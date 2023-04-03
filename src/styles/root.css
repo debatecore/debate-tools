@@ -58,3 +58,13 @@ h1, h2, h3 {
 .mutedtext {
   color: var(--mutedtext);
 }
+.centerpadding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+.gap8 {
+  gap: 8px;
+}

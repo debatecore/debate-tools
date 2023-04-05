@@ -1,7 +1,7 @@
 import { DebateSetting } from "@/components/DebateSetting";
 import Link from "next/link";
 import { useContext } from "react";
-import { DebateContext } from "./_app";
+import { DebateContext, defaultDebate } from "./_app";
 
 export default function Home() {
   const debate = useContext(DebateContext);
@@ -18,12 +18,36 @@ export default function Home() {
         <DebateSetting setting="speechTime" numberIsSeconds />
         <DebateSetting setting="protectedTime" numberIsSeconds />
       </div>
-      <div className="centerpadding gap8">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "end",
+          maxWidth: "600px",
+          margin: "0 auto",
+          gap: "12px",
+        }}
+      >
+        <button
+          style={{
+            fontSize: "20px",
+            padding: "8px 12px",
+            borderRadius: "6px",
+            border: "1px solid transparent",
+          }}
+          onClick={() => {
+            debate?.setData(defaultDebate);
+          }}
+        >
+          reset debate settings
+        </button>
         <Link href="/debate">
           <button
             style={{
-              padding: "6px 12px",
-              borderRadius: "1000px",
+              fontSize: "20px",
+              padding: "8px 12px",
+              borderRadius: "6px",
+              border: "1px solid transparent",
             }}
           >
             conduct the debate

@@ -20,6 +20,22 @@ type debate = {
 };
 export type { debate };
 
+const defaultDebate: debate = {
+  format: "oxford",
+  motion: "No motion provided.",
+  proTeam: "Anonymous Team I",
+  oppTeam: "Anonymous Team II",
+  speechTime: 240,
+  protectedTime: 30,
+  allowAdVocem: false,
+  showProtectedTime: false,
+  showAdVocemAvailability: false,
+  playSoundOnSpeechLimits: false,
+  playSoundOnProtectedTime: false,
+  playedSoundSelection: "bell",
+};
+export { defaultDebate };
+
 const DebateContext = createContext<{
   data: debate;
   setData: Dispatch<SetStateAction<debate>>;
@@ -27,20 +43,7 @@ const DebateContext = createContext<{
 export { DebateContext };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [data, setData] = useState<debate>({
-    format: "oxford",
-    motion: "No motion provided.",
-    proTeam: "Anonymous Team",
-    oppTeam: "Anonymous Team",
-    speechTime: 240,
-    protectedTime: 30,
-    allowAdVocem: false,
-    showProtectedTime: false,
-    showAdVocemAvailability: false,
-    playSoundOnSpeechLimits: false,
-    playSoundOnProtectedTime: false,
-    playedSoundSelection: "knock",
-  });
+  const [data, setData] = useState<debate>(defaultDebate);
   return (
     <DebateContext.Provider value={{ data, setData }}>
       <Component {...pageProps} />

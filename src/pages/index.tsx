@@ -19,14 +19,16 @@ export default function Home() {
         <DebateSetting type="protectedTime" numberIsSeconds />
       </div>
       <div className="centerpadding gap8">
-        <button
-          style={{
-            padding: "6px 12px",
-            borderRadius: "1000px",
-          }}
-        >
-          conduct the debate
-        </button>
+        <Link href="/debate">
+          <button
+            style={{
+              padding: "6px 12px",
+              borderRadius: "1000px",
+            }}
+          >
+            conduct the debate
+          </button>
+        </Link>
       </div>
     </>
   );

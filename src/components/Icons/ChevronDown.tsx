@@ -1,4 +1,4 @@
-const ChevronDown = () => {
+const ChevronDown = (props: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,6 +11,7 @@ const ChevronDown = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
       className="feather feather-chevron-down"
+      {...props}
     >
       <polyline points="6 9 12 15 18 9" />
     </svg>

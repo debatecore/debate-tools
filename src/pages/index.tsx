@@ -15,7 +15,8 @@ export default function Home() {
         <DebateSetting type="motion" />
         <DebateSetting type="proTeam" />
         <DebateSetting type="oppTeam" />
-        <DebateSetting type="speechTime" />
+        <DebateSetting type="speechTime" numberIsSeconds />
+        <DebateSetting type="protectedTime" numberIsSeconds />
       </div>
       <div className="centerpadding gap8">
         <button

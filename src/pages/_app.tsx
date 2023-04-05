@@ -8,6 +8,7 @@ type debate = {
   proTeam: string;
   oppTeam: string;
   speechTime: number;
+  protectedTime: number;
 };
 export type { debate };
 
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     proTeam: "Anonymous Team",
     oppTeam: "Anonymous Team",
     speechTime: 240,
+    protectedTime: 30,
   });
   return (
     <DebateContext.Provider value={{ data, setData }}>

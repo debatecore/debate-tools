@@ -58,6 +58,12 @@ h1, h2, h3 {
 .mutedtext {
   color: var(--mutedtext);
 }
+.centertext {
+  text-align: center;
+}
+.padding8 {
+  padding: 8px;
+}
 .centerpadding {
   display: flex;
   flex-direction: column;
@@ -67,4 +73,11 @@ h1, h2, h3 {
 }
 .gap8 {
   gap: 8px;
+}
+
+.chevronFlip {
+  transition-duration: 250ms;
+}
+.chevronFlipped {
+  transform: rotate(180deg);
 }

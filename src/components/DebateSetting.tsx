@@ -32,7 +32,7 @@ const DebateSetting = (props: {
       style={{
         background: "#252525",
         minWidth: "220px",
-        width: "80%",
+        width: "90%",
         maxWidth: "600px",
         borderRadius: "6px",
       }}

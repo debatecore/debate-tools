@@ -23,8 +23,8 @@ export type { debate };
 const defaultDebate: debate = {
   format: "oxford",
   motion: "No motion provided.",
-  proTeam: "Anonymous Team I",
-  oppTeam: "Anonymous Team II",
+  proTeam: "Anonymous Team 1",
+  oppTeam: "Anonymous Team 2",
   speechTime: 240,
   protectedTime: 30,
   allowAdVocem: false,

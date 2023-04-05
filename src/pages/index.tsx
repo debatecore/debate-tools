@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
       <div className="centerpadding">
-        <h1>Oxford Debate Tools</h1>
-        <p className="mutedtext">An aide to the marshall.</p>
+        <h1>{"Oxford Debate Tools"}</h1>
+        <p className="mutedtext">{"An aide to the marshall."}</p>
       </div>
       <div className="centerpadding gap8">
         <DebateSetting setting="motion" />
@@ -39,7 +39,7 @@ export default function Home() {
             debate?.setData(defaultDebate);
           }}
         >
-          reset debate settings
+          {"reset debate settings"}
         </button>
         <Link href="/debate">
           <button
@@ -50,7 +50,7 @@ export default function Home() {
               border: "1px solid transparent",
             }}
           >
-            conduct the debate
+            {"conduct the debate"}
           </button>
         </Link>
       </div>

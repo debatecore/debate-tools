@@ -12,11 +12,11 @@ export default function Home() {
         <p className="mutedtext">An aide to the marshall.</p>
       </div>
       <div className="centerpadding gap8">
-        <DebateSetting type="motion" />
-        <DebateSetting type="proTeam" />
-        <DebateSetting type="oppTeam" />
-        <DebateSetting type="speechTime" numberIsSeconds />
-        <DebateSetting type="protectedTime" numberIsSeconds />
+        <DebateSetting setting="motion" />
+        <DebateSetting setting="proTeam" />
+        <DebateSetting setting="oppTeam" />
+        <DebateSetting setting="speechTime" numberIsSeconds />
+        <DebateSetting setting="protectedTime" numberIsSeconds />
       </div>
       <div className="centerpadding gap8">
         <Link href="/debate">

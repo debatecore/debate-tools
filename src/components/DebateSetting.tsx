@@ -22,7 +22,7 @@ const debateSettingDescriptions: { [Property in keyof debate]?: string } = {
 };
 
 const DebateSetting = (props: {
-  type: keyof debate;
+  setting: keyof debate;
   numberIsSeconds?: boolean;
 }) => {
   const debate = useContext(DebateContext);
@@ -51,7 +51,7 @@ const DebateSetting = (props: {
           setExpanded(!expanded);
         }}
       >
-        <span>{debateSettingTitles[props.type] || props.type}</span>
+        <span>{debateSettingTitles[props.setting] || props.setting}</span>
         <span
           className="mutedtext"
           style={{
@@ -61,7 +61,7 @@ const DebateSetting = (props: {
             gap: "24px",
           }}
         >
-          {debate?.data[props.type]}
+          {debate?.data[props.setting]}
           {props.numberIsSeconds ? ` seconds` : ""}
           <ChevronDown
             className={`chevronFlip ${expanded ? "chevronFlipped" : ""}`}
@@ -72,31 +72,42 @@ const DebateSetting = (props: {
       {expanded ? (
         <>
           <div className="mutedtext centertext padding8">
-            {debateSettingDescriptions[props.type]}
+            {debateSettingDescriptions[props.setting]}
           </div>
           <div>
-            <input
-              type={
-                typeof debate?.data[props.type] === typeof 240
-                  ? "number"
-                  : "text"
-              }
-              value={debate?.data[props.type]}
-              onChange={(e) => {
-                debate?.setData({
-                  ...debate?.data,
-                  [props.type]:
-                    typeof debate?.data[props.type] === typeof 240
-                      ? parseInt(e.target.value)
-                      : e.target.value,
-                });
-              }}
-              style={{
-                width: "100%",
-                borderRadius: "0 0 6px 6px",
-                padding: "8px 12px",
-              }}
-            />
+            {typeof debate?.data[props.setting] === "number" ||
+            typeof debate?.data[props.setting] === "string" ? (
+              <input
+                type={
+                  typeof debate?.data[props.setting] === "number"
+                    ? "number"
+                    : "text"
+                }
+                value={
+                  typeof debate?.data[props.setting] === "number"
+                    ? parseInt(debate.data[props.setting].toString())
+                    : debate.data[props.setting].toString()
+                }
+                onChange={(e) => {
+                  debate?.setData({
+                    ...debate?.data,
+                    [props.setting]:
+                      typeof debate?.data[props.setting] === "number"
+                        ? parseInt(e.target.value)
+                        : e.target.value,
+                  });
+                }}
+                style={{
+                  width: "100%",
+                  borderRadius: "0 0 6px 6px",
+                  padding: "8px 12px",
+                }}
+              />
+            ) : typeof debate?.data[props.setting] === "boolean" ? (
+              "boolean switching soon (?)"
+            ) : (
+              ""
+            )}
           </div>
         </>
       ) : (

@@ -44,8 +44,23 @@ const DebateClock = (props: { running: boolean; stage: number }) => {
           />
         </svg>
         <main>
-          <h4>{time}</h4>
-          <p className="mutedtext">{"SECONDS"}</p>
+          {time > 0 ? (
+            <h4>
+              {Math.floor(time / 60) < 10 ? "0" : ""}
+              {Math.floor(time / 60)}
+              {":"}
+              {Math.floor(time % 60) < 10 && Math.floor(time % 60) !== 0
+                ? "0"
+                : ""}
+              {Math.floor(time % 60)}
+              {Math.floor(time % 60) === 0 ? "0" : ""}
+            </h4>
+          ) : (
+            <h4>{Math.abs(time)}</h4>
+          )}
+          <p className="mutedtext">
+            {time > 0 ? "TIME LEFT" : "SECONDS OF OVERTIME"}
+          </p>
         </main>
       </div>
     </>

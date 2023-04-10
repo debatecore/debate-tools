@@ -1,0 +1,44 @@
+.clockparent {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  --w: 240px;
+  --h: 240px;
+  width: var(--w) !important;
+  height: var(--h) !important;
+  svg.topCircle {
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: 0;
+    left: 0;
+    color: burlywood;
+    z-index: 10;
+    circle {
+      stroke-dasharray: 690.4611206054688;
+      transition: stroke-dashoffset 0.35s;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+  }
+  svg.bottomCircle {
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: 0;
+    left: 0;
+    color: #242424;
+    z-index: 9;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--w);
+    height: var(--h);
+    h4 {
+      font-size: 3em;
+    }
+  }
+}

@@ -1,7 +1,13 @@
 import type { AppProps } from "next/app";
 import "@/styles/root.css";
 
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 
 type debate = {
   format: "oxford" | "britparliamentary";
@@ -43,7 +49,28 @@ const DebateContext = createContext<{
 export { DebateContext };
 
 export default function App({ Component, pageProps }: AppProps) {
+  // const [data, setData] = useState<debate>(
+  //   typeof localStorage != "undefined" && localStorage.getItem("debateconfig")
+  //     ? JSON.parse(localStorage.getItem("debateconfig") || "")
+  //     : defaultDebate
+  // );
+  const [initialData, setInitialData] = useState<boolean>(false);
   const [data, setData] = useState<debate>(defaultDebate);
+  useEffect(() => {
+    if (typeof localStorage == "undefined") return;
+    if (initialData) {
+      localStorage.setItem("debateconfig", JSON.stringify(data));
+    } else {
+      setInitialData(true);
+      if (localStorage.getItem("debateconfig")) {
+        setData(JSON.parse(localStorage.getItem("debateconfig") || ""));
+      }
+    }
+  }, [data]);
+  // useEffect(() => {
+  //   if (typeof localStorage == "undefined") return;
+  //   localStorage.setItem("debateconfig", JSON.stringify(data));
+  // }, [data]);
   return (
     <DebateContext.Provider value={{ data, setData }}>
       <Component {...pageProps} />

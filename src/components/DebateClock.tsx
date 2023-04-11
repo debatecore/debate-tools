@@ -11,7 +11,7 @@ const DebateClock = (props: { running: boolean; stage: number }) => {
   }, 1000);
   useEffect(() => {
     setTime(debate?.data.speechTime || 0);
-  }, [props.stage]);
+  }, [props.stage, debate]);
   return (
     <>
       {/* <div style={{ padding: "32px 0" }}>
@@ -19,7 +19,13 @@ const DebateClock = (props: { running: boolean; stage: number }) => {
         {" seconds"}
       </div> */}
       <div className={styles.clockparent}>
-        <svg className={styles.topCircle} height="240" width="240">
+        <svg
+          className={`${styles.topCircle} ${
+            time <= 10 ? styles.nearovertime : ""
+          } ${time < 0 ? styles.overtime : ""}`}
+          height="240"
+          width="240"
+        >
           <circle
             stroke="currentColor"
             fill="transparent"
@@ -33,7 +39,13 @@ const DebateClock = (props: { running: boolean; stage: number }) => {
             cy="120"
           />
         </svg>
-        <svg className={styles.bottomCircle} height="240" width="240">
+        <svg
+          className={`${styles.bottomCircle} ${
+            time <= 10 ? styles.nearovertime : ""
+          }`}
+          height="240"
+          width="240"
+        >
           <circle
             stroke="currentColor"
             fill="transparent"

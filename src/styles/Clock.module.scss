@@ -14,9 +14,16 @@
     left: 0;
     color: burlywood;
     z-index: 10;
+    &.nearovertime {
+      color: white;
+    }
+    &.overtime {
+      color: transparent;
+      opacity: 0;
+    }
     circle {
       stroke-dasharray: 690.4611206054688;
-      transition: stroke-dashoffset 0.35s;
+      transition-duration: 350ms;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;
     }
@@ -29,6 +36,12 @@
     left: 0;
     color: #242424;
     z-index: 9;
+    &.nearovertime {
+      color: indianred;
+    }
+    circle {
+      transition-duration: 350ms;
+    }
   }
   main {
     display: flex;

@@ -36,3 +36,25 @@
     padding: 0 48px;
   }
 }
+
+.dotsSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+}
+.dotGeneric {
+  display: block;
+  --dotsize: 12px;
+  --dotcolor: #666;
+  width: var(--dotsize);
+  height: var(--dotsize);
+  border-radius: 50%;
+  // background: var(--dotcolor);
+  border: 2px solid var(--dotcolor);
+  &.dotFilled {
+    background: var(--dotcolor);
+  }
+}

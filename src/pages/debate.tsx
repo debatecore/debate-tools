@@ -26,6 +26,52 @@ function PageDebate() {
           <p>{debate?.data.proTeam ? "AS THE PROPOSITION" : "-"}</p>
           <p>{debate?.data.oppTeam ? "AS THE OPPOSITION" : "-"}</p>
         </section>
+        <section className={styles.sideitems}>
+          <section className={styles.dotsSection}>
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 0 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 2 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 4 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 6 ? styles.dotFilled : ""
+              }`}
+            />
+          </section>
+          <section className={styles.dotsSection}>
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 1 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 3 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 5 ? styles.dotFilled : ""
+              }`}
+            />
+            <div
+              className={`${styles.dotGeneric} ${
+                stage > 7 ? styles.dotFilled : ""
+              }`}
+            />
+          </section>
+        </section>
         <section
           className="mutedtext"
           style={{

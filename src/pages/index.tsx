@@ -16,7 +16,9 @@ export default function Home() {
         <DebateSetting setting="proTeam" />
         <DebateSetting setting="oppTeam" />
         <DebateSetting setting="speechTime" numberIsSeconds />
-        {/* <DebateSetting setting="protectedTime" numberIsSeconds /> */}
+        <DebateSetting setting="protectedTime" numberIsSeconds />
+        <DebateSetting setting="adVocemCount" />
+        <DebateSetting setting="adVocemTime" numberIsSeconds />
       </div>
       <div
         style={{

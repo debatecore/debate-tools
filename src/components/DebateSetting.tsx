@@ -10,15 +10,19 @@ const debateSettingTitles: { [Property in keyof debate]?: string } = {
   oppTeam: "Opposition Team",
   speechTime: "Speech Time",
   protectedTime: "Protected Time",
+  adVocemCount: "Ad Vocems per Team",
+  adVocemTime: "Ad Vocem Speech Time",
 };
 
 const debateSettingDescriptions: { [Property in keyof debate]?: string } = {
   motion: "The matter of debate between the two teams.",
   proTeam: "Name or indicator of the team arguing in favor of the motion.",
-  oppTeam: "Name or indicator of the team arguing in favor of the motion.",
+  oppTeam: "Name or indicator of the team arguing against the motion.",
   speechTime: "Length of time a regular speaker may speak.",
   protectedTime:
-    "A length of time at the start and end of a regular speech that may not be interrupted by questions or POIs.",
+    "A period at the start and end of a speech that can't be interrupted by questions.",
+  adVocemCount: "Amount of ad vocems. Set to 0 to allow none.",
+  adVocemTime: "Amount of time per ad vocem.",
 };
 
 const DebateSetting = (props: {

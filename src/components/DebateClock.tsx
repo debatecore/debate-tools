@@ -26,9 +26,20 @@ const DebateClock = (props: {
         className={`${styles.clockparent} ${props.dimmed ? styles.dimmed : ""}`}
       >
         <svg
-          className={`${styles.topCircle} ${
-            time <= 10 ? styles.nearovertime : ""
-          } ${time < 0 ? styles.overtime : ""}`}
+          className={`
+            ${styles.topCircle}
+            ${time <= 10 ? styles.protectedtime : ""}
+            ${time < 0 ? styles.overtime : ""}
+            ${
+              /* prettier-ignore */
+              (
+                (debate?.data.speechTime || 0) - (debate?.data.protectedTime || 0) <= time
+                || time <= (debate?.data.protectedTime || 0)
+              )&& props.running && debate?.data.protectedTime
+                ? styles.protectedtime
+                : ""
+            }
+          `}
           height="240"
           width="240"
         >
@@ -46,9 +57,11 @@ const DebateClock = (props: {
           />
         </svg>
         <svg
-          className={`${styles.bottomCircle} ${
-            time <= 10 ? styles.nearovertime : ""
-          }`}
+          className={`
+            ${styles.bottomCircle}
+            ${time <= 10 ? styles.nearovertime : ""}
+            ${time <= 0 ? styles.overtime : ""}
+          `}
           height="240"
           width="240"
         >

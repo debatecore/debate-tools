@@ -18,9 +18,12 @@
     left: 0;
     color: burlywood;
     z-index: 10;
-    &.nearovertime {
-      color: white;
+    &.protectedtime {
+      color: var(--lightred);
     }
+    // &.nearovertime {
+    // color: white;
+    // }
     &.overtime {
       color: transparent;
       opacity: 0;
@@ -41,8 +44,11 @@
     left: 0;
     color: #242424;
     z-index: 9;
-    &.nearovertime {
-      color: indianred;
+    // &.nearovertime {
+    // color: var(--lightred);
+    // }
+    &.overtime {
+      color: var(--lightred);
     }
     circle {
       transition-duration: 350ms;

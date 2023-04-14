@@ -6,6 +6,10 @@
   --h: 240px;
   width: var(--w) !important;
   height: var(--h) !important;
+  transition: opacity 350ms;
+  &.dimmed {
+    opacity: 0.5;
+  }
   svg.topCircle {
     position: absolute;
     width: var(--w);
@@ -23,6 +27,7 @@
     }
     circle {
       stroke-dasharray: 690.4611206054688;
+      // number taken from path.getTotalLength()
       transition-duration: 350ms;
       transform: rotate(-90deg);
       transform-origin: 50% 50%;

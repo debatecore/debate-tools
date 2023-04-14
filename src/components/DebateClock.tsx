@@ -3,7 +3,11 @@ import { useContext, useEffect, useState } from "react";
 import useInterval from "react-useinterval";
 import styles from "../styles/Clock.module.scss";
 
-const DebateClock = (props: { running: boolean; stage: number }) => {
+const DebateClock = (props: {
+  running: boolean;
+  stage: number;
+  dimmed?: boolean;
+}) => {
   const debate = useContext(DebateContext);
   const [time, setTime] = useState<number>(debate?.data.speechTime || 0);
   useInterval(() => {
@@ -18,7 +22,9 @@ const DebateClock = (props: { running: boolean; stage: number }) => {
         {time} / {debate?.data.speechTime}
         {" seconds"}
       </div> */}
-      <div className={styles.clockparent}>
+      <div
+        className={`${styles.clockparent} ${props.dimmed ? styles.dimmed : ""}`}
+      >
         <svg
           className={`${styles.topCircle} ${
             time <= 10 ? styles.nearovertime : ""

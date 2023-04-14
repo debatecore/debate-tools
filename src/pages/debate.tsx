@@ -54,10 +54,12 @@ function PageDebate() {
         <section className={`${styles.sideitems}`}>
           <DebateClock
             running={running && [0, 2, 4, 6].includes(stage)}
+            dimmed={running && [1, 3, 5, 7].includes(stage)}
             stage={stage}
           />
           <DebateClock
             running={running && [1, 3, 5, 7].includes(stage)}
+            dimmed={running && [0, 2, 4, 6].includes(stage)}
             stage={stage}
           />
         </section>

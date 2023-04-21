@@ -8,51 +8,35 @@ export default function Home() {
   return (
     <>
       <div className="centerpadding">
-        <h1>{"Oxford Debate Tools"}</h1>
-        <p className="mutedtext">{"An aide to the marshall."}</p>
-      </div>
-      <div className="centerpadding gap8">
-        <DebateSetting setting="motion" />
-        <DebateSetting setting="proTeam" />
-        <DebateSetting setting="oppTeam" />
-        <DebateSetting setting="speechTime" numberIsSeconds />
-        <DebateSetting setting="protectedTime" numberIsSeconds />
-        <DebateSetting setting="adVocemCount" />
-        <DebateSetting setting="adVocemTime" numberIsSeconds />
+        <h1>{"Debate Tools"}</h1>
+        <p className="mutedtext">{"Made with <3 in Poznań."}</p>
+        <p className="mutedtext" style={{ opacity: ".4" }}>
+          {"debates.manczak.net"}
+        </p>
       </div>
       <div
+        className="centerpadding"
         style={{
           display: "flex",
-          flexDirection: "row",
-          justifyContent: "end",
-          maxWidth: "600px",
-          margin: "0 auto",
-          gap: "12px",
+          gap: "1rem",
         }}
       >
-        <button
-          style={{
-            fontSize: "20px",
-            padding: "8px 12px",
-            borderRadius: "6px",
-            border: "1px solid transparent",
-          }}
-          onClick={() => {
-            debate?.setData(defaultDebate);
-          }}
-        >
-          {"reset debate settings"}
-        </button>
-        <Link href="/debate">
+        <Link href="/debate/setup">
+          <button style={{ padding: "8px 24px", borderRadius: "12px" }}>
+            {"Oxford Debate Utility"}
+          </button>
+        </Link>
+        <Link href="/">
           <button
+            disabled
             style={{
-              fontSize: "20px",
-              padding: "8px 12px",
-              borderRadius: "6px",
-              border: "1px solid transparent",
+              padding: "8px 24px",
+              borderRadius: "12px",
+              opacity: ".4",
+              cursor: "not-allowed",
             }}
           >
-            {"conduct the debate"}
+            {"Tournament Ladder Generator"}
           </button>
         </Link>
       </div>

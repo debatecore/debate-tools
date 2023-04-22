@@ -10,63 +10,54 @@ import {
 } from "react";
 
 type debate = {
-  format: "oxford" | "britparliamentary";
   motion: string;
   proTeam: string;
   oppTeam: string;
   speechTime: number;
   protectedTime: number;
-  adVocemCount: number;
-  adVocemTime: number;
-  // showAdVocemAvailability: boolean;
-  // playSoundOnSpeechLimits: boolean;
-  // playSoundOnProtectedTime: boolean;
-  // playedSoundSelection: "knock" | "bell" | "duck";
-  // figure out how to handle questions ?
 };
 export type { debate };
 
 const defaultDebate: debate = {
-  format: "oxford",
   motion: "No motion provided.",
   proTeam: "Anonymous Team 1",
   oppTeam: "Anonymous Team 2",
   speechTime: 240,
   protectedTime: 30,
-  adVocemCount: 1,
-  adVocemTime: 60,
-  // showAdVocemAvailability: false,
-  // playSoundOnSpeechLimits: false,
-  // playSoundOnProtectedTime: false,
-  // playedSoundSelection: "bell",
 };
 export { defaultDebate };
 
-const DebateContext = createContext<{
-  data: debate;
-  setData: Dispatch<SetStateAction<debate>>;
+const OneContext = createContext<{
+  lang: language;
+  setLang: Dispatch<SetStateAction<language>>;
+  debate: debate;
+  setDebate: Dispatch<SetStateAction<debate>>;
 } | null>(null);
-export { DebateContext };
+export { OneContext };
 
-const debateConfig = "debateconfigv2";
+const debateConfig = "debateconfigv3";
+
+type language = "en" | "pl";
+export type { language };
 
 export default function App({ Component, pageProps }: AppProps) {
   const [initialData, setInitialData] = useState<boolean>(false);
-  const [data, setData] = useState<debate>(defaultDebate);
+  const [lang, setLang] = useState<language>("en");
+  const [debate, setDebate] = useState<debate>(defaultDebate);
   useEffect(() => {
     if (typeof localStorage == "undefined") return;
     if (initialData) {
-      localStorage.setItem(debateConfig, JSON.stringify(data));
+      localStorage.setItem(debateConfig, JSON.stringify(debate));
     } else {
       setInitialData(true);
       if (localStorage.getItem(debateConfig)) {
-        setData(JSON.parse(localStorage.getItem(debateConfig) || ""));
+        setDebate(JSON.parse(localStorage.getItem(debateConfig) || ""));
       }
     }
-  }, [data]);
+  }, [debate]);
   return (
-    <DebateContext.Provider value={{ data, setData }}>
+    <OneContext.Provider value={{ lang, setLang, debate, setDebate }}>
       <Component {...pageProps} />
-    </DebateContext.Provider>
+    </OneContext.Provider>
   );
 }

@@ -1,30 +1,28 @@
 import { DebateClock } from "@/components/DebateClock";
 import { useContext, useEffect, useState } from "react";
 import styles from "../styles/Debate.module.scss";
-import { DebateContext } from "./_app";
+import { OneContext } from "./_app";
 
 function PageDebate() {
-  const debate = useContext(DebateContext);
+  const config = useContext(OneContext);
   const [running, setRunning] = useState<boolean>(false);
   const [stage, setStage] = useState<number>(0);
   return (
     <>
       <main className={`centertext ${styles.debateMain}`}>
-        <h1>{debate?.data.motion || "debatemotion"}</h1>
-        <p className="mutedtext">
-          {debate?.data.format == "oxford" ? "AN OXFORD FORMAT DEBATE" : ""}
-        </p>
+        <h1>{config?.debate.motion || "debatemotion"}</h1>
+        <p className="mutedtext">{"AN OXFORD FORMAT DEBATE"}</p>
         <section
           className={`${styles.sideitems} ${styles.topPadding48} ${styles["innerPadding0-48"]}`}
         >
-          <h2>{debate?.data.proTeam || "The Proposition"}</h2>
-          <h2>{debate?.data.oppTeam || "The Opposition"}</h2>
+          <h2>{config?.debate.proTeam || "The Proposition"}</h2>
+          <h2>{config?.debate.oppTeam || "The Opposition"}</h2>
         </section>
         <section
           className={`mutedtext ${styles.sideitems} ${styles["innerPadding0-48"]}`}
         >
-          <p>{debate?.data.proTeam ? "AS THE PROPOSITION" : "-"}</p>
-          <p>{debate?.data.oppTeam ? "AS THE OPPOSITION" : "-"}</p>
+          <p>{config?.debate.proTeam ? "AS THE PROPOSITION" : "-"}</p>
+          <p>{config?.debate.oppTeam ? "AS THE OPPOSITION" : "-"}</p>
         </section>
         <section className={styles.sideitems}>
           <section className={styles.dotsSection}>
@@ -110,11 +108,6 @@ function PageDebate() {
           />
         </section>
         <button
-          style={{
-            background: "#282828",
-            padding: "6px 12px",
-            borderRadius: "6px",
-          }}
           onClick={() => {
             if (stage < 8) {
               if (running) {

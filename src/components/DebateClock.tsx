@@ -1,4 +1,4 @@
-import { DebateContext } from "@/pages/_app";
+import { OneContext } from "@/pages/_app";
 import { useContext, useEffect, useState } from "react";
 import useInterval from "react-useinterval";
 import styles from "../styles/Clock.module.scss";
@@ -8,14 +8,14 @@ const DebateClock = (props: {
   stage: number;
   dimmed?: boolean;
 }) => {
-  const debate = useContext(DebateContext);
-  const [time, setTime] = useState<number>(debate?.data.speechTime || 0);
+  const config = useContext(OneContext);
+  const [time, setTime] = useState<number>(config?.debate.speechTime || 0);
   useInterval(() => {
     if (props.running) setTime(time - 1);
   }, 1000);
   useEffect(() => {
-    setTime(debate?.data.speechTime || 0);
-  }, [props.stage, debate]);
+    setTime(config?.debate.speechTime || 0);
+  }, [props.stage, config]);
   return (
     <>
       {/* <div style={{ padding: "32px 0" }}>
@@ -33,9 +33,9 @@ const DebateClock = (props: {
             ${
               /* prettier-ignore */
               (
-                (debate?.data.speechTime || 0) - (debate?.data.protectedTime || 0) <= time
-                || time <= (debate?.data.protectedTime || 0)
-              )&& props.running && debate?.data.protectedTime
+                (config?.debate.speechTime || 0) - (config?.debate.protectedTime || 0) <= time
+                || time <= (config?.debate.protectedTime || 0)
+              )&& props.running && config?.debate.protectedTime
                 ? styles.protectedtime
                 : ""
             }
@@ -48,7 +48,7 @@ const DebateClock = (props: {
             fill="transparent"
             strokeDashoffset={
               110 * 2 * Math.PI -
-              (time / (debate?.data.speechTime || 240)) * (110 * 2 * Math.PI)
+              (time / (config?.debate.speechTime || 240)) * (110 * 2 * Math.PI)
             }
             strokeWidth="5"
             r="110"

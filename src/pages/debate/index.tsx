@@ -1,7 +1,9 @@
 import { DebateClock } from "@/components/DebateClock";
 import { useContext, useEffect, useState } from "react";
-import styles from "../styles/Debate.module.scss";
-import { OneContext } from "./_app";
+import styles from "../../styles/Debate.module.scss";
+import { OneContext } from "../_app";
+import { useLang } from "@/lib/useLang";
+import Link from "next/link";
 
 function PageDebate() {
   const config = useContext(OneContext);
@@ -11,18 +13,18 @@ function PageDebate() {
     <>
       <main className={`centertext ${styles.debateMain}`}>
         <h1>{config?.debate.motion || "debatemotion"}</h1>
-        <p className="mutedtext">{"AN OXFORD FORMAT DEBATE"}</p>
+        <p className="mutedtext">{useLang("AN_OXFORD_FORMAT_DEBATE")}</p>
         <section
           className={`${styles.sideitems} ${styles.topPadding48} ${styles["innerPadding0-48"]}`}
         >
-          <h2>{config?.debate.proTeam || "The Proposition"}</h2>
-          <h2>{config?.debate.oppTeam || "The Opposition"}</h2>
+          <h2>{config?.debate.proTeam || "Anonymous"}</h2>
+          <h2>{config?.debate.oppTeam || "Anonymous"}</h2>
         </section>
         <section
           className={`mutedtext ${styles.sideitems} ${styles["innerPadding0-48"]}`}
         >
-          <p>{config?.debate.proTeam ? "AS THE PROPOSITION" : "-"}</p>
-          <p>{config?.debate.oppTeam ? "AS THE OPPOSITION" : "-"}</p>
+          <p>{config?.debate.proTeam ? useLang("AS_PROPO") : "-"}</p>
+          <p>{config?.debate.oppTeam ? useLang("AS_OPPO") : "-"}</p>
         </section>
         <section className={styles.sideitems}>
           <section className={styles.dotsSection}>
@@ -70,29 +72,25 @@ function PageDebate() {
             />
           </section>
         </section>
-        <section
-          className="mutedtext"
-          style={{
-            textTransform: "uppercase",
-          }}
-        >
+        <section className="mutedtext">
           <p>
-            {Math.floor(stage / 2 + 1) != 5 ? (
-              <span>
-                {Math.floor(stage / 2 + 1)}
-                {Math.floor(stage / 2 + 1) == 1
-                  ? "st"
-                  : Math.floor(stage / 2 + 1) == 2
-                  ? "nd"
-                  : Math.floor(stage / 2 + 1) == 3
-                  ? "rd"
-                  : "th"}{" "}
-                {"speaker of the"}{" "}
-                {stage % 2 == 0 ? "Proposition" : "Opposition"} {"side"}
-              </span>
-            ) : (
-              <span>competition complete!</span>
-            )}
+            {stage == 0
+              ? useLang("STAGE_0")
+              : stage == 1
+              ? useLang("STAGE_1")
+              : stage == 2
+              ? useLang("STAGE_2")
+              : stage == 3
+              ? useLang("STAGE_3")
+              : stage == 4
+              ? useLang("STAGE_4")
+              : stage == 5
+              ? useLang("STAGE_5")
+              : stage == 6
+              ? useLang("STAGE_6")
+              : stage == 7
+              ? useLang("STAGE_7")
+              : useLang("STAGE_8")}
           </p>
         </section>
         <section className={`${styles.sideitems}`}>
@@ -107,52 +105,55 @@ function PageDebate() {
             stage={stage}
           />
         </section>
-        <button
-          onClick={() => {
-            if (stage < 8) {
+        {stage < 8 ? (
+          <button
+            onClick={() => {
+              if (stage >= 8) return;
               if (running) {
                 setRunning(false);
                 setStage(stage + 1);
               } else {
                 setRunning(true);
               }
-            }
-          }}
-        >
-          {stage == 0 && !running
-            ? "Start Proposition's First Speech"
-            : stage == 0 && running
-            ? "End Proposition's First Speech"
-            : stage == 1 && !running
-            ? "Start Opposition's First Speech"
-            : stage == 1 && running
-            ? "End Opposition's First Speech"
-            : stage == 2 && !running
-            ? "Start Proposition's Second Speech"
-            : stage == 2 && running
-            ? "End Proposition's Second Speech"
-            : stage == 3 && !running
-            ? "Start Opposition's Second Speech"
-            : stage == 3 && running
-            ? "End Opposition's Second Speech"
-            : stage == 4 && !running
-            ? "Start Proposition's Third Speech"
-            : stage == 4 && running
-            ? "End Proposition's Third Speech"
-            : stage == 5 && !running
-            ? "Start Opposition's Third Speech"
-            : stage == 5 && running
-            ? "End Opposition's Third Speech"
-            : stage == 6 && !running
-            ? "Start Proposition's Fourth Speech"
-            : stage == 6 && running
-            ? "End Proposition's Fourth Speech"
-            : stage == 7 && !running
-            ? "Start Opposition's Fourth Speech"
-            : stage == 7 && running
-            ? "End Opposition's Fourth Speech"
-            : "Competition complete :)"}
-        </button>
+            }}
+          >
+            {stage == 0 && !running
+              ? useLang("STAGE_0_0_BTN")
+              : stage == 0 && running
+              ? useLang("STAGE_0_1_BTN")
+              : stage == 1 && !running
+              ? useLang("STAGE_1_0_BTN")
+              : stage == 1 && running
+              ? useLang("STAGE_1_1_BTN")
+              : stage == 2 && !running
+              ? useLang("STAGE_2_0_BTN")
+              : stage == 2 && running
+              ? useLang("STAGE_2_1_BTN")
+              : stage == 3 && !running
+              ? useLang("STAGE_3_0_BTN")
+              : stage == 3 && running
+              ? useLang("STAGE_3_1_BTN")
+              : stage == 4 && !running
+              ? useLang("STAGE_4_0_BTN")
+              : stage == 4 && running
+              ? useLang("STAGE_4_1_BTN")
+              : stage == 5 && !running
+              ? useLang("STAGE_5_0_BTN")
+              : stage == 5 && running
+              ? useLang("STAGE_5_1_BTN")
+              : stage == 6 && !running
+              ? useLang("STAGE_6_0_BTN")
+              : stage == 6 && running
+              ? useLang("STAGE_6_1_BTN")
+              : stage == 7 && !running
+              ? useLang("STAGE_7_0_BTN")
+              : useLang("STAGE_7_1_BTN")}
+          </button>
+        ) : (
+          <Link href="/debate/setup">
+            <button>{useLang("STAGE_8_BTN")}</button>
+          </Link>
+        )}
       </main>
     </>
   );

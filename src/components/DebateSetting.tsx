@@ -3,22 +3,22 @@ import { OneContext } from "@/pages/_app";
 import { debate } from "@/pages/_app";
 
 import { ChevronDown } from "./Icons/ChevronDown";
+import { tokens, useLang } from "@/lib/useLang";
 
-const debateSettingTitles: { [Property in keyof debate]?: string } = {
-  motion: "Debate Motion",
-  proTeam: "Proposition Team",
-  oppTeam: "Opposition Team",
-  speechTime: "Speech Time",
-  protectedTime: "Protected Time",
+const debateSettingTitles: { [Property in keyof debate]: tokens } = {
+  motion: "DEBATE_MOTION",
+  proTeam: "PROPOSITION_TEAM",
+  oppTeam: "OPPOSITION_TEAM",
+  speechTime: "SPEECH_TIME",
+  protectedTime: "PROTECTED_TIME",
 };
 
-const debateSettingDescriptions: { [Property in keyof debate]?: string } = {
-  motion: "The matter of debate between the two teams.",
-  proTeam: "Name or indicator of the team arguing in favor of the motion.",
-  oppTeam: "Name or indicator of the team arguing against the motion.",
-  speechTime: "Length of time a regular speaker may speak.",
-  protectedTime:
-    "A period at the start and end of a speech that can't be interrupted by questions.",
+const debateSettingDescriptions: { [Property in keyof debate]: tokens } = {
+  motion: "DEBATE_MOTION_DESC",
+  proTeam: "PROPOSITION_TEAM_DESC",
+  oppTeam: "OPPOSITION_TEAM_DESC",
+  speechTime: "SPEECH_TIME_DESC",
+  protectedTime: "PROTECTED_TIME_DESC",
 };
 
 const DebateSetting = (props: {
@@ -51,7 +51,9 @@ const DebateSetting = (props: {
           setExpanded(!expanded);
         }}
       >
-        <span>{debateSettingTitles[props.setting] || props.setting}</span>
+        <span>
+          {useLang(debateSettingTitles[props.setting]) || props.setting}
+        </span>
         <span
           className="mutedtext"
           style={{
@@ -72,7 +74,7 @@ const DebateSetting = (props: {
       {expanded ? (
         <>
           <div className="mutedtext centertext padding8">
-            {debateSettingDescriptions[props.setting]}
+            {useLang(debateSettingDescriptions[props.setting]) || ""}
           </div>
           <div>
             {typeof config?.debate[props.setting] === "number" ||

@@ -3,6 +3,7 @@ import { OneContext } from "../_app";
 import { defaultDebate } from "../_app";
 import { DebateSetting } from "@/components/DebateSetting";
 import Link from "next/link";
+import { useLang } from "@/lib/useLang";
 
 export default function PageDebateSetup() {
   const config = useContext(OneContext);
@@ -30,10 +31,10 @@ export default function PageDebateSetup() {
             config?.setDebate(defaultDebate);
           }}
         >
-          {"reset debate settings"}
+          {useLang("RESET_DEBATE_SETTINGS")}
         </button>
         <Link href="/debate">
-          <button>{"conduct the debate"}</button>
+          <button>{useLang("CONDUCT_DEBATE")}</button>
         </Link>
       </div>
     </>

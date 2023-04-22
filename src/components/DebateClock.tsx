@@ -2,6 +2,7 @@ import { OneContext } from "@/pages/_app";
 import { useContext, useEffect, useState } from "react";
 import useInterval from "react-useinterval";
 import styles from "../styles/Clock.module.scss";
+import { useLang } from "@/lib/useLang";
 
 const DebateClock = (props: {
   running: boolean;
@@ -90,7 +91,7 @@ const DebateClock = (props: {
             <h4>{Math.abs(time)}</h4>
           )}
           <p className="mutedtext">
-            {time > 0 ? "TIME LEFT" : "SECONDS OF OVERTIME"}
+            {time > 0 ? useLang("TIME_LEFT") : useLang("SECONDS_OVERTIME")}
           </p>
         </main>
       </div>

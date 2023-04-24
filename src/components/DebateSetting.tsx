@@ -27,6 +27,10 @@ const DebateSetting = (props: {
 }) => {
   const config = useContext(OneContext);
   const [expanded, setExpanded] = useState<boolean>(false);
+  const settingTitle =
+    useLang(debateSettingTitles[props.setting]) || props.setting;
+  const settingDescription =
+    useLang(debateSettingDescriptions[props.setting]) || "";
   return (
     <div
       style={{
@@ -51,9 +55,7 @@ const DebateSetting = (props: {
           setExpanded(!expanded);
         }}
       >
-        <span>
-          {useLang(debateSettingTitles[props.setting]) || props.setting}
-        </span>
+        <span>{settingTitle}</span>
         <span
           className="mutedtext"
           style={{
@@ -74,7 +76,7 @@ const DebateSetting = (props: {
       {expanded ? (
         <>
           <div className="mutedtext centertext padding8">
-            {useLang(debateSettingDescriptions[props.setting]) || ""}
+            {settingDescription}
           </div>
           <div>
             {typeof config?.debate[props.setting] === "number" ||

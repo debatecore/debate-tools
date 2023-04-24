@@ -91,7 +91,7 @@ const DebateClock = (props: {
             <h4>{Math.abs(time)}</h4>
           )}
           <p className="mutedtext">
-            {time > 0 ? useLang("TIME_LEFT") : useLang("SECONDS_OVERTIME")}
+            {useLang(time > 0 ? "TIME_LEFT" : "SECONDS_OVERTIME")}
           </p>
         </main>
       </div>

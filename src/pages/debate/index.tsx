@@ -9,6 +9,62 @@ function PageDebate() {
   const config = useContext(OneContext);
   const [running, setRunning] = useState<boolean>(false);
   const [stage, setStage] = useState<number>(0);
+  const subProposition = useLang("AS_PROPO");
+  const subOpposition = useLang("AS_OPPO");
+  const stageText = useLang(
+    stage == 0
+      ? "STAGE_0"
+      : stage == 1
+      ? "STAGE_1"
+      : stage == 2
+      ? "STAGE_2"
+      : stage == 3
+      ? "STAGE_3"
+      : stage == 4
+      ? "STAGE_4"
+      : stage == 5
+      ? "STAGE_5"
+      : stage == 6
+      ? "STAGE_6"
+      : stage == 7
+      ? "STAGE_7"
+      : "STAGE_8"
+  );
+  const stageBtnText = useLang(
+    stage == 0 && !running
+      ? "STAGE_0_0_BTN"
+      : stage == 0 && running
+      ? "STAGE_0_1_BTN"
+      : stage == 1 && !running
+      ? "STAGE_1_0_BTN"
+      : stage == 1 && running
+      ? "STAGE_1_1_BTN"
+      : stage == 2 && !running
+      ? "STAGE_2_0_BTN"
+      : stage == 2 && running
+      ? "STAGE_2_1_BTN"
+      : stage == 3 && !running
+      ? "STAGE_3_0_BTN"
+      : stage == 3 && running
+      ? "STAGE_3_1_BTN"
+      : stage == 4 && !running
+      ? "STAGE_4_0_BTN"
+      : stage == 4 && running
+      ? "STAGE_4_1_BTN"
+      : stage == 5 && !running
+      ? "STAGE_5_0_BTN"
+      : stage == 5 && running
+      ? "STAGE_5_1_BTN"
+      : stage == 6 && !running
+      ? "STAGE_6_0_BTN"
+      : stage == 6 && running
+      ? "STAGE_6_1_BTN"
+      : stage == 7 && !running
+      ? "STAGE_7_0_BTN"
+      : stage == 7 && running
+      ? "STAGE_7_1_BTN"
+      : "STAGE_8_BTN"
+  );
   return (
     <>
       <main className={`centertext ${styles.debateMain}`}>
@@ -23,8 +79,8 @@ function PageDebate() {
         <section
           className={`mutedtext ${styles.sideitems} ${styles["innerPadding0-48"]}`}
         >
-          <p>{config?.debate.proTeam ? useLang("AS_PROPO") : "-"}</p>
-          <p>{config?.debate.oppTeam ? useLang("AS_OPPO") : "-"}</p>
+          <p>{config?.debate.proTeam ? subProposition : "-"}</p>
+          <p>{config?.debate.oppTeam ? subOpposition : "-"}</p>
         </section>
         <section className={styles.sideitems}>
           <section className={styles.dotsSection}>
@@ -73,25 +129,7 @@ function PageDebate() {
           </section>
         </section>
         <section className="mutedtext">
-          <p>
-            {stage == 0
-              ? useLang("STAGE_0")
-              : stage == 1
-              ? useLang("STAGE_1")
-              : stage == 2
-              ? useLang("STAGE_2")
-              : stage == 3
-              ? useLang("STAGE_3")
-              : stage == 4
-              ? useLang("STAGE_4")
-              : stage == 5
-              ? useLang("STAGE_5")
-              : stage == 6
-              ? useLang("STAGE_6")
-              : stage == 7
-              ? useLang("STAGE_7")
-              : useLang("STAGE_8")}
-          </p>
+          <p>{stageText}</p>
         </section>
         <section className={`${styles.sideitems}`}>
           <DebateClock
@@ -105,7 +143,7 @@ function PageDebate() {
             stage={stage}
           />
         </section>
-        {stage < 8 ? (
+        <Link href={stage >= 8 ? "/debate/setup" : ""}>
           <button
             onClick={() => {
               if (stage >= 8) return;
@@ -117,43 +155,9 @@ function PageDebate() {
               }
             }}
           >
-            {stage == 0 && !running
-              ? useLang("STAGE_0_0_BTN")
-              : stage == 0 && running
-              ? useLang("STAGE_0_1_BTN")
-              : stage == 1 && !running
-              ? useLang("STAGE_1_0_BTN")
-              : stage == 1 && running
-              ? useLang("STAGE_1_1_BTN")
-              : stage == 2 && !running
-              ? useLang("STAGE_2_0_BTN")
-              : stage == 2 && running
-              ? useLang("STAGE_2_1_BTN")
-              : stage == 3 && !running
-              ? useLang("STAGE_3_0_BTN")
-              : stage == 3 && running
-              ? useLang("STAGE_3_1_BTN")
-              : stage == 4 && !running
-              ? useLang("STAGE_4_0_BTN")
-              : stage == 4 && running
-              ? useLang("STAGE_4_1_BTN")
-              : stage == 5 && !running
-              ? useLang("STAGE_5_0_BTN")
-              : stage == 5 && running
-              ? useLang("STAGE_5_1_BTN")
-              : stage == 6 && !running
-              ? useLang("STAGE_6_0_BTN")
-              : stage == 6 && running
-              ? useLang("STAGE_6_1_BTN")
-              : stage == 7 && !running
-              ? useLang("STAGE_7_0_BTN")
-              : useLang("STAGE_7_1_BTN")}
+            {stageBtnText}
           </button>
-        ) : (
-          <Link href="/debate/setup">
-            <button>{useLang("STAGE_8_BTN")}</button>
-          </Link>
-        )}
+        </Link>
       </main>
     </>
   );

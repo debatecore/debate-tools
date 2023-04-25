@@ -48,13 +48,17 @@ export default function App({ Component, pageProps }: AppProps) {
     if (typeof localStorage == "undefined") return;
     if (initialData) {
       localStorage.setItem(debateConfig, JSON.stringify(debate));
+      localStorage.setItem("sitelang", lang);
     } else {
       setInitialData(true);
       if (localStorage.getItem(debateConfig)) {
         setDebate(JSON.parse(localStorage.getItem(debateConfig) || ""));
       }
+      if (localStorage.getItem("sitelang")) {
+        setLang(localStorage.getItem("sitelang") === "pl" ? "pl" : "en");
+      }
     }
-  }, [debate]);
+  }, [initialData, debate, lang]);
   return (
     <OneContext.Provider value={{ lang, setLang, debate, setDebate }}>
       <Component {...pageProps} />

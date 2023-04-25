@@ -8,6 +8,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import Head from "next/head";
 
 type debate = {
   motion: string;
@@ -60,8 +61,15 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   }, [initialData, debate, lang]);
   return (
-    <OneContext.Provider value={{ lang, setLang, debate, setDebate }}>
-      <Component {...pageProps} />
-    </OneContext.Provider>
+    <>
+      <Head>
+        <title>
+          {lang === "pl" ? "Narzędzia debatanckie" : "Debate Tools"}
+        </title>
+      </Head>
+      <OneContext.Provider value={{ lang, setLang, debate, setDebate }}>
+        <Component {...pageProps} />
+      </OneContext.Provider>
+    </>
   );
 }

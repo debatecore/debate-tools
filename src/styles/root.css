@@ -84,3 +84,45 @@ h1, h2, h3 {
 .chevronFlipped {
   transform: rotate(180deg);
 }
+
+/* .langParent{
+  position: absolute;
+} */
+.langParent {
+  --langWidth: 120px;
+}
+.langParent > button {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: var(--langWidth);
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  background: #282828;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 4px 8px 0 12px;
+}
+.langParent > button.panelOpen {
+  border-radius: 8px 8px 0 0;
+}
+.langList {
+  display: flex;
+  display: none;
+  position: absolute;
+  top: 55px;
+  right: 24px;
+  flex-direction: column;
+}
+.langList > button {
+  width: var(--langWidth);
+  border-radius: 0;
+  background: #222;
+}
+.langList > button:last-of-type {
+  border-radius: 0 0 8px 8px;
+}
+.langListVisible {
+  display: flex;
+}

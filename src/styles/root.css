@@ -119,6 +119,12 @@ h1, h2, h3 {
   width: var(--langWidth);
   border-radius: 0;
   background: #222;
+  border-top: 1px solid #383838;
+}
+.langList > button:hover,
+.langList > button:focus {
+  text-decoration: underline;
+  background: #323232;
 }
 .langList > button:last-of-type {
   border-radius: 0 0 8px 8px;

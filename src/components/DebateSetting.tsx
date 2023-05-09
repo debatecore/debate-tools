@@ -31,6 +31,7 @@ const DebateSetting = (props: {
     useLang(debateSettingTitles[props.setting]) || props.setting;
   const settingDescription =
     useLang(debateSettingDescriptions[props.setting]) || "";
+  const secondsString = useLang("SECONDS");
   return (
     <div
       style={{
@@ -66,7 +67,7 @@ const DebateSetting = (props: {
           }}
         >
           {config?.debate[props.setting]}
-          {props.numberIsSeconds ? ` seconds` : ""}
+          {props.numberIsSeconds ? ` ${secondsString}` : ""}
           <ChevronDown
             className={`chevronFlip ${expanded ? "chevronFlipped" : ""}`}
           />

@@ -20,9 +20,9 @@ type debate = {
 export type { debate };
 
 const defaultDebate: debate = {
-  motion: "No motion provided.",
-  proTeam: "Anonymous Team 1",
-  oppTeam: "Anonymous Team 2",
+  motion: "Si vis pacem, para bellum.",
+  proTeam: "Anonymous",
+  oppTeam: "Anonymous",
   speechTime: 240,
   protectedTime: 30,
 };

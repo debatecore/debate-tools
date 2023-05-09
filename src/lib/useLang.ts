@@ -50,7 +50,8 @@ type tokens =
   | "STAGE_6_1_BTN"
   | "STAGE_7_0_BTN"
   | "STAGE_7_1_BTN"
-  | "STAGE_8_BTN";
+  | "STAGE_8_BTN"
+  | "SECONDS";
 export type { tokens };
 
 function useLang(token: tokens): string {

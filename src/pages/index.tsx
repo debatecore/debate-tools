@@ -3,6 +3,7 @@ import { useLang } from "@/lib/useLang";
 import { useContext, useState } from "react";
 import { OneContext } from "./_app";
 import { ChevronDown } from "@/components/Icons/ChevronDown";
+import { ChevronUp } from "@/components/Icons/ChevronUp";
 
 export default function Home() {
   const config = useContext(OneContext);
@@ -17,24 +18,24 @@ export default function Home() {
           className={langPanelOn ? "panelOpen" : ""}
         >
           <p>{config?.lang === "pl" ? "Polish" : "English"}</p>
-          <div>
-            <ChevronDown />
-          </div>
+          <div>{!langPanelOn ? <ChevronDown /> : <ChevronUp />}</div>
         </button>
         <div className={`langList ${langPanelOn ? "langListVisible" : ""}`}>
           <button
             onClick={() => {
               config?.setLang("en");
+              setLangPanelOn(false);
             }}
           >
-            English
+            {"English"}
           </button>
           <button
             onClick={() => {
               config?.setLang("pl");
+              setLangPanelOn(false);
             }}
           >
-            Polish
+            {"Polski"}
           </button>
         </div>
       </div>

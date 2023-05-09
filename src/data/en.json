@@ -45,5 +45,6 @@
   "STAGE_6_1_BTN": "end the 4th speech of the proposition",
   "STAGE_7_0_BTN": "start the 4th speech of the opposition",
   "STAGE_7_1_BTN": "end the 4th speech of the opposition",
-  "STAGE_8_BTN": "end debate"
+  "STAGE_8_BTN": "end debate",
+  "SECONDS": "seconds"
 }

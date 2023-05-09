@@ -31,7 +31,58 @@ body {
   @apply w-full;
 }
 
-.settingsbtn {
+.langbtn {
+  @apply absolute;
+  @apply top-4;
+  @apply right-4;
+  @apply px-2;
+  @apply py-1;
+  @apply rounded;
+  @apply bg-zinc-700;
+  @apply hover:bg-zinc-600;
+  @apply text-zinc-300;
+  @apply flex;
+  @apply justify-between;
+  @apply w-32;
+  @apply z-20;
+}
+.langbtn.opened {
+  @apply bg-zinc-600;
+}
+.langbtn svg {
+  @apply transition-all;
+}
+.langbtn.opened svg {
+  @apply rotate-180;
+}
+.langpane {
+  @apply absolute;
+  @apply top-4;
+  @apply right-4;
+  @apply pt-10;
+  @apply rounded-lg;
+  @apply bg-zinc-700;
+  @apply z-10;
+  @apply flex;
+  @apply flex-col;
+  @apply w-32;
+}
+.langpane.hide {
+  @apply hidden;
+  /*
+    seems i have to do this due to @apply being applied
+    later on, invalidating inlined tailwind
+  */
+}
+.langpane button {
+  @apply w-full;
+  @apply p-1;
+  @apply hover:bg-zinc-600;
+  @apply last-of-type:rounded-br-lg;
+  @apply last-of-type:rounded-bl-lg;
+}
+
+/* .settingsbtn {
   @apply absolute;
   @apply top-4;
   @apply right-4;
@@ -54,25 +105,27 @@ body {
   @apply absolute;
   @apply top-4;
   @apply right-4;
-  /* @apply p-2; */
   @apply w-1/6;
-  /* @apply h-40; */
   @apply rounded-lg;
   @apply z-10;
   @apply bg-zinc-700;
 }
+.settingspane h1 {
+  @apply pl-5;
+  @apply py-2;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
 .settingspane h2 {
   @apply pl-5;
   @apply py-2;
-  /* @apply mb-1; */
-  @apply font-semibold;
-  @apply tracking-wider;
+  @apply underline;
 }
 .settingspane button {
   @apply flex;
   @apply flex-row;
   @apply justify-between;
   @apply p-2;
+  @apply pl-5;
   @apply w-full;
-  /* @apply even:bg-zinc-600; */
-}
+} */

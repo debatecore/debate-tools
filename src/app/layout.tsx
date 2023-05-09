@@ -8,6 +8,7 @@ import {
 } from "react";
 import { LangContext } from "@/contexts/LangContext";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 type language = "en" | "pl";
 export type { language };
@@ -32,10 +33,12 @@ export default function RootLayout({
     }
   }, [initialFetch, lang]);
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <LangContext.Provider value={{ lang, setLang }}>
-          {children}
+          <ThemeProvider themes={["light", "dark", "projector"]}>
+            {children}
+          </ThemeProvider>
         </LangContext.Provider>
       </body>
     </html>

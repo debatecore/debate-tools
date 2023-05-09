@@ -10,7 +10,8 @@ type tokens =
   | "language"
   | "theme"
   | "oxfDebateUtility"
-  | "ladderGen";
+  | "ladderGen"
+  | "motionGen";
 export type { tokens };
 
 const useLang = (token: tokens) => {

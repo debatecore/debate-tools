@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import en from "../data/en.json";
 import pl from "../data/pl.json";
+import { LangContext } from "@/contexts/LangContext";
 
 type tokens =
   | "debateTools"
@@ -12,6 +14,11 @@ type tokens =
 export type { tokens };
 
 const useLang = (token: tokens) => {
-  return en[token];
+  const context = useContext(LangContext);
+  if (context?.lang === "pl") {
+    return pl[token];
+  } else {
+    return en[token];
+  }
 };
 export { useLang };

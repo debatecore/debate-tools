@@ -2,17 +2,19 @@
 import { IconChevronDown } from "@/components/icons/ChevronDown";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { LangContext } from "@/contexts/LangContext";
 
 export default function PageIndex() {
   const [langsOpen, setLangsOpen] = useState<boolean>(false);
+  const langContext = useContext(LangContext);
   const debateTools = useLang("debateTools");
   const madeWithLove = useLang("madeWithLove");
   const debateUtility = useLang("oxfDebateUtility");
   const ladderGen = useLang("ladderGen");
   return (
     <>
-      <div className="text-center py-12">
+      <div className="text-center py-12 pt-14">
         <h1 className="text-4xl font-serif">{debateTools}</h1>
         <p className="text-zinc-400">{madeWithLove}</p>
       </div>
@@ -29,12 +31,26 @@ export default function PageIndex() {
           setLangsOpen(!langsOpen);
         }}
       >
-        English
+        {langContext?.lang === "pl" ? "Polski" : "English"}
         <IconChevronDown />
       </button>
       <div className={`langpane ${langsOpen ? "" : "hide"}`}>
-        <button>English</button>
-        <button>Polski</button>
+        <button
+          onClick={() => {
+            langContext?.setLang("en");
+            setLangsOpen(false);
+          }}
+        >
+          English
+        </button>
+        <button
+          onClick={() => {
+            langContext?.setLang("pl");
+            setLangsOpen(false);
+          }}
+        >
+          Polski
+        </button>
       </div>
 
       {/* <div className={`langpane ${langsOpen ? "" : "hidden"}`}>

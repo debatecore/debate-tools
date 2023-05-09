@@ -79,7 +79,12 @@ const DebateSetting = (props: {
           <div className="mutedtext centertext padding8">
             {settingDescription}
           </div>
-          <div>
+          <div
+            style={{
+              margin: "12px",
+              marginTop: "6px",
+            }}
+          >
             {typeof config?.debate[props.setting] === "number" ||
             typeof config?.debate[props.setting] === "string" ? (
               <input
@@ -104,8 +109,12 @@ const DebateSetting = (props: {
                 }}
                 style={{
                   width: "100%",
-                  borderRadius: "0 0 6px 6px",
-                  padding: "8px 12px",
+                  borderRadius: "6px",
+                  padding: "9px 10px",
+                  border: "1px solid #777",
+                  // background: "#abb",
+                  // color: "black",
+                  // boxShadow: "inset 0 0 2px white",
                 }}
               />
             ) : typeof config?.debate[props.setting] === "boolean" ? (

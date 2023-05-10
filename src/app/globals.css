@@ -28,81 +28,12 @@ body {
   @apply hover:border-zinc-400;
   @apply disabled:hover:border-transparent;
   @apply hover:bg-zinc-600;
+  @apply hover:text-zinc-100;
   @apply disabled:cursor-not-allowed;
   @apply disabled:opacity-60;
 }
 .buttonflex a {
   @apply w-full;
-}
-
-.themebtn {
-  @apply absolute;
-  @apply top-4;
-  @apply left-4;
-  @apply px-2;
-  @apply py-1;
-  @apply rounded;
-  @apply bg-zinc-700;
-  @apply hover:bg-zinc-600;
-  @apply text-zinc-300;
-  @apply flex;
-  @apply w-32;
-  @apply z-20;
-  @apply border;
-  @apply border-transparent;
-  @apply hover:border-zinc-400;
-}
-.themebtn svg {
-  @apply transition-all;
-}
-.themebtn.opened {
-  @apply rounded-bl-none;
-  @apply rounded-br-none;
-  @apply border-b;
-  @apply border-zinc-600;
-  @apply border-t-transparent;
-  @apply border-l-transparent;
-  @apply border-r-transparent;
-}
-.themebtn.opened svg {
-  @apply rotate-180;
-}
-.themepane {
-  @apply absolute;
-  @apply top-4;
-  @apply left-4;
-  @apply pt-8;
-  @apply rounded;
-  @apply bg-zinc-700;
-  @apply z-10;
-  @apply flex;
-  @apply flex-col;
-  @apply w-32;
-}
-.themepane.hide {
-  @apply hidden;
-}
-.themepane button {
-  @apply w-full;
-  @apply p-1;
-  @apply hover:bg-zinc-600;
-  @apply rounded-none;
-  @apply last-of-type:rounded-bl;
-  @apply last-of-type:rounded-br;
-  @apply text-left;
-  @apply px-2;
-  @apply flex;
-  @apply justify-between;
-  @apply text-zinc-400;
-  @apply hover:text-zinc-300;
-}
-.themepane button svg {
-  @apply text-zinc-400;
-  @apply w-4;
-  @apply mr-1;
-}
-.themepane button:hover svg {
-  @apply text-zinc-300;
 }
 
 .langbtn {
@@ -169,51 +100,3 @@ body {
   @apply hover:text-zinc-300;
   @apply px-2;
 }
-
-/* .settingsbtn {
-  @apply absolute;
-  @apply top-4;
-  @apply right-4;
-  @apply cursor-pointer;
-  @apply p-2;
-  @apply rounded-lg;
-  @apply bg-zinc-700;
-  @apply hover:bg-zinc-600;
-  @apply text-zinc-300;
-  @apply z-20;
-}
-.settingsbtn svg.feather-settings {
-  @apply transition-all;
-}
-.settingsbtn:hover svg.feather-settings {
-  @apply rotate-12;
-}
-
-.settingspane {
-  @apply absolute;
-  @apply top-4;
-  @apply right-4;
-  @apply w-1/6;
-  @apply rounded-lg;
-  @apply z-10;
-  @apply bg-zinc-700;
-}
-.settingspane h1 {
-  @apply pl-5;
-  @apply py-2;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-.settingspane h2 {
-  @apply pl-5;
-  @apply py-2;
-  @apply underline;
-}
-.settingspane button {
-  @apply flex;
-  @apply flex-row;
-  @apply justify-between;
-  @apply p-2;
-  @apply pl-5;
-  @apply w-full;
-} */

@@ -89,6 +89,20 @@ body {
   @apply rounded-none;
   @apply last-of-type:rounded-bl;
   @apply last-of-type:rounded-br;
+  @apply text-left;
+  @apply px-2;
+  @apply flex;
+  @apply justify-between;
+  @apply text-zinc-400;
+  @apply hover:text-zinc-300;
+}
+.themepane button svg {
+  @apply text-zinc-400;
+  @apply w-4;
+  @apply mr-1;
+}
+.themepane button:hover svg {
+  @apply text-zinc-300;
 }
 
 .langbtn {
@@ -150,6 +164,10 @@ body {
   @apply rounded;
   @apply rounded-tr-none;
   @apply rounded-tl-none;
+  @apply text-left;
+  @apply text-zinc-400;
+  @apply hover:text-zinc-300;
+  @apply px-2;
 }
 
 /* .settingsbtn {

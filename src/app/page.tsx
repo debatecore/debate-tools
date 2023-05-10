@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@/contexts/LangContext";
 import { useTheme } from "next-themes";
+import { IconSquare } from "@/components/icons/Square";
+import { IconCheckSquare } from "@/components/icons/CheckSquare";
 
 export default function PageIndex() {
   const [langsOpen, setLangsOpen] = useState<boolean>(false);
@@ -31,7 +33,7 @@ export default function PageIndex() {
   return (
     <>
       <div className="text-center py-12 pt-14">
-        <h1 className="text-4xl font-serif">{debateTools}</h1>
+        <h1 className="text-4xl font-serif text-zinc-50">{debateTools}</h1>
         <p className="text-zinc-400">{madeWithLove}</p>
       </div>
       <div className="buttonflex">
@@ -61,6 +63,15 @@ export default function PageIndex() {
           }}
         >
           {themeSystem || "system"}
+          {mounted ? (
+            theme == "system" ? (
+              <IconCheckSquare />
+            ) : (
+              <IconSquare />
+            )
+          ) : (
+            "..."
+          )}
         </button>
         <button
           onClick={() => {
@@ -69,6 +80,15 @@ export default function PageIndex() {
           }}
         >
           {themeLight || "light"}
+          {mounted ? (
+            theme == "light" ? (
+              <IconCheckSquare />
+            ) : (
+              <IconSquare />
+            )
+          ) : (
+            "..."
+          )}
         </button>
         <button
           onClick={() => {
@@ -77,6 +97,15 @@ export default function PageIndex() {
           }}
         >
           {themeDark || "dark"}
+          {mounted ? (
+            theme == "dark" ? (
+              <IconCheckSquare />
+            ) : (
+              <IconSquare />
+            )
+          ) : (
+            "..."
+          )}
         </button>
         <button
           onClick={() => {
@@ -85,6 +114,15 @@ export default function PageIndex() {
           }}
         >
           {themeProjector || "projector"}
+          {mounted ? (
+            theme == "projector" ? (
+              <IconCheckSquare />
+            ) : (
+              <IconSquare />
+            )
+          ) : (
+            "..."
+          )}
         </button>
       </div>
 
@@ -94,7 +132,7 @@ export default function PageIndex() {
           setLangsOpen(!langsOpen);
         }}
       >
-        {langContext?.lang === "pl" ? "Polski" : "English"}
+        {langContext?.lang === "pl" ? "polski" : "english"}
         <IconChevronDown />
       </button>
       <div className={`langpane ${langsOpen ? "" : "hide"}`}>
@@ -105,7 +143,7 @@ export default function PageIndex() {
           }}
           className={langContext?.lang == "en" ? "hidden" : ""}
         >
-          English
+          english
         </button>
         <button
           onClick={() => {
@@ -114,7 +152,7 @@ export default function PageIndex() {
           }}
           className={langContext?.lang == "pl" ? "hidden" : ""}
         >
-          Polski
+          polski
         </button>
       </div>
     </>

@@ -23,6 +23,10 @@ body {
   @apply px-5;
   @apply py-2;
   @apply w-full;
+  @apply border;
+  @apply border-transparent;
+  @apply hover:border-zinc-400;
+  @apply disabled:hover:border-transparent;
   @apply hover:bg-zinc-600;
   @apply disabled:cursor-not-allowed;
   @apply disabled:opacity-60;
@@ -44,6 +48,9 @@ body {
   @apply flex;
   @apply w-32;
   @apply z-20;
+  @apply border;
+  @apply border-transparent;
+  @apply hover:border-zinc-400;
 }
 .themebtn svg {
   @apply transition-all;
@@ -53,6 +60,9 @@ body {
   @apply rounded-br-none;
   @apply border-b;
   @apply border-zinc-600;
+  @apply border-t-transparent;
+  @apply border-l-transparent;
+  @apply border-r-transparent;
 }
 .themebtn.opened svg {
   @apply rotate-180;
@@ -76,7 +86,9 @@ body {
   @apply w-full;
   @apply p-1;
   @apply hover:bg-zinc-600;
-  @apply rounded;
+  @apply rounded-none;
+  @apply last-of-type:rounded-bl;
+  @apply last-of-type:rounded-br;
 }
 
 .langbtn {
@@ -93,12 +105,18 @@ body {
   @apply justify-between;
   @apply w-32;
   @apply z-20;
+  @apply border;
+  @apply border-transparent;
+  @apply hover:border-zinc-400;
 }
 .langbtn.opened {
   @apply rounded-bl-none;
   @apply rounded-br-none;
   @apply border-b;
   @apply border-zinc-600;
+  @apply border-t-transparent;
+  @apply border-l-transparent;
+  @apply border-r-transparent;
 }
 .langbtn svg {
   @apply transition-all;

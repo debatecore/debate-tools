@@ -9,6 +9,10 @@ type tokens =
   | "settings"
   | "language"
   | "theme"
+  | "themeSystem"
+  | "themeLight"
+  | "themeDark"
+  | "themeProjector"
   | "oxfDebateUtility"
   | "ladderGen"
   | "motionGen";

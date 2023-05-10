@@ -4,6 +4,10 @@
   "settings": "ustawienia",
   "language": "język",
   "theme": "motyw",
+  "themeSystem": "systemowy",
+  "themeLight": "jasny",
+  "themeDark": "ciemny",
+  "themeProjector": "projektor",
   "oxfDebateUtility": "Narzędzie do przeprowadzania debaty",
   "ladderGen": "Generator drabinek turniejowych",
   "motionGen": "Generator tez do debaty"

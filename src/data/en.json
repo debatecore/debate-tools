@@ -4,6 +4,10 @@
   "settings": "settings",
   "language": "language",
   "theme": "theme",
+  "themeSystem": "system",
+  "themeLight": "light",
+  "themeDark": "dark",
+  "themeProjector": "projector",
   "oxfDebateUtility": "Oxford Debate Utility",
   "ladderGen": "Tournament Bracket Generator",
   "motionGen": "Debate Motion Generator"

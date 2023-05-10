@@ -2,21 +2,32 @@
 import { IconChevronDown } from "@/components/icons/ChevronDown";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LangContext } from "@/contexts/LangContext";
-import { IconSettings } from "@/components/icons/Settings";
 import { useTheme } from "next-themes";
 
 export default function PageIndex() {
   const [langsOpen, setLangsOpen] = useState<boolean>(false);
   const [themesOpen, setThemesOpen] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
   const langContext = useContext(LangContext);
+
   const debateTools = useLang("debateTools");
   const madeWithLove = useLang("madeWithLove");
   const debateUtility = useLang("oxfDebateUtility");
   const ladderGen = useLang("ladderGen");
   const motionGen = useLang("motionGen");
+
+  const themeStr = useLang("theme");
+  const themeSystem = useLang("themeSystem");
+  const themeDark = useLang("themeDark");
+  const themeLight = useLang("themeLight");
+  const themeProjector = useLang("themeProjector");
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <>
       <div className="text-center py-12 pt-14">
@@ -38,10 +49,8 @@ export default function PageIndex() {
         }}
       >
         <span className="mr-auto">
-          {theme || "theme"}
-          {/* <IconSettings /> */}
+          {themesOpen ? themeStr : mounted ? theme : "..."}
         </span>
-        {/* <IconSettings /> */}
         <IconChevronDown />
       </button>
       <div className={`themepane ${themesOpen ? "" : "hide"}  `}>
@@ -51,7 +60,7 @@ export default function PageIndex() {
             setThemesOpen(false);
           }}
         >
-          system
+          {themeSystem || "system"}
         </button>
         <button
           onClick={() => {
@@ -59,7 +68,7 @@ export default function PageIndex() {
             setThemesOpen(false);
           }}
         >
-          light
+          {themeLight || "light"}
         </button>
         <button
           onClick={() => {
@@ -67,7 +76,7 @@ export default function PageIndex() {
             setThemesOpen(false);
           }}
         >
-          dark
+          {themeDark || "dark"}
         </button>
         <button
           onClick={() => {
@@ -75,7 +84,7 @@ export default function PageIndex() {
             setThemesOpen(false);
           }}
         >
-          projector
+          {themeProjector || "projector"}
         </button>
       </div>
 
@@ -108,36 +117,6 @@ export default function PageIndex() {
           Polski
         </button>
       </div>
-
-      {/* <div className={`langpane ${langsOpen ? "" : "hidden"}`}>
-        <button>English</button>
-        <button>Polski</button>
-      </div> */}
-
-      {/* <button
-        className="settingsbtn"
-        onClick={() => {
-          setSettingsOpen(!settingsOpen);
-        }}
-      >
-        {!settingsOpen ? <IconSettings /> : <IconClose />}
-      </button>
-      <div className={`settingspane ${settingsOpen ? "" : "hidden"}`}>
-        <h1>{settings}</h1>
-        <h2>theme</h2>
-        <button>
-          <p>system theme</p>
-          <IconCheckSquare />
-        </button>
-        <button>
-          <p>dark theme </p>
-          <IconSquare />
-        </button>
-        <button>
-          <p>light theme</p>
-          <IconSquare />
-        </button> 
-      </div>*/}
     </>
   );
 }

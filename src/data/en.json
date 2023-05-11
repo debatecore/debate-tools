@@ -25,6 +25,13 @@
   "speechTimeDesc": "How long a speech lasts.",
   "protectedTime": "Protected Time",
   "protectedTimeDesc": "How long to halt interruptions.",
+  "adVocemTime": "Ad Vocem",
+  "adVocemTimeDesc": "The Interruption Royale.",
   "sampleDebate": "Sample debate",
-  "example": "e.g."
+  "example": "e.g.",
+  "or": "or",
+  "off": "Off",
+  "seconds": "seconds",
+  "minutes": "minutes",
+  "minute": "minute"
 }

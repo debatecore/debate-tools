@@ -25,6 +25,13 @@
   "speechTimeDesc": "Ile można mówić.",
   "protectedTime": "Czas chroniony",
   "protectedTimeDesc": "Czas bez pytań i zgłoszeń.",
+  "adVocemTime": "Ad Vocem",
+  "adVocemTimeDesc": "Najwyższa forma przeszkód.",
   "sampleDebate": "Przykładowa debata",
-  "example": "np."
+  "example": "np.",
+  "or": "lub",
+  "off": "Wyłączone",
+  "seconds": "sekund",
+  "minutes": "minuty",
+  "minute": "minuta"
 }

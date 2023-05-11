@@ -30,6 +30,7 @@ export default function PageDebateSetup() {
         <DebateSetting setting="oppTeam" />
         <DebateSetting setting="speechTime" />
         <DebateSetting setting="protectedTime" />
+        <DebateSetting setting="adVocemTime" />
       </div>
       <div className="flex flex-row max-w-md mx-auto gap-2">
         <Link href="/" className="mr-auto">

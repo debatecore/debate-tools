@@ -6,20 +6,22 @@ type debateType = {
   oppTeam: string;
   speechTime: number;
   protectedTime: number;
+  adVocemTime: number;
 };
 export type { debateType };
 
 const defaultDebate: debateType = {
-  motion: "Si vis pacem, para bellum.",
-  proTeam: "Anonymous",
-  oppTeam: "Anonymous",
+  motion: "",
+  proTeam: "",
+  oppTeam: "",
   speechTime: 240,
   protectedTime: 30,
+  adVocemTime: 60,
 };
 export { defaultDebate };
 
 // increment this on changes to debateType
-const debateStorageField = "debateconfigv4";
+const debateStorageField = "debateconfigv5";
 export { debateStorageField };
 
 const DebateContext = createContext<{
@@ -35,23 +37,23 @@ const sampleDebates: debateType[] = [
     oppTeam: "Technikum Komunikacji w Poznaniu",
     speechTime: 240,
     protectedTime: 30,
+    adVocemTime: 60,
   },
   {
     motion: "TH regrets the narrative that forgiveness is a virtue.",
-    proTeam: "",
-    oppTeam: "",
-    // VI LO, Bydgoszcz (Team I)
-    // vs.
-    // 33 LO, Warszawa
+    proTeam: "VI LO Bydgoszcz Team I",
+    oppTeam: "33 LO Warszawa",
     speechTime: 240,
     protectedTime: 30,
+    adVocemTime: 60,
   },
   {
-    motion: "Consumers should try to buy local goods and use local services",
+    motion: "Consumers should try to buy local goods and services.",
     proTeam: "Technikum Komunikacji PŃ - 4C",
     oppTeam: "Technikum Komunikacji PŃ - 2D",
     speechTime: 120,
     protectedTime: 30,
+    adVocemTime: 0,
   },
 ];
 export { sampleDebates };

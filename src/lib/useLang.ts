@@ -30,7 +30,8 @@ type tokens =
   | "speechTimeDesc"
   | "protectedTime"
   | "protectedTimeDesc"
-  | "sampleDebate";
+  | "sampleDebate"
+  | "example";
 export type { tokens };
 
 const useLang = (token: tokens) => {

@@ -25,5 +25,6 @@
   "speechTimeDesc": "How long a speech lasts.",
   "protectedTime": "Protected Time",
   "protectedTimeDesc": "How long to halt interruptions.",
-  "sampleDebate": "Sample debate"
+  "sampleDebate": "Sample debate",
+  "example": "e.g."
 }

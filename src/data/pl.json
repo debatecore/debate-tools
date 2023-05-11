@@ -16,14 +16,15 @@
   "resetDebateConfig": "Reset konfiguracji",
   "conductDebate": "Rozpocznij debatę",
   "motion": "Teza debaty",
-  "motionDesc": "",
+  "motionDesc": "Kość niezgody.",
   "proTeam": "Drużyna propozycji",
-  "proTeamDesc": "",
+  "proTeamDesc": "Za.",
   "oppTeam": "Drużyna opozycji",
-  "oppTeamDesc": "",
+  "oppTeamDesc": "Przeciw.",
   "speechTime": "Czas trwania mowy",
-  "speechTimeDesc": "",
+  "speechTimeDesc": "Ile można mówić.",
   "protectedTime": "Czas chroniony",
-  "protectedTimeDesc": "",
-  "sampleDebate": "Przykładowa debata"
+  "protectedTimeDesc": "Czas bez pytań i zgłoszeń.",
+  "sampleDebate": "Przykładowa debata",
+  "example": "np."
 }

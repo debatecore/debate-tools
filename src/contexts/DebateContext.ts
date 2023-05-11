@@ -37,10 +37,21 @@ const sampleDebates: debateType[] = [
     protectedTime: 30,
   },
   {
-    motion: "TH regrets the narrative saying that forgiveness is a virtue.",
+    motion: "TH regrets the narrative that forgiveness is a virtue.",
     proTeam: "",
     oppTeam: "",
+    // VI LO, Bydgoszcz (Team I)
+    // vs.
+    // 33 LO, Warszawa
     speechTime: 240,
     protectedTime: 30,
   },
+  {
+    motion: "Consumers should try to buy local goods and use local services",
+    proTeam: "Technikum Komunikacji PŃ - 4C",
+    oppTeam: "Technikum Komunikacji PŃ - 2D",
+    speechTime: 120,
+    protectedTime: 30,
+  },
 ];
+export { sampleDebates };

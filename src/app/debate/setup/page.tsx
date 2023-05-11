@@ -1,7 +1,12 @@
 "use client";
 
 import { DebateSetting } from "@/components/DebateSetting";
-import { DebateContext, defaultDebate } from "@/contexts/DebateContext";
+import {
+  DebateContext,
+  debateType,
+  defaultDebate,
+  sampleDebates,
+} from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
 import { useContext } from "react";
@@ -48,9 +53,16 @@ export default function PageDebateSetup() {
       </div>
       <div className="flex flex-row justify-end max-w-md mx-auto py-1">
         <button
-          className="text-zinc-400 hover:underline"
+          className="text-zinc-400 hover:underline pr-1"
           onClick={() => {
-            // debate?.setData(sampleDebate);
+            let previousDebate = debate?.data;
+            let newDebate: debateType =
+              sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
+            while (previousDebate === newDebate) {
+              newDebate =
+                sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
+            }
+            debate?.setData(newDebate);
           }}
         >
           {useLang("sampleDebate")}

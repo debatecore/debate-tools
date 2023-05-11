@@ -15,7 +15,22 @@ type tokens =
   | "themeProjector"
   | "oxfDebateUtility"
   | "ladderGen"
-  | "motionGen";
+  | "motionGen"
+  | "debateConfig"
+  | "backToMenu"
+  | "resetDebateConfig"
+  | "conductDebate"
+  | "motion"
+  | "motionDesc"
+  | "proTeam"
+  | "proTeamDesc"
+  | "oppTeam"
+  | "oppTeamDesc"
+  | "speechTime"
+  | "speechTimeDesc"
+  | "protectedTime"
+  | "protectedTimeDesc"
+  | "sampleDebate";
 export type { tokens };
 
 const useLang = (token: tokens) => {

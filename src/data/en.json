@@ -10,5 +10,20 @@
   "themeProjector": "projector",
   "oxfDebateUtility": "Oxford Debate Utility",
   "ladderGen": "Tournament Bracket Generator",
-  "motionGen": "Debate Motion Generator"
+  "motionGen": "Debate Motion Generator",
+  "debateConfig": "Debate configuration",
+  "backToMenu": "Back to menu",
+  "resetDebateConfig": "Reset debate",
+  "conductDebate": "Conduct debate",
+  "motion": "Debate Motion",
+  "motionDesc": "The topic of debate.",
+  "proTeam": "Proposition Team",
+  "proTeamDesc": "The name of those in favour.",
+  "oppTeam": "Opposition Team",
+  "oppTeamDesc": "The name of those against.",
+  "speechTime": "Speech Time",
+  "speechTimeDesc": "How long a speech lasts.",
+  "protectedTime": "Protected Time",
+  "protectedTimeDesc": "How long to halt interruptions.",
+  "sampleDebate": "Sample debate"
 }

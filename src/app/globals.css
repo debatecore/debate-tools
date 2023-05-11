@@ -28,7 +28,6 @@ body {
   @apply hover:border-zinc-400;
   @apply disabled:hover:border-transparent;
   @apply hover:bg-zinc-600;
-  @apply hover:text-zinc-100;
   @apply disabled:cursor-not-allowed;
   @apply disabled:opacity-60;
 }

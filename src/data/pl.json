@@ -10,5 +10,20 @@
   "themeProjector": "projektor",
   "oxfDebateUtility": "Narzędzie do przeprowadzania debaty",
   "ladderGen": "Generator drabinek turniejowych",
-  "motionGen": "Generator tez do debaty"
+  "motionGen": "Generator tez do debaty",
+  "debateConfig": "Konfiguracja debaty",
+  "backToMenu": "Wróć",
+  "resetDebateConfig": "Reset konfiguracji",
+  "conductDebate": "Rozpocznij debatę",
+  "motion": "Teza debaty",
+  "motionDesc": "",
+  "proTeam": "Drużyna propozycji",
+  "proTeamDesc": "",
+  "oppTeam": "Drużyna opozycji",
+  "oppTeamDesc": "",
+  "speechTime": "Czas trwania mowy",
+  "speechTimeDesc": "",
+  "protectedTime": "Czas chroniony",
+  "protectedTimeDesc": "",
+  "sampleDebate": "Przykładowa debata"
 }

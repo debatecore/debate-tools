@@ -22,7 +22,7 @@ export default function PageIndex() {
         <p className="text-zinc-400">{madeWithLove}</p>
       </div>
       <div className="buttonflex">
-        <Link href="/">
+        <Link href="/debate/setup">
           <button>{debateUtility}</button>
         </Link>
         <button disabled>{ladderGen}</button>

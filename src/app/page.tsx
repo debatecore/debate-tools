@@ -22,11 +22,15 @@ export default function PageIndex() {
         <p className="text-zinc-400">{madeWithLove}</p>
       </div>
       <div className="buttonflex">
-        <Link href="/debate/setup">
+        <Link tabIndex={-1} href="/debate/setup">
           <button>{debateUtility}</button>
         </Link>
-        <button disabled>{ladderGen}</button>
-        <button disabled>{motionGen}</button>
+        <Link tabIndex={-1} href="bracket-generator">
+          <button disabled>{ladderGen}</button>
+        </Link>
+        <Link tabIndex={-1} href="/motion-generator">
+          <button disabled>{motionGen}</button>
+        </Link>
       </div>
 
       <button

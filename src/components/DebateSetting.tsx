@@ -85,17 +85,19 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
         </div>
       ) : props.setting === "protectedTime" ? (
         <div className="flex flex-row gap-2 items-baseline">
-          <button
-            className={`${buttonstyle} ${
-              debate?.data.protectedTime === 30 ? activestyle : ""
-            }`}
-            onClick={() => {
-              debate?.setData({ ...debate.data, protectedTime: 30 });
-            }}
-          >
-            30 {seconds}
-          </button>
-          <button
+          <div className="w-1/2">
+            <button
+              className={`${buttonstyle} ${
+                debate?.data.protectedTime === 30 ? activestyle : ""
+              }`}
+              onClick={() => {
+                debate?.setData({ ...debate.data, protectedTime: 30 });
+              }}
+            >
+              30 {seconds}
+            </button>
+          </div>
+          {/* <button
             className={`${buttonstyle} ${
               debate?.data.protectedTime === 20 ? activestyle : ""
             }`}
@@ -104,7 +106,7 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
             }}
           >
             20 {seconds}
-          </button>
+          </button> */}
           <p>{or}</p>
           <input
             type="number"

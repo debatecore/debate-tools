@@ -38,7 +38,32 @@ type tokens =
   | "off"
   | "seconds"
   | "minutes"
-  | "minute";
+  | "minute"
+  | "STAGE_0"
+  | "STAGE_1"
+  | "STAGE_2"
+  | "STAGE_3"
+  | "STAGE_4"
+  | "STAGE_5"
+  | "STAGE_6"
+  | "STAGE_7"
+  | "STAGE_8"
+  | "STAGE_0_0_BTN"
+  | "STAGE_0_1_BTN"
+  | "STAGE_1_0_BTN"
+  | "STAGE_1_1_BTN"
+  | "STAGE_2_0_BTN"
+  | "STAGE_2_1_BTN"
+  | "STAGE_3_0_BTN"
+  | "STAGE_3_1_BTN"
+  | "STAGE_4_0_BTN"
+  | "STAGE_4_1_BTN"
+  | "STAGE_5_0_BTN"
+  | "STAGE_5_1_BTN"
+  | "STAGE_6_0_BTN"
+  | "STAGE_6_1_BTN"
+  | "STAGE_7_0_BTN"
+  | "STAGE_7_1_BTN";
 export type { tokens };
 
 const useLang = (token: tokens) => {

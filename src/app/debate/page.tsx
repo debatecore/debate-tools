@@ -1,4 +1,5 @@
 "use client";
+import { DebateClock } from "@/components/DebateClock";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
@@ -11,11 +12,10 @@ export default function PageDebate() {
   const [stage, setStage] = useState<number>(0);
 
   const dot = `
-    h-3 w-3 rounded-full border-2 border-zinc-400
+    h-3 w-3 rounded-full border-2 border-zinc-500
   `;
-  const dotfill = `
-    bg-zinc-400
-  `;
+  const dotfill = "bg-zinc-500";
+  const dotactive = "border-zinc-400";
   const button = `
     bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
     hover:border-zinc-400 disabled:cursor-not-allowed
@@ -74,41 +74,109 @@ export default function PageDebate() {
       : "STAGE_7_1_BTN"
   );
 
+  const oxfordDebate = useLang("oxfordDebate");
+  const asPro = useLang("asPro");
+  const asOpp = useLang("asOpp");
+
   return (
     <>
       <div className="text-center py-8 pt-16">
         <h1 className="font-serif text-4xl">
           {debate?.data.motion || "No motion given."}
         </h1>
-        <p className="text-zinc-400">AN OXFORD FORMAT DEBATE</p>
+        <p className="text-zinc-400">{oxfordDebate}</p>
       </div>
       <div className="flex flex-row py-4">
         <div className="w-1/2">
           <h2 className="font-serif text-2xl text-center">
             {debate?.data.proTeam || "Anonymous Team"}
           </h2>
-          <p className="text-zinc-400 text-center">{"AS THE PROPOSITION"}</p>
+          <p className="text-zinc-400 text-center">{asPro}</p>
           <div className="flex flex-row gap-2 justify-center pt-1">
-            <div className={`${dot} ${stage > 0 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 2 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 4 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 6 ? dotfill : ""}`} />
+            <div
+              className={`
+                ${dot}
+                ${stage > 0 ? dotfill : ""}
+                ${stage === 0 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 2 ? dotfill : ""}
+                ${stage === 2 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 4 ? dotfill : ""}
+                ${stage === 4 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 6 ? dotfill : ""}
+                ${stage === 6 ? dotactive : ""}
+              `}
+            />
           </div>
         </div>
         <div className="w-1/2">
           <h2 className="font-serif text-2xl text-center">
             {debate?.data.oppTeam || "Anonymous Team"}
           </h2>
-          <p className="text-zinc-400 text-center">{"AS THE OPPOSITION"}</p>
+          <p className="text-zinc-400 text-center">{asOpp}</p>
           <div className="flex flex-row gap-2 justify-center pt-1">
-            <div className={`${dot} ${stage > 1 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 3 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 5 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 7 ? dotfill : ""}`} />
+            <div
+              className={`
+                ${dot}
+                ${stage > 1 ? dotfill : ""}
+                ${stage === 1 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 3 ? dotfill : ""}
+                ${stage === 3 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 5 ? dotfill : ""}
+                ${stage === 5 ? dotactive : ""}
+              `}
+            />
+            <div
+              className={`
+                ${dot}
+                ${stage > 7 ? dotfill : ""}
+                ${stage === 7 ? dotactive : ""}
+              `}
+            />
           </div>
         </div>
       </div>
       <p className="text-center text-zinc-400">{stageText}</p>
+      <div className="flex flex-row py-4">
+        <div className="w-1/2 flex flex-row justify-center">
+          <DebateClock
+            running={running && [0, 2, 4, 6].includes(stage)}
+            dimmed={running && [1, 3, 5, 7].includes(stage)}
+            stage={stage}
+          />
+        </div>
+        <div className="w-1/2 flex flex-row justify-center">
+          <DebateClock
+            running={running && [1, 3, 5, 7].includes(stage)}
+            dimmed={running && [0, 2, 4, 6].includes(stage)}
+            stage={stage}
+          />
+        </div>
+      </div>
       <div className={stage == 8 ? "hidden" : ""}>
         <div className="max-w-md mx-auto flex flex-row justify-center gap-2 pt-32">
           <button
@@ -129,11 +197,6 @@ export default function PageDebate() {
             Ad Vocem
           </button>
         </div>
-        {/* <div className="max-w-md mx-auto p-1 text-zinc-400">
-          <Link href="">
-            <button className="hover:underline">Back</button>
-          </Link>
-        </div> */}
       </div>
       <div
         className={`max-w-lg mx-auto flex flex-row justify-center gap-2 py-6 pt-32 ${

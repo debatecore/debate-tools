@@ -9,6 +9,10 @@ body {
   min-height: 100vh;
 }
 
+.transition-350ms {
+  transition-duration: 450ms;
+}
+
 .buttonflex {
   @apply mx-auto;
   @apply w-fit;

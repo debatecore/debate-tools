@@ -39,6 +39,13 @@ type tokens =
   | "seconds"
   | "minutes"
   | "minute"
+  | "oxfordDebate"
+  | "asPro"
+  | "asOpp"
+  | "timeLeft"
+  | "secondsOverTime"
+  | "secondsOverTime_1"
+  | "secondsOverTime_2-3-4"
   | "STAGE_0"
   | "STAGE_1"
   | "STAGE_2"
@@ -69,9 +76,9 @@ export type { tokens };
 const useLang = (token: tokens) => {
   const context = useContext(LangContext);
   if (context?.lang === "pl") {
-    return pl[token];
+    return pl[token] || en[token] || token;
   } else {
-    return en[token];
+    return en[token] || token;
   }
 };
 export { useLang };

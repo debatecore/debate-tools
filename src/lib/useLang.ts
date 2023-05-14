@@ -1,30 +1,51 @@
-import { OneContext } from "@/pages/_app";
+import { useContext } from "react";
 import en from "../data/en.json";
 import pl from "../data/pl.json";
-import { useContext } from "react";
+import { LangContext } from "@/contexts/LangContext";
 
 type tokens =
-  | "SITE_TITLE"
-  | "MADE_WITH"
-  | "DEBATE_TOOL"
-  | "LADDER_TOOL"
-  | "DEBATE_MOTION"
-  | "DEBATE_MOTION_DESC"
-  | "PROPOSITION_TEAM"
-  | "PROPOSITION_TEAM_DESC"
-  | "OPPOSITION_TEAM"
-  | "OPPOSITION_TEAM_DESC"
-  | "SPEECH_TIME"
-  | "SPEECH_TIME_DESC"
-  | "PROTECTED_TIME"
-  | "PROTECTED_TIME_DESC"
-  | "RESET_DEBATE_SETTINGS"
-  | "CONDUCT_DEBATE"
-  | "AN_OXFORD_FORMAT_DEBATE"
-  | "AS_PROPO"
-  | "AS_OPPO"
-  | "TIME_LEFT"
-  | "SECONDS_OVERTIME"
+  | "debateTools"
+  | "madeWithLove"
+  | "settings"
+  | "language"
+  | "theme"
+  | "themeSystem"
+  | "themeLight"
+  | "themeDark"
+  | "themeProjector"
+  | "oxfDebateUtility"
+  | "ladderGen"
+  | "motionGen"
+  | "debateConfig"
+  | "backToMenu"
+  | "resetDebateConfig"
+  | "conductDebate"
+  | "motion"
+  | "motionDesc"
+  | "proTeam"
+  | "proTeamDesc"
+  | "oppTeam"
+  | "oppTeamDesc"
+  | "speechTime"
+  | "speechTimeDesc"
+  | "protectedTime"
+  | "protectedTimeDesc"
+  | "adVocemTime"
+  | "adVocemTimeDesc"
+  | "sampleDebate"
+  | "example"
+  | "or"
+  | "off"
+  | "seconds"
+  | "minutes"
+  | "minute"
+  | "oxfordDebate"
+  | "asPro"
+  | "asOpp"
+  | "timeLeft"
+  | "secondsOverTime"
+  | "secondsOverTime_1"
+  | "secondsOverTime_2-3-4"
   | "STAGE_0"
   | "STAGE_1"
   | "STAGE_2"
@@ -49,19 +70,15 @@ type tokens =
   | "STAGE_6_0_BTN"
   | "STAGE_6_1_BTN"
   | "STAGE_7_0_BTN"
-  | "STAGE_7_1_BTN"
-  | "STAGE_8_BTN"
-  | "SECONDS";
+  | "STAGE_7_1_BTN";
 export type { tokens };
 
-function useLang(token: tokens): string {
-  const config = useContext(OneContext);
-  if (config?.lang === "en") {
-    return en[token];
-  } else if (config?.lang === "pl") {
-    return pl[token];
+const useLang = (token: tokens) => {
+  const context = useContext(LangContext);
+  if (context?.lang === "pl") {
+    return pl[token] || en[token] || token;
   } else {
-    return "unknown language";
+    return en[token] || token;
   }
-}
+};
 export { useLang };

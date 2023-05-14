@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-800;
+  @apply text-zinc-200;
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+.transition-350ms {
+  transition-duration: 450ms;
+}
+
+.buttonflex {
+  @apply mx-auto;
+  @apply w-fit;
+  @apply flex;
+  @apply flex-col;
+  @apply gap-4;
+}
+.buttonflex button {
+  @apply bg-zinc-700;
+  @apply text-zinc-50;
+  @apply rounded-lg;
+  @apply px-5;
+  @apply py-2;
+  @apply w-full;
+  @apply border;
+  @apply border-transparent;
+  @apply hover:border-zinc-400;
+  @apply disabled:hover:border-transparent;
+  @apply hover:bg-zinc-600;
+  @apply disabled:cursor-not-allowed;
+  @apply disabled:opacity-60;
+}
+.buttonflex a {
+  @apply w-full;
+}
+
+.langbtn {
+  @apply absolute;
+  @apply top-4;
+  @apply right-4;
+  @apply px-2;
+  @apply py-1;
+  @apply rounded;
+  @apply bg-zinc-700;
+  @apply hover:bg-zinc-600;
+  @apply text-zinc-300;
+  @apply flex;
+  @apply justify-between;
+  @apply w-32;
+  @apply z-20;
+  @apply border;
+  @apply border-transparent;
+  @apply hover:border-zinc-400;
+}
+.langbtn.opened {
+  @apply rounded-bl-none;
+  @apply rounded-br-none;
+  @apply border-b;
+  @apply border-zinc-600;
+  @apply border-t-transparent;
+  @apply border-l-transparent;
+  @apply border-r-transparent;
+}
+.langbtn svg {
+  @apply transition-all;
+}
+.langbtn.opened svg {
+  @apply rotate-180;
+}
+.langpane {
+  @apply absolute;
+  @apply top-4;
+  @apply right-4;
+  @apply pt-8;
+  @apply rounded;
+  @apply bg-zinc-700;
+  @apply z-10;
+  @apply flex;
+  @apply flex-col;
+  @apply w-32;
+}
+.langpane.hide {
+  @apply hidden;
+  /*
+    seems i have to do this due to @apply being applied
+    later on, invalidating inlined tailwind
+  */
+}
+.langpane button {
+  @apply w-full;
+  @apply p-1;
+  @apply hover:bg-zinc-600;
+  @apply rounded;
+  @apply rounded-tr-none;
+  @apply rounded-tl-none;
+  @apply text-left;
+  @apply text-zinc-400;
+  @apply hover:text-zinc-300;
+  @apply px-2;
+}

@@ -1,134 +1,184 @@
+"use client";
+import { DebateContext, debateType } from "@/contexts/DebateContext";
+import { useLang } from "@/lib/useLang";
 import { useContext, useState } from "react";
-import { OneContext } from "@/pages/_app";
-import { debate } from "@/pages/_app";
 
-import { ChevronDown } from "./Icons/ChevronDown";
-import { tokens, useLang } from "@/lib/useLang";
+const DebateSetting = (props: { setting: keyof debateType }) => {
+  const debate = useContext(DebateContext);
+  const inputstyle = `
+		w-full p-2 bg-zinc-700 border border-transparent rounded
+		outline-0 hover:bg-zinc-800 hover:border-zinc-400
+		focus:bg-zinc-800 focus:border-zinc-400
+	`;
+  const buttonstyle = `
+		w-full p-2 bg-zinc-700 border border-transparent rounded
+		outline-0 hover:bg-zinc-800 hover:border-zinc-400
+	`;
+  const activestyle = "!border-violet-400";
 
-const debateSettingTitles: { [Property in keyof debate]: tokens } = {
-  motion: "DEBATE_MOTION",
-  proTeam: "PROPOSITION_TEAM",
-  oppTeam: "OPPOSITION_TEAM",
-  speechTime: "SPEECH_TIME",
-  protectedTime: "PROTECTED_TIME",
-};
+  const inputType = typeof debate?.data[props.setting];
 
-const debateSettingDescriptions: { [Property in keyof debate]: tokens } = {
-  motion: "DEBATE_MOTION_DESC",
-  proTeam: "PROPOSITION_TEAM_DESC",
-  oppTeam: "OPPOSITION_TEAM_DESC",
-  speechTime: "SPEECH_TIME_DESC",
-  protectedTime: "PROTECTED_TIME_DESC",
-};
+  const string = useLang(props.setting);
+  const stringdesc = useLang(`${props.setting}Desc`);
+  const or = useLang("or");
+  const seconds = useLang("seconds");
+  const minutes = useLang("minutes");
+  const off = useLang("off");
+  const minute = useLang("minute");
 
-const DebateSetting = (props: {
-  setting: keyof debate;
-  numberIsSeconds?: boolean;
-}) => {
-  const config = useContext(OneContext);
-  const [expanded, setExpanded] = useState<boolean>(false);
-  const settingTitle =
-    useLang(debateSettingTitles[props.setting]) || props.setting;
-  const settingDescription =
-    useLang(debateSettingDescriptions[props.setting]) || "";
-  const secondsString = useLang("SECONDS");
   return (
-    <div
-      style={{
-        background: "#252525",
-        minWidth: "220px",
-        width: "90%",
-        maxWidth: "600px",
-        borderRadius: "6px",
-      }}
-    >
-      <div
-        style={{
-          // background: "#363636",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          padding: "12px",
-          borderRadius: expanded ? "6px 6px 0 0" : "6px",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          setExpanded(!expanded);
-        }}
-      >
-        <span>{settingTitle}</span>
-        <span
-          className="mutedtext"
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            gap: "24px",
-          }}
-        >
-          {config?.debate[props.setting]}
-          {props.numberIsSeconds ? ` ${secondsString}` : ""}
-          <ChevronDown
-            className={`chevronFlip ${expanded ? "chevronFlipped" : ""}`}
-          />
-          {/* {expanded ? <ChevronUp /> : <ChevronDown />} */}
-        </span>
+    <div className="w-full">
+      <div className="flex flex-row justify-between pb-1">
+        <p className="text-zinc-100">{string}</p>
+        <p className="text-zinc-500">{stringdesc}</p>
       </div>
-      {expanded ? (
-        <>
-          <div className="mutedtext centertext padding8">
-            {settingDescription}
-          </div>
-          <div
-            style={{
-              margin: "12px",
-              marginTop: "6px",
+      {inputType === "string" ? (
+        <input
+          type="text"
+          className={inputstyle}
+          value={debate?.data[props.setting]}
+          placeholder={string}
+          onChange={(e) => {
+            debate?.setData({
+              ...debate.data,
+              [props.setting]: e.target.value,
+            });
+          }}
+        />
+      ) : props.setting === "speechTime" ? (
+        <div className="flex flex-row gap-2 items-baseline">
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.speechTime === 240 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, speechTime: 240 });
             }}
           >
-            {typeof config?.debate[props.setting] === "number" ||
-            typeof config?.debate[props.setting] === "string" ? (
-              <input
-                type={
-                  typeof config?.debate[props.setting] === "number"
-                    ? "number"
-                    : "text"
-                }
-                value={
-                  typeof config?.debate[props.setting] === "number"
-                    ? parseInt(config.debate[props.setting].toString())
-                    : config.debate[props.setting].toString()
-                }
-                onChange={(e) => {
-                  config?.setDebate({
-                    ...config?.debate,
-                    [props.setting]:
-                      typeof config?.debate[props.setting] === "number"
-                        ? parseInt(e.target.value)
-                        : e.target.value,
-                  });
-                }}
-                style={{
-                  width: "100%",
-                  borderRadius: "6px",
-                  padding: "9px 10px",
-                  border: "1px solid #777",
-                  // background: "#abb",
-                  // color: "black",
-                  // boxShadow: "inset 0 0 2px white",
-                }}
-              />
-            ) : typeof config?.debate[props.setting] === "boolean" ? (
-              "boolean switching soon (?)"
-            ) : (
-              ""
-            )}
+            4 {minutes}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.speechTime === 120 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, speechTime: 120 });
+            }}
+          >
+            2 {minutes}
+          </button>
+          <p>{or}</p>
+          <input
+            type="number"
+            min={1}
+            className={inputstyle}
+            value={debate?.data[props.setting]}
+            placeholder={string}
+            onChange={(e) => {
+              debate?.setData({
+                ...debate.data,
+                [props.setting]: parseInt(e.target.value),
+              });
+            }}
+          />
+          <p>{seconds}.</p>
+        </div>
+      ) : props.setting === "protectedTime" ? (
+        <div className="flex flex-row gap-2 items-baseline">
+          <div className="w-1/2">
+            <button
+              className={`${buttonstyle} ${
+                debate?.data.protectedTime === 30 ? activestyle : ""
+              }`}
+              onClick={() => {
+                debate?.setData({ ...debate.data, protectedTime: 30 });
+              }}
+            >
+              30 {seconds}
+            </button>
           </div>
-        </>
+          {/* <button
+            className={`${buttonstyle} ${
+              debate?.data.protectedTime === 20 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, protectedTime: 20 });
+            }}
+          >
+            20 {seconds}
+          </button> */}
+          <p>{or}</p>
+          <input
+            type="number"
+            min={1}
+            className={inputstyle}
+            value={debate?.data[props.setting]}
+            placeholder={string}
+            onChange={(e) => {
+              debate?.setData({
+                ...debate.data,
+                [props.setting]: parseInt(e.target.value),
+              });
+            }}
+          />
+          <p>{seconds}.</p>
+        </div>
+      ) : props.setting === "adVocemTime" ? (
+        <div className="flex flex-row gap-2 items-baseline">
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.adVocemTime === 60 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, adVocemTime: 60 });
+            }}
+          >
+            1 {minute}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.adVocemTime === 0 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, adVocemTime: 0 });
+            }}
+          >
+            {off}
+          </button>
+          <p>{or}</p>
+          <input
+            type="number"
+            min={1}
+            className={inputstyle}
+            value={debate?.data[props.setting]}
+            placeholder={string}
+            onChange={(e) => {
+              debate?.setData({
+                ...debate.data,
+                [props.setting]: parseInt(e.target.value),
+              });
+            }}
+          />
+          <p>{seconds}.</p>
+        </div>
+      ) : inputType === "number" ? (
+        <input
+          type="number"
+          min={1}
+          className={inputstyle}
+          value={debate?.data[props.setting]}
+          placeholder={string}
+          onChange={(e) => {
+            debate?.setData({
+              ...debate.data,
+              [props.setting]: parseInt(e.target.value),
+            });
+          }}
+        />
       ) : (
-        ""
+        "unsupported input."
       )}
     </div>
   );
 };
-
 export { DebateSetting };

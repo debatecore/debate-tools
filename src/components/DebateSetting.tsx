@@ -25,6 +25,7 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
   const minutes = useLang("minutes");
   const off = useLang("off");
   const minute = useLang("minute");
+  const dontshow = useLang("dontShow");
 
   return (
     <div className="w-full">
@@ -85,28 +86,28 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
         </div>
       ) : props.setting === "protectedTime" ? (
         <div className="flex flex-row gap-2 items-baseline">
-          <div className="w-1/2">
-            <button
-              className={`${buttonstyle} ${
-                debate?.data.protectedTime === 30 ? activestyle : ""
-              }`}
-              onClick={() => {
-                debate?.setData({ ...debate.data, protectedTime: 30 });
-              }}
-            >
-              30 {seconds}
-            </button>
-          </div>
-          {/* <button
+          {/* <div className="w-1/2"> */}
+          <button
             className={`${buttonstyle} ${
-              debate?.data.protectedTime === 20 ? activestyle : ""
+              debate?.data.protectedTime === 0 ? activestyle : ""
             }`}
             onClick={() => {
-              debate?.setData({ ...debate.data, protectedTime: 20 });
+              debate?.setData({ ...debate.data, protectedTime: 0 });
             }}
           >
-            20 {seconds}
-          </button> */}
+            {dontshow}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.protectedTime === 30 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, protectedTime: 30 });
+            }}
+          >
+            30 {seconds}
+          </button>
+          {/* </div> */}
           <p>{or}</p>
           <input
             type="number"
@@ -127,16 +128,6 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
         <div className="flex flex-row gap-2 items-baseline">
           <button
             className={`${buttonstyle} ${
-              debate?.data.adVocemTime === 60 ? activestyle : ""
-            }`}
-            onClick={() => {
-              debate?.setData({ ...debate.data, adVocemTime: 60 });
-            }}
-          >
-            1 {minute}
-          </button>
-          <button
-            className={`${buttonstyle} ${
               debate?.data.adVocemTime === 0 ? activestyle : ""
             }`}
             onClick={() => {
@@ -144,6 +135,16 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
             }}
           >
             {off}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.adVocemTime === 60 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, adVocemTime: 60 });
+            }}
+          >
+            1 {minute}
           </button>
           <p>{or}</p>
           <input

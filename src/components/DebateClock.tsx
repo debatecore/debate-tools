@@ -64,7 +64,19 @@ const DebateClock = (props: {
           className={`
 						absolute top-0 left-0 w-64 h-64 -rotate-90 z-20 text-emerald-400
 						${time <= (debate?.data.speechTime || 240) / 12 ? "text-orange-400" : ""}
-						${time <= 5 ? "!text-rose-400" : ""}
+            ${
+              debate?.data.protectedTime &&
+              props.running &&
+              time >= debate.data.speechTime - debate.data.protectedTime
+                ? "text-orange-400"
+                : ""
+            }
+            ${
+              debate?.data.protectedTime && time <= debate.data.protectedTime
+                ? "text-orange-400"
+                : ""
+            }
+            ${time <= 5 ? "!text-rose-400" : ""}
 					`}
         >
           <circle
@@ -91,7 +103,7 @@ const DebateClock = (props: {
           height="256"
           className={`
 						absolute top-0 left-0 w-64 h-64 text-zinc-700 z-10
-						${time <= 0 ? "text-rose-400" : ""}
+						${time <= 0 ? "!text-rose-400" : ""}
 					`}
         >
           <circle

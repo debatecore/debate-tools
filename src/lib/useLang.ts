@@ -36,6 +36,7 @@ type tokens =
   | "example"
   | "or"
   | "off"
+  | "dontShow"
   | "seconds"
   | "minutes"
   | "minute"

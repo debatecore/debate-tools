@@ -36,9 +36,7 @@ export default function PageDebate() {
       ? "STAGE_5"
       : stage == 6
       ? "STAGE_6"
-      : stage == 7
-      ? "STAGE_7"
-      : "STAGE_8"
+      : "STAGE_7"
   );
   const stageBtnText = useLang(
     stage == 0 && !running
@@ -86,7 +84,7 @@ export default function PageDebate() {
         </h1>
         <p className="text-zinc-400">{oxfordDebate}</p>
       </div>
-      <div className="flex flex-row py-4">
+      <div className={`flex flex-row py-4 ${stage === 8 ? "opacity-50" : ""}`}>
         <div className="w-1/2">
           <h2 className="font-serif text-2xl text-center">
             {debate?.data.proTeam || "Anonymous Team"}
@@ -160,21 +158,33 @@ export default function PageDebate() {
           </div>
         </div>
       </div>
-      <p className="text-center text-zinc-400">{stageText}</p>
-      <div className="flex flex-row py-4">
+      <p className="text-center text-zinc-400">
+        {stage != 8 ? stageText : "-"}
+      </p>
+      <div className="relative flex flex-row py-4">
         <div className="w-1/2 flex flex-row justify-center">
           <DebateClock
             running={running && [0, 2, 4, 6].includes(stage)}
-            dimmed={running && [1, 3, 5, 7].includes(stage)}
+            dimmed={(running && [1, 3, 5, 7].includes(stage)) || stage === 8}
             stage={stage}
           />
         </div>
         <div className="w-1/2 flex flex-row justify-center">
           <DebateClock
             running={running && [1, 3, 5, 7].includes(stage)}
-            dimmed={running && [0, 2, 4, 6].includes(stage)}
+            dimmed={(running && [0, 2, 4, 6].includes(stage)) || stage === 8}
             stage={stage}
           />
+        </div>
+        <div
+          className={`absolute flex flex-col text-center w-full h-full ${
+            stage === 8 ? "" : "hidden"
+          }`}
+        >
+          <h1 className="font-bold text-3xl text-daisy-bush-100">
+            {"Debate finished!"}
+          </h1>
+          <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
         </div>
       </div>
       <div className={stage == 8 ? "hidden" : ""}>

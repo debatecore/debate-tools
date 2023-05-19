@@ -50,7 +50,7 @@
   "STAGE_5": "TRZECIA MOWA OPOZYCJI",
   "STAGE_6": "CZWARTA MOWA PROPOZYCJI",
   "STAGE_7": "CZWARTA MOWA OPOZYCJI",
-  "STAGE_8": "DEBATA ZAKOŃCZONA",
+  "STAGE_8": "Debata zakończona!",
   "STAGE_0_0_BTN": "Rozpocznij pierwszą mowę propozycji",
   "STAGE_0_1_BTN": "Zakończ pierwszą mowę propozycji",
   "STAGE_1_0_BTN": "Rozpocznij pierwszą mowę opozycji",
@@ -66,5 +66,7 @@
   "STAGE_6_0_BTN": "Rozpocznij czwartą mowę propozycji",
   "STAGE_6_1_BTN": "Zakończ czwartą mowę propozycji",
   "STAGE_7_0_BTN": "Rozpocznij czwartą mowę opozycji",
-  "STAGE_7_1_BTN": "Zakończ czwartą mowę opozycji"
+  "STAGE_7_1_BTN": "Zakończ czwartą mowę opozycji",
+  "backtomenu": "Wróć do menu",
+  "backtodebateconfig": "Wróć do konfiguracji debaty"
 }

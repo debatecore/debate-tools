@@ -71,6 +71,7 @@ export default function PageDebate() {
       ? "STAGE_7_0_BTN"
       : "STAGE_7_1_BTN"
   );
+  const stage8 = useLang("STAGE_8");
 
   const oxfordDebate = useLang("oxfordDebate");
   const asPro = useLang("asPro");
@@ -181,9 +182,7 @@ export default function PageDebate() {
             stage === 8 ? "" : "hidden"
           }`}
         >
-          <h1 className="font-bold text-3xl text-daisy-bush-100">
-            {"Debate finished!"}
-          </h1>
+          <h1 className="font-bold text-3xl text-daisy-bush-100">{stage8}</h1>
           <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
         </div>
       </div>
@@ -214,10 +213,10 @@ export default function PageDebate() {
         }`}
       >
         <Link href="/" tabIndex={-1}>
-          <button className={button}>Back to menu</button>
+          <button className={button}>{useLang("backtomenu")}</button>
         </Link>
         <Link href="/debate/setup" tabIndex={-1}>
-          <button className={button}>Back to debate config</button>
+          <button className={button}>{useLang("backtodebateconfig")}</button>
         </Link>
       </div>
     </>

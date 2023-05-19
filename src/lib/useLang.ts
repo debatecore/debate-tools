@@ -71,7 +71,9 @@ type tokens =
   | "STAGE_6_0_BTN"
   | "STAGE_6_1_BTN"
   | "STAGE_7_0_BTN"
-  | "STAGE_7_1_BTN";
+  | "STAGE_7_1_BTN"
+  | "backtomenu"
+  | "backtodebateconfig";
 export type { tokens };
 
 const useLang = (token: tokens) => {

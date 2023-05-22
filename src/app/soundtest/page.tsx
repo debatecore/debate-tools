@@ -2,16 +2,12 @@
 import { useAudio } from "react-use";
 
 export default function PageSoundTest() {
-  const ping = {
-    data: useAudio({
-      src: "/ping.mp3",
-    }),
-  };
-  const ping2 = {
-    data: useAudio({
-      src: "/ping2.mp3",
-    }),
-  };
+  const [audio1, state1, controls1] = useAudio({
+    src: "/ping.mp3",
+  });
+  const [audio2, state2, controls2] = useAudio({
+    src: "/ping2.mp3",
+  });
   const button = `p-2 rounded bg-daisy-bush-600 text-white
 									border border-transparent
 									hover:bg-daisy-bush-800 hover:border-daisy-bush-400`;
@@ -19,12 +15,13 @@ export default function PageSoundTest() {
     <>
       <div className="flex flex-col gap-2 text-center pt-10 max-w-xs mx-auto">
         <p className="font-bold text-3xl">sound test</p>
-        {ping.data[0]}
-        {ping2.data[0]}
+        {audio1}
+        {audio2}
         <button
           className={button}
           onClick={() => {
-            ping.data[2].play();
+            controls1.seek(0);
+            controls1.play();
           }}
         >
           single ping
@@ -32,7 +29,8 @@ export default function PageSoundTest() {
         <button
           className={button}
           onClick={() => {
-            ping2.data[2].play();
+            controls2.seek(0);
+            controls2.play();
           }}
         >
           double ping

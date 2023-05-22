@@ -178,12 +178,12 @@ export default function PageDebate() {
           />
         </div>
         <div
-          className={`absolute flex flex-col text-center w-full h-full ${
-            stage === 8 ? "" : "hidden"
-          }`}
+          className={`absolute w-full h-full ${stage === 8 ? "" : "hidden"}`}
         >
-          <h1 className="font-bold text-3xl text-daisy-bush-100">{stage8}</h1>
-          <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
+          <div className="flex flex-col w-full h-full justify-center items-center">
+            <h1 className="font-bold text-3xl text-daisy-bush-100">{stage8}</h1>
+            <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
+          </div>
         </div>
       </div>
       <div className={stage == 8 ? "hidden" : ""}>

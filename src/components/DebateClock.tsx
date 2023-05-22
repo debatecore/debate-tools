@@ -27,30 +27,24 @@ const DebateClock = (props: {
         ? debate?.data.adVocemTime || 0
         : debate?.data.speechTime || 0
     );
-    controls1.mute();
-    controls2.mute();
-    controls1.play();
-    controls2.play();
   }, [props.stage, props.running, props.advocem, debate]);
+  useEffect(() => {
+    if (time === 0) {
+      controls2.play();
+    }
+    if (
+      !props.advocem &&
+      (time ===
+        (debate?.data.speechTime || 999999) -
+          (debate?.data.protectedTime || 9) ||
+        time === debate?.data.protectedTime)
+    ) {
+      controls1.play();
+    }
+  }, [time]);
   useInterval(
     () => {
       setTime(time - 1);
-      if (time === 0) {
-        controls2.seek(0);
-        controls2.unmute();
-        controls2.play();
-      }
-      if (
-        !props.advocem &&
-        (time ===
-          (debate?.data.speechTime || 999999) -
-            (debate?.data.protectedTime || 9) ||
-          time === debate?.data.protectedTime)
-      ) {
-        controls1.seek(0);
-        controls1.unmute();
-        controls1.play();
-      }
     },
     props.running ? delay : null
   );

@@ -7,14 +7,19 @@ const DebateClock = (props: {
   running: boolean;
   stage: number;
   dimmed?: boolean;
+  advocem?: boolean;
 }) => {
   const debate = useContext(DebateContext);
   const [time, setTime] = useState<number>(debate?.data.speechTime || 0);
   const refCircle = useRef<SVGCircleElement>(null);
   const delay = 1000; // ms
   useEffect(() => {
-    setTime(debate?.data.speechTime || 0);
-  }, [props.stage, debate]);
+    setTime(
+      props.advocem
+        ? debate?.data.adVocemTime || 0
+        : debate?.data.speechTime || 0
+    );
+  }, [props.stage, props.running, props.advocem, debate]);
   useInterval(
     () => {
       setTime(time - 1);
@@ -89,7 +94,11 @@ const DebateClock = (props: {
             strokeWidth={5}
             strokeDashoffset={
               118 * 2 * Math.PI -
-              (time / (debate?.data.speechTime || 240)) * (118 * 2 * Math.PI)
+              (time /
+                (props.advocem
+                  ? debate?.data.adVocemTime || 60
+                  : debate?.data.speechTime || 240)) *
+                (118 * 2 * Math.PI)
             }
             strokeDasharray={
               refCircle.current?.getTotalLength()

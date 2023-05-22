@@ -68,5 +68,9 @@
   "STAGE_7_0_BTN": "Rozpocznij czwartą mowę opozycji",
   "STAGE_7_1_BTN": "Zakończ czwartą mowę opozycji",
   "backtomenu": "Wróć do menu",
-  "backtodebateconfig": "Wróć do konfiguracji debaty"
+  "backtodebateconfig": "Wróć do konfiguracji debaty",
+  "back": "wróć",
+  "nukedebate": "reset debaty",
+  "speechstart": "rozpocznij mowę",
+  "speechend": "zakończ mowę"
 }

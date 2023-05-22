@@ -1,5 +1,12 @@
 "use client";
 import { DebateClock } from "@/components/DebateClock";
+import { AlertCircle } from "@/components/icons/AlertCircle";
+import { AlertTriangle } from "@/components/icons/AlertTriangle";
+import { ArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
+import { PauseCircle } from "@/components/icons/PauseCircle";
+import { PlayCircle } from "@/components/icons/PlayCircle";
+import { RotateCCW } from "@/components/icons/RotateCCW";
+import { StopCircle } from "@/components/icons/StopCircle";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
@@ -10,6 +17,7 @@ export default function PageDebate() {
 
   const [running, setRunning] = useState<boolean>(false);
   const [stage, setStage] = useState<number>(0);
+  const [advocem, setAdvocem] = useState<boolean>(false);
 
   const dot = `
     h-3 w-3 rounded-full border-2 border-zinc-500
@@ -18,7 +26,8 @@ export default function PageDebate() {
   const dotactive = "border-zinc-400";
   const button = `
     bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
-    hover:border-zinc-400 disabled:cursor-not-allowed
+    hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
+    disabled:opacity-50 transition-all
   `;
 
   const stageText = useLang(
@@ -38,40 +47,11 @@ export default function PageDebate() {
       ? "STAGE_6"
       : "STAGE_7"
   );
-  const stageBtnText = useLang(
-    stage == 0 && !running
-      ? "STAGE_0_0_BTN"
-      : stage == 0 && running
-      ? "STAGE_0_1_BTN"
-      : stage == 1 && !running
-      ? "STAGE_1_0_BTN"
-      : stage == 1 && running
-      ? "STAGE_1_1_BTN"
-      : stage == 2 && !running
-      ? "STAGE_2_0_BTN"
-      : stage == 2 && running
-      ? "STAGE_2_1_BTN"
-      : stage == 3 && !running
-      ? "STAGE_3_0_BTN"
-      : stage == 3 && running
-      ? "STAGE_3_1_BTN"
-      : stage == 4 && !running
-      ? "STAGE_4_0_BTN"
-      : stage == 4 && running
-      ? "STAGE_4_1_BTN"
-      : stage == 5 && !running
-      ? "STAGE_5_0_BTN"
-      : stage == 5 && running
-      ? "STAGE_5_1_BTN"
-      : stage == 6 && !running
-      ? "STAGE_6_0_BTN"
-      : stage == 6 && running
-      ? "STAGE_6_1_BTN"
-      : stage == 7 && !running
-      ? "STAGE_7_0_BTN"
-      : "STAGE_7_1_BTN"
-  );
   const stage8 = useLang("STAGE_8");
+  const back = useLang("back");
+  const nukedebate = useLang("nukedebate");
+  const speechstart = useLang("speechstart");
+  const speechend = useLang("speechend");
 
   const oxfordDebate = useLang("oxfordDebate");
   const asPro = useLang("asPro");
@@ -167,6 +147,7 @@ export default function PageDebate() {
           <DebateClock
             running={running && [0, 2, 4, 6].includes(stage)}
             dimmed={(running && [1, 3, 5, 7].includes(stage)) || stage === 8}
+            advocem={advocem}
             stage={stage}
           />
         </div>
@@ -174,6 +155,7 @@ export default function PageDebate() {
           <DebateClock
             running={running && [1, 3, 5, 7].includes(stage)}
             dimmed={(running && [0, 2, 4, 6].includes(stage)) || stage === 8}
+            advocem={advocem}
             stage={stage}
           />
         </div>
@@ -187,23 +169,53 @@ export default function PageDebate() {
         </div>
       </div>
       <div className={stage == 8 ? "hidden" : ""}>
-        <div className="max-w-md mx-auto flex flex-row justify-center gap-2 pt-32">
+        <div className="max-w-lg mx-auto flex flex-row justify-center gap-2 pt-32">
+          {stage === 0 ? (
+            <Link href="/debate/setup" className={button}>
+              <ArrowLeftCircle />
+              <p className="hidden sm:block">{back}</p>
+            </Link>
+          ) : (
+            <button
+              className={button}
+              onClick={() => {
+                setRunning(false);
+                setAdvocem(false);
+                setStage(0);
+              }}
+            >
+              <StopCircle />
+              <p className="hidden sm:block">{nukedebate}</p>
+            </button>
+          )}
           <button
             className={button}
             onClick={() => {
               if (stage == 8) return;
               if (running) {
                 setRunning(false);
-                setStage(stage + 1);
+                setStage(advocem ? stage : stage + 1);
               } else {
                 setRunning(true);
               }
             }}
           >
-            {stageBtnText}
+            {running ? <PauseCircle /> : <PlayCircle />}
+            <p className="hidden sm:block">
+              {running ? speechend : speechstart}
+            </p>
           </button>
-          <button className={button} onClick={() => {}}>
-            Ad Vocem
+          <button
+            className={`${button} ${
+              advocem ? "!bg-emerald-400 hover:border-white text-white" : ""
+            }`}
+            onClick={() => {
+              setAdvocem(!advocem);
+            }}
+            disabled={running}
+          >
+            <AlertCircle />
+            <p className="hidden sm:block">{"ad vocem"}</p>
           </button>
         </div>
       </div>
@@ -212,12 +224,21 @@ export default function PageDebate() {
           stage == 8 ? "" : "hidden"
         }`}
       >
-        <Link href="/" tabIndex={-1}>
-          <button className={button}>{useLang("backtomenu")}</button>
+        <Link href="/" className={button}>
+          <ArrowLeftCircle />
+          <p className="hidden sm:block">{back}</p>
         </Link>
-        <Link href="/debate/setup" tabIndex={-1}>
-          <button className={button}>{useLang("backtodebateconfig")}</button>
-        </Link>
+        <button
+          className={button}
+          onClick={() => {
+            setRunning(false);
+            setAdvocem(false);
+            setStage(0);
+          }}
+        >
+          <StopCircle />
+          <p className="hidden sm:block">{nukedebate}</p>
+        </button>
       </div>
     </>
   );

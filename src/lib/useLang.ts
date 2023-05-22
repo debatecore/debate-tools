@@ -73,7 +73,11 @@ type tokens =
   | "STAGE_7_0_BTN"
   | "STAGE_7_1_BTN"
   | "backtomenu"
-  | "backtodebateconfig";
+  | "backtodebateconfig"
+  | "back"
+  | "nukedebate"
+  | "speechstart"
+  | "speechend";
 export type { tokens };
 
 const useLang = (token: tokens) => {

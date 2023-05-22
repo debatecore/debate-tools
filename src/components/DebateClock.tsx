@@ -1,7 +1,7 @@
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { useContext, useEffect, useRef, useState } from "react";
-import { useInterval } from "react-use";
+import { useAudio, useInterval } from "react-use";
 
 const DebateClock = (props: {
   running: boolean;
@@ -13,16 +13,44 @@ const DebateClock = (props: {
   const [time, setTime] = useState<number>(debate?.data.speechTime || 0);
   const refCircle = useRef<SVGCircleElement>(null);
   const delay = 1000; // ms
+
+  const [audio1, state1, controls1] = useAudio({
+    src: "/ping.mp3",
+  });
+  const [audio2, state2, controls2] = useAudio({
+    src: "/ping2.mp3",
+  });
+
   useEffect(() => {
     setTime(
       props.advocem
         ? debate?.data.adVocemTime || 0
         : debate?.data.speechTime || 0
     );
+    controls1.mute();
+    controls2.mute();
+    controls1.play();
+    controls2.play();
   }, [props.stage, props.running, props.advocem, debate]);
   useInterval(
     () => {
       setTime(time - 1);
+      if (time === 0) {
+        controls2.seek(0);
+        controls2.unmute();
+        controls2.play();
+      }
+      if (
+        !props.advocem &&
+        (time ===
+          (debate?.data.speechTime || 999999) -
+            (debate?.data.protectedTime || 9) ||
+          time === debate?.data.protectedTime)
+      ) {
+        controls1.seek(0);
+        controls1.unmute();
+        controls1.play();
+      }
     },
     props.running ? delay : null
   );
@@ -63,6 +91,7 @@ const DebateClock = (props: {
           )}
         </h2>
         <p className="text-zinc-500 pt-1">{underclock}</p>
+        {audio1} {audio2}
         <svg
           width="256"
           height="256"

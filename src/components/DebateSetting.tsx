@@ -2,6 +2,8 @@
 import { DebateContext, debateType } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { useContext, useState } from "react";
+import { IconCheckSquare } from "./icons/CheckSquare";
+import { IconSquare } from "./icons/Square";
 
 const DebateSetting = (props: { setting: keyof debateType }) => {
   const debate = useContext(DebateContext);
@@ -12,7 +14,7 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
 	`;
   const buttonstyle = `
 		w-full p-2 bg-zinc-700 border border-transparent rounded
-		outline-0 hover:bg-zinc-800 hover:border-zinc-400
+		outline-0 hover:bg-zinc-600 hover:border-zinc-400
 	`;
   const activestyle = "!border-violet-400";
 
@@ -33,20 +35,7 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
         <p className="text-zinc-100">{string}</p>
         <p className="text-zinc-500">{stringdesc}</p>
       </div>
-      {inputType === "string" ? (
-        <input
-          type="text"
-          className={inputstyle}
-          value={debate?.data[props.setting]}
-          placeholder={string}
-          onChange={(e) => {
-            debate?.setData({
-              ...debate.data,
-              [props.setting]: e.target.value,
-            });
-          }}
-        />
-      ) : props.setting === "speechTime" ? (
+      {props.setting === "speechTime" ? (
         <div className="flex flex-row gap-2 items-baseline">
           <button
             className={`${buttonstyle} ${
@@ -128,16 +117,6 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
         <div className="flex flex-row gap-2 items-baseline">
           <button
             className={`${buttonstyle} ${
-              debate?.data.adVocemTime === 0 ? activestyle : ""
-            }`}
-            onClick={() => {
-              debate?.setData({ ...debate.data, adVocemTime: 0 });
-            }}
-          >
-            {off}
-          </button>
-          <button
-            className={`${buttonstyle} ${
               debate?.data.adVocemTime === 60 ? activestyle : ""
             }`}
             onClick={() => {
@@ -145,6 +124,16 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
             }}
           >
             1 {minute}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.adVocemTime === 0 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, adVocemTime: 0 });
+            }}
+          >
+            {off}
           </button>
           <p>{or}</p>
           <input
@@ -162,6 +151,47 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
           />
           <p>{seconds}.</p>
         </div>
+      ) : props.setting === "showProtectedTime" ? (
+        <button
+          onClick={() =>
+            debate?.setData({
+              ...debate.data,
+              showProtectedTime: !debate.data.showProtectedTime,
+            })
+          }
+          className={`${buttonstyle} ${
+            debate?.data.showProtectedTime ? activestyle : ""
+          } text-left pl-6`}
+        >
+          {string}
+        </button>
+      ) : props.setting === "beepProtectedTime" ? (
+        <button
+          onClick={() =>
+            debate?.setData({
+              ...debate.data,
+              showProtectedTime: !debate.data.showProtectedTime,
+            })
+          }
+          className={`${buttonstyle} ${
+            debate?.data.beepProtectedTime ? activestyle : ""
+          } text-left pl-6`}
+        >
+          {string}
+        </button>
+      ) : inputType === "string" ? (
+        <input
+          type="text"
+          className={inputstyle}
+          value={debate?.data[props.setting]}
+          placeholder={string}
+          onChange={(e) => {
+            debate?.setData({
+              ...debate.data,
+              [props.setting]: e.target.value,
+            });
+          }}
+        />
       ) : inputType === "number" ? (
         <input
           type="number"

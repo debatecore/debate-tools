@@ -72,5 +72,9 @@
   "back": "back",
   "nukedebate": "nuke debate",
   "speechstart": "start speech",
-  "speechend": "end speech"
+  "speechend": "end speech",
+  "showProtectedTime": "Indicate Protected Time",
+  "showProtectedTimeDesc": "Shows in yellow.",
+  "beepProtectedTime": "Beep",
+  "beepProtectedTimeDesc": "Once on protected time, twice on speech end."
 }

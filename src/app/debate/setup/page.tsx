@@ -5,6 +5,7 @@ import {
   DebateContext,
   debateType,
   defaultDebate,
+  sampleDebate,
   sampleDebates,
 } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
@@ -31,6 +32,8 @@ export default function PageDebateSetup() {
         <DebateSetting setting="speechTime" />
         <DebateSetting setting="protectedTime" />
         <DebateSetting setting="adVocemTime" />
+        {/* <DebateSetting setting="showProtectedTime" /> */}
+        {/* <DebateSetting setting="beepProtectedTime" /> */}
       </div>
       <div className="flex flex-row max-w-md mx-auto gap-2">
         <Link href="/" className="mr-auto">
@@ -56,14 +59,14 @@ export default function PageDebateSetup() {
         <button
           className="text-zinc-400 hover:underline pr-1"
           onClick={() => {
-            let previousDebate = debate?.data;
-            let newDebate: debateType =
-              sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
-            while (previousDebate === newDebate) {
-              newDebate =
-                sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
-            }
-            debate?.setData(newDebate);
+            // let previousDebate = debate?.data;
+            // let newDebate: debateType =
+            //   sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
+            // while (previousDebate === newDebate) {
+            //   newDebate =
+            //     sampleDebates[Math.floor(Math.random() * sampleDebates.length)];
+            // }
+            debate?.setData(sampleDebate);
           }}
         >
           {useLang("sampleDebate")}

@@ -5,8 +5,10 @@ type debateType = {
   proTeam: string;
   oppTeam: string;
   speechTime: number;
-  protectedTime: number;
   adVocemTime: number;
+  protectedTime: number;
+  showProtectedTime: boolean;
+  beepProtectedTime: boolean;
 };
 export type { debateType };
 
@@ -15,13 +17,15 @@ const defaultDebate: debateType = {
   proTeam: "",
   oppTeam: "",
   speechTime: 240,
-  protectedTime: 30,
   adVocemTime: 60,
+  protectedTime: 30,
+  showProtectedTime: true,
+  beepProtectedTime: true,
 };
 export { defaultDebate };
 
 // increment this on changes to debateType
-const debateStorageField = "debateconfigv5";
+const debateStorageField = "debateconfigv6";
 export { debateStorageField };
 
 const DebateContext = createContext<{
@@ -29,6 +33,18 @@ const DebateContext = createContext<{
   setData: Dispatch<SetStateAction<debateType>>;
 } | null>(null);
 export { DebateContext };
+
+const sampleDebate: debateType = {
+  motion: "THW abolish the UN Security Council.",
+  proTeam: "38 Dwujęzyczne Liceum w Poznaniu",
+  oppTeam: "Technikum Komunikacji w Poznaniu",
+  speechTime: 240,
+  protectedTime: 30,
+  adVocemTime: 60,
+  showProtectedTime: false,
+  beepProtectedTime: true,
+};
+export { sampleDebate };
 
 const sampleDebates: debateType[] = [
   {
@@ -38,6 +54,8 @@ const sampleDebates: debateType[] = [
     speechTime: 240,
     protectedTime: 30,
     adVocemTime: 60,
+    showProtectedTime: false,
+    beepProtectedTime: true,
   },
   {
     motion: "TH regrets the narrative that forgiveness is a virtue.",
@@ -46,6 +64,8 @@ const sampleDebates: debateType[] = [
     speechTime: 240,
     protectedTime: 30,
     adVocemTime: 60,
+    showProtectedTime: false,
+    beepProtectedTime: true,
   },
   {
     motion: "Consumers should try to buy local goods and services.",
@@ -54,6 +74,8 @@ const sampleDebates: debateType[] = [
     speechTime: 120,
     protectedTime: 30,
     adVocemTime: 0,
+    showProtectedTime: true,
+    beepProtectedTime: true,
   },
 ];
 export { sampleDebates };

@@ -29,17 +29,19 @@ const DebateClock = (props: {
     );
   }, [props.stage, props.running, props.advocem, debate]);
   useEffect(() => {
-    if (time === 0) {
-      controls2.play();
-    }
-    if (
-      !props.advocem &&
-      (time ===
-        (debate?.data.speechTime || 999999) -
-          (debate?.data.protectedTime || 9) ||
-        time === debate?.data.protectedTime)
-    ) {
-      controls1.play();
+    if (debate?.data.beepProtectedTime) {
+      if (time === 0) {
+        controls2.play();
+      }
+      if (
+        !props.advocem &&
+        (time ===
+          (debate?.data.speechTime || 999999) -
+            (debate?.data.protectedTime || 9) ||
+          time === debate?.data.protectedTime)
+      ) {
+        controls1.play();
+      }
     }
   }, [time]);
   useInterval(
@@ -91,8 +93,14 @@ const DebateClock = (props: {
           height="256"
           className={`
 						absolute top-0 left-0 w-64 h-64 -rotate-90 z-20 text-emerald-400
-						${time <= (debate?.data.speechTime || 240) / 12 ? "text-orange-400" : ""}
+						${
+              debate?.data.showProtectedTime &&
+              time <= (debate?.data.speechTime || 240) / 12
+                ? "text-orange-400"
+                : ""
+            }
             ${
+              debate?.data.showProtectedTime &&
               debate?.data.protectedTime &&
               props.running &&
               !props.advocem &&
@@ -101,6 +109,7 @@ const DebateClock = (props: {
                 : ""
             }
             ${
+              debate?.data.showProtectedTime &&
               debate?.data.protectedTime &&
               !props.advocem &&
               time <= debate.data.protectedTime

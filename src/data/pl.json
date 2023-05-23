@@ -72,5 +72,9 @@
   "back": "wróć",
   "nukedebate": "reset debaty",
   "speechstart": "rozpocznij mowę",
-  "speechend": "zakończ mowę"
+  "speechend": "zakończ mowę",
+  "showProtectedTime": "Pokaż czas chroniony",
+  "showProtectedTimeDesc": "Zaznaczony na żółto.",
+  "beepProtectedTime": "Sygnały dźwiękowe",
+  "beepProtectedTimeDesc": "Czas chroniony - raz, koniec mowy - dwa."
 }

@@ -8,7 +8,45 @@ import { StopCircle } from "@/components/icons/StopCircle";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
+
+const dot = `
+  h-3 w-3 rounded-full border-2 border-zinc-500
+  `;
+const dotfill = "bg-zinc-500";
+const dotactive = "border-emerald-400 animate-ping";
+const button = `
+  bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
+  hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
+  disabled:opacity-50 transition-all
+  `;
+
+const dots = (
+  speakers: number[],
+  running: boolean,
+  stage: number
+): ReactNode => {
+  return (
+    <>
+      {speakers.map((el) => {
+        return (
+          <div className="relative" key={`dot${el}`}>
+            <div
+              className={`${dot} ${stage > el ? dotfill : ""} ${
+                running && stage == el ? "border-emerald-400" : ""
+              }`}
+            />
+            <div
+              className={`absolute left-0 top-0 ${dot} ${
+                running && stage == el ? dotactive : ""
+              }`}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 export default function PageDebateOneClock() {
   const debate = useContext(DebateContext);
@@ -16,17 +54,6 @@ export default function PageDebateOneClock() {
   const [running, setRunning] = useState<boolean>(false);
   const [stage, setStage] = useState<number>(0);
   const [advocem, setAdvocem] = useState<boolean>(false);
-
-  const dot = `
-    h-3 w-3 rounded-full border-2 border-zinc-500
-  `;
-  const dotfill = "bg-zinc-500";
-  const dotactive = "border-zinc-400";
-  const button = `
-    bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
-    hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
-    disabled:opacity-50 transition-all
-  `;
 
   const stageText = useLang(
     stage == 0
@@ -72,10 +99,7 @@ export default function PageDebateOneClock() {
           <h2 className="text-2xl">{debate?.data.proTeam || "Anonymous"}</h2>
           <p className="text-zinc-400">{asPro}</p>
           <div className="flex flex-row gap-1 my-2">
-            <div className={`${dot} ${stage > 0 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 2 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 4 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 6 ? dotfill : ""}`} />
+            {dots([0, 2, 4, 6], running, stage)}
           </div>
         </div>
         <div
@@ -88,16 +112,10 @@ export default function PageDebateOneClock() {
           </p>
           <div className="flex flex-row justify-between gap-16 lg:hidden">
             <div className="flex flex-row gap-2">
-              <div className={`${dot} ${stage > 0 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 2 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 4 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 6 ? dotfill : ""}`} />
+              {dots([0, 2, 4, 6], running, stage)}
             </div>
             <div className="flex flex-row gap-2">
-              <div className={`${dot} ${stage > 1 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 3 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 5 ? dotfill : ""}`} />
-              <div className={`${dot} ${stage > 7 ? dotfill : ""}`} />
+              {dots([1, 3, 5, 7], running, stage)}
             </div>
           </div>
           <div className="mt-6">
@@ -112,10 +130,7 @@ export default function PageDebateOneClock() {
           <h2 className="text-2xl">{debate?.data.oppTeam || "Anonymous"}</h2>
           <p className="text-zinc-400">{asOpp}</p>
           <div className="flex flex-row gap-1 my-2">
-            <div className={`${dot} ${stage > 1 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 3 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 5 ? dotfill : ""}`} />
-            <div className={`${dot} ${stage > 7 ? dotfill : ""}`} />
+            {dots([1, 3, 5, 7], running, stage)}
           </div>
         </div>
         <div

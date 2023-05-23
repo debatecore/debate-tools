@@ -140,7 +140,7 @@ export default function PageDebate() {
         </div>
       </div>
       <p className="text-center text-zinc-400">
-        {stage != 8 ? stageText : "-"}
+        {advocem ? "AD VOCEM" : stage != 8 ? stageText : "-"}
       </p>
       <div className="relative flex flex-row py-4">
         <div className="w-1/2 flex flex-row justify-center">
@@ -170,10 +170,10 @@ export default function PageDebate() {
       </div>
       <div className={stage == 8 ? "hidden" : ""}>
         <div className="max-w-lg mx-auto flex flex-row justify-center gap-2 pt-32">
-          {stage === 0 ? (
+          {stage === 0 && !running ? (
             <Link href="/debate/setup" className={button}>
               <ArrowLeftCircle />
-              <p className="hidden sm:block">{back}</p>
+              {/* <p className="hidden sm:block">{back}</p> */}
             </Link>
           ) : (
             <button
@@ -185,9 +185,21 @@ export default function PageDebate() {
               }}
             >
               <StopCircle />
-              <p className="hidden sm:block">{nukedebate}</p>
+              {/* <p className="hidden sm:block">{nukedebate}</p> */}
             </button>
           )}
+          <button
+            className={`${button} ${
+              advocem ? "!bg-emerald-500 hover:border-white text-white" : ""
+            } ${debate?.data.adVocemTime === 0 ? "hidden" : ""}`}
+            onClick={() => {
+              setAdvocem(!advocem);
+            }}
+            disabled={running}
+          >
+            <AlertCircle />
+            <p className="hidden sm:block">{"ad vocem"}</p>
+          </button>
           <button
             className={button}
             onClick={() => {
@@ -204,18 +216,6 @@ export default function PageDebate() {
             <p className="hidden sm:block">
               {running ? speechend : speechstart}
             </p>
-          </button>
-          <button
-            className={`${button} ${
-              advocem ? "!bg-emerald-400 hover:border-white text-white" : ""
-            }`}
-            onClick={() => {
-              setAdvocem(!advocem);
-            }}
-            disabled={running}
-          >
-            <AlertCircle />
-            <p className="hidden sm:block">{"ad vocem"}</p>
           </button>
         </div>
       </div>

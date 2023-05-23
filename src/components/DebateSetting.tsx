@@ -89,16 +89,6 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
           {/* <div className="w-1/2"> */}
           <button
             className={`${buttonstyle} ${
-              debate?.data.protectedTime === 0 ? activestyle : ""
-            }`}
-            onClick={() => {
-              debate?.setData({ ...debate.data, protectedTime: 0 });
-            }}
-          >
-            {dontshow}
-          </button>
-          <button
-            className={`${buttonstyle} ${
               debate?.data.protectedTime === 30 ? activestyle : ""
             }`}
             onClick={() => {
@@ -106,6 +96,16 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
             }}
           >
             30 {seconds}
+          </button>
+          <button
+            className={`${buttonstyle} ${
+              debate?.data.protectedTime === 20 ? activestyle : ""
+            }`}
+            onClick={() => {
+              debate?.setData({ ...debate.data, protectedTime: 20 });
+            }}
+          >
+            20 {seconds}
           </button>
           {/* </div> */}
           <p>{or}</p>

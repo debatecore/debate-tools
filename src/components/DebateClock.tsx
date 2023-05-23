@@ -95,12 +95,15 @@ const DebateClock = (props: {
             ${
               debate?.data.protectedTime &&
               props.running &&
-              time >= debate.data.speechTime - debate.data.protectedTime
+              !props.advocem &&
+              time > debate.data.speechTime - debate.data.protectedTime
                 ? "text-orange-400"
                 : ""
             }
             ${
-              debate?.data.protectedTime && time <= debate.data.protectedTime
+              debate?.data.protectedTime &&
+              !props.advocem &&
+              time <= debate.data.protectedTime
                 ? "text-orange-400"
                 : ""
             }

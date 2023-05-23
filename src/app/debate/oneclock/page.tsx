@@ -23,7 +23,7 @@ const button = `
 
 const dots = (
   speakers: number[],
-  running: boolean,
+  showAnim: boolean,
   stage: number
 ): ReactNode => {
   return (
@@ -33,12 +33,12 @@ const dots = (
           <div className="relative" key={`dot${el}`}>
             <div
               className={`${dot} ${stage > el ? dotfill : ""} ${
-                running && stage == el ? "!border-emerald-400" : ""
+                showAnim && stage == el ? "!border-emerald-400" : ""
               }`}
             />
             <div
               className={`absolute left-0 top-0 ${dot} ${
-                running && stage == el ? dotactive : ""
+                showAnim && stage == el ? dotactive : ""
               }`}
             />
           </div>
@@ -99,7 +99,7 @@ export default function PageDebateOneClock() {
           <h2 className="text-2xl">{debate?.data.proTeam || "Anonymous"}</h2>
           <p className="text-zinc-400">{asPro}</p>
           <div className="flex flex-row gap-1 my-2">
-            {dots([0, 2, 4, 6], running, stage)}
+            {dots([0, 2, 4, 6], running && !advocem, stage)}
           </div>
         </div>
         <div
@@ -112,10 +112,10 @@ export default function PageDebateOneClock() {
           </p>
           <div className="flex flex-row justify-between gap-16 lg:hidden">
             <div className="flex flex-row gap-2">
-              {dots([0, 2, 4, 6], running, stage)}
+              {dots([0, 2, 4, 6], running && !advocem, stage)}
             </div>
             <div className="flex flex-row gap-2">
-              {dots([1, 3, 5, 7], running, stage)}
+              {dots([1, 3, 5, 7], running && !advocem, stage)}
             </div>
           </div>
           <div className="mt-6">
@@ -130,7 +130,7 @@ export default function PageDebateOneClock() {
           <h2 className="text-2xl">{debate?.data.oppTeam || "Anonymous"}</h2>
           <p className="text-zinc-400">{asOpp}</p>
           <div className="flex flex-row gap-1 my-2">
-            {dots([1, 3, 5, 7], running, stage)}
+            {dots([1, 3, 5, 7], running && !advocem, stage)}
           </div>
         </div>
         <div

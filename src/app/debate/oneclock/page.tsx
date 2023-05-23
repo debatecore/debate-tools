@@ -11,10 +11,10 @@ import Link from "next/link";
 import { ReactNode, useContext, useState } from "react";
 
 const dot = `
-  h-3 w-3 rounded-full border-2 border-zinc-500
+  h-3 w-3 rounded-full border-2 border-zinc-500 z-10
   `;
 const dotfill = "bg-zinc-500";
-const dotactive = "border-emerald-400 animate-ping";
+const dotactive = "!border-emerald-400 z-20 animate-ping";
 const button = `
   bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
   hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
@@ -33,7 +33,7 @@ const dots = (
           <div className="relative" key={`dot${el}`}>
             <div
               className={`${dot} ${stage > el ? dotfill : ""} ${
-                running && stage == el ? "border-emerald-400" : ""
+                running && stage == el ? "!border-emerald-400" : ""
               }`}
             />
             <div

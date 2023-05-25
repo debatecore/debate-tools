@@ -10,12 +10,7 @@ import {
   debateType,
   defaultDebate,
 } from "@/contexts/DebateContext";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Debate Tools.",
-  description: "Tools to aid with conducting oxford format debates.",
-};
+import Head from "next/head";
 
 export default function RootLayout({
   children,
@@ -25,6 +20,7 @@ export default function RootLayout({
   const [initialFetch, setInitialFetch] = useState<boolean>(false);
   const [lang, setLang] = useState<language>("en");
   const [debate, setDebate] = useState<debateType>(defaultDebate);
+
   useEffect(() => {
     if (typeof localStorage == "undefined") return;
     if (initialFetch) {
@@ -42,9 +38,17 @@ export default function RootLayout({
       }
     }
   }, [initialFetch, lang, debate]);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+        <Head>
+          <title>Debate Tools.</title>
+          <meta
+            name="description"
+            content="Tools to aid in conducting oxford format debates."
+          />
+        </Head>
         <ThemeProvider themes={["light", "dark", "projector"]}>
           <LangContext.Provider value={{ lang, setLang }}>
             <DebateContext.Provider

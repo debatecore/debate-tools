@@ -1,16 +1,52 @@
 "use client";
 import { DebateClock } from "@/components/DebateClock";
 import { AlertCircle } from "@/components/icons/AlertCircle";
-import { AlertTriangle } from "@/components/icons/AlertTriangle";
 import { ArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
 import { PauseCircle } from "@/components/icons/PauseCircle";
 import { PlayCircle } from "@/components/icons/PlayCircle";
-import { RotateCCW } from "@/components/icons/RotateCCW";
 import { StopCircle } from "@/components/icons/StopCircle";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { ReactNode, useContext, useState } from "react";
+
+const dot = `
+  h-3 w-3 rounded-full border-2 border-zinc-500 z-10
+  `;
+const dotfill = "bg-zinc-500";
+const dotactive = "!border-emerald-400 z-20 animate-ping";
+const button = `
+  bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
+  hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
+  disabled:opacity-50 transition-all
+  `;
+
+const dots = (
+  speakers: number[],
+  showAnim: boolean,
+  stage: number
+): ReactNode => {
+  return (
+    <>
+      {speakers.map((el) => {
+        return (
+          <div className="relative" key={`dot${el}`}>
+            <div
+              className={`${dot} ${stage > el ? dotfill : ""} ${
+                showAnim && stage == el ? "!border-emerald-400" : ""
+              }`}
+            />
+            <div
+              className={`absolute left-0 top-0 ${dot} ${
+                showAnim && stage == el ? dotactive : ""
+              }`}
+            />
+          </div>
+        );
+      })}
+    </>
+  );
+};
 
 export default function PageDebate() {
   const debate = useContext(DebateContext);
@@ -18,17 +54,6 @@ export default function PageDebate() {
   const [running, setRunning] = useState<boolean>(false);
   const [stage, setStage] = useState<number>(0);
   const [advocem, setAdvocem] = useState<boolean>(false);
-
-  const dot = `
-    h-3 w-3 rounded-full border-2 border-zinc-500
-  `;
-  const dotfill = "bg-zinc-500";
-  const dotactive = "border-zinc-400";
-  const button = `
-    bg-zinc-700 p-2 rounded hover:bg-zinc-600 border border-transparent
-    hover:border-zinc-400 disabled:cursor-not-allowed flex flex-row gap-2
-    disabled:opacity-50 transition-all
-  `;
 
   const stageText = useLang(
     stage == 0
@@ -60,120 +85,68 @@ export default function PageDebate() {
   return (
     <>
       <div className="text-center py-8 pt-16">
-        <h1 className="font-serif text-4xl">
+        <h1 className="text-2xl md:text-4xl">
           {debate?.data.motion || "No motion given."}
         </h1>
         <p className="text-zinc-400">{oxfordDebate}</p>
       </div>
-      <div className={`flex flex-row py-4 ${stage === 8 ? "opacity-50" : ""}`}>
-        <div className="w-1/2">
-          <h2 className="font-serif text-2xl text-center">
-            {debate?.data.proTeam || "Anonymous Team"}
-          </h2>
-          <p className="text-zinc-400 text-center">{asPro}</p>
-          <div className="flex flex-row gap-2 justify-center pt-1">
-            <div
-              className={`
-                ${dot}
-                ${stage > 0 ? dotfill : ""}
-                ${stage === 0 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 2 ? dotfill : ""}
-                ${stage === 2 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 4 ? dotfill : ""}
-                ${stage === 4 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 6 ? dotfill : ""}
-                ${stage === 6 ? dotactive : ""}
-              `}
-            />
+      <div className="relative flex flex-row justify-center py-4">
+        <div
+          className={`w-1/3 text-right flex flex-col items-end ${
+            stage === 8 ? "opacity-80" : ""
+          } hidden lg:flex `}
+        >
+          <h2 className="text-2xl">{debate?.data.proTeam || "Anonymous"}</h2>
+          <p className="text-zinc-400">{asPro}</p>
+          <div className="flex flex-row gap-1 my-2">
+            {dots([0, 2, 4, 6], running && !advocem, stage)}
           </div>
-        </div>
-        <div className="w-1/2">
-          <h2 className="font-serif text-2xl text-center">
-            {debate?.data.oppTeam || "Anonymous Team"}
-          </h2>
-          <p className="text-zinc-400 text-center">{asOpp}</p>
-          <div className="flex flex-row gap-2 justify-center pt-1">
-            <div
-              className={`
-                ${dot}
-                ${stage > 1 ? dotfill : ""}
-                ${stage === 1 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 3 ? dotfill : ""}
-                ${stage === 3 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 5 ? dotfill : ""}
-                ${stage === 5 ? dotactive : ""}
-              `}
-            />
-            <div
-              className={`
-                ${dot}
-                ${stage > 7 ? dotfill : ""}
-                ${stage === 7 ? dotactive : ""}
-              `}
-            />
-          </div>
-        </div>
-      </div>
-      <p className="text-center text-zinc-400">
-        {advocem ? "AD VOCEM" : stage != 8 ? stageText : "-"}
-      </p>
-      <div className="relative flex flex-row py-4">
-        <div className="w-1/2 flex flex-row justify-center">
-          <DebateClock
-            running={running && [0, 2, 4, 6].includes(stage)}
-            dimmed={(running && [1, 3, 5, 7].includes(stage)) || stage === 8}
-            advocem={advocem}
-            stage={stage}
-          />
-        </div>
-        <div className="w-1/2 flex flex-row justify-center">
-          <DebateClock
-            running={running && [1, 3, 5, 7].includes(stage)}
-            dimmed={(running && [0, 2, 4, 6].includes(stage)) || stage === 8}
-            advocem={advocem}
-            stage={stage}
-          />
         </div>
         <div
-          className={`absolute w-full h-full ${stage === 8 ? "" : "hidden"}`}
+          className={`lg:w-1/3 flex flex-col gap-2 text-center justify-center items-center ${
+            stage === 8 ? "opacity-10" : ""
+          } `}
         >
-          <div className="flex flex-col w-full h-full justify-center items-center">
-            <h1 className="font-bold text-3xl text-daisy-bush-100">{stage8}</h1>
-            <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
+          <p className="text-zinc-400">
+            {advocem ? "AD VOCEM" : stage != 8 ? stageText : "-"}
+          </p>
+          <div className="flex flex-row justify-between gap-16 lg:hidden">
+            <div className="flex flex-row gap-2">
+              {dots([0, 2, 4, 6], running && !advocem, stage)}
+            </div>
+            <div className="flex flex-row gap-2">
+              {dots([1, 3, 5, 7], running && !advocem, stage)}
+            </div>
           </div>
+          <div className="mt-6">
+            <DebateClock running={running} stage={stage} advocem={advocem} />
+          </div>
+        </div>
+        <div
+          className={`w-1/3 text-left flex flex-col items-start ${
+            stage == 8 ? "opacity-80" : ""
+          } hidden lg:flex`}
+        >
+          <h2 className="text-2xl">{debate?.data.oppTeam || "Anonymous"}</h2>
+          <p className="text-zinc-400">{asOpp}</p>
+          <div className="flex flex-row gap-1 my-2">
+            {dots([1, 3, 5, 7], running && !advocem, stage)}
+          </div>
+        </div>
+        <div
+          className={`absolute w-full h-full flex flex-col justify-center items-center ${
+            stage !== 8 ? "hidden" : ""
+          }`}
+        >
+          <h1 className="font-bold text-3xl text-daisy-bush-100">{stage8}</h1>
+          <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
         </div>
       </div>
       <div className={stage == 8 ? "hidden" : ""}>
-        <div className="max-w-lg mx-auto flex flex-row justify-center gap-2 pt-32">
+        <div className="max-w-lg mx-auto flex flex-row justify-center gap-2 pt-16">
           {stage === 0 && !running ? (
             <Link href="/debate/setup" className={button}>
               <ArrowLeftCircle />
-              {/* <p className="hidden sm:block">{back}</p> */}
             </Link>
           ) : (
             <button
@@ -185,7 +158,6 @@ export default function PageDebate() {
               }}
             >
               <StopCircle />
-              {/* <p className="hidden sm:block">{nukedebate}</p> */}
             </button>
           )}
           <button
@@ -220,7 +192,7 @@ export default function PageDebate() {
         </div>
       </div>
       <div
-        className={`max-w-lg mx-auto flex flex-row justify-center gap-2 py-6 pt-32 ${
+        className={`max-w-lg mx-auto flex flex-row justify-center gap-2 py-6 pt-16 ${
           stage == 8 ? "" : "hidden"
         }`}
       >

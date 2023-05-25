@@ -10,6 +10,12 @@ import {
   debateType,
   defaultDebate,
 } from "@/contexts/DebateContext";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Debate Tools.",
+  description: "Tools to aid with conducting oxford format debates.",
+};
 
 export default function RootLayout({
   children,

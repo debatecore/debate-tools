@@ -19,7 +19,7 @@ const defaultDebate: debateType = {
   speechTime: 240,
   adVocemTime: 60,
   protectedTime: 30,
-  showProtectedTime: true,
+  showProtectedTime: false,
   beepProtectedTime: true,
 };
 export { defaultDebate };

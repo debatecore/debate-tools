@@ -4,6 +4,8 @@ import { useLang } from "@/lib/useLang";
 import { useContext, useState } from "react";
 import { IconCheckSquare } from "./icons/CheckSquare";
 import { IconSquare } from "./icons/Square";
+import { IconCheck } from "./icons/Check";
+import { IconX } from "./icons/X";
 
 const DebateSetting = (props: { setting: keyof debateType }) => {
   const debate = useContext(DebateContext);
@@ -159,25 +161,23 @@ const DebateSetting = (props: { setting: keyof debateType }) => {
               showProtectedTime: !debate.data.showProtectedTime,
             })
           }
-          className={`${buttonstyle} ${
-            debate?.data.showProtectedTime ? activestyle : ""
-          } text-left pl-6`}
+          className={`${buttonstyle} text-left pl-6 px-4 flex flex-row justify-between`}
         >
           {string}
+          {debate?.data.showProtectedTime ? <IconCheck /> : <IconX />}
         </button>
       ) : props.setting === "beepProtectedTime" ? (
         <button
           onClick={() =>
             debate?.setData({
               ...debate.data,
-              showProtectedTime: !debate.data.showProtectedTime,
+              beepProtectedTime: !debate.data.beepProtectedTime,
             })
           }
-          className={`${buttonstyle} ${
-            debate?.data.beepProtectedTime ? activestyle : ""
-          } text-left pl-6`}
+          className={`${buttonstyle} text-left pl-6 px-4 flex flex-row justify-between`}
         >
           {string}
+          {debate?.data.beepProtectedTime ? <IconCheck /> : <IconX />}
         </button>
       ) : inputType === "string" ? (
         <input

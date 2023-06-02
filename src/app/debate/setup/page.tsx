@@ -32,8 +32,8 @@ export default function PageDebateSetup() {
         <DebateSetting setting="speechTime" />
         <DebateSetting setting="protectedTime" />
         <DebateSetting setting="adVocemTime" />
-        {/* <DebateSetting setting="showProtectedTime" /> */}
-        {/* <DebateSetting setting="beepProtectedTime" /> */}
+        <DebateSetting setting="showProtectedTime" />
+        <DebateSetting setting="beepProtectedTime" />
       </div>
       <div className="flex flex-row max-w-md mx-auto gap-2">
         <Link href="/" className="mr-auto">

@@ -76,5 +76,9 @@
   "showProtectedTime": "Pokaż czas chroniony",
   "showProtectedTimeDesc": "Zaznaczony na żółto.",
   "beepProtectedTime": "Sygnały dźwiękowe",
-  "beepProtectedTimeDesc": "Czas chroniony - raz, koniec mowy - dwa."
+  "beepProtectedTimeDesc": "Czas chroniony - raz, koniec mowy - dwa.",
+  "soundDemo": "Demo dźwiękowe",
+  "soundDemoExpl": "Kliknij poniższe przyciski by usłyszeć dźwięki odtwarzane przez stronę. Podczas debaty pojedyńczy sygnał oznacza koniec i początek czasów chronionych, a podwójny sygnał informuje o skończeniu się czasu mówcy.",
+  "singlePing": "Pojedyńczy sygnał",
+  "doublePing": "Podwójny sygnał"
 }

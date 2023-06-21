@@ -76,5 +76,9 @@
   "showProtectedTime": "Indicate Protected Time",
   "showProtectedTimeDesc": "Shows in yellow.",
   "beepProtectedTime": "Beep",
-  "beepProtectedTimeDesc": "Once on protected time, twice on speech end."
+  "beepProtectedTimeDesc": "Once on protected time, twice on speech end.",
+  "soundDemo": "Sound Demo",
+  "soundDemoExpl": "Press the buttons to preview sounds played by the website. During a debate, a single ping may play to indicate the end and start of protected time, while the double ping may play to signify a speaker's time running out.",
+  "singlePing": "Single Ping",
+  "doublePing": "Double Ping"
 }

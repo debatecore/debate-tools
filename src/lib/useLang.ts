@@ -81,7 +81,11 @@ type tokens =
   | "back"
   | "nukedebate"
   | "speechstart"
-  | "speechend";
+  | "speechend"
+  | "soundDemo"
+  | "soundDemoExpl"
+  | "singlePing"
+  | "doublePing";
 export type { tokens };
 
 const useLang = (token: tokens) => {

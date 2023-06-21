@@ -14,6 +14,7 @@ export default function PageIndex() {
   const debateUtility = useLang("oxfDebateUtility");
   const ladderGen = useLang("ladderGen");
   const motionGen = useLang("motionGen");
+  const soundDemo = useLang("soundDemo");
 
   return (
     <>
@@ -24,6 +25,9 @@ export default function PageIndex() {
       <div className="buttonflex">
         <Link tabIndex={-1} href="/debate/setup">
           <button>{debateUtility}</button>
+        </Link>
+        <Link tabIndex={-1} href="/soundtest">
+          <button>{soundDemo}</button>
         </Link>
         <Link tabIndex={-1} href="bracket-generator">
           <button disabled>{ladderGen}</button>

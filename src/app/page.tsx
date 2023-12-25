@@ -4,6 +4,7 @@ import { useLang } from "@/lib/useLang";
 import Link from "next/link";
 import { useContext, useState } from "react";
 import { LangContext } from "@/contexts/LangContext";
+import { IconGitHub } from "@/components/icons/GitHub";
 
 export default function PageIndex() {
   const [langsOpen, setLangsOpen] = useState<boolean>(false);
@@ -37,34 +38,43 @@ export default function PageIndex() {
         </Link>
       </div>
 
-      <button
-        className={`langbtn ${langsOpen ? "opened" : ""}`}
-        onClick={() => {
-          setLangsOpen(!langsOpen);
-        }}
-      >
-        {langContext?.lang === "pl" ? "polski" : "English"}
-        <IconChevronDown />
-      </button>
-      <div className={`langpane ${langsOpen ? "" : "hide"}`}>
+      <div className="flex flex-row absolute top-0 right-0 pt-4 gap-6">
+        <Link
+          href="https://github.com/jakubmanczak/debates"
+          className="rounded bg-zinc-700 p-1 z-30 border border-transparent hover:bg-zinc-600 hover:border-zinc-400"
+        >
+          <IconGitHub />
+        </Link>
+        <button className="z-20 w-32"></button>
         <button
-          className={langContext?.lang == "en" ? "hidden" : ""}
+          className={`langbtn ${langsOpen ? "opened" : ""}`}
           onClick={() => {
-            langContext?.setLang("en");
-            setLangsOpen(false);
+            setLangsOpen(!langsOpen);
           }}
         >
-          English
+          {langContext?.lang === "pl" ? "polski" : "English"}
+          <IconChevronDown />
         </button>
-        <button
-          className={langContext?.lang == "pl" ? "hidden" : ""}
-          onClick={() => {
-            langContext?.setLang("pl");
-            setLangsOpen(false);
-          }}
-        >
-          polski
-        </button>
+        <div className={`langpane ${langsOpen ? "" : "hide"}`}>
+          <button
+            className={langContext?.lang == "en" ? "hidden" : ""}
+            onClick={() => {
+              langContext?.setLang("en");
+              setLangsOpen(false);
+            }}
+          >
+            English
+          </button>
+          <button
+            className={langContext?.lang == "pl" ? "hidden" : ""}
+            onClick={() => {
+              langContext?.setLang("pl");
+              setLangsOpen(false);
+            }}
+          >
+            polski
+          </button>
+        </div>
       </div>
     </>
   );

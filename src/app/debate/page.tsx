@@ -73,10 +73,11 @@ export default function PageDebate() {
       : "STAGE_7"
   );
   const stage8 = useLang("STAGE_8");
-  const back = useLang("back");
-  const nukedebate = useLang("nukedebate");
+  // const back = useLang("back");
+  // const nukedebate = useLang("nukedebate");
   const speechstart = useLang("speechstart");
   const speechend = useLang("speechend");
+  const backtodbtconfig = useLang("backtodebateconfig");
 
   const oxfordDebate = useLang("oxfordDebate");
   const asPro = useLang("asPro");
@@ -142,24 +143,21 @@ export default function PageDebate() {
           <div className="text-5xl mt-4 animate-wiggle">{"🎉"}</div>
         </div>
       </div>
+      {/*  */}
       <div className={stage == 8 ? "hidden" : ""}>
         <div className="max-w-lg mx-auto flex flex-row justify-center gap-2 pt-16">
-          {stage === 0 && !running ? (
-            <Link href="/debate/setup" className={button}>
-              <ArrowLeftCircle />
-            </Link>
-          ) : (
-            <button
-              className={button}
-              onClick={() => {
-                setRunning(false);
-                setAdvocem(false);
-                setStage(0);
-              }}
-            >
-              <StopCircle />
-            </button>
-          )}
+          <button
+            className={button}
+            disabled={running || advocem || !stage}
+            onClick={() => {
+              if (running || advocem || !stage) return;
+              setRunning(false);
+              setAdvocem(false);
+              setStage(stage - 1);
+            }}
+          >
+            <ArrowLeftCircle />
+          </button>
           <button
             className={`${button} ${
               advocem ? "!bg-emerald-500 hover:border-white text-white" : ""
@@ -190,27 +188,20 @@ export default function PageDebate() {
             </p>
           </button>
         </div>
+        <div className="max-w-lg mx-auto flex flex-row justify-center mt-2">
+          <Link href="/debate/setup" className="text-zinc-400 hover:underline">
+            {backtodbtconfig}
+          </Link>
+        </div>
       </div>
       <div
         className={`max-w-lg mx-auto flex flex-row justify-center gap-2 py-6 pt-16 ${
           stage == 8 ? "" : "hidden"
         }`}
       >
-        <Link href="/" className={button}>
-          <ArrowLeftCircle />
-          <p className="hidden sm:block">{back}</p>
+        <Link href="/debate/setup" className={button}>
+          {backtodbtconfig}
         </Link>
-        <button
-          className={button}
-          onClick={() => {
-            setRunning(false);
-            setAdvocem(false);
-            setStage(0);
-          }}
-        >
-          <StopCircle />
-          <p className="hidden sm:block">{nukedebate}</p>
-        </button>
       </div>
     </>
   );

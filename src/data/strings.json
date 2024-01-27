@@ -2,7 +2,7 @@
   "debateTools": {
     "en": "Debate Tools",
     "pl": "Narzędzia Debatanckie",
-    "de": "Debattenhilfskräfte",
+    "de": "Debattensoftware",
     "jp": "ディベートツール"
   },
   "byPoznanDebaters": {
@@ -14,5 +14,25 @@
     "pl": "Język",
     "de": "Sprache",
     "jp": "言語"
+  },
+  "oxfordDebateConductionUtility": {
+    "en": "Oxford Debate Utility",
+    "pl": "Narzędzie do przeprowadzenia debaty"
+  },
+  "soundDemonstration": {
+    "en": "Sound Demonstration",
+    "pl": "Demonstracja Dźwięku"
+  },
+  "debateMotionGenerator": {
+    "en": "Debate Motion Generator",
+    "pl": "Generator tez do debaty"
+  },
+  "tournamentLadderGenerator": {
+    "en": "Tournament Ladder Generator",
+    "pl": "Generator drabinki turniejowej"
+  },
+  "disclaimer": {
+    "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely. © 2023-2024 Jakub Mańczak.",
+    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie. © 2023-2024 Jakub Mańczak."
   }
 }

@@ -4,8 +4,10 @@ import strings from "@/data/strings.json";
 import { languages } from "@/types/language";
 
 const useLang = (token: keyof typeof strings) => {
-  const lang: languages = "en";
-  return lang in strings[token] ? strings[token][lang] : strings[token]["en"];
+  let lang: languages = "en";
+  return (
+    (strings[token] as Record<languages, string>)[lang] || strings[token]["en"]
+  );
 };
 
 export { useLang };

@@ -8,16 +8,16 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col text-center mt-16 mb-8">
-          <h1 className="text-4xl font-serif">Debate Tools</h1>
+          <h1 className="text-4xl font-serif">{useLang("debateTools")}</h1>
           <p className="text-neutral-500 flex flex-row justify-center gap-[2px] select-none">
             {"Made with"}
             <IconHeart moreClass="scale-75" />
-            {"in Poznań by fellow debaters."}
+            {useLang("byPoznanDebaters")}
           </p>
         </div>
         <div className="flex flex-col w-fit mx-auto gap-2">
           <div className="flex flex-row justify-between text-neutral-500">
-            <p>Language</p>
+            <p>{useLang("language")}</p>
             <select className="bg-transparent">
               <option value="en">🇬🇧 English</option>
               <option value="pl">🇵🇱 polski</option>
@@ -28,28 +28,23 @@ export default function Home() {
           {[
             {
               dest: "/oxford-debate/setup",
-              name: "Oxford Debate Utility",
+              name: useLang("oxfordDebateConductionUtility"),
             },
             {
               dest: "/sound-demonstration",
-              name: "Sound Demonstration",
+              name: useLang("soundDemonstration"),
               disabled: true,
             },
             {
               dest: "/debate-motion-generator",
-              name: "Debate Motion Generator",
+              name: useLang("debateMotionGenerator"),
               disabled: true,
             },
             {
               dest: "/ladder-generator",
-              name: "Tournament Ladder Generator",
+              name: useLang("tournamentLadderGenerator"),
               disabled: true,
             },
-            // {
-            //   dest: "/about",
-            //   name: "About the site",
-            //   // disabled: true,
-            // },
           ].map((el) => {
             return (
               <div key={el.dest}>
@@ -73,17 +68,10 @@ export default function Home() {
               </div>
             );
           })}
-          <div className="flex flex-row justify-between text-neutral-500">
-            {/* {useLang("byPoznanDebaters")} */}
-          </div>
         </div>
       </div>
       <div className="hidden lg:block max-w-7xl mx-auto mt-auto text-neutral-800 text-center p-2">
-        <p className="text-balance">
-          Originally made for the purposes of the debaters from ZSK Poznań as
-          well as various Polish debate organisations. Available freely. &copy;
-          2023-2024 Jakub Mańczak.
-        </p>
+        <p className="text-balance">{useLang("disclaimer")}</p>
       </div>
     </div>
   );

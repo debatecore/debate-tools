@@ -1,81 +1,90 @@
-"use client";
-import { IconChevronDown } from "@/components/icons/ChevronDown";
+import { IconHeart } from "@/components/icons/Heart";
 import { useLang } from "@/lib/useLang";
 import Link from "next/link";
-import { useContext, useState } from "react";
-import { LangContext } from "@/contexts/LangContext";
-import { IconGitHub } from "@/components/icons/GitHub";
+import React from "react";
 
-export default function PageIndex() {
-  const [langsOpen, setLangsOpen] = useState<boolean>(false);
-  const langContext = useContext(LangContext);
-
-  const debateTools = useLang("debateTools");
-  const madeWithLove = useLang("madeWithLove");
-  const debateUtility = useLang("oxfDebateUtility");
-  const ladderGen = useLang("ladderGen");
-  const motionGen = useLang("motionGen");
-  const soundDemo = useLang("soundDemo");
-
+export default function Home() {
   return (
-    <>
-      <div className="text-center py-12 pt-14">
-        <h1 className="text-4xl font-serif text-zinc-50">{debateTools}</h1>
-        <p className="text-zinc-400">{madeWithLove}</p>
-      </div>
-      <div className="buttonflex">
-        <Link tabIndex={-1} href="/debate/setup">
-          <button>{debateUtility}</button>
-        </Link>
-        <Link tabIndex={-1} href="/soundtest">
-          <button>{soundDemo}</button>
-        </Link>
-        <Link tabIndex={-1} href="bracket-generator">
-          <button disabled>{ladderGen}</button>
-        </Link>
-        <Link tabIndex={-1} href="/motion-generator">
-          <button disabled>{motionGen}</button>
-        </Link>
-      </div>
-
-      <div className="flex flex-row absolute top-0 right-0 pt-4 gap-6">
-        <Link
-          href="https://github.com/jakubmanczak/debates"
-          className="rounded bg-zinc-700 p-1 z-30 border border-transparent hover:bg-zinc-600 hover:border-zinc-400"
-        >
-          <IconGitHub />
-        </Link>
-        <button className="z-20 w-32"></button>
-        <button
-          className={`langbtn ${langsOpen ? "opened" : ""}`}
-          onClick={() => {
-            setLangsOpen(!langsOpen);
-          }}
-        >
-          {langContext?.lang === "pl" ? "polski" : "English"}
-          <IconChevronDown />
-        </button>
-        <div className={`langpane ${langsOpen ? "" : "hide"}`}>
-          <button
-            className={langContext?.lang == "en" ? "hidden" : ""}
-            onClick={() => {
-              langContext?.setLang("en");
-              setLangsOpen(false);
-            }}
-          >
-            English
-          </button>
-          <button
-            className={langContext?.lang == "pl" ? "hidden" : ""}
-            onClick={() => {
-              langContext?.setLang("pl");
-              setLangsOpen(false);
-            }}
-          >
-            polski
-          </button>
+    <div className="flex flex-col min-h-screen">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col text-center mt-16 mb-8">
+          <h1 className="text-4xl font-serif">Debate Tools</h1>
+          <p className="text-neutral-500 flex flex-row justify-center gap-[2px] select-none">
+            {"Made with"}
+            <IconHeart moreClass="scale-75" />
+            {"in Poznań by fellow debaters."}
+          </p>
+        </div>
+        <div className="flex flex-col w-fit mx-auto gap-2">
+          <div className="flex flex-row justify-between text-neutral-500">
+            <p>Language</p>
+            <select className="bg-transparent">
+              <option value="en">🇬🇧 English</option>
+              <option value="pl">🇵🇱 polski</option>
+              <option value="de">🇩🇪 Deutsch</option>
+              <option value="jp">🇯🇵 日本語</option>
+            </select>
+          </div>
+          {[
+            {
+              dest: "/oxford-debate/setup",
+              name: "Oxford Debate Utility",
+            },
+            {
+              dest: "/sound-demonstration",
+              name: "Sound Demonstration",
+              disabled: true,
+            },
+            {
+              dest: "/debate-motion-generator",
+              name: "Debate Motion Generator",
+              disabled: true,
+            },
+            {
+              dest: "/ladder-generator",
+              name: "Tournament Ladder Generator",
+              disabled: true,
+            },
+            // {
+            //   dest: "/about",
+            //   name: "About the site",
+            //   // disabled: true,
+            // },
+          ].map((el) => {
+            return (
+              <div key={el.dest}>
+                <Link
+                  href={el.disabled ? "/" : el.dest}
+                  className="rounded-lg"
+                  tabIndex={el.disabled ? -1 : 0}
+                >
+                  <button
+                    disabled={el.disabled}
+                    tabIndex={-1}
+                    className={`
+                      ml-auto p-2 px-6 rounded-lg w-full border-2
+                      border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                    `}
+                  >
+                    {el.name}
+                  </button>
+                </Link>
+              </div>
+            );
+          })}
+          <div className="flex flex-row justify-between text-neutral-500">
+            {/* {useLang("byPoznanDebaters")} */}
+          </div>
         </div>
       </div>
-    </>
+      <div className="hidden lg:block max-w-7xl mx-auto mt-auto text-neutral-800 text-center p-2">
+        <p className="text-balance">
+          Originally made for the purposes of the debaters from ZSK Poznań as
+          well as various Polish debate organisations. Available freely. &copy;
+          2023-2024 Jakub Mańczak.
+        </p>
+      </div>
+    </div>
   );
 }

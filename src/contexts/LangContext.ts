@@ -1,10 +1,8 @@
-import { Dispatch, SetStateAction, createContext } from "react";
-
-type language = "en" | "pl";
-export type { language };
+import { languages } from "@/types/language";
+import { createContext } from "react";
 
 const LangContext = createContext<{
-  lang: language;
-  setLang: Dispatch<SetStateAction<language>>;
+  lang: languages;
+  setLang: (lang: languages) => void;
 } | null>(null);
 export { LangContext };

@@ -6,7 +6,6 @@ import { languages } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
 
 const inter = Inter({ subsets: ["latin"] });
-export { inter };
 
 export default function RootLayout({
   children,

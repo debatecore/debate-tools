@@ -1,5 +1,4 @@
 "use client";
-import { IconBell } from "@/components/icons/Bell";
 import { IconHeart } from "@/components/icons/Heart";
 import { LangContext } from "@/contexts/LangContext";
 import { useLang } from "@/lib/useLang";
@@ -59,7 +58,6 @@ export default function Home() {
             {
               dest: "/sound-demonstration",
               name: useLang("soundDemonstration"),
-              disabled: true,
             },
             {
               dest: "/debate-motion-generator",

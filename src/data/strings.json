@@ -35,6 +35,12 @@
     "pl": "Demonstracja Dźwięku",
     "de": "Klingdemo"
   },
+  "soundDemonstrationSubtitle": {
+    "en": "Click the buttons to preview sounds."
+  },
+  "soundDemonstrationSingleDoubleExpl": {
+    "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's alloted time."
+  },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
     "pl": "Generator tez do debaty",

@@ -1,38 +1,51 @@
 {
-  "debateTools": {
-    "en": "Debate Tools",
-    "pl": "Narzędzia Debatanckie",
-    "de": "Debattensoftware",
-    "jp": "ディベートツール"
-  },
-  "byPoznanDebaters": {
-    "en": "in Poznań by fellow debaters.",
-    "pl": "przez debatantów z Poznania."
-  },
   "language": {
     "en": "Language",
     "pl": "Język",
     "de": "Sprache",
     "jp": "言語"
   },
+  "selfLanguageString": {
+    "en": "🇬🇧 English",
+    "pl": "🇵🇱 polski",
+    "de": "🇩🇪 Deutsch",
+    "jp": "🇯🇵 日本語"
+  },
+  "debateTools": {
+    "en": "Debate Tools",
+    "pl": "Narzędzia Debatanckie",
+    "de": "Debattensoftware",
+    "jp": "ディベートツール"
+  },
+  "madeWith": {
+    "en": "Made with",
+    "de": "Hergestellt mit"
+  },
+  "byPoznanDebaters": {
+    "en": "in Poznań by fellow debaters.",
+    "de": "von Posener Debattierer."
+  },
   "oxfordDebateConductionUtility": {
-    "en": "Oxford Debate Utility",
-    "pl": "Narzędzie do przeprowadzenia debaty"
+    "en": "Oxford Debate Conduction",
+    "pl": "Przeprowadzenie debaty",
+    "de": "Debattenführung"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
-    "pl": "Demonstracja Dźwięku"
+    "pl": "Demonstracja Dźwięku",
+    "de": "Klingdemo"
   },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
-    "pl": "Generator tez do debaty"
+    "pl": "Generator tez do debaty",
+    "de": "Debattenthesisgenerator"
   },
   "tournamentLadderGenerator": {
     "en": "Tournament Ladder Generator",
     "pl": "Generator drabinki turniejowej"
   },
   "disclaimer": {
-    "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely. © 2023-2024 Jakub Mańczak.",
-    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie. © 2023-2024 Jakub Mańczak."
+    "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
+    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie."
   }
 }

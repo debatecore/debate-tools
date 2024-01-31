@@ -14,7 +14,7 @@
   "debateTools": {
     "en": "Debate Tools",
     "pl": "Narzędzia Debatanckie",
-    "de": "Debattensoftware",
+    "de": "Debatten-Tool",
     "jp": "ディベートツール"
   },
   "madeWith": {
@@ -33,13 +33,15 @@
   "soundDemonstration": {
     "en": "Sound Demonstration",
     "pl": "Demonstracja Dźwięku",
-    "de": "Klingdemo"
+    "de": "Tondemo"
   },
   "soundDemonstrationSubtitle": {
-    "en": "Click the buttons to preview sounds."
+    "en": "Click the buttons to preview sounds.",
+    "de": "Ancklicken, um die Vorschautone anzuhören."
   },
   "soundDemonstrationSingleDoubleExpl": {
-    "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's alloted time."
+    "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
+    "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann die Ende der Ansprachezeit zu signalisieren."
   },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
@@ -48,10 +50,12 @@
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",
-    "pl": "Planer turniejowy"
+    "pl": "Planowanie turnieju",
+    "de": "Wettbewerb planen"
   },
   "disclaimer": {
     "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
-    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie."
+    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
+    "de": "Originell herstellt um die Notwendigkeiten der Posener und Polnisher Debattierer zu befriedigen. Öffentlich zugängliche."
   }
 }

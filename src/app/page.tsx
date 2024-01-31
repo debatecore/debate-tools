@@ -1,5 +1,4 @@
 "use client";
-import { IconAward } from "@/components/icons/Award";
 import { IconBell } from "@/components/icons/Bell";
 import { IconClipboard } from "@/components/icons/Clipboard";
 import { IconClock } from "@/components/icons/Clock";
@@ -8,7 +7,6 @@ import { IconHeart } from "@/components/icons/Heart";
 import { LangContext } from "@/contexts/LangContext";
 import { useLang } from "@/lib/useLang";
 import { iconprops } from "@/types/iconprops";
-import { languages } from "@/types/language";
 import Link from "next/link";
 import React, { useContext, useRef } from "react";
 
@@ -107,7 +105,7 @@ export default function Home() {
                       {el.icon
                         ? el.icon({
                             moreClass:
-                              "absolute bottom-1 right-0 scale-[1.75] rotate-[-15deg] text-neutral-700 z-10",
+                              "absolute bottom-1 right-0 scale-[1.75] rotate-[-15deg] opacity-[.15] text-white z-10",
                           })
                         : ""}
                     </button>

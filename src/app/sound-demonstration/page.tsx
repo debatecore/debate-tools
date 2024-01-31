@@ -1,11 +1,7 @@
 "use client";
-import { IconAlertTriangle } from "@/components/icons/AlertTriangle";
 import { IconBell } from "@/components/icons/Bell";
-import { IconClock } from "@/components/icons/Clock";
-import { IconDoubleBell } from "@/components/icons/DoubleBell";
 import { useLang } from "@/lib/useLang";
 import { iconprops } from "@/types/iconprops";
-import Link from "next/link";
 
 export default function SoundTestPage() {
   return (

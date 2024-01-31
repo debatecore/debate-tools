@@ -46,9 +46,9 @@
     "pl": "Generator tez do debaty",
     "de": "Debattenthesisgenerator"
   },
-  "tournamentLadderGenerator": {
-    "en": "Tournament Ladder Generator",
-    "pl": "Generator drabinki turniejowej"
+  "tournamentPlanner": {
+    "en": "Tournament Planner",
+    "pl": "Planer turniejowy"
   },
   "disclaimer": {
     "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",

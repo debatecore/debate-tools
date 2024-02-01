@@ -37,11 +37,23 @@
   },
   "soundDemonstrationSubtitle": {
     "en": "Click the buttons to preview sounds.",
+    "pl": "Kliknij przycisk by odsłuchać dźwięk.",
     "de": "Anclicken, um die Vorschautone anzuhören."
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
+    "pl": "Podczas debaty, pojedyńczy dźwięk może zostać odtworzony aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
     "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren."
+  },
+  "soundDemonstrationSinglePing": {
+    "en": "Single ping",
+    "pl": "Pojedyńczy dźwięk",
+    "de": "Singular Ton"
+  },
+  "soundDemonstrationDoublePing": {
+    "en": "Double ping",
+    "pl": "Podwójny dźwięk",
+    "de": "Doppelton"
   },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",

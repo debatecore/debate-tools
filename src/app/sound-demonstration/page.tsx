@@ -22,12 +22,12 @@ export default function SoundTestPage() {
         <div className="flex flex-row justify-center items-center gap-2 m-4">
           {[
             {
-              text: "Single ping",
+              text: useLang("soundDemonstrationSinglePing"),
               soundpath: "ping.mp3",
               righticon: IconBell,
             },
             {
-              text: "Double ping",
+              text: useLang("soundDemonstrationDoublePing"),
               soundpath: "ping2.mp3",
               righticon: IconBell,
             },

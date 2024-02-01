@@ -38,6 +38,7 @@ export default function SoundTestPage() {
                 soundpath={el.soundpath}
                 righticon={el.righticon}
                 lefticon={el.lefticon}
+                key={el.text}
               />
             );
           })}

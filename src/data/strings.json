@@ -40,6 +40,10 @@
     "pl": "Kliknij przycisk by odsłuchać dźwięk.",
     "de": "Anclicken, um die Vorschautone anzuhören."
   },
+  "soundDemonstrationStockSounds": {
+    "en": "Default sounds",
+    "pl": "Dźwięki domyślne"
+  },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
     "pl": "Podczas debaty, pojedyńczy dźwięk może zostać odtworzony aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
@@ -55,10 +59,30 @@
     "pl": "Podwójny dźwięk",
     "de": "Doppelton"
   },
+  "soundDemonstrationPoznanPack": {
+    "en": "ZTM Poznań Pack: (KBING! - Gong)",
+    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)"
+  },
+  "soundDemonstrationPoznanPackFlavortext": {
+    "en": "The iconic announcement sound known to anyone who's had the pleasure to use public transportation in the world's potato capital.",
+    "pl": "Paczka dźwięków ZTM Poznań"
+  },
+  "soundDemonstrationDisclaimer": {
+    "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl For Developers page, in an effort to promote the city of Poznań. Files last updated: 2024-02-02. Unmodified.",
+    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane."
+  },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
     "pl": "Generator tez do debaty",
     "de": "Debattenthesisgenerator"
+  },
+  "debateMotionGeneratorFlavortext": {
+    "en": "Motions taken from tournaments past.",
+    "pl": "Tezy "
+  },
+  "debateMotionGeneratorRegenerate": {
+    "en": "Regenerate motion",
+    "pl": "Wygeneruj tezę jeszcze raz"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",

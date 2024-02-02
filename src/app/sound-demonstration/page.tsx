@@ -1,8 +1,5 @@
 "use client";
-import {
-  SoundPlayerButton,
-  soundPlayerButtonType,
-} from "@/components/SoundPlayer";
+import { SoundPlayerButton } from "@/components/SoundPlayer";
 import { IconBell } from "@/components/icons/Bell";
 import { IconDoubleBell } from "@/components/icons/DoubleBell";
 import { IconPoznanBus } from "@/components/icons/PoznanBus";
@@ -43,7 +40,7 @@ export default function SoundTestPage() {
         </p>
         <div className="flex flex-row justify-center items-center gap-2 mt-4">
           <SoundPlayerButton
-            text="Transit bell"
+            text={useLang("soundDemonstrationTransitBell")}
             soundpath="KBING! - Gong.mp3"
             righticon={IconPoznanTram}
             righticonclasses="scale-x-[-1.85] scale-y-[1.85] right-[8px] top-[14px] rotate-[0]"
@@ -52,9 +49,6 @@ export default function SoundTestPage() {
           />
         </div>
       </div>
-      {/* <div className="mx-auto mt-4 flex flex-row gap-2">
-        <IconPoznanBus /> <IconPoznanTram />
-      </div> */}
       <p className="text-neutral-700 text-balance text-center mt-auto mx-auto max-w-7xl">
         {useLang("soundDemonstrationDisclaimer")}
       </p>

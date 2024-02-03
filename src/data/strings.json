@@ -42,7 +42,8 @@
   },
   "soundDemonstrationStockSounds": {
     "en": "Default sounds",
-    "pl": "Dźwięki domyślne"
+    "pl": "Dźwięki domyślne",
+    "de": "Standardtone"
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
@@ -51,7 +52,7 @@
   },
   "soundDemonstrationSinglePing": {
     "en": "Single ping",
-    "pl": "Pojedyńczy dźwięk",
+    "pl": "Pojedynczy dźwięk",
     "de": "Singular Ton"
   },
   "soundDemonstrationDoublePing": {
@@ -78,7 +79,7 @@
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
     "pl": "Generator tez do debaty",
-    "de": "Debattenthesisgenerator"
+    "de": "Debattenthesengenerator"
   },
   "debateMotionGeneratorFlavortext": {
     "en": "Motions taken from tournaments past.",
@@ -86,7 +87,8 @@
   },
   "debateMotionGeneratorRegenerate": {
     "en": "Regenerate motion",
-    "pl": "Wygeneruj tezę jeszcze raz"
+    "pl": "Wygeneruj tezę jeszcze raz",
+    "de": "Die These nochmal generieren"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",

@@ -1,18 +1,15 @@
 "use client";
+import { LangSwitchComponent } from "@/components/LangSwitch";
 import { IconBell } from "@/components/icons/Bell";
 import { IconClipboard } from "@/components/icons/Clipboard";
 import { IconClock } from "@/components/icons/Clock";
 import { IconFileText } from "@/components/icons/FileText";
 import { IconHeart } from "@/components/icons/Heart";
-import { LangContext } from "@/contexts/LangContext";
 import { useLang } from "@/lib/useLang";
 import { iconprops } from "@/types/iconprops";
 import Link from "next/link";
-import React, { useContext, useRef } from "react";
 
 export default function Home() {
-  const langContext = useContext(LangContext);
-  const refSelect = useRef<HTMLSelectElement>(null);
   return (
     <div className="flex flex-col min-h-screen">
       <div className="max-w-4xl mx-auto">
@@ -25,36 +22,7 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col w-fit mx-auto gap-2">
-          <div className="flex flex-row justify-between text-neutral-500">
-            <p>{useLang("language")}</p>
-            <select
-              className="bg-transparent"
-              ref={refSelect}
-              value={langContext.lang || "en"}
-              onChange={() => {
-                // langContext.setLang(refSelect.current?.value);
-                switch (refSelect.current?.value) {
-                  case "en":
-                    langContext.setLang("en");
-                    break;
-                  case "pl":
-                    langContext.setLang("pl");
-                    break;
-                  case "de":
-                    langContext.setLang("de");
-                    break;
-                  case "jp":
-                    langContext.setLang("jp");
-                    break;
-                }
-              }}
-            >
-              <option value="en">🇬🇧 English</option>
-              <option value="pl">🇵🇱 polski</option>
-              <option value="de">🇩🇪 Deutsch</option>
-              <option value="jp">🇯🇵 日本語</option>
-            </select>
-          </div>
+          <LangSwitchComponent />
           {[
             {
               dest: "/oxford-debate/setup",

@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { useState } from "react";
-import { languages } from "@/types/language";
+import { language } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -12,7 +12,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [stateLang, setStateLang] = useState<languages>("en");
+  const [stateLang, setStateLang] = useState<language>("en");
   return (
     <html>
       <head>

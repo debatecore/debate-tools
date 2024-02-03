@@ -17,10 +17,10 @@ export default function SoundTestPage() {
       </p>
       <div className="max-w-4xl mx-auto flex flex-col">
         <p className="text-center">Stock sounds</p>
-        <p className="text-neutral-500 text-center text-balance">
+        <p className="text-neutral-500 px-2 text-justify sm:text-center sm:text-balance">
           {useLang("soundDemonstrationSingleDoubleExpl")}
         </p>
-        <div className="flex flex-row justify-center items-center gap-2 mt-4">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap items-center gap-2 mt-4">
           <SoundPlayerButton
             text={useLang("soundDemonstrationSinglePing")}
             soundpath="ping.mp3"
@@ -35,7 +35,7 @@ export default function SoundTestPage() {
         <p className="text-center mt-4">
           {useLang("soundDemonstrationPoznanPack")}
         </p>
-        <p className="text-center text-neutral-500 text-balance">
+        <p className="text-neutral-500 px-2 text-justify sm:text-center sm:text-balance">
           {useLang("soundDemonstrationPoznanPackFlavortext")}
         </p>
         <div className="flex flex-row justify-center items-center gap-2 mt-4">
@@ -49,9 +49,9 @@ export default function SoundTestPage() {
           />
         </div>
       </div>
-      <p className="text-neutral-700 text-balance text-center mt-auto mx-auto max-w-7xl">
+      {/* <p className="text-neutral-700 px-2 text-justify sm:text-balance sm:text-center mt-auto mx-auto max-w-7xl">
         {useLang("soundDemonstrationDisclaimer")}
-      </p>
+      </p> */}
     </div>
   );
 }

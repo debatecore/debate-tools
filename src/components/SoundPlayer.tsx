@@ -17,7 +17,7 @@ const SoundPlayerButton = (props: soundPlayerButtonType) => {
   return (
     <button
       onClick={() => playSound()}
-      className="relative p-4 w-1/3 rounded border-2 border-neutral-800 bg-neutral-800 hover:border-neutral-700 overflow-hidden active:border-neutral-500"
+      className="relative p-4 px-24 min-w-[300px] rounded border-2 border-neutral-800 bg-neutral-800 hover:border-neutral-700 overflow-hidden active:border-neutral-500"
     >
       <span className="z-20 relative">{props.text}</span>
       {props.righticon

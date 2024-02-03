@@ -11,10 +11,10 @@ const useLang = (token: keyof typeof strings) => {
   );
 };
 
-const useSpecifiedLang = (token: keyof typeof strings, lang: language) => {
+const getSpecificLangString = (token: keyof typeof strings, lang: language) => {
   return (
     (strings[token] as Record<language, string>)[lang] || strings[token]["en"]
   );
 };
 
-export { useLang, useSpecifiedLang };
+export { useLang, getSpecificLangString };

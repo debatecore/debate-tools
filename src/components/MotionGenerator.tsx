@@ -37,18 +37,18 @@ const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
         <span className="z-20 relative">{props.text}</span>
       </button>
       <section className="text-center p-10">
-        <p className="text-2xl md:text-2xl max-w-[85vw]">"{motion?.motion || ""}"</p>
+        <p className="text-2xl md:text-2xl max-w-[85vw]">
+          &quot;{motion?.motion || ""}&quot;
+        </p>
         <section className="p-5">
-          {motion && motion.adinfo ? (
+          {(
             <section className="flex flex-col items-center">
               <section className="flex space-x-1 mt-15 text-2xl items-center">
                 <IconInfo /> <h3>{useLang("infoslide")}</h3>
               </section>
-              <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
+              <p className="text-justify max-w-[75vw]">{motion?.adinfo}</p>
             </section>
-          ) : (
-            ""
-          )}
+          ) || ""}
         </section>
         <p className="text-neutral-500">{motion?.source || ""}</p>
       </section>

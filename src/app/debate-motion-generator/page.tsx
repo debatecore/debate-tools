@@ -2,7 +2,7 @@
 import { MotionGenerator } from "@/components/MotionGenerator";
 import { useLang } from "@/lib/useLang";
 
-export default function debateMotionGenerator() {
+export default function DebateMotionGenerator() {
   return (
     <div className="flex flex-col min-h-screen">
       <h1 className="text-3xl mt-8 text-center font-serif">

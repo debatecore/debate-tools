@@ -5,6 +5,7 @@ import { motion } from "@/types/motion";
 import motions from "@/data/motion.json";
 import { useEffect, useState } from "react";
 import { IconInfo } from "@/components/icons/info";
+import { useLang } from "@/lib/useLang";
 
 type debateMotionGeneratorButtonType = {
   text: string;
@@ -36,20 +37,20 @@ const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
         <span className="z-20 relative">{props.text}</span>
       </button>
       <section className="text-center p-10">
-        <p className="text-2xl md:text-2xl">{motion?.motion || ""}</p>
+        <p className="text-2xl md:text-2xl max-w-[85vw]">"{motion?.motion || ""}"</p>
         <section className="p-5">
           {motion && motion.adinfo ? (
             <section className="flex flex-col items-center">
-              <section className="flex max-w-[300px] space-x-1 mt-15">
-                <IconInfo /> <h3>Infoslide</h3>
+              <section className="flex space-x-1 mt-15 text-2xl items-center">
+                <IconInfo /> <h3>{useLang("infoslide")}</h3>
               </section>
-              {motion.adinfo}
+              <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
             </section>
           ) : (
             ""
           )}
         </section>
-        <p className="text-center opacity-70">{motion?.source || ""}</p>
+        <p className="text-neutral-500">{motion?.source || ""}</p>
       </section>
     </div>
   );

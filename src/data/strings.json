@@ -3,101 +3,122 @@
     "en": "Language",
     "pl": "Język",
     "de": "Sprache",
-    "jp": "言語"
+    "jp": "言語",
+    "poznan": "Blubry"
   },
   "selfLanguageString": {
     "en": "🇬🇧 English",
     "pl": "🇵🇱 polski",
     "de": "🇩🇪 Deutsch",
-    "jp": "🇯🇵 日本語"
+    "jp": "🇯🇵 日本語",
+    "poznan": "Poznońskie blubry"
   },
   "debateTools": {
     "en": "Debate Tools",
     "pl": "Narzędzia Debatanckie",
     "de": "Debatten-Tool",
-    "jp": "ディベートツール"
+    "jp": "ディベートツール",
+    "poznan": "Klamoty do blubrania"
   },
   "madeWith": {
     "en": "Made with",
-    "de": "Hergestellt mit"
+    "de": "Hergestellt mit",
+    "poznan": "Zrobione z"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
-    "de": "von Posener Debattierer."
+    "de": "von Posener Debattierer.",
+    "poznan": "przyz Poznońskich szczunów."
   },
   "oxfordDebateConductionUtility": {
     "en": "Oxford Debate Conduction",
     "pl": "Przeprowadzenie debaty",
-    "de": "Debattenführung"
+    "de": "Debattenführung",
+    "poznan": "Robienie blubrów"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
     "pl": "Demonstracja dźwięku",
-    "de": "Tondemo"
+    "de": "Tondemo",
+    "poznan": "Dynks do dźwiynku"
   },
   "soundDemonstrationSubtitle": {
     "en": "Click the buttons to preview sounds.",
     "pl": "Kliknij przycisk by odsłuchać dźwięk.",
-    "de": "Anclicken, um die Vorschautone anzuhören."
+    "de": "Anclicken, um die Vorschautone anzuhören.",
+    "poznan": "Naduś guzik, by odsłuchoć dźwiynk."
   },
   "soundDemonstrationStockSounds": {
     "en": "Default sounds",
     "pl": "Dźwięki domyślne",
-    "de": "Standardtone"
+    "de": "Standardtone",
+    "poznan": "Dźwiynki rychtyk"
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
     "pl": "Podczas debaty, pojedyńczy dźwięk może zostać odtworzony aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
     "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren."
+    "poznan": "Podczas blubrów, pojedyńczy dźwiynk puszcza się, by pokazać czos chroniuny. Podwójny dźwiynk puszcza się, by zakuńczyć blubry."
   },
   "soundDemonstrationSinglePing": {
     "en": "Single ping",
     "pl": "Pojedynczy dźwięk",
-    "de": "Singular Ton"
+    "de": "Singular Ton",
+    "poznan": "Pojedynczy dźwiynk",
   },
   "soundDemonstrationDoublePing": {
     "en": "Double ping",
     "pl": "Podwójny dźwięk",
-    "de": "Doppelton"
+    "de": "Doppelton",
+    "poznan": "Podwójny dźwiynk"
   },
   "soundDemonstrationPoznanPack": {
     "en": "ZTM Poznań Pack: (KBING! - Gong)",
-    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)"
+    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)",
+    "poznan": "Paczka wuchty dźwinków z bimby ZTM Poznoń: (KBING! - Gong)"
   },
   "soundDemonstrationPoznanPackFlavortext": {
     "en": "The iconic announcement sound known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
-    "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych."
+    "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "poznan": "Kto jechoł bimbą w tyj flejowatej poznońskiej wsi, tyn zno tyn dźwiynk zapowiedzi."
   },
   "soundDemonstrationTransitBell": {
     "en": "Transit bell",
-    "pl": "Gong"
+    "pl": "Gong",
+    "poznan": "Dźwiynk"
   },
   "soundDemonstrationDisclaimer": {
     "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl For Developers page, in an effort to promote the city of Poznań. Files last updated: 2024-02-02. Unmodified.",
-    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane."
+    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane.",
+    "poznan": "Dźwiynki z \"Kasty dźwiynków ZTM Poznoń\" są używone pod warunkami na stronie Dla Majstrów w ztm.poznan.pl, by promowoć tyn fifny Poznoń. Ostatnia aktualyzacja: 2024-02-02. Niezminione."
   },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
     "pl": "Generator tez do debaty",
-    "de": "Debattenthesengenerator"
+    "de": "Debattenthesengenerator",
+    "poznan": "Generator powodów do blubrania."
   },
   "debateMotionGeneratorFlavortext": {
     "en": "Motions taken from tournaments past.",
-    "pl": "Tezy "
+    "pl": "Tezy ",
+    "poznan": "Tezy wziynte z poprzydni turniejów."
   },
   "debateMotionGeneratorRegenerate": {
     "en": "Regenerate motion",
     "pl": "Wygeneruj tezę jeszcze raz",
-    "de": "Die These nochmal generieren"
+    "de": "Die These nochmal generieren",
+    "poznan": "Tej, wygeneruj nowo teze"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",
     "pl": "Planowanie turnieju",
-    "de": "Wettbewerb planen"
+    "de": "Wettbewerb planen",
+    "poznan": "Planowanie turniejów"
   },
   "disclaimer": {
     "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
     "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
-    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich."
+    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
+    "poznan": "Zrobione dla i przyz szczunów z ZSK Poznoń i różny polskich organizacji blubrajoncych. Dostypne publycznie."
   }
 }

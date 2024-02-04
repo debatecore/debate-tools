@@ -9,14 +9,14 @@ import { useContext } from "react";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
+  const flavortext = useLang("oxfordDebateConfigurationFlavortext");
   return (
     <div>
       <h1 className="text-3xl mt-8 text-center font-serif">
         {useLang("oxfordDebateConfiguration")}
       </h1>
       <p className="text-center text-neutral-500">
-        {debateContext.conf.motion ||
-          useLang("oxfordDebateConfigurationFlavortext")}
+        {debateContext.conf.motion || flavortext}
       </p>
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-4 px-4">
         <DebateConfStringsPanel />

@@ -30,6 +30,46 @@
     "pl": "Przeprowadzenie debaty",
     "de": "Debattenführung"
   },
+  "oxfordDebateConfiguration": {
+    "en": "Debate configuration",
+    "pl": "Konfiguracja debaty"
+  },
+  "oxfordDebateConfigurationFlavortext": {
+    "en": "Dear Marshal, what are the rules?",
+    "pl": "Wysoka izbo, to my mamy rację!"
+  },
+  "debateMotion": {
+    "en": "Debate motion",
+    "pl": "Teza debaty"
+  },
+  "debateMotionFlavortext": {
+    "en": "The topic of the debate.",
+    "pl": "Kość niezgody"
+  },
+  "proTeam": {
+    "en": "Proposition Team",
+    "pl": "Drużyna propozycji"
+  },
+  "proTeamFlavortext": {
+    "en": "Those in favour.",
+    "pl": "Za."
+  },
+  "oppTeam": {
+    "en": "Opposition Team",
+    "pl": "Drużyna opozycji"
+  },
+  "oppTeamFlavortext": {
+    "en": "Those against.",
+    "pl": "Przeciw."
+  },
+  "musketeers": {
+    "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
+    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku"
+  },
+  "PLD": {
+    "en": "PLD - Poznań Debate League",
+    "pl": "PLD - Poznańska Liga Debat"
+  },
   "soundDemonstration": {
     "en": "Sound Demonstration",
     "pl": "Demonstracja dźwięku",

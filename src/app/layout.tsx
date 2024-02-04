@@ -4,6 +4,8 @@ import "./globals.css";
 import { useState } from "react";
 import { language } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
+import { debateConf, defaultDebateConf } from "@/types/debate";
+import { DebateContext } from "@/contexts/DebateContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [stateLang, setStateLang] = useState<language>("en");
+  const [stateDebateConf, setStateDebateConf] =
+    useState<debateConf>(defaultDebateConf);
   return (
     <html>
       <head>
@@ -31,7 +35,14 @@ export default function RootLayout({
             },
           }}
         >
-          {children}
+          <DebateContext.Provider
+            value={{
+              conf: stateDebateConf,
+              setConf: (conf) => setStateDebateConf(conf),
+            }}
+          >
+            {children}
+          </DebateContext.Provider>
         </LangContext.Provider>
       </body>
     </html>

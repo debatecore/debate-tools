@@ -87,7 +87,7 @@
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
-    "pl": "Podczas debaty, pojedyńczy dźwięk może zostać odtworzony aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
+    "pl": "Podczas debaty pojedynczy dźwięk może zostać odtworzony, aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
     "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren."
   },
   "soundDemonstrationSinglePing": {
@@ -129,6 +129,10 @@
     "en": "Regenerate motion",
     "pl": "Wygeneruj tezę jeszcze raz",
     "de": "Die These nochmal generieren"
+  },
+  "infoslide": {
+    "en": "Infoslide",
+    "pl": "Infoslajd"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",

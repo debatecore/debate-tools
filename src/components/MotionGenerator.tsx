@@ -32,7 +32,7 @@ const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
   const infoslideString = useLang("infoslide");
 
   return (
-    <div className="flex flex-col min-h-screen items-center">
+    <div className="flex flex-col min-h-screen items-center text-center">
       <section className="max-w-[350px]">
         <GenericButton
           text={useLang("debateMotionGeneratorRegenerate")}
@@ -40,22 +40,20 @@ const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
           onClick={() => setMotion(() => generateMotion())}
         />
       </section>
-      <section className="text-center p-10">
-        <p className="text-2xl md:text-2xl max-w-[85vw]">
+      <section className="p-5">
+        {motion && motion.adinfo ? (
+          <section className="flex flex-col items-center mb-5">
+            <section className="flex space-x-1 mt-15 text-2xl items-center">
+              <IconInfo /> <h3>{infoslideString}</h3>
+            </section>
+            <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
+          </section>
+        ) : (
+          ""
+        )}
+        <p className="text-2xl md:text-2xl max-w-[85vw] mb-5">
           &quot;{motion?.motion || ""}&quot;
         </p>
-        <section className="p-5">
-          {motion && motion.adinfo ? (
-            <section className="flex flex-col items-center">
-              <section className="flex space-x-1 mt-15 text-2xl items-center">
-                <IconInfo /> <h3>{infoslideString}</h3>
-              </section>
-              <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
-            </section>
-          ) : (
-            ""
-          )}
-        </section>
         <p className="text-neutral-500">{motion?.source || ""}</p>
       </section>
     </div>

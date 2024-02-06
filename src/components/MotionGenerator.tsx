@@ -6,6 +6,8 @@ import motions from "@/data/motion.json";
 import { useEffect, useState } from "react";
 import { IconInfo } from "@/components/icons/info";
 import { useLang } from "@/lib/useLang";
+import { GenericButton } from "./GenericButton";
+import { IconRotateCCW } from "./icons/RotateCCW";
 
 type debateMotionGeneratorButtonType = {
   text: string;
@@ -31,13 +33,13 @@ const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
 
   return (
     <div className="flex flex-col min-h-screen items-center">
-      <button
-        onClick={() => setMotion(() => generateMotion())}
-        className="relative p-4 px-24 max-w-[450px] rounded border-2 border-neutral-800
-        bg-neutral-800 hover:border-neutral-700 overflow-hidden active:border-neutral-500"
-      >
-        <span className="z-20 relative">{props.text}</span>
-      </button>
+      <section className="max-w-[350px]">
+        <GenericButton
+          text={useLang("debateMotionGeneratorRegenerate")}
+          icon={IconRotateCCW}
+          onClick={() => setMotion(() => generateMotion())}
+        />
+      </section>
       <section className="text-center p-10">
         <p className="text-2xl md:text-2xl max-w-[85vw]">
           &quot;{motion?.motion || ""}&quot;

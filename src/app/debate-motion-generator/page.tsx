@@ -12,7 +12,7 @@ export default function DebateMotionGenerator() {
         {useLang("debateMotionGeneratorFlavortext")}
       </p>
       <div className="flex flex-col md:flex-row justify-center flex-wrap items-center gap-2 mt-4">
-        <MotionGenerator text={useLang("debateMotionGeneratorRegenerate")} />
+        <MotionGenerator />
       </div>
     </div>
   );

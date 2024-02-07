@@ -36,7 +36,6 @@ export default function Home() {
             {
               href: "/debate-motion-generator",
               text: useLang("debateMotionGenerator"),
-              disabled: true,
               icon: IconFileText,
             },
             {

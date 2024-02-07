@@ -1,6 +1,4 @@
 "use client";
-
-import { iconprops } from "@/types/iconprops";
 import { motion } from "@/types/motion";
 import motions from "@/data/motion.json";
 import { useEffect, useState } from "react";
@@ -9,42 +7,36 @@ import { useLang } from "@/lib/useLang";
 import { GenericButton } from "./GenericButton";
 import { IconRotateCCW } from "./icons/RotateCCW";
 
-type debateMotionGeneratorButtonType = {
-  text: string;
-  icon?: (props: iconprops) => JSX.Element;
-};
-export type { debateMotionGeneratorButtonType };
-
-const MotionGenerator = (props: debateMotionGeneratorButtonType) => {
+const MotionGenerator = () => {
   const [motion, setMotion] = useState<motion | null>(null);
+  const infoslideString = useLang("infoslide");
 
   function generateMotion(): motion {
-    const motionsCount = motions.length;
-    //TO-DO: add option to generate only motions in a chosen language
-    const randomMotion: motion = motions[Math.floor(Math.random() * motionsCount)];
-    return randomMotion;
+    // TODO: add option to only generate motions in a chosen language
+    return motions[Math.floor(Math.random() * motions.length)];
   }
 
   useEffect(() => {
-    setMotion(() => generateMotion());
+    setMotion(generateMotion());
   }, []);
 
-  const infoslideString = useLang("infoslide");
-
   return (
-    <div className="flex flex-col min-h-screen items-center text-center">
+    <div className="flex flex-col items-center text-center">
       <section className="max-w-[350px]">
         <GenericButton
           text={useLang("debateMotionGeneratorRegenerate")}
           icon={IconRotateCCW}
-          onClick={() => setMotion(() => generateMotion())}
+          onClick={() => setMotion(generateMotion())}
         />
       </section>
       <section className="p-5">
         {motion && motion.adinfo ? (
           <section className="flex flex-col items-center mb-5">
-            <section className="flex space-x-1 mt-15 text-2xl items-center">
-              <IconInfo /> <h3>{infoslideString}</h3>
+            <section className="flex gap-2 text-2xl items-center">
+              <span className="text-neutral-500">
+                <IconInfo />
+              </span>
+              {infoslideString}
             </section>
             <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
           </section>

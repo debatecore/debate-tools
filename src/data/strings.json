@@ -145,7 +145,8 @@
   },
   "debateMotionGeneratorFlavortext": {
     "en": "Motions taken from tournaments past.",
-    "pl": "Tezy "
+    "pl": "Tezy zaczerpnięte z minionych turniejów.",
+    "de": "Thesen aus vergangenen Wettbewerben entnommen."
   },
   "debateMotionGeneratorRegenerate": {
     "en": "Regenerate motion",

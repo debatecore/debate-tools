@@ -5,22 +5,27 @@ import { useContext, useEffect, useState } from "react";
 import { IconInfo } from "@/components/icons/info";
 import { useLang } from "@/lib/useLang";
 import { GenericButton } from "./GenericButton";
-import { LinkButton } from "./LinkButton";
 import { DebateContext } from "@/contexts/DebateContext";
 import { IconDice } from "./icons/Dice";
 import { IconClock } from "./icons/Clock";
+import { useRouter } from "next/navigation";
 
 const MotionGenerator = () => {
   const [motion, setMotion] = useState<motion | null>(null);
   const infoslideString = useLang("infoslide");
-  const debateSetupPath = "/../oxford-debate/setup";
   const debateContext = useContext(DebateContext);
+  const router = useRouter();
 
   function generateMotion(): motion {
     // TODO: add option to only generate motions in a chosen language
-    const randomMotion = motions[Math.floor(Math.random() * motions.length)];
-    debateContext.setConf({ ...debateContext.conf, motion: randomMotion.motion || "" });
-    return randomMotion;
+    return motions[Math.floor(Math.random() * motions.length)];
+  }
+
+  function saveMotionToContext(): void {
+    debateContext.setConf({
+      ...debateContext.conf,
+      motion: motion?.motion || "",
+    });
   }
 
   useEffect(() => {
@@ -35,10 +40,13 @@ const MotionGenerator = () => {
           icon={IconDice}
           onClick={() => setMotion(generateMotion())}
         />
-        <LinkButton
+        <GenericButton
           text={useLang("debateOverThisMotion")}
           icon={IconClock}
-          href={debateSetupPath}
+          onClick={() => {
+            saveMotionToContext();
+            router.push("/oxford-debate/setup");
+          }}
         />
       </section>
       <section className="p-5">

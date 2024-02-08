@@ -25,7 +25,7 @@ const MotionGenerator = () => {
       <section className="max-w-[350px]">
         <GenericButton
           text={useLang("debateMotionGeneratorRegenerate")}
-          icon={IconRotateCCW}
+          icon={IconDice}
           onClick={() => setMotion(generateMotion())}
         />
       </section>

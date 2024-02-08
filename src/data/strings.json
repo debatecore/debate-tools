@@ -152,6 +152,11 @@
     "pl": "Wygeneruj tezę jeszcze raz",
     "de": "Die These nochmal generieren"
   },
+  "debateOverThisMotion": {
+    "en": "Debate over this motion",
+    "pl": "Debatuj nad tą tezą",
+    "de": "Darüber debattieren"
+  },
   "infoslide": {
     "en": "Infoslide",
     "pl": "Infoslajd"

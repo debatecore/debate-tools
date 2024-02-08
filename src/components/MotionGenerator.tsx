@@ -1,19 +1,26 @@
 "use client";
 import { motion } from "@/types/motion";
 import motions from "@/data/motion.json";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IconInfo } from "@/components/icons/info";
 import { useLang } from "@/lib/useLang";
 import { GenericButton } from "./GenericButton";
-import { IconRotateCCW } from "./icons/RotateCCW";
+import { LinkButton } from "./LinkButton";
+import { DebateContext } from "@/contexts/DebateContext";
+import { IconDice } from "./icons/Dice";
+import { IconClock } from "./icons/Clock";
 
 const MotionGenerator = () => {
   const [motion, setMotion] = useState<motion | null>(null);
   const infoslideString = useLang("infoslide");
+  const debateSetupPath = "/../oxford-debate/setup";
+  const debateContext = useContext(DebateContext);
 
   function generateMotion(): motion {
     // TODO: add option to only generate motions in a chosen language
-    return motions[Math.floor(Math.random() * motions.length)];
+    const randomMotion = motions[Math.floor(Math.random() * motions.length)];
+    debateContext.setConf({ ...debateContext.conf, motion: randomMotion.motion || "" });
+    return randomMotion;
   }
 
   useEffect(() => {
@@ -22,11 +29,16 @@ const MotionGenerator = () => {
 
   return (
     <div className="flex flex-col items-center text-center">
-      <section className="max-w-[350px]">
+      <section className="flex flex-col space-y-2 max-w-[400px]">
         <GenericButton
           text={useLang("debateMotionGeneratorRegenerate")}
           icon={IconDice}
           onClick={() => setMotion(generateMotion())}
+        />
+        <LinkButton
+          text={useLang("debateOverThisMotion")}
+          icon={IconClock}
+          href={debateSetupPath}
         />
       </section>
       <section className="p-5">

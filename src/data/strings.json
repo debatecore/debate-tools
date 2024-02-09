@@ -29,14 +29,76 @@
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
     "pl": "w Poznaniu przez innych debatantów.",
-    "de": "von Posener Debattierer."
-    "es": "en Poznań por compañeros de debate.";
+    "de": "von Posener Debattierer.",
+    "es": "en Poznań por compañeros de debate."
   },
   "oxfordDebateConductionUtility": {
     "en": "Oxford Debate Conduction",
     "pl": "Przeprowadzenie debaty",
     "de": "Debattenführung",
     "es": "Conducción del debate"
+  },
+  "oxfordDebateConfiguration": {
+    "en": "Debate configuration",
+    "pl": "Konfiguracja debaty"
+  },
+  "oxfordDebateConfigurationFlavortext": {
+    "en": "Dear Marshal, what are the rules?",
+    "pl": "Wysoka izbo, to my mamy rację!"
+  },
+  "debateMotion": {
+    "en": "Debate motion",
+    "pl": "Teza debaty"
+  },
+  "debateMotionFlavortext": {
+    "en": "The topic of the debate.",
+    "pl": "Kość niezgody"
+  },
+  "proTeam": {
+    "en": "Proposition Team",
+    "pl": "Drużyna propozycji"
+  },
+  "proTeamFlavortext": {
+    "en": "Those in favour.",
+    "pl": "Za."
+  },
+  "oppTeam": {
+    "en": "Opposition Team",
+    "pl": "Drużyna opozycji"
+  },
+  "oppTeamFlavortext": {
+    "en": "Those against.",
+    "pl": "Przeciw."
+  },
+  "speechTime": {
+    "en": "Speech time",
+    "pl": "Czas mowy"
+  },
+  "adVocem": {
+    "en": "Ad vocem"
+  },
+  "protectedTime": {
+    "en": "Protected time",
+    "pl": "Czas chroniony"
+  },
+  "min": {
+    "en": "min"
+  },
+  "sec": {
+    "en": "sec",
+    "pl": "sek"
+  },
+  "preset": {
+    "en": "Preset",
+    "pl": "Szablon"
+  },
+  "musketeers": {
+    "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
+    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku"
+  },
+  "PLD": {
+    "en": "PLD - Poznań Debate League",
+    "pl": "PLD - Poznańska Liga Debat"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
@@ -58,7 +120,7 @@
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
-    "pl": "Podczas debaty, pojedyńczy dźwięk może zostać odtworzony aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
+    "pl": "Podczas debaty pojedynczy dźwięk może zostać odtworzony, aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
     "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren.",
     "es": "Durante un debate, un solo pitido indica tiempo protegido. Un doble pitido señala el final de la declaración del orador."
   },
@@ -102,7 +164,8 @@
   },
   "debateMotionGeneratorFlavortext": {
     "en": "Motions taken from tournaments past.",
-    "pl": "Tezy wzięte z poprzednich turniejów.",
+    "pl": "Tezy zaczerpnięte z minionych turniejów.",
+    "de": "Thesen aus vergangenen Wettbewerben entnommen.",
     "es": "Tesis extraídas de torneos anteriores."
   },
   "debateMotionGeneratorRegenerate": {
@@ -110,6 +173,15 @@
     "pl": "Wygeneruj tezę jeszcze raz",
     "de": "Die These nochmal generieren",
     "es": "Generar la tesis nuevamente"
+  },
+  "debateOverThisMotion": {
+    "en": "Debate over this motion",
+    "pl": "Debatuj nad tą tezą",
+    "de": "Darüber debattieren"
+  },
+  "infoslide": {
+    "en": "Infoslide",
+    "pl": "Infoslajd"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",

@@ -22,13 +22,11 @@
   },
   "madeWith": {
     "en": "Made with",
-    "pl": "Stworzone z",
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
-    "pl": "w Poznaniu przez innych debatantów.",
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },
@@ -108,7 +106,7 @@
   },
   "soundDemonstrationSubtitle": {
     "en": "Click the buttons to preview sounds.",
-    "pl": "Kliknij przyciski, by odsłuchać dźwięki.",
+    "pl": "Kliknij przycisk, by odsłuchać dźwięk.",
     "de": "Anclicken, um die Vorschautone anzuhören.",
     "es": "Presione los botones para reproducir sonidos."
   },

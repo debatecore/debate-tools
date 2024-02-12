@@ -45,37 +45,43 @@
     "lang": "pl",
     "motion": "Robert Makłowicz byłby lepszym prezydentem RP niż Magda Gessler.",
     "adinfo": "",
-    "source": "Poznańska Noc Debaty 2023, Faza grupowa"
+    "source": "Poznańska Noc Debaty 2023, Faza grupowa",
+    "type": "motionPlComparative"
   },
   {
     "lang": "pl",
     "motion": "Należy żałować popularności astrologii.",
     "adinfo": "",
-    "source": "Poznańska Noc Debaty 2023, Faza grupowa"
+    "source": "Poznańska Noc Debaty 2023, Faza grupowa",
+    "type": "motionPlDescriptive"
   },
   {
     "lang": "pl",
     "motion": "Czesław Michniewicz powinien zostać selekcjonerem reprezentacji Polski w mistrzostwach świata w 2022 roku.",
     "adinfo": "",
-    "source": "Poznańska Noc Debaty 2023, Faza grupowa"
+    "source": "Poznańska Noc Debaty 2023, Faza grupowa",
+    "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Rząd Stanów Zjednoczonych powinien być zorganizowany nomadycznie.",
     "adinfo": "W rządzie zorganizowanym nomadycznie przedstawiciele rządu nie mają swojej stałej siedziby i wspólnie podróżują po kraju, stale pozostając w ruchu.",
-    "source": "Poznańska Noc Debaty 2023, Ćwierćfinał"
+    "source": "Poznańska Noc Debaty 2023, Ćwierćfinał",
+    "type": "motionPlPolicy"
   },
   {
     "lang": "pl",
     "motion": "Jako właściciel największego w Karpaczu sklepu ze sprzętem górskim zatrudniłbym Oskara Górowicza.",
     "adinfo": "Oskar Górowicz to fanatyk gór. Pół mieszkania zawalone kurtkami goretex najgorsze. Średnio raz w miesiącu ktoś wdepnie w leżący na ziemi czekan czy raki i trzeba wyciągać w szpitalu bo mają zadziory na końcu. Górowicz wybitnie zna się na sprzęcie górskim i górach a jako doradca klienta zawsze doradzi im dużo lepiej niż którykolwiek z twoich pracowników. Niestety Górowicz ma trudny charakter. Nie potrafi współpracować, bardzo łatwo go nienawidzić i ma problemy z przystosowaniem społecznym.",
-    "source": "Poznańska Noc Debaty 2023, Półfinał"
+    "source": "Poznańska Noc Debaty 2023, Półfinał",
+    "type": "motionPlFirstPerson"
   },
   {
     "lang": "pl",
     "motion": "Co ślyp nie eknie, tego serducho nie zawiści.",
     "adinfo": "",
-    "source": "Poznańska Noc Debaty 2023, Finał"
+    "source": "Poznańska Noc Debaty 2023, Finał",
+    "type": "motionPlValues"
   },
   {
     "lang": "en",
@@ -124,12 +130,6 @@
     "motion": "If I were Witold Pilecki, I would have left the country in 1946.",
     "adinfo": "",
     "source": "Musketeers of Words - Polish Oxford Debates Championships in English 2021, Quarterfinal"
-  },
-  {
-    "lang": "en",
-    "motion": "The Tokyo Olympic Games in 2021 should be canceled.",
-    "adinfo": "",
-    "source": "Musketeers of Words - Polish Oxford Debates Championships in English 2021, Semifinal"
   },
   {
     "lang": "en",

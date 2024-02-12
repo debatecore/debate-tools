@@ -165,5 +165,23 @@
     "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
     "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich."
+  },
+  "motionPlPolicy": {
+    "pl": "Teza o działaniu"
+  },
+  "motionPlDuty": {
+    "pl": "Teza powinnościowa"
+  },
+  "motionPlDescriptive": {
+    "pl": "Teza deskryptywna"
+  },
+  "motionPlFirstPerson": {
+    "pl": "Teza pierwszoosobowa"
+  },
+  "motionPlComparative": {
+    "pl": "Teza porównawcza"
+  },
+  "motionPlValues": {
+    "pl": "Teza o wartościach "
   }
 }

@@ -3,32 +3,38 @@
     "en": "Language",
     "pl": "Język",
     "de": "Sprache",
-    "jp": "言語"
+    "jp": "言語",
+    "es": "Lengua"
   },
   "selfLanguageString": {
     "en": "🇬🇧 English",
     "pl": "🇵🇱 polski",
     "de": "🇩🇪 Deutsch",
-    "jp": "🇯🇵 日本語"
+    "jp": "🇯🇵 日本語",
+    "es": "🇪🇸 Español"
   },
   "debateTools": {
     "en": "Debate Tools",
     "pl": "Narzędzia Debatanckie",
     "de": "Debatten-Tool",
-    "jp": "ディベートツール"
+    "jp": "ディベートツール",
+    "es": "Herramientas de Debate"
   },
   "madeWith": {
     "en": "Made with",
-    "de": "Hergestellt mit"
+    "de": "Hergestellt mit",
+    "es": "Creado con"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
-    "de": "von Posener Debattierer."
+    "de": "von Posener Debattierer.",
+    "es": "en Poznań por compañeros de debate."
   },
   "oxfordDebateConductionUtility": {
     "en": "Oxford Debate Conduction",
     "pl": "Przeprowadzenie debaty",
-    "de": "Debattenführung"
+    "de": "Debattenführung",
+    "es": "Conducción del debate"
   },
   "oxfordDebateConfiguration": {
     "en": "Debate configuration",
@@ -95,62 +101,81 @@
   "soundDemonstration": {
     "en": "Sound Demonstration",
     "pl": "Demonstracja dźwięku",
-    "de": "Tondemo"
+    "de": "Tondemo",
+    "es": "Demostración de sonido"
   },
   "soundDemonstrationSubtitle": {
     "en": "Click the buttons to preview sounds.",
-    "pl": "Kliknij przycisk by odsłuchać dźwięk.",
-    "de": "Anclicken, um die Vorschautone anzuhören."
+    "pl": "Kliknij przycisk, by odsłuchać dźwięk.",
+    "de": "Anclicken, um die Vorschautone anzuhören.",
+    "es": "Presione los botones para reproducir sonidos."
   },
   "soundDemonstrationStockSounds": {
     "en": "Default sounds",
     "pl": "Dźwięki domyślne",
-    "de": "Standardtone"
+    "de": "Standardtone",
+    "es": "Sonidos predeterminados"
   },
   "soundDemonstrationSingleDoubleExpl": {
     "en": "During a debate, a single sound may be played to indicate the boundaries of protected speech time, while a double sound may indicate the end of a speaker's allotted time.",
     "pl": "Podczas debaty pojedynczy dźwięk może zostać odtworzony, aby zasygnalizować czas chroniony. Podwójny dźwięk może zasygnalizować koniec czasu mowy.",
-    "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren."
+    "de": "Während der Debatte, ein singular Ton kann abgespielt werden, um die Geschütztzeit zu signalisieren. Ein Doppelton kann dazu die Ende der Ansprachezeit signalisieren.",
+    "es": "Durante un debate, un solo pitido indica tiempo protegido. Un doble pitido señala el final de la declaración del orador."
   },
   "soundDemonstrationSinglePing": {
     "en": "Single ping",
     "pl": "Pojedynczy dźwięk",
-    "de": "Singular Ton"
+    "de": "Singular Ton",
+    "es": "Sonido único"
   },
   "soundDemonstrationDoublePing": {
     "en": "Double ping",
     "pl": "Podwójny dźwięk",
-    "de": "Doppelton"
+    "de": "Doppelton",
+    "es": "Doble sonido"
   },
   "soundDemonstrationPoznanPack": {
     "en": "ZTM Poznań Pack: (KBING! - Gong)",
-    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)"
+    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)",
+    "es": "Un conjunto de sonidos ZTM Poznań: (KBING! - Gong)"
   },
   "soundDemonstrationPoznanPackFlavortext": {
     "en": "The iconic announcement sound known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
-    "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych."
+    "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "es": "El icónico sonido del anuncio es conocido por cualquiera que haya tenido el placer de utilizar el transporte público en la capital de obras viales."
   },
   "soundDemonstrationTransitBell": {
     "en": "Transit bell",
-    "pl": "Gong"
+    "pl": "Gong",
+    "es": "Campana de transito"
   },
   "soundDemonstrationDisclaimer": {
     "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl For Developers page, in an effort to promote the city of Poznań. Files last updated: 2024-02-02. Unmodified.",
-    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane."
+    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane.",
+    "es": "Los sonidos disponibles bajo el nombre \"Conjunto de sonidos ZTM Poznań\" se utilizan según las condiciones disponibles en la página Para Desarrolladores del sitio web ztm.poznan.pl, con el fin de promocionar la ciudad de Poznań. Archivos actualizados: 2024-02-02. Sin modificar."
   },
   "debateMotionGenerator": {
     "en": "Debate Motion Generator",
     "pl": "Generator tez do debaty",
-    "de": "Debattenthesengenerator"
+    "de": "Debattenthesengenerator",
+    "es": "Generador de tesis para debate"
   },
   "debateMotionGeneratorFlavortext": {
     "en": "Motions taken from tournaments past.",
-    "pl": "Tezy "
+    "pl": "Tezy zaczerpnięte z minionych turniejów.",
+    "de": "Thesen aus vergangenen Wettbewerben entnommen.",
+    "es": "Tesis extraídas de torneos anteriores."
   },
   "debateMotionGeneratorRegenerate": {
     "en": "Regenerate motion",
     "pl": "Wygeneruj tezę jeszcze raz",
-    "de": "Die These nochmal generieren"
+    "de": "Die These nochmal generieren",
+    "es": "Generar la tesis nuevamente"
+  },
+  "debateOverThisMotion": {
+    "en": "Debate over this motion",
+    "pl": "Debatuj nad tą tezą",
+    "de": "Darüber debattieren"
   },
   "infoslide": {
     "en": "Infoslide",
@@ -159,12 +184,14 @@
   "tournamentPlanner": {
     "en": "Tournament Planner",
     "pl": "Planowanie turnieju",
-    "de": "Wettbewerb planen"
+    "de": "Wettbewerb planen",
+    "es": "Planificación de torneos"
   },
   "disclaimer": {
     "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
     "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
-    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich."
+    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
+    "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
   "motionPlPolicy": {
     "pl": "Teza o działaniu"

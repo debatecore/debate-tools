@@ -352,5 +352,744 @@
     "motion": "Irish reunification is in the best interest of the United Kingdom.",
     "adinfo": "",
     "source": "Musketeers of Words - Polish Oxford Debates Championships in English 2021, Group phase"
+  },
+  {
+    "lang": "pl",
+    "motion": "W interesie UE leży wprowadzenie proponowanych zmian traktatowych.",
+    "adinfo": "Proponowane zmiany traktatowe w UE dotyczą spraw przegłosowanych w Parlamencie Europejskim podczas drugiej sesji plenarnej w listopadzie 2023 r.",
+    "source": "Tezownicy",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako nastoletni obywatel Polski swoją aktywność społeczną realizowałbym w młodzieżowych partiach politycznych.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń, 13.12.2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Z perspektywy przeciętnego Europejczyka żałowałbym Brexitu.",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 5.04.2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Z perspektywy obywatela UE ważniejszy jest dla mnie proces integracji wewnętrznej niż wspólna polityka zagraniczna.",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 5.04.2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie Polski leży federalizacja UE.",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 5.04.2022",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako absolwent studiów w Polsce wolałbym otworzyć działalność gospodarczą niż pracować na etacie.",
+    "source": "Poznańska Liga Debat, 7.11.2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie Polski leży wprowadzenie bezwarunkowego dochodu podstawowego.",
+    "source": "Poznańska Liga Debat, 7.11.2022",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Z perspektywy państwa polskiego, 31 sierpnia 1939 r. Polska była gotowa do wojny.",
+    "source": "Porozmawiajmy o II Wojnie Światowej, październik 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie Polski leży wprowadzenie bezwarunkowego dochodu podstawowego.",
+    "source": "Debata pokazowa, czerwiec 2022",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako Elon Musk zaangażowałbym się w walkę z kryzysem klimatycznym kosztem programu kosmicznego. Turniej debat ekologiczno-klimatycznych ",
+    "source": "czerwiec 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Z perspektywy edukacji historycznej komedie wojenne przynoszą więcej szkody niż pożytku.",
+    "source": "AV, maj 2021",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako intelektualista żyjący w Polsce w 1975 roku podpisałbym tzw. List 59.",
+    "source": "AV, grudzień 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako lokalny partyzant, który przeżył Obławę Augustowską, wolałbym przenieść się w inny rejon kraju, niż pozostać na miejscu.",
+    "source": "AV, październik 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako prezydent miasta bydgoszczy priorytetzowałbym wydatki na ochronę zdrowia psychicznego ponad inne elementy ochrony zdrowia.",
+    "source": "Kujawsko-Pomorska Liga Debat 2023, Finał",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako uczeń/uczennica szkoły ponadpodstawowej dostrzegam więcej szkód niż korzyści z pojawienia się Chatu GPT.",
+    "source": "Kujawsko-Pomorska Liga Debat, luty 2023",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako zaangażowany społecznie wielkopolski przedsiębiorca wolałbym inwestować w duchu XIX-wiecznych organiczników w tworzenie funduszu żelaznego ponad inne działania filantropijne.",
+    "source": "Debata pokazowa, grudzień 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie miasta Ostrów Mazowiecka leży kultywowanie pamięci o Szkole Podchorążych Piechoty.",
+    "source": "htw, 2022",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie Palestyńczyków leży popieranie rozwiązania jednopaństwowego.",
+    "source": "TILD, listopad 2023",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako uczeń/uczennica szkoły ponadpodstawowej wołał(a)bym realizować swój obowiązek szkolny w \"szkole w chmurze\" niż w tradycyjnej szkole.",
+    "source": "Kwidzyn, październik 2023",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako Minister Środowiska i Klimatu, skupiłbym się na rozwoju OZE z wiatru bardziej niż promieni słonecznych.",
+    "source": "Katowice-Murcki, listopad 2023",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako obywatel/obywatelka X kupiłbym/kupiłabym samochód elektryczny (Infoslajd: Obywatel X potrzebuje auta do przemieszczania się w tygodniu pomiędzy dużymi miastami wojewódzkimi i ich centrami).",
+    "source": "Poznańska Liga Debat, grudzień 2023",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie Polski leży całkowita rezygnacja z gotówki na rzecz płatności bezgotówkowych.",
+    "source": "Poznańska Liga Debat, listopad 2023",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Z perspektywy mieszkańców ośrodków miejskich korzystną jest prywatyzacja przedsiębiorstw wodociągowych.",
+    "source": "",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Patrząc z ówczesnej perspektywy, Witold Pilecki nie powinien wracać do Polski po II wojnie światowej AV maj 2021",
+    "source": "",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Działalność grupy Anonymous przynosi więcej szkód niż korzyści.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 23.11.2022",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Odpady biodegradowalne to bardziej szansa niż zagrożenie.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 14.12.2022",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Obecne problemy związane z odpadami wynikają bardziej z świadomości społecznej niż złego zarządzania.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 14.12.2022",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna wprowadzić instytucję weta ludowego do swojego systemu prawnego.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 13.12.2022",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Partie polityczne nie powinny być finansowane z budżetu państwa.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 22.11.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Pełnienie funkcji poselskiej nie powinno być opłacane ze środków publicznych.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 22.11.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno zakazać się algorytmu personalizacji treści w Internecie.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 23.11.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Przez 23 lata istnienia województwa kujawsko-pomorskiego udało się wytworzyć wspólną tożsamość regionalną.",
+    "source": "Finał Kujawsko-Pomorska Liga Debat, 31.05.2022",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Sztuczna inteligencja powinna zawsze podlegać kontroli ludzi.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 6.04.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno się zaprzestać używania betonu w budownictwie.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 6.04.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Należy wprowadzić przymus wyborczy w Polsce.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 11.03.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Dwukadencyjność wójtów, burmistrzów, prezydentów miast niesie za sobą więcej szkód niż korzyści.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 11.03.2022",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Państwo powinno częściowo spłacać dług osób uzależnionych od hazardu.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 11.02.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna utrzymać i egzekwować bardziej restrykcyjne przymusowe leczenie dla karanych osób uzależnionych.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 11.02.2022",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Komunikacja miejska powinna być bezpłatna.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.12.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno wprowadzić się specjalne opłaty dla samochodów wjeżdżających do centrów miast.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.12.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno zakazać się chowu przemysłowego zwierząt.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.12.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "GMO przynosi więcej korzyści niż szkód.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.01.2022",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno wprowadzić się JOW w wyborach do Sejmu RP.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.11.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Postanowienia międzynarodowych trybunałów powinny być nadrzędne wobec konstytucji krajowych.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.11.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Migranci klimatyczni powinni posiadać status uchodźców.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.11.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Aby skutecznie walczyć z kryzysem klimatycznym, powinien powstać specjalny podatek od mięsa.",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.11.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "W dobie kryzysu energetycznego państwa powinny inwestować w OZE nawet kosztem dobrobytu swoich obywateli ",
+    "source": "Poznańska Liga Debat, 16.12.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Współcześnie osiąganie sukcesów finansowych w działalności gospodarczej nie jest możliwe bez płatnych kampanii reklamowych w social mediach.",
+    "source": "Poznańska Liga Debat, 16.12.2022",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Głównym zadaniem medycyny jest przedłużanie życia ludzkiego.",
+    "source": "Poznańska Liga Debat, 28.05.2022, Finał",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Będąc premierem Polski priorytetyzowałbym zwiększanie wydatków na ochronę zdrowia ponad inne aspekty funkcjonowania państwa.",
+    "source": "Poznańska Liga Debat, 28.05.2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Dla zdrowia psychicznego człowieka, rozwój natury w ośrodkach miejskich, jest ważniejszy niż rozwój infrastruktury.",
+    "source": "Poznańska Liga Debat, 27.04.2022",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Szkoła odgrywa najważniejszą rolę w kwestii dbania o zdrowie psychiczne młodzieży.",
+    "source": "Poznańska Liga Debat, 27.04.2022",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Państwo powinno zagwarantować wszystkim gospodarstwom domowym równy dostęp do internetu.",
+    "source": "Poznańska Liga Debat, 29.03.2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "W szkolnych sklepikach i automatach z jedzeniem i piciem każdy ma prawo kupować to, na co ma ochotę.",
+    "source": "Poznańska Liga Debat, 29.03.2022",
+    "type": "motionPlValues"
+  },
+  {
+    "adinfo": "",
+    "motion": "Po Europie lepiej podróżować pociągiem niż autem.",
+    "source": "Poznańska Liga Debat, 23.02.2022",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Suburbanizacja jest większym zagrożeniem dla środowiska niż betonoza.",
+    "source": "Poznańska Liga Debat, 23.02.2022",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Gospodarka 4.0 niesie za sobą więcej szans niż zagrożeń.",
+    "source": "Poznańska Liga Debat, 17.12.2021",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Postęp technologiczny jest podstawą zrównoważonego rozwoju.",
+    "source": "Poznańska Liga Debat, 17.12.2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Otton III miał realną szansę stworzyć monarchię uniwersalną w Europie.",
+    "source": "Poznańska Liga Debat, 26.11.2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "W imię wspólnego interesu miasto Poznań oraz ościenne gminy powinny się połączyć ",
+    "source": "Poznańska Liga Debat, 26.11.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Najlepszym rozwiązaniem problemu starzejącego się społeczeństwa w Europie jest rozwój automatyzacji i sztucznej inteligencji.",
+    "source": "Poznańska Liga Debat, 26.11.2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Aby skutecznie walczyć z kryzysem klimatycznym, państwa powinny wprowadzić wysoki podatek od mięsa i nabiału.",
+    "source": "Poznańska Liga Debat, 27.05.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Ustrój I RP blokował dynamiczny rozwój społeczny mieszczan.",
+    "source": "Poznańska Liga Debat, 27.04.2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Główną przyczyną solidarności afrykańskiej było doświadczenie kolonializmu.",
+    "source": "Poznańska Liga Debat, 27.04.2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "W projektowaniu przestrzeni dla dzieci ich zdanie powinno być decydujące, nawet jeżeli jest to sprzeczne z wizją dorosłych.",
+    "source": "Poznańska Liga Debat, 27.03.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "W protestach społecznych osoby niepełnoletnie powinny brać udział tylko za zgodą swoich rodziców lub opiekunów ",
+    "source": "Poznańska Liga Debat, 27.03.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Po ustaniu epidemii polskie szkoły podstawowe i ponadpodstawowe powinny działać z częściowym wykorzystaniem nauki zdalnej.",
+    "source": "Poznańska Liga Debat, 29.01.2021",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Wykluczenie komunikacyjne jest głównym czynnikiem ograniczającym rozwój obszarów peryferyjnych w Polsce.",
+    "source": "Poznańska Liga Debat, marzec 2021",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Długofalowo praca zdalna jest bardziej opłacalna dla sektora prywatnego niż stacjonarna.",
+    "source": "Poznańska Liga Debat, 18 grudnia 2020",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Poznań zasługuje na miano smart-city.",
+    "source": "Poznańska Liga Debat, 18 grudnia 2020",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Uzyskanie praw wyborczych przez kobiety w Polsce w 1918 r. było głównie ich efektem wcześniejszego zaangażowania w działalność niepodległościową.",
+    "source": "Poznańska Liga Debat, marzec 2020",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Poznań efektywnie wykorzystuje potencjał wielokulturowego dziedzictwa miasta.",
+    "source": "Poznańska Liga Debat, marzec 2020",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Wprowadzenie tzw. \"dochodu naleźnego\" nie zrównoważy negatywnych skutków społecznych dalszej automatyzacji i robotyzacji produckji.",
+    "source": "Poznańska Liga Debat, listopad 2019",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Lepiej prowadzić własną działalność gospodarczą niż pracować na etacie.",
+    "source": "Poznańska Liga Debat, listopad 2019",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Komunikacja publiczna w Poznaniu powinna być darmowa dla wszystkich.",
+    "source": "Poznańska Liga Debat, 20.02.2019",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Władze Poznania nie powinny wydawać publicznych pieniędzy na rewitalizację historycznych dzielnic miasta.",
+    "source": "Poznańska Liga Debat, 20.022019",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Witold Pilecki i inni polscy żołnierze nie powinni po II wojnie światowej wracać do Polski.",
+    "source": "AV, czerwiec 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Państwa UE powinny opierać swój system bezpieczeństwa na strategicznym partnerstwie z USA niż budować europejski system bezpieczeństwa.",
+    "source": "Kujawsko-Pomorska Liga Debat Toruń kwiecień 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Wielka rewolucja francuska przyniosła społeczeństwu europejskiemu więcej szkód niż korzyści.",
+    "source": "Kujawsko-Pomorska Liga Debat, bdg 3 miejsce marzec 2023",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Chat GPT powinien być ograniczony dostępem tylko jako narzędzie pomocnicze w badaniach, np. sortowaniu danych.",
+    "source": "Kujawsko-Pomorska Liga Debat byd luty 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako zaangażowany i świadomy kibic piłki nożnej bojkotowałbym MS w katarze.",
+    "source": "Kujawsko-Pomorska Liga Debat torun styczen 2021",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "Dla rozwoju młodzieżowych relacji rówieśniczych social media są bardziej zagrożeniem niż szansą.",
+    "source": "Kujawsko-Pomorska Liga Debat byd styczen 2023",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "dostępne zasoby internetu są szkodliwe dla dzieci i niepełnoletniej młodzieży.",
+    "source": "Kujawsko-Pomorska Liga Debat byd styczen 2023",
+    "type": ""
+  },
+  {
+    "adinfo": "",
+    "motion": "Odpady biodegradowalne to bardziej szansa niż zagrożenie.",
+    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "obecne problemy związane z odpadami wynikają bardziej ze świadomości społecznej niż złego zarządzania.",
+    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
+    "type": ""
+  },
+  {
+    "adinfo": "",
+    "motion": "jako nastoletni obywatel polski swoją aktywność polityczną realizowałbym w młodzieżowych partiach politycznych.",
+    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
+    "type": ""
+  },
+  {
+    "adinfo": "",
+    "motion": "polska powinna wprowadzić instytucję weta ludowego do swojego systemu prawnego.",
+    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "partie polityczne nie powinny być finansowane z budżetu państwa.",
+    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "pełnienie funkcji poselskiej nie powinno być opłacane ze środków publicznych.",
+    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "powinno zakazac sie stosowania algorytmu personalizacji tresci w internecie.",
+    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "Państwo X funkcjonuje w unii gospodarczej w warunkach wolnorynkowych. W skutek globalnego kryzysu megakorporacje zaczęły wpływać na rządy państw oraz ich politykę oraz zaczęły znacząco wpływać na najważniejsze sektory gospodarek państw, w tym państwa X.",
+    "motion": "Państwo X powinno wprowadzić politykę protekcjonizmu oraz znacjonalizować najważniejsze gałęzie przemysłu.",
+    "source": "Poznańska Liga Debat finał maj 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Praca organiczna była najskuteczniejszą formą walki z zaborcą.",
+    "source": "Poznańska Liga Debat, marzec 2023",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Działania dyplomatyczne Polski w XIX wieku przybliżyły polskę do osiągnięcia niepodległości w większym stopniu od pozostałych form działań.",
+    "source": "Poznańska Liga Debat, marzec 2023",
+    "type": "motionPlComparative"
+  },
+  {
+    "adinfo": "",
+    "motion": "Decyzje dotyczące projektowania przestrzeni w polskich miastach powinny być podejmowane o parytety płci.",
+    "source": "Poznańska Liga Debat, luty 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "W polskiej szkole system ocen zachowania przynosi więcej szkód niż pożytków.",
+    "source": "Poznańska Liga Debat styczeń 2023",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Młodzież chcąca skutecznie walczyć z kryzysem klimatycznym musi zainteresować się polityką.",
+    "source": "Poznańska Liga Debat styczeń 2023",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "w dobie kryzysu energetycznego państwa powinny inwestować w OZE, nawet kosztem dobrobytu swoich obywateli.",
+    "source": "Poznańska Liga Debat grudzień 2022",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Współcześnie osiąganie sukcesów finansowych w działalności gospodarczej nie jest możliwe bez płatnych kampanii reklamowych w social mediach.",
+    "source": "Poznańska Liga Debat grudzień 2022",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Jako młody absolwent studiów w polsce wolałbym otworzyć własną działalność gospodarczą niż pracować na etacie.",
+    "source": "Poznańska Liga Debat październik 2022",
+    "type": "motionPlFirstPerson"
+  },
+  {
+    "adinfo": "",
+    "motion": "W interesie polski jest wprowadzenie bezwarunkowego dochodu podstawowego.",
+    "source": "Poznańska Liga Debat październik 2022",
+    "type": "motionPlInterest"
+  },
+  {
+    "adinfo": "",
+    "motion": "Metoda d'Hondta przynosi więcej szkód niż pożytków polskiemu systemowi wyborczemu.",
+    "source": "Bydgoska Liga Debat, listopad 2023",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna wprowadzić przymus wyborczy.",
+    "source": "Bydgoska Liga Debat, listopad 2023",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Państwa sojusznicze względem Izraela powinny uzależnić swoje dalsze wsparcie od jego akceptacji rozwiązania dwupaństwowego.",
+    "source": "TILD listopad 2023",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Przekonanie, że recykling jest w pełni prośrodowsiskowy niesie za sobą więcej korzyści niż strat.",
+    "source": "Poznańska Liga Debat, grudzień 2023",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Państwo polskie powinno finansować wyłącznie te dziedziny sportu zawodowego, w których odnosi sukcesy.",
+    "source": "Poznańska Liga Debat, listopad 2023",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Rodzice powinni wychowywać swoje dzieci tak, aby przedkładały one kolektywizm nad indywidualizm.",
+    "source": "Bydgoska Liga Debat, styczeń 2024",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna dążyć do struktury społeczeństwa międzykulturowego.",
+    "source": "Bydgoska Liga Debat, styczeń 2024",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna przyjąć jak najszybciej bezwzględny zakaz hodowli zwierząt na futra.",
+    "source": "Bydgoska Liga Debat, grudzień 2023",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Unia Europejska powinna zakazać używania wobec żywności roślinnej nazw kojarzonych z produktami pochodzenia zwierzęcego.",
+    "source": "Bydgoska Liga Debat, grudzień 2023",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Powinno się przywrócić przedmiot \"wiedza o kulturze\" w szkołach średnich.",
+    "source": "Wielkopolska Liga Debat, luty 2024",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "homogenizacja kultury przynosi więcej szkód niż korzyści.",
+    "source": "Wielkopolska Liga Debat, luty 2024",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Poznań powinien zakazać wjazdu samochodów do centrum miasta.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Zabytki w miastach polskich nie powinny uniemożliwiać zmian w planie zagospodarowania przestrzennego dla projektów publicznych.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Instytucje państwowe nie powinny być skoncentrowane tylko w jednym mieście.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Obowiązek ochrony zabytkowych obiektów miejskich powinien spoczywać w rękach prywatnych inwestorów.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Wykorzystanie systemów facial recognition (systemów rozpoznawania twarzy) to raczej szansa, niż zagrożenie.",
+    "source": "Tezownicy",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": "Ustawowy zakaz gospodarowania mieniem komunalnym dużych miast RP poprzez przeniesienie własności przyniósłby ich mieszkańcom więcej szkód niż korzyści.",
+    "source": "Tezownicy",
+    "type": "motionPlDescriptive"
+  },
+  {
+    "adinfo": "",
+    "motion": " W Polsce należy obniżyć czynne prawo wyborcze do 16 roku życia.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Marszałek województwa ma większy wpływ na funkcjonowanie województwa niż wojewoda.",
+    "source": "Tezownicy",
+    "type": "plMotionOfFact"
+  },
+  {
+    "adinfo": "",
+    "motion": "Wolność słowa nie powinna podlegać żadnym ograniczeniom.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Unia Europejska powinna przyjąć wspólne prawo penalizujące mowę nienawiści w Internecie.",
+    "source": "Tezownicy",
+    "type": "motionPlPolicy"
+  },
+  {
+    "adinfo": "",
+    "motion": "Debaty oksfordzkie powinny stać się nowym przedmiotem obowiązkowym dla osób uczących się w szkołach ponadpodstawowych.",
+    "source": "Tezownicy",
+    "type": "motionPlDuty"
+  },
+  {
+    "adinfo": "",
+    "motion": "Polska powinna dążyć do jak najszybszego wejścia wejścia do strefy euro.",
+    "source": "Tezownicy",
+    "type": "motionPlPolicy"
   }
 ]

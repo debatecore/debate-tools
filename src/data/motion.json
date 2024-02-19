@@ -364,7 +364,7 @@
     "lang": "pl",
     "motion": "Jako nastoletni obywatel Polski swoją aktywność społeczną realizowałbym w młodzieżowych partiach politycznych.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń, 13.12.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 13.12.2022",
     "type": "motionPlFirstPerson"
   },
   {
@@ -418,9 +418,9 @@
   },
   {
     "lang": "pl",
-    "motion": "Jako Elon Musk zaangażowałbym się w walkę z kryzysem klimatycznym kosztem programu kosmicznego. Turniej debat ekologiczno-klimatycznych ",
+    "motion": "Jako Elon Musk zaangażowałbym się w walkę z kryzysem klimatycznym kosztem programu kosmicznego.",
     "adinfo": "",
-    "source": "czerwiec 2022",
+    "source": "Turniej debat ekologiczno-klimatycznych, czerwiec 2022",
     "type": "motionPlFirstPerson"
   },
   {
@@ -446,13 +446,6 @@
   },
   {
     "lang": "pl",
-    "motion": "Jako prezydent miasta bydgoszczy priorytetzowałbym wydatki na ochronę zdrowia psychicznego ponad inne elementy ochrony zdrowia.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat 2023, Finał",
-    "type": "motionPlFirstPerson"
-  },
-  {
-    "lang": "pl",
     "motion": "Jako uczeń/uczennica szkoły ponadpodstawowej dostrzegam więcej szkód niż korzyści z pojawienia się Chatu GPT.",
     "adinfo": "",
     "source": "Kujawsko-Pomorska Liga Debat, luty 2023",
@@ -464,13 +457,6 @@
     "adinfo": "",
     "source": "Debata pokazowa, grudzień 2022",
     "type": "motionPlFirstPerson"
-  },
-  {
-    "lang": "pl",
-    "motion": "W interesie miasta Ostrów Mazowiecka leży kultywowanie pamięci o Szkole Podchorążych Piechoty.",
-    "adinfo": "",
-    "source": "htw, 2022",
-    "type": "motionPlInterest"
   },
   {
     "lang": "pl",
@@ -495,8 +481,8 @@
   },
   {
     "lang": "pl",
-    "motion": "Jako obywatel/obywatelka X kupiłbym/kupiłabym samochód elektryczny (Infoslajd: Obywatel X potrzebuje auta do przemieszczania się w tygodniu pomiędzy dużymi miastami wojewódzkimi i ich centrami).",
-    "adinfo": "",
+    "motion": "Jako obywatel/obywatelka X kupiłbym/kupiłabym samochód elektryczny",
+    "adinfo": "Obywatel X potrzebuje auta do przemieszczania się w tygodniu pomiędzy dużymi miastami wojewódzkimi i ich centrami.",
     "source": "Poznańska Liga Debat, grudzień 2023",
     "type": "motionPlFirstPerson"
   },
@@ -516,135 +502,128 @@
   },
   {
     "lang": "pl",
-    "motion": "Patrząc z ówczesnej perspektywy, Witold Pilecki nie powinien wracać do Polski po II wojnie światowej AV maj 2021",
+    "motion": "Patrząc z ówczesnej perspektywy, Witold Pilecki nie powinien wracać do Polski po II wojnie światowej",
     "adinfo": "",
-    "source": "",
+    "source": "AV, maj 2021",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Działalność grupy Anonymous przynosi więcej szkód niż korzyści.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 23.11.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 23.11.2022",
     "type": "motionPlDescriptive"
   },
   {
     "lang": "pl",
     "motion": "Odpady biodegradowalne to bardziej szansa niż zagrożenie.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 14.12.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 14.12.2022",
     "type": "motionPlDescriptive"
   },
   {
     "lang": "pl",
     "motion": "Obecne problemy związane z odpadami wynikają bardziej z świadomości społecznej niż złego zarządzania.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 14.12.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 14.12.2022",
     "type": "plMotionOfFact"
   },
   {
     "lang": "pl",
     "motion": "Polska powinna wprowadzić instytucję weta ludowego do swojego systemu prawnego.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 13.12.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 13.12.2022",
     "type": "motionPlPolicy"
   },
   {
     "lang": "pl",
     "motion": "Partie polityczne nie powinny być finansowane z budżetu państwa.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 22.11.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 22.11.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Pełnienie funkcji poselskiej nie powinno być opłacane ze środków publicznych.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 22.11.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 22.11.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Powinno zakazać się algorytmu personalizacji treści w Internecie.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 23.11.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 23.11.2022",
     "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "Przez 23 lata istnienia województwa kujawsko-pomorskiego udało się wytworzyć wspólną tożsamość regionalną.",
-    "adinfo": "",
-    "source": "Finał Kujawsko-Pomorska Liga Debat, 31.05.2022",
-    "type": "plMotionOfFact"
   },
   {
     "lang": "pl",
     "motion": "Sztuczna inteligencja powinna zawsze podlegać kontroli ludzi.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 6.04.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 6.04.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Powinno się zaprzestać używania betonu w budownictwie.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 6.04.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 6.04.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Należy wprowadzić przymus wyborczy w Polsce.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 11.03.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 11.03.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Dwukadencyjność wójtów, burmistrzów, prezydentów miast niesie za sobą więcej szkód niż korzyści.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 11.03.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 11.03.2022",
     "type": "motionPlDescriptive"
   },
   {
     "lang": "pl",
     "motion": "Państwo powinno częściowo spłacać dług osób uzależnionych od hazardu.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 11.02.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 11.02.2022",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Polska powinna utrzymać i egzekwować bardziej restrykcyjne przymusowe leczenie dla karanych osób uzależnionych.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 11.02.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 11.02.2022",
     "type": "motionPlPolicy"
   },
   {
     "lang": "pl",
     "motion": "Komunikacja miejska powinna być bezpłatna.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.12.2021",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 15.12.2021",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Powinno wprowadzić się specjalne opłaty dla samochodów wjeżdżających do centrów miast.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń 15.12.2021",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, 15.12.2021",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Powinno zakazać się chowu przemysłowego zwierząt.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.12.2021",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 16.12.2021",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "GMO przynosi więcej korzyści niż szkód.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.01.2022",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 16.01.2022",
     "type": "motionPlDescriptive"
   },
   {
@@ -665,14 +644,14 @@
     "lang": "pl",
     "motion": "Migranci klimatyczni powinni posiadać status uchodźców.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.11.2021",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 16.11.2021",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Aby skutecznie walczyć z kryzysem klimatycznym, powinien powstać specjalny podatek od mięsa.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz 16.11.2021",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 16.11.2021",
     "type": "motionPlDuty"
   },
   {
@@ -768,7 +747,7 @@
   },
   {
     "lang": "pl",
-    "motion": "W imię wspólnego interesu miasto Poznań oraz ościenne gminy powinny się połączyć ",
+    "motion": "W imię wspólnego interesu miasto Poznań oraz ościenne gminy powinny się połączyć.",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 26.11.2021",
     "type": "motionPlDuty"
@@ -817,13 +796,6 @@
   },
   {
     "lang": "pl",
-    "motion": "Po ustaniu epidemii polskie szkoły podstawowe i ponadpodstawowe powinny działać z częściowym wykorzystaniem nauki zdalnej.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat, 29.01.2021",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
     "motion": "Wykluczenie komunikacyjne jest głównym czynnikiem ograniczającym rozwój obszarów peryferyjnych w Polsce.",
     "adinfo": "",
     "source": "Poznańska Liga Debat, marzec 2021",
@@ -838,13 +810,6 @@
   },
   {
     "lang": "pl",
-    "motion": "Poznań zasługuje na miano smart-city.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat, 18 grudnia 2020",
-    "type": "plMotionOfFact"
-  },
-  {
-    "lang": "pl",
     "motion": "Uzyskanie praw wyborczych przez kobiety w Polsce w 1918 r. było głównie ich efektem wcześniejszego zaangażowania w działalność niepodległościową.",
     "adinfo": "",
     "source": "Poznańska Liga Debat, marzec 2020",
@@ -852,14 +817,7 @@
   },
   {
     "lang": "pl",
-    "motion": "Poznań efektywnie wykorzystuje potencjał wielokulturowego dziedzictwa miasta.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat, marzec 2020",
-    "type": "plMotionOfFact"
-  },
-  {
-    "lang": "pl",
-    "motion": "Wprowadzenie tzw. \"dochodu naleźnego\" nie zrównoważy negatywnych skutków społecznych dalszej automatyzacji i robotyzacji produckji.",
+    "motion": "Wprowadzenie tzw. \"dochodu naleźnego\" nie zrównoważy negatywnych skutków społecznych dalszej automatyzacji i robotyzacji produkcji.",
     "adinfo": "",
     "source": "Poznańska Liga Debat, listopad 2019",
     "type": "plMotionOfFact"
@@ -873,20 +831,6 @@
   },
   {
     "lang": "pl",
-    "motion": "Komunikacja publiczna w Poznaniu powinna być darmowa dla wszystkich.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat, 20.02.2019",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "Władze Poznania nie powinny wydawać publicznych pieniędzy na rewitalizację historycznych dzielnic miasta.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat, 20.022019",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
     "motion": "Witold Pilecki i inni polscy żołnierze nie powinni po II wojnie światowej wracać do Polski.",
     "adinfo": "",
     "source": "AV, czerwiec 2023",
@@ -896,21 +840,21 @@
     "lang": "pl",
     "motion": "Państwa UE powinny opierać swój system bezpieczeństwa na strategicznym partnerstwie z USA niż budować europejski system bezpieczeństwa.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat Toruń kwiecień 2023",
+    "source": "Kujawsko-Pomorska Liga Debat, Toruń, kwiecień 2023",
     "type": "motionPlDuty"
   },
   {
     "lang": "pl",
     "motion": "Wielka rewolucja francuska przyniosła społeczeństwu europejskiemu więcej szkód niż korzyści.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat, bdg 3 miejsce marzec 2023",
+    "source": "Kujawsko-Pomorska Liga Debat, debata o trzecie miejsce, Bydgoszcz, marzec 2023",
     "type": "motionPlDescriptive"
   },
   {
     "lang": "pl",
     "motion": "Chat GPT powinien być ograniczony dostępem tylko jako narzędzie pomocnicze w badaniach, np. sortowaniu danych.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd luty 2023",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, luty 2023",
     "type": "motionPlDuty"
   },
   {
@@ -924,64 +868,8 @@
     "lang": "pl",
     "motion": "Dla rozwoju młodzieżowych relacji rówieśniczych social media są bardziej zagrożeniem niż szansą.",
     "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd styczen 2023",
+    "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, styczen 2023",
     "type": "motionPlDescriptive"
-  },
-  {
-    "lang": "pl",
-    "motion": "dostępne zasoby internetu są szkodliwe dla dzieci i niepełnoletniej młodzieży.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd styczen 2023",
-    "type": ""
-  },
-  {
-    "lang": "pl",
-    "motion": "Odpady biodegradowalne to bardziej szansa niż zagrożenie.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
-    "type": "motionPlDescriptive"
-  },
-  {
-    "lang": "pl",
-    "motion": "obecne problemy związane z odpadami wynikają bardziej ze świadomości społecznej niż złego zarządzania.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
-    "type": ""
-  },
-  {
-    "lang": "pl",
-    "motion": "jako nastoletni obywatel polski swoją aktywność polityczną realizowałbym w młodzieżowych partiach politycznych.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
-    "type": ""
-  },
-  {
-    "lang": "pl",
-    "motion": "polska powinna wprowadzić instytucję weta ludowego do swojego systemu prawnego.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "partie polityczne nie powinny być finansowane z budżetu państwa.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "pełnienie funkcji poselskiej nie powinno być opłacane ze środków publicznych.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat torun listopad 2022",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "powinno zakazac sie stosowania algorytmu personalizacji tresci w internecie.",
-    "adinfo": "",
-    "source": "Kujawsko-Pomorska Liga Debat byd listopad 2022",
-    "type": "motionPlDuty"
   },
   {
     "lang": "pl",
@@ -1027,20 +915,6 @@
   },
   {
     "lang": "pl",
-    "motion": "w dobie kryzysu energetycznego państwa powinny inwestować w OZE, nawet kosztem dobrobytu swoich obywateli.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat grudzień 2022",
-    "type": "motionPlDuty"
-  },
-  {
-    "lang": "pl",
-    "motion": "Współcześnie osiąganie sukcesów finansowych w działalności gospodarczej nie jest możliwe bez płatnych kampanii reklamowych w social mediach.",
-    "adinfo": "",
-    "source": "Poznańska Liga Debat grudzień 2022",
-    "type": "plMotionOfFact"
-  },
-  {
-    "lang": "pl",
     "motion": "Jako młody absolwent studiów w polsce wolałbym otworzyć własną działalność gospodarczą niż pracować na etacie.",
     "adinfo": "",
     "source": "Poznańska Liga Debat październik 2022",
@@ -1071,7 +945,7 @@
     "lang": "pl",
     "motion": "Państwa sojusznicze względem Izraela powinny uzależnić swoje dalsze wsparcie od jego akceptacji rozwiązania dwupaństwowego.",
     "adinfo": "",
-    "source": "TILD listopad 2023",
+    "source": "TILD, listopad 2023",
     "type": "motionPlDuty"
   },
   {
@@ -1125,7 +999,7 @@
   },
   {
     "lang": "pl",
-    "motion": "homogenizacja kultury przynosi więcej szkód niż korzyści.",
+    "motion": "Homogenizacja kultury przynosi więcej szkód niż korzyści.",
     "adinfo": "",
     "source": "Wielkopolska Liga Debat, luty 2024",
     "type": "motionPlDescriptive"
@@ -1160,7 +1034,7 @@
   },
   {
     "lang": "pl",
-    "motion": "Wykorzystanie systemów facial recognition (systemów rozpoznawania twarzy) to raczej szansa, niż zagrożenie.",
+    "motion": "Wykorzystanie systemów facial recognition (systemów rozpoznawania twarzy) to raczej szansa niż zagrożenie.",
     "adinfo": "",
     "source": "Tezownicy",
     "type": "motionPlDescriptive"

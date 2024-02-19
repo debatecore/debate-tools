@@ -526,7 +526,7 @@
     "motion": "Obecne problemy związane z odpadami wynikają bardziej z świadomości społecznej niż złego zarządzania..",
     "adinfo": "",
     "source": "Kujawsko-Pomorska Liga Debat, Bydgoszcz, 14.12.2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -666,14 +666,14 @@
     "motion": "Współcześnie osiąganie sukcesów finansowych w działalności gospodarczej nie jest możliwe bez płatnych kampanii reklamowych w social mediach..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 16.12.2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
     "motion": "Głównym zadaniem medycyny jest przedłużanie życia ludzkiego..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 28.05.2022, Finał",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -694,7 +694,7 @@
     "motion": "Szkoła odgrywa najważniejszą rolę w kwestii dbania o zdrowie psychiczne młodzieży..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 27.04.2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -736,14 +736,14 @@
     "motion": "Postęp technologiczny jest podstawą zrównoważonego rozwoju..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 17.12.2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
     "motion": "Otton III miał realną szansę stworzyć monarchię uniwersalną w Europie..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 26.11.2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -757,7 +757,7 @@
     "motion": "Najlepszym rozwiązaniem problemu starzejącego się społeczeństwa w Europie jest rozwój automatyzacji i sztucznej inteligencji..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 26.11.2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -771,14 +771,14 @@
     "motion": "Ustrój I RP blokował dynamiczny rozwój społeczny mieszczan..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 27.04.2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
     "motion": "Główną przyczyną solidarności afrykańskiej było doświadczenie kolonializmu..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, 27.04.2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -799,7 +799,7 @@
     "motion": "Wykluczenie komunikacyjne jest głównym czynnikiem ograniczającym rozwój obszarów peryferyjnych w Polsce..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, marzec 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -813,14 +813,14 @@
     "motion": "Uzyskanie praw wyborczych przez kobiety w Polsce w 1918 r. było głównie ich efektem wcześniejszego zaangażowania w działalność niepodległościową..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, marzec 2020",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
     "motion": "Wprowadzenie tzw. \"dochodu naleźnego\" nie zrównoważy negatywnych skutków społecznych dalszej automatyzacji i robotyzacji produkcji..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, listopad 2019",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -883,7 +883,7 @@
     "motion": "Praca organiczna była najskuteczniejszą formą walki z zaborcą..",
     "adinfo": "",
     "source": "Poznańska Liga Debat, marzec 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -911,7 +911,7 @@
     "motion": "Młodzież chcąca skutecznie walczyć z kryzysem klimatycznym musi zainteresować się polityką..",
     "adinfo": "",
     "source": "Poznańska Liga Debat styczeń 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -1058,7 +1058,7 @@
     "motion": "Marszałek województwa ma większy wpływ na funkcjonowanie województwa niż wojewoda..",
     "adinfo": "",
     "source": "Tezownicy",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "lang": "pl",
@@ -1116,13 +1116,13 @@
     "adinfo": "",
     "motion": "Anglia i Francja postąpiły zgodnie ze swoją racją stanu, nie pomagając Polsce w trakcie kampanii polskiej 1939 r.",
     "source": "Porozmawiajmy o II Wojnie Światowej, październik 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Polska była państwem zwycięskim w II wojnie światowej.",
     "source": "Porozmawiajmy o II Wojnie Światowej, październik 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1134,7 +1134,7 @@
     "adinfo": "",
     "motion": "Racja stanu Rzeczypospolitej wymagała, aby polscy lotnicy w Wielkiej Brytanii służyli w dywizjonach Polskich Sił Powietrznych.",
     "source": "Odzyskani bohaterowie, kwiecień 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1146,19 +1146,19 @@
     "adinfo": "",
     "motion": "Andrzej i Olga Małkowscy zasługują na miejsce w panteonie ojców niepodległości.",
     "source": "Odzyskani bohaterowie, marzec 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Idea zrównoważonego rozwoju jest nową utopią.",
     "source": "Turniej debat ekologiczno-klimatycznych, czerwiec 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Sprawiedliwa transformacja nie jest w Polsce możliwa.",
     "source": "Turniej debat ekologiczno-klimatycznych, czerwiec 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1188,19 +1188,19 @@
     "adinfo": "",
     "motion": "Walka ze zmianami klimatu w Polsce odniosłaby większe sukcesy, gdyby była wpisana w konserwatywną narrację.",
     "source": "Turniej debat ekologiczno-klimatycznych, listopad 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Najlepszym sposobem na rozwój technologii energii odnawialnej jest prawo do ich pierwokupu przez państwa.",
     "source": "Turniej debat ekologiczno-klimatycznych, listopad 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Atak alianckiego lotnictwa na niemieckie obozy koncentracyjne i obozy śmierci był odpowiednim środkiem na zmniejszenie skali ludobójstwa.",
     "source": "AV, luty 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1212,7 +1212,7 @@
     "adinfo": "",
     "motion": "Młodzież, chcąca skutecznie walczyć z kryzysem klimatycznym, musi zainteresować się polityką.",
     "source": "Kwidzyn, październik 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1224,13 +1224,13 @@
     "adinfo": "",
     "motion": "Bitwa o Atlantyk była decydującym czynnikiem determinującym wynik II wojny światowej.",
     "source": "Gdańsk, listopad 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Główną przyczyną wybuchu II wojny światowej było przyjęcie traktatu wersalskiego w jego oryginalnym brzmieniu.",
     "source": "Gdańsk, listopad 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1242,7 +1242,7 @@
     "adinfo": "",
     "motion": "Podstawą polityki niemieckiego narodowego socjalizmu był kult nowoczesności.",
     "source": "Gdańsk, grudzień 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1272,13 +1272,13 @@
     "adinfo": "",
     "motion": "Opór zbrojny przeciwko władzy komunistycznej w powojennej Polsce był niepotrzebnym narażaniem życia Polaków.",
     "source": "AV, marzec 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Polska Rzeczpospolita Ludowa w latach 1956-1989 nie była państwem totalitarnym.",
     "source": "AV, marzec 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1338,7 +1338,7 @@
     "adinfo": "",
     "motion": "Istnienie Rządu Rzeczypospolitej Polskiej na uchodźstwie po II wojnie światowej nie miało istotnego znaczenia dla sprawy polskiej.",
     "source": "AV, maj 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1362,7 +1362,7 @@
     "adinfo": "",
     "motion": "Wielokulturowość i wieloetniczność była niewykorzystaną szansą na rozwój miast pogranicza II Rzeczypospolitej, takich jak Supraśl.",
     "source": "Historia w Trasie, październik 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1386,7 +1386,7 @@
     "adinfo": "",
     "motion": "W dzisiejszych czasach tradycyjne biblioteki są nam niepotrzebne.",
     "source": "Kwidzyn, październik 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1398,7 +1398,7 @@
     "adinfo": "",
     "motion": "Przeprowadzenie planu Balcerowicza było największym sukcesem gospodarczym III RP.",
     "source": "Kujawsko-Pomorska Liga Debat, Toruń, maj 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "Inwestycje strategiczne: autostrady, przekopy, elektrownie, kanały, infrastruktura wojskowa bądź należąca do innych służb mundurowych, znajdujące się na terenie państwa.",
@@ -1410,13 +1410,13 @@
     "adinfo": "",
     "motion": "Powstanie w getcie warszawskim było pierwszym powstaniem warszawskim.",
     "source": "Odzyskani bohaterowie, kwiecień 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Pamięć o losach partnerek i partnerów upamiętnionych osób, zamordowanych w latach 1944-1956 w ramach represji komunistycznych jest niewystarczająca.",
     "source": "Odzyskani bohaterowie, kwiecień 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1470,7 +1470,7 @@
     "adinfo": "",
     "motion": "Wielokulturowość i wieloetniczność była niewykorzystaną szansą na rozwój miast pogranicza II Rzeczypospolitej, takich jak Supraśl.",
     "source": "htw 2022",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1482,7 +1482,7 @@
     "adinfo": "",
     "motion": "Festiwale kultury są najlepszą formą edukacji regionalnej społeczności.",
     "source": "Jaskółki Kultury, listopad 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1494,7 +1494,7 @@
     "adinfo": "",
     "motion": "Do zażegnania kryzysu klimatycznego wystarczyłaby zmiana modelu konsumpcji z konsumpcjonizmu na konsumpcję autonomiczną.",
     "source": "Turniej debat ekologiczno-klimatycznych, listopad 2021",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
@@ -1506,13 +1506,13 @@
     "adinfo": "",
     "motion": "Polacy wygrali Bitwę pod Gniewem w 1626 roku.",
     "source": "Historia w Trasie, 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",
     "motion": "Polska była państwem zwycięskim w II wojnie światowej.",
     "source": "Historia w Trasie, 2023",
-    "type": "plMotionOfFact"
+    "type": "motionPlFact"
   },
   {
     "adinfo": "",

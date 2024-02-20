@@ -194,30 +194,39 @@
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
   "motionPlPolicy": {
-    "en": "Motion of policy",
-    "pl": "Teza o działaniu"
+    "en": "Teza o działaniu"
   },
   "motionPlDuty": {
-    "en": "Motion of duty",
-    "pl": "Teza powinnościowa"
+    "en": "Teza powinnościowa"
   },
   "motionPlDescriptive": {
-    "en": "Descriptive motion",
-    "pl": "Teza deskryptywna"
+    "en": "Teza deskryptywna"
   },
   "motionPlFirstPerson": {
-    "en": "First-person motion",
-    "pl": "Teza pierwszoosobowa"
+    "en": "Teza pierwszoosobowa"
   },
   "motionPlComparative": {
-    "en": "Comparative motion",
-    "pl": "Teza porównawcza"
+    "en": "Teza porównawcza"
   },
   "motionPlValues": {
-    "en": "Motion of values",
-    "pl": "Teza o wartościach "
+    "en": "Teza o wartościach "
   },
   "motionPlFact": {
+    "en": "Teza faktograficzna"
+  },
+  "motionPlEvaluative": {
+    "en": "Teza oceniająca"
+  },
+  "motionEnFirstPerson": {
+    "en": "First-person motion"
+  },
+  "motionEnFact": {
     "en": "Motion of fact"
+  },
+  "motionEnRegret": {
+    "en": "This House Regrets..."
+  },
+  "motionEnThisHouseSupports": {
+    "en": "This House Supports..."
   }
 }

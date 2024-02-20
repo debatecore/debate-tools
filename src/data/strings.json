@@ -231,5 +231,8 @@
   },
   "motionEnThisHouseSupports": {
     "en": "This House Supports..."
+  },
+  "motionEnPolicy": {
+    "en": "Motion of policy"
   }
 }

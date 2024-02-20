@@ -217,6 +217,9 @@
   "motionPlEvaluative": {
     "en": "Teza oceniająca"
   },
+  "motionPlRegret": {
+    "en": "Należy żałować..."
+  },
   "motionEnFirstPerson": {
     "en": "First-person motion"
   },

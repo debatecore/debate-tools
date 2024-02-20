@@ -216,5 +216,8 @@
   "motionPlValues": {
     "en": "Motion of values",
     "pl": "Teza o wartościach "
+  },
+  "motionPlFact": {
+    "en": "Motion of fact"
   }
 }

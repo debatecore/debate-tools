@@ -193,6 +193,48 @@
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
+  "motionPlPolicy": {
+    "en": "Teza o działaniu"
+  },
+  "motionPlDuty": {
+    "en": "Teza powinnościowa"
+  },
+  "motionPlDescriptive": {
+    "en": "Teza deskryptywna"
+  },
+  "motionPlFirstPerson": {
+    "en": "Teza pierwszoosobowa"
+  },
+  "motionPlComparative": {
+    "en": "Teza porównawcza"
+  },
+  "motionPlValues": {
+    "en": "Teza o wartościach "
+  },
+  "motionPlFact": {
+    "en": "Teza faktograficzna"
+  },
+  "motionPlEvaluative": {
+    "en": "Teza oceniająca"
+  },
+  "motionPlRegret": {
+    "en": "Należy żałować..."
+  },
+  "motionEnFirstPerson": {
+    "en": "First-person motion"
+  },
+  "motionEnFact": {
+    "en": "Motion of fact"
+  },
+  "motionEnRegret": {
+    "en": "This House Regrets..."
+  },
+  "motionEnThisHouseSupports": {
+    "en": "This House Supports..."
+  },
+  "motionEnPolicy": {
+    "en": "Motion of policy"
+  },
   "motionFilterTitle": {
     "en": "Filter motions"
   },

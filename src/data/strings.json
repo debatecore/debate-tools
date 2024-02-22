@@ -192,5 +192,14 @@
     "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
+  },
+  "motionFilterTitle": {
+    "en": "Filter motions"
+  },
+  "motionType": {
+    "en": "Motion type"
+  },
+  "filterButtonText": {
+    "en": "Filter"
   }
 }

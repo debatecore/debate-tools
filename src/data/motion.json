@@ -52,7 +52,8 @@
     "lang": "pl",
     "motion": "W Polsce należy wprowadzić test preferencji politycznych.",
     "adinfo": "Na potrzeby debaty test preferencji politycznych stanowi test składający się z pytań dotyczących określonych polityk, poglądów oraz wartości. Po wypełnieniu testu, system ustala do którego z kandydatów głosujący ma najbardziej zbliżone odpowiedzi i oddaje na niego automatycznie głos.",
-    "source": "Turniej Debat Oksfordzkich o Tematyce Społeczno-Prawnej 2023, Eliminacje"
+    "source": "Turniej Debat Oksfordzkich o Tematyce Społeczno-Prawnej 2023, Eliminacje",
+    "type": "motionPlPolicy"
   },
   {
     "lang": "pl",

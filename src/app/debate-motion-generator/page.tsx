@@ -1,5 +1,4 @@
 "use client";
-import MotionFilter from "@/components/MotionFilter";
 import { MotionGenerator } from "@/components/MotionGenerator";
 import { useLang } from "@/lib/useLang";
 
@@ -12,7 +11,6 @@ export default function DebateMotionGenerator() {
       <p className="mb-2 text-center text-neutral-500">
         {useLang("debateMotionGeneratorFlavortext")}
       </p>
-      <MotionFilter />
       <div className="flex flex-col md:flex-row justify-center flex-wrap items-center gap-2 mt-4">
         <MotionGenerator />
       </div>

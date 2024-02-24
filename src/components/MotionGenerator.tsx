@@ -11,6 +11,7 @@ import { IconClock } from "./icons/Clock";
 import { useRouter } from "next/navigation";
 import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { Checkbox } from "./Checkbox";
+import { IconFilter } from "./icons/Filter";
 
 /**
  * TO-DO:
@@ -27,7 +28,6 @@ const MotionGenerator = () => {
   const router = useRouter();
 
   function generateMotion(): motion {
-    console.log(motions);
     const filteredMotions = motions.filter((motion) => {
       return (
         motion.type &&
@@ -35,7 +35,6 @@ const MotionGenerator = () => {
         enabledMotions.includes(motion.type as any)
       );
     });
-    console.log(filteredMotions);
     return filteredMotions[Math.floor(Math.random() * filteredMotions.length)];
   }
 
@@ -144,23 +143,23 @@ const MotionGenerator = () => {
         <section className="flex flex-col">
           <h6 className="text-center">{useLang("language")}</h6>
           {allowedMotionLanguages.map((langCode) => (
-            <label className="flex flex-row justify-between">
-              <span>{getSpecificLangString("selfLanguageString", langCode)}</span>
-              <input
-                type="checkbox"
-                name="language"
-                value={langCode}
-                onChange={applyLanguageFilter}
-              />
-            </label>
+            <Checkbox
+              key={langCode}
+              name="language"
+              value={langCode}
+              labelText={getSpecificLangString("selfLanguageString", langCode)}
+              onChange={applyLanguageFilter}
+            />
           ))}
         </section>
         <section>
           <h6 className="text-center">{useLang("motionType")}</h6>
           {motionTypes.map((motionType) => (
             <Checkbox
+              key={motionType.type}
               name="motionType"
               value={motionType.type}
+              // TO-DO: Don't use the useLang hook in a callback
               labelText={useLang(motionType.type)}
               disabled={isLanguageDisabled(motionType.lang)}
               onChange={applyMotionTypeFilter}
@@ -169,6 +168,7 @@ const MotionGenerator = () => {
         </section>
         <GenericButton
           text={useLang("filterButtonText")}
+          icon={IconFilter}
           onClick={() => {
             if (
               motion?.type &&

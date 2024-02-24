@@ -4,6 +4,7 @@ type CheckboxProps = {
   name: string;
   value: string;
   labelText: string;
+  key: string;
   disabled?: boolean;
   onChange?: any;
 };
@@ -19,6 +20,7 @@ const Checkbox = (props: CheckboxProps) => {
         type="checkbox"
         name={props.name}
         value={props.value}
+        key={props.key}
         disabled={props.disabled}
         onChange={props.onChange}
       />

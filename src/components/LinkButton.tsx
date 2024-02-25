@@ -19,6 +19,8 @@ const LinkButton = (props: LinkButtonProps) => {
         disabled={props.disabled}
         icon={props.icon}
         compactOnMobile={props.compactOnMobile}
+        smol={props.smol}
+        square={props.square}
       />
     </Link>
   );

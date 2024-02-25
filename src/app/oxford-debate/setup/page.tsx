@@ -1,5 +1,7 @@
 "use client";
 import { DebateConfStringsPanel } from "@/components/DebateConfStringsPanel";
+import { DebateConfUglyPanel } from "@/components/DebateConfUglyPanel";
+import { LangSwitchComponent } from "@/components/LangSwitch";
 import { LinkButton } from "@/components/LinkButton";
 import { IconList } from "@/components/icons/List";
 import { IconPlayCircle } from "@/components/icons/PlayCircle";
@@ -20,6 +22,8 @@ export default function OxfordDebateSetup() {
       </p>
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-4 px-4">
         <DebateConfStringsPanel />
+        <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <DebateConfUglyPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <div className="flex flex-row flex-wrap justify-center gap-2">
           <LinkButton href="/" text="Main Menu" icon={IconList} />

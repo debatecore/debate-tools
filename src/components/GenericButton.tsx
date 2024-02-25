@@ -5,6 +5,8 @@ type SharedButtonProps = {
   disabled?: boolean;
   compactOnMobile?: boolean;
   icon?: (props: iconprops) => JSX.Element;
+  smol?: boolean;
+  square?: boolean;
   onClick?: () => void;
   className?: string;
 };
@@ -19,9 +21,13 @@ const GenericButton = (props: SharedButtonProps & GenericButtonProps) => {
       disabled={props.disabled}
       tabIndex={props.disableTabbing ? -1 : 0}
       className={`
-        ml-auto p-2 px-12 rounded-lg w-full border-2 relative overflow-hidden
+        ml-auto p-2 w-full border-2 relative
+        ${!props.smol ? "px-12" : ""}
+        ${!props.square ? "rounded-lg" : "rounded"}
+        overflow-hidden
         border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700
         disabled:opacity-50 disabled:cursor-not-allowed
+        ${props.className}
       `}
       onClick={props.onClick}
     >

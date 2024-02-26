@@ -76,6 +76,8 @@ const DebateConfUglyPanel = () => {
             debateContext.setConf({
               ...debateContext.conf,
               endProtectedTime: 30,
+              startProtectedTime:
+                debateContext.conf.startProtectedTime === 0 ? 0 : 30,
             })
           }
         />
@@ -92,6 +94,8 @@ const DebateConfUglyPanel = () => {
             debateContext.setConf({
               ...debateContext.conf,
               endProtectedTime: 20,
+              startProtectedTime:
+                debateContext.conf.startProtectedTime === 0 ? 0 : 20,
             })
           }
         />
@@ -107,6 +111,10 @@ const DebateConfUglyPanel = () => {
               endProtectedTime: parseInt(
                 refSafeTimeInput.current?.value || "30"
               ),
+              startProtectedTime:
+                debateContext.conf.startProtectedTime === 0
+                  ? 0
+                  : parseInt(refSafeTimeInput.current?.value || "30"),
             })
           }
         />

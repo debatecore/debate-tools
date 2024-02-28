@@ -18,7 +18,7 @@
     "pl": "Narzędzia Debatanckie",
     "de": "Debatten-Tool",
     "jp": "ディベートツール",
-    "es": "Herramientas de Debate"
+    "es": "Herramientas de debate"
   },
   "madeWith": {
     "en": "Made with",
@@ -38,7 +38,8 @@
   },
   "oxfordDebateConfiguration": {
     "en": "Debate configuration",
-    "pl": "Konfiguracja debaty"
+    "pl": "Konfiguracja debaty",
+    "es": "Configuración del debate"
   },
   "oxfordDebateConfigurationFlavortext": {
     "en": "Dear Marshal, what are the rules?",
@@ -46,57 +47,69 @@
   },
   "debateMotion": {
     "en": "Debate motion",
-    "pl": "Teza debaty"
+    "pl": "Teza debaty",
+    "es": "Tesis de debate"
   },
   "debateMotionFlavortext": {
     "en": "The topic of the debate.",
-    "pl": "Kość niezgody"
+    "pl": "Kość niezgody",
+    "es": "La manzana de la discordia"
   },
   "proTeam": {
     "en": "Proposition Team",
-    "pl": "Drużyna propozycji"
+    "pl": "Drużyna propozycji",
+    "es": "Equipo de propuesta"
   },
   "proTeamFlavortext": {
     "en": "Those in favour.",
-    "pl": "Za."
+    "pl": "Za.",
+    "es": "A favor."
   },
   "oppTeam": {
     "en": "Opposition Team",
-    "pl": "Drużyna opozycji"
+    "pl": "Drużyna opozycji",
+    "es": "Equipo de oposición"
   },
   "oppTeamFlavortext": {
     "en": "Those against.",
-    "pl": "Przeciw."
+    "pl": "Przeciw.",
+    "es": "En contra."
   },
   "speechTime": {
     "en": "Speech time",
-    "pl": "Czas mowy"
+    "pl": "Czas mowy",
+    "es": "Tiempo de habla"
   },
   "adVocem": {
     "en": "Ad vocem"
   },
   "protectedTime": {
     "en": "Protected time",
-    "pl": "Czas chroniony"
+    "pl": "Czas chroniony",
+    "es": "Tiempo protegido"
   },
   "min": {
     "en": "min"
   },
   "sec": {
     "en": "sec",
-    "pl": "sek"
+    "pl": "sek",
+    "es": "seg"
   },
   "preset": {
     "en": "Preset",
-    "pl": "Szablon"
+    "pl": "Szablon",
+    "es": "Plantilla"
   },
   "musketeers": {
     "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
-    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku"
+    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
+    "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
     "en": "PLD - Poznań Debate League",
-    "pl": "PLD - Poznańska Liga Debat"
+    "pl": "PLD - Poznańska Liga Debat",
+    "es": "PLD - Liga de debate de Poznan"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
@@ -175,11 +188,13 @@
   "debateOverThisMotion": {
     "en": "Debate over this motion",
     "pl": "Debatuj nad tą tezą",
-    "de": "Darüber debattieren"
+    "de": "Darüber debattieren",
+    "es": "Debatir esta tesis"
   },
   "infoslide": {
     "en": "Infoslide",
-    "pl": "Infoslajd"
+    "pl": "Infoslajd",
+    "es": "Diapositiva informativa"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",

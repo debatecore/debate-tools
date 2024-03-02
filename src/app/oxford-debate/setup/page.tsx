@@ -3,6 +3,7 @@ import { DebateConfStringsPanel } from "@/components/DebateConfStringsPanel";
 import { DebateConfUglyPanel } from "@/components/DebateConfUglyPanel";
 import { LangSwitchComponent } from "@/components/LangSwitch";
 import { LinkButton } from "@/components/LinkButton";
+import { TimeInput } from "@/components/TimeInput";
 import { IconList } from "@/components/icons/List";
 import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { DebateContext } from "@/contexts/DebateContext";
@@ -22,6 +23,19 @@ export default function OxfordDebateSetup() {
       </p>
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-4 px-4">
         <DebateConfStringsPanel />
+        <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <div className="flex flex-row justify-between items-center">
+          <p>Speech Time</p>
+          <TimeInput
+            time={debateContext.conf.speechTime}
+            setTime={(time: number) => {
+              debateContext.setConf({
+                ...debateContext.conf,
+                speechTime: time,
+              });
+            }}
+          />
+        </div>
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <DebateConfUglyPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />

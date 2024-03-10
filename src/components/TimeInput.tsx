@@ -10,12 +10,13 @@ const TimeInput = (props: {
         <button className="px-3" onClick={() => props.setTime(props.time + 60)}>
           +
         </button>
-        <div className="border-x-2 border-neutral-800 p-2">
+        <div className="border-x-2 border-neutral-800 min-w-32 flex flex-row justify-center p-2">
           {Math.floor(props.time / 60)}
           {" minutes"}
         </div>
         <button
-          className="px-3"
+          className="px-3 disabled:text-neutral-500 disabled:cursor-not-allowed"
+          disabled={!(props.time - 60 >= 0)}
           onClick={() => {
             if (props.time - 60 >= 0) props.setTime(props.time - 60);
           }}
@@ -28,12 +29,13 @@ const TimeInput = (props: {
         <button className="px-3" onClick={() => props.setTime(props.time + 15)}>
           +
         </button>
-        <div className="border-x-2 border-neutral-800 p-2">
+        <div className="border-x-2 border-neutral-800 min-w-32 flex flex-row justify-center p-2">
           {props.time % 60}
           {" seconds"}
         </div>
         <button
-          className="px-3"
+          className="px-3 disabled:text-neutral-500 disabled:cursor-not-allowed"
+          disabled={!(props.time - 15 >= 0)}
           onClick={() => {
             if (props.time - 15 >= 0) props.setTime(props.time - 15);
           }}

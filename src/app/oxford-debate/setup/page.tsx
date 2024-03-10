@@ -1,7 +1,6 @@
 "use client";
 import { DebateConfStringsPanel } from "@/components/DebateConfStringsPanel";
 import { DebateConfUglyPanel } from "@/components/DebateConfUglyPanel";
-import { LangSwitchComponent } from "@/components/LangSwitch";
 import { LinkButton } from "@/components/LinkButton";
 import { TimeInput } from "@/components/TimeInput";
 import { IconList } from "@/components/icons/List";
@@ -36,7 +35,31 @@ export default function OxfordDebateSetup() {
             }}
           />
         </div>
-        <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <div className="flex flex-row justify-between items-center">
+          <p>Protected Time</p>
+          <TimeInput
+            time={debateContext.conf.endProtectedTime}
+            setTime={(time: number) => {
+              debateContext.setConf({
+                ...debateContext.conf,
+                endProtectedTime: time,
+              });
+            }}
+          />
+        </div>
+        <div className="flex flex-row justify-between items-center">
+          <p>Ad Vocem Time</p>
+          <TimeInput
+            time={debateContext.conf.adVocemTime}
+            setTime={(time: number) => {
+              debateContext.setConf({
+                ...debateContext.conf,
+                adVocemTime: time,
+              });
+            }}
+          />
+        </div>
+        {/* <hr className="border-b-2 rounded border-neutral-800 my-2" /> */}
         <DebateConfUglyPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <div className="flex flex-row flex-wrap justify-center gap-2">

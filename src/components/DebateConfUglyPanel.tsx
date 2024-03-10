@@ -17,7 +17,7 @@ const DebateConfUglyPanel = () => {
   return (
     <div className="flex flex-col gap-2">
       {/* SPEECH TIME */}
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <p>Speech Time</p>
       </div>
       <div className="flex flex-row gap-2 items-center">
@@ -57,9 +57,9 @@ const DebateConfUglyPanel = () => {
           }
         />
         <p>seconds.</p>
-      </div>
+      </div> */}
       {/* PROTECTED TIME */}
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <p>Protected Time</p>
       </div>
       <div className="flex flex-row gap-2 items-center">
@@ -119,9 +119,9 @@ const DebateConfUglyPanel = () => {
           }
         />
         <p>seconds.</p>
-      </div>
+      </div> */}
       {/* AD VOCEM TIME */}
-      <div className="flex justify-between">
+      {/* <div className="flex justify-between">
         <p>Ad Vocem</p>
       </div>
       <div className="flex flex-row gap-2 items-center">
@@ -161,7 +161,7 @@ const DebateConfUglyPanel = () => {
           }
         />
         <p>seconds.</p>
-      </div>
+      </div> */}
       <div className="flex flex-row gap-2 mt-4">
         <GenericButton
           text="Beep on speech time"

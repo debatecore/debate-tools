@@ -109,7 +109,7 @@ export default function OxfordDebateSetup() {
         <div className="flex flex-row flex-wrap justify-center gap-2">
           <LinkButton href="/" text={useLang("mainmenu")} icon={IconList} />
           <LinkButton
-            href="/"
+            href="/oxford-debate"
             text={useLang("oxfordDebateConductionUtility")}
             icon={IconPlayCircle}
           />

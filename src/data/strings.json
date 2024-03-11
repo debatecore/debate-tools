@@ -88,6 +88,10 @@
     "pl": "Czas chroniony",
     "es": "Tiempo protegido"
   },
+  "adVocemTime": {
+    "en": "Ad vocem time",
+    "pl": "Czas Ad vocem"
+  },
   "min": {
     "en": "min"
   },
@@ -110,6 +114,26 @@
     "en": "PLD - Poznań Debate League",
     "pl": "PLD - Poznańska Liga Debat",
     "es": "PLD - Liga de debate de Poznan"
+  },
+  "beepOnSpeechEnd": {
+    "en": "Beep on speech end",
+    "pl": "Sygnalizuj koniec mowy dźwiękowo"
+  },
+  "beepOnProtected": {
+    "en": "Beep on protected time",
+    "pl": "Sygnalizuj czas chroniony dźwiękowo"
+  },
+  "visualizeProtected": {
+    "en": "Visualize protected time",
+    "pl": "Pokaż czas chroniony wizualnie"
+  },
+  "protectSpeechStart": {
+    "en": "Protect time on speech start",
+    "pl": "Chroń czas na początku mowy"
+  },
+  "mainmenu": {
+    "en": "Main menu",
+    "pl": "Menu główne"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",

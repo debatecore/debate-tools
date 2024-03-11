@@ -1,10 +1,12 @@
 "use client";
 import { DebateConfStringsPanel } from "@/components/DebateConfStringsPanel";
-import { DebateConfUglyPanel } from "@/components/DebateConfUglyPanel";
+import { GenericButton } from "@/components/GenericButton";
 import { LinkButton } from "@/components/LinkButton";
 import { TimeInput } from "@/components/TimeInput";
+import { IconCheck } from "@/components/icons/Check";
 import { IconList } from "@/components/icons/List";
 import { IconPlayCircle } from "@/components/icons/PlayCircle";
+import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { useContext } from "react";
@@ -24,7 +26,7 @@ export default function OxfordDebateSetup() {
         <DebateConfStringsPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <div className="flex flex-row justify-between items-center">
-          <p>Speech Time</p>
+          <p>{useLang("speechTime")}</p>
           <TimeInput
             time={debateContext.conf.speechTime}
             setTime={(time: number) => {
@@ -36,7 +38,7 @@ export default function OxfordDebateSetup() {
           />
         </div>
         <div className="flex flex-row justify-between items-center">
-          <p>Protected Time</p>
+          <p>{useLang("protectedTime")}</p>
           <TimeInput
             time={debateContext.conf.endProtectedTime}
             setTime={(time: number) => {
@@ -48,7 +50,7 @@ export default function OxfordDebateSetup() {
           />
         </div>
         <div className="flex flex-row justify-between items-center">
-          <p>Ad Vocem Time</p>
+          <p>{useLang("adVocemTime")}</p>
           <TimeInput
             time={debateContext.conf.adVocemTime}
             setTime={(time: number) => {
@@ -59,12 +61,58 @@ export default function OxfordDebateSetup() {
             }}
           />
         </div>
-        {/* <hr className="border-b-2 rounded border-neutral-800 my-2" /> */}
-        <DebateConfUglyPanel />
+        <GenericButton
+          text={useLang("beepOnSpeechEnd")}
+          icon={debateContext.conf.beepOnSpeechEnd ? IconCheck : IconX}
+          onClick={() => {
+            debateContext.setConf({
+              ...debateContext.conf,
+              beepOnSpeechEnd: !debateContext.conf.beepOnSpeechEnd,
+            });
+          }}
+        />
+        <GenericButton
+          text={useLang("beepOnProtected")}
+          icon={debateContext.conf.beepProtectedTime ? IconCheck : IconX}
+          onClick={() => {
+            debateContext.setConf({
+              ...debateContext.conf,
+              beepProtectedTime: !debateContext.conf.beepProtectedTime,
+            });
+          }}
+        />
+        <GenericButton
+          text={useLang("visualizeProtected")}
+          icon={debateContext.conf.visualizeProtectedTimes ? IconCheck : IconX}
+          onClick={() => {
+            debateContext.setConf({
+              ...debateContext.conf,
+              visualizeProtectedTimes:
+                !debateContext.conf.visualizeProtectedTimes,
+            });
+          }}
+        />
+        <GenericButton
+          text={useLang("protectSpeechStart")}
+          icon={debateContext.conf.startProtectedTime ? IconCheck : IconX}
+          onClick={() => {
+            debateContext.setConf({
+              ...debateContext.conf,
+              startProtectedTime:
+                debateContext.conf.startProtectedTime === 0
+                  ? debateContext.conf.endProtectedTime
+                  : 0,
+            });
+          }}
+        />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <div className="flex flex-row flex-wrap justify-center gap-2">
-          <LinkButton href="/" text="Main Menu" icon={IconList} />
-          <LinkButton href="/" text="Conduct debate" icon={IconPlayCircle} />
+          <LinkButton href="/" text={useLang("mainmenu")} icon={IconList} />
+          <LinkButton
+            href="/"
+            text={useLang("oxfordDebateConductionUtility")}
+            icon={IconPlayCircle}
+          />
         </div>
       </div>
     </div>

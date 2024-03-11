@@ -5,7 +5,8 @@ import { useContext, useRef } from "react";
 const inputStyle = `
   border-2 border-neutral-800 bg-transparent rounded
   p-2 px-3 outline-none hover:border-neutral-700 focus:border-neutral-600
-  placeholder:text-neutral-700 w-full
+  placeholder:text-neutral-700 w-full hover:bg-neutral-800
+  hover:placeholder:text-neutral-500
 `;
 
 const DebateConfStringsPanel = () => {

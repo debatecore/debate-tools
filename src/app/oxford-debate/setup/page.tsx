@@ -1,6 +1,7 @@
 "use client";
 import { DebateConfStringsPanel } from "@/components/DebateConfStringsPanel";
 import { GenericButton } from "@/components/GenericButton";
+import { GenericSelect } from "@/components/GenericSelect";
 import { LinkButton } from "@/components/LinkButton";
 import { TimeInput } from "@/components/TimeInput";
 import { IconCheck } from "@/components/icons/Check";
@@ -9,6 +10,7 @@ import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
+import { displayImageTypeArray } from "@/types/debate";
 import { useContext } from "react";
 
 export default function OxfordDebateSetup() {
@@ -24,7 +26,32 @@ export default function OxfordDebateSetup() {
       </p>
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-4 px-4">
         <DebateConfStringsPanel />
+        {/* <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <GenericSelect
+          text="Debate ruleset preset"
+          value={"Custom"}
+          options={[
+            {
+              value: "Custom",
+              exec: () => {},
+            },
+          ]}
+        /> */}
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <GenericSelect
+          text="Branding display image"
+          value={debateContext.conf.displayImage1}
+          options={displayImageTypeArray.map((el) => {
+            return {
+              value: el,
+              exec: () =>
+                debateContext.setConf({
+                  ...debateContext.conf,
+                  displayImage1: el,
+                }),
+            };
+          })}
+        />
         <div className="flex flex-row justify-between items-center">
           <p>{useLang("speechTime")}</p>
           <TimeInput

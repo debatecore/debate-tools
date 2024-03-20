@@ -19,10 +19,12 @@ const Dots = (props: {
               <div className="absolute left-0 top-0 h-3 w-3 rounded-full border-2 border-emerald-400 animate-ping z-20" />
             )}
             <div
-              className={`h-3 w-3 rounded-full border-2 border-neutral-600 z-10 ${
+              className={`h-3 w-3 rounded-full border-2 z-10 ${
                 props.stage > el && "bg-neutral-600"
               } ${
-                props.stage === el && props.flashCurrent && "border-emerald-400"
+                props.stage === el && props.flashCurrent
+                  ? "border-emerald-400"
+                  : "border-neutral-600"
               }`}
             />
           </div>
@@ -66,7 +68,11 @@ export default function OxfordDebate() {
           <p className="text-neutral-500 uppercase">
             {"current debate stage here"}
           </p>
-          <Clock running={running} maxtime={debate.conf.speechTime || 0} />
+          <Clock
+            running={running}
+            maxtime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
+            clockimage={debate.conf.displayImage1}
+          />
         </div>
         {/*  */}
         {/*  */}
@@ -89,16 +95,25 @@ export default function OxfordDebate() {
       {/*  */}
       {/*  */}
       {/*  */}
-      <div className="max-w-4xl mx-auto">
-        <GenericButton
-          text={!running ? "run" : "stop"}
-          onClick={() => {
-            setRunning(!running);
-            if (running) {
-              setStage(stage + 1);
-            }
-          }}
-        />
+      <div className="max-w-4xl mx-auto flex flex-row space-x-2">
+        {stage < 8 && (
+          <>
+            <GenericButton
+              text={!running ? "run" : "stop"}
+              onClick={() => {
+                setRunning(!running);
+                if (running && !advocem) {
+                  setStage(stage + 1);
+                }
+              }}
+            />
+            <GenericButton
+              text="advocem"
+              disabled={running}
+              onClick={() => setAdvocem(!advocem)}
+            />
+          </>
+        )}
       </div>
     </div>
   );

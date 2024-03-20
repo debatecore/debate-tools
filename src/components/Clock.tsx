@@ -1,17 +1,20 @@
 "use client";
-import { DebateContext } from "@/contexts/DebateContext";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { displayImageType } from "@/types/debate";
 import { useInterval } from "react-use";
 import Image from "next/image";
 
-const Clock = (props: { running: boolean; maxtime: number }) => {
-  const debate = useContext(DebateContext);
+const Clock = (props: {
+  running: boolean;
+  maxtime: number;
+  clockimage?: displayImageType;
+}) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
 
   const delay = 1000; // ms
 
-  useEffect(() => setTime(props.maxtime), [props.running]);
+  useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
   useInterval(() => setTime(time - 1), props.running ? delay : null);
   return (
     <>
@@ -72,7 +75,7 @@ const Clock = (props: { running: boolean; maxtime: number }) => {
             />
           </svg>
         </div>
-        {debate.conf.displayImage1 === "Musketeers of Words" && (
+        {props.clockimage === "Musketeers of Words" && (
           <div className="absolute w-full h-full flex justify-center items-center">
             <Image
               src={"/displayimages/Musketeer.png"}
@@ -80,6 +83,17 @@ const Clock = (props: { running: boolean; maxtime: number }) => {
               width={80}
               height={64}
               className="pt-32"
+            />
+          </div>
+        )}
+        {props.clockimage === "MOW" && (
+          <div className="absolute w-full h-full flex justify-center items-center">
+            <Image
+              src={"/displayimages/MOW.png"}
+              alt="Musketeers of Words logo"
+              width={60}
+              height={60}
+              className="mt-36 rounded-full"
             />
           </div>
         )}

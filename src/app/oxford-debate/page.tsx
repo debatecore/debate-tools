@@ -68,7 +68,7 @@ export default function OxfordDebate() {
       <p className="uppercase text-neutral-500">{anoxfordformatdebate}</p>
       <div className="relative flex flex-row justify-center mt-4 py-4">
         {/*  */}
-        <div className="w-1/3 text-right flex flex-col items-end">
+        <div className="hidden lg:flex w-1/3 text-right flex-col items-end">
           <h2 className="text-2xl">
             {debate.conf.proTeam || "Anonymous" || "The Proposition"}
           </h2>
@@ -85,10 +85,24 @@ export default function OxfordDebate() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <div className="w-1/3 text-center flex flex-col space-y-2 items-center">
-          <p className="text-neutral-500 uppercase">
-            {!advocem ? stage_strings[stage] : "ad vocem"}
-          </p>
+        <div className="w-full lg:w-1/3 text-center flex flex-col space-y-2 items-center">
+          <div>
+            <p className="text-neutral-500 uppercase">
+              {!advocem ? stage_strings[stage] : "ad vocem"}
+            </p>
+            <div className="flex lg:hidden flex-row space-x-6 justify-center">
+              <Dots
+                stage={stage}
+                stages={[0, 2, 4, 6]}
+                flashCurrent={running && !running}
+              />
+              <Dots
+                stage={stage}
+                stages={[1, 3, 5, 7]}
+                flashCurrent={running && !running}
+              />
+            </div>
+          </div>
           <Clock
             running={running}
             maxtime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
@@ -96,12 +110,13 @@ export default function OxfordDebate() {
             beepSpeechEnd={debate.conf.beepOnSpeechEnd}
             beepProtected={debate.conf.beepProtectedTime && !advocem}
             protectedTime={debate.conf.endProtectedTime}
+            protectStart={!!debate.conf.startProtectedTime}
           />
         </div>
         {/*  */}
         {/*  */}
         {/*  */}
-        <div className="w-1/3 text-left flex flex-col items-start">
+        <div className="hidden lg:flex w-1/3 text-left flex-col items-start">
           <h2 className="text-2xl">
             {debate.conf.oppTeam || "Anonymous" || "The Opposition"}
           </h2>
@@ -141,7 +156,7 @@ export default function OxfordDebate() {
               >
                 <div className="flex flex-row gap-2">
                   <IconAlertCircle />
-                  {"ad vocem"}
+                  <span className="hidden sm:block">{"ad vocem"}</span>
                 </div>
               </GenericButton>
               <GenericButton
@@ -156,7 +171,9 @@ export default function OxfordDebate() {
               >
                 <div className="flex flex-row gap-2">
                   {!running ? <IconPlayCircle /> : <IconStopCircle />}
-                  {!running ? startspeech : stopspeech}
+                  <span className="hidden sm:block">
+                    {!running ? startspeech : stopspeech}
+                  </span>
                 </div>
               </GenericButton>
             </div>

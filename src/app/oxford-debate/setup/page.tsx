@@ -114,7 +114,10 @@ export default function OxfordDebateSetup() {
             });
           }}
         />
-        <GenericButton
+        {/* TODO: */}
+        {/* implement visualize protected speech functionality */}
+        {/* selection disabled until implemented */}
+        {/* <GenericButton
           text={useLang("visualizeProtected")}
           icon={debateContext.conf.visualizeProtectedTimes ? IconCheck : IconX}
           onClick={() => {
@@ -124,7 +127,7 @@ export default function OxfordDebateSetup() {
                 !debateContext.conf.visualizeProtectedTimes,
             });
           }}
-        />
+        /> */}
         <GenericButton
           text={useLang("protectSpeechStart")}
           icon={debateContext.conf.startProtectedTime ? IconCheck : IconX}

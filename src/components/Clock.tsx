@@ -12,6 +12,7 @@ const Clock = (props: {
   beepSpeechEnd?: boolean;
   beepProtected?: boolean;
   protectedTime?: number;
+  protectStart?: boolean;
 }) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
@@ -31,18 +32,16 @@ const Clock = (props: {
   useEffect(() => {
     if (props.beepSpeechEnd && time === 0) controls2.play();
     // prettier-ignore
-    if (
-      props.beepProtected && props.protectedTime && (
-        time === props.protectedTime ||
-        time === props.maxtime - props.protectedTime
-    )) controls1.play();
+    if(props.beepProtected && props.protectedTime && time === props.protectedTime) controls1.play();
+    // prettier-ignore
+    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) controls1.play();
   }, [time]);
 
   useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
   useInterval(() => setTime(time - 1), props.running ? delay : null);
   return (
     <>
-      <div className="aspect-square w-[65%] flex flex-col space-y-1 justify-center items-center relative select-none">
+      <div className="aspect-square min-w-64 flex flex-col space-y-1 justify-center items-center relative select-none">
         <h2 className="text-5xl z-30">
           {time > 0 && (
             <>

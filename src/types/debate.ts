@@ -1,4 +1,4 @@
-const displayImageTypeArray = ["none", "Musketeers of Words", "MOW"] as const;
+const displayImageTypeArray = ["none", "MOW2024", "MOW2018"] as const;
 export { displayImageTypeArray };
 
 type displayImageType = (typeof displayImageTypeArray)[number];
@@ -29,6 +29,6 @@ const defaultDebateConf: debateConf = {
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  displayImage1: "MOW",
+  displayImage1: "MOW2024",
 };
 export { defaultDebateConf };

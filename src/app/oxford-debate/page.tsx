@@ -3,7 +3,6 @@ import { GenericButton } from "@/components/GenericButton";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useContext, useState } from "react";
 import { Clock } from "@/components/Clock";
-import Image from "next/image";
 
 const Dots = (props: {
   stages: number[];

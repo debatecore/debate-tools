@@ -92,7 +92,7 @@ const Clock = (props: {
             />
           </svg>
         </div>
-        {props.clockimage === "Musketeers of Words" && (
+        {props.clockimage === "MOW2018" && (
           <div className="absolute w-full h-full flex justify-center items-center">
             <Image
               src={"/displayimages/Musketeer.png"}
@@ -103,7 +103,7 @@ const Clock = (props: {
             />
           </div>
         )}
-        {props.clockimage === "MOW" && (
+        {props.clockimage === "MOW2024" && (
           <div className="absolute w-full h-full flex justify-center items-center">
             <Image
               src={"/displayimages/MOW.png"}

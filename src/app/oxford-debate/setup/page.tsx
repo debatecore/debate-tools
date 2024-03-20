@@ -16,6 +16,7 @@ import { useContext } from "react";
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
+  const brandingselect = useLang("brandingdisplayimage");
   return (
     <div>
       <h1 className="text-3xl mt-8 text-center font-serif">
@@ -39,7 +40,7 @@ export default function OxfordDebateSetup() {
         /> */}
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <GenericSelect
-          text="Branding display image"
+          text={brandingselect}
           value={debateContext.conf.displayImage1}
           options={displayImageTypeArray.map((el) => {
             return {

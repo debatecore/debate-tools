@@ -273,5 +273,9 @@
   },
   "motionEnPolicy": {
     "en": "Motion of policy"
+  },
+  "brandingdisplayimage": {
+    "en": "Clock branding image",
+    "pl": "Logotyp zegarowy"
   }
 }

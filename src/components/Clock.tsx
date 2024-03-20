@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { displayImageType } from "@/types/debate";
 import { useInterval } from "react-use";
 import Image from "next/image";
+import { useLang } from "@/lib/useLang";
 
 const Clock = (props: {
   running: boolean;
@@ -11,6 +12,9 @@ const Clock = (props: {
 }) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
+
+  const timeleft = useLang("timeleft");
+  const overtime = useLang("overtime");
 
   const delay = 1000; // ms
 
@@ -33,7 +37,7 @@ const Clock = (props: {
           {time <= 0 && time * -1}
         </h2>
         <p className="text-neutral-500 uppercase z-30">
-          {time > 0 ? "time left" : "seconds overtime"}
+          {time > 0 ? timeleft : overtime}
         </p>
         {/* INFORM */}
         {/* ------ */}

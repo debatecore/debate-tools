@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { useEffect, useState } from "react";
-import { langsArray, language } from "@/types/language";
+import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
 import { debateConf, defaultDebateConf } from "@/types/debate";
 import { DebateContext } from "@/contexts/DebateContext";
@@ -14,14 +14,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [stateLang, setStateLang] = useState<language>(
-    (langsArray.includes(localStorage.getItem("lang") as language) &&
-      (localStorage.getItem("lang") as language)) ||
-      "en"
-  );
+  const [stateLang, setStateLang] = useState<language>("en");
   const [stateDebateConf, setStateDebateConf] =
     useState<debateConf>(defaultDebateConf);
 
+  useEffect(() => {
+    if (!localStorage) return;
+    const localLang = localStorage.getItem("lang");
+    // prettier-ignore
+    if (localLang && !langsPublicBlacklist.includes(localLang as language) && langsArray.includes(localLang as language)) {
+      setStateLang(localLang as language);
+    }
+  }, []);
   return (
     <html>
       <head>

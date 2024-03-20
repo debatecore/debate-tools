@@ -3,6 +3,8 @@ import { GenericButton } from "@/components/GenericButton";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useContext, useState } from "react";
 import { Clock } from "@/components/Clock";
+import { useLang } from "@/lib/useLang";
+import { LinkButton } from "@/components/LinkButton";
 
 const Dots = (props: {
   stages: number[];
@@ -39,20 +41,32 @@ export default function OxfordDebate() {
   const [running, setRunning] = useState<boolean>(false);
   const [advocem, setAdvocem] = useState<boolean>(false);
 
+  // prettier-ignore
+  const stage_strings = [
+    useLang("stage0"), useLang("stage1"), useLang("stage2"), useLang("stage3"),
+    useLang("stage4"), useLang("stage5"), useLang("stage6"), useLang("stage7"),
+    useLang("stage8")
+  ];
+  const nomotiongiven = useLang("nomotiongiven");
+  const anoxfordformatdebate = useLang("oxfordformatdebate");
+  const aspropo = useLang("asproposition");
+  const asoppo = useLang("asopposition");
+
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">
       <h1 className="font-serif text-4xl text-balance">
-        {debate.conf.motion || "No motion given"}
+        {debate.conf.motion || nomotiongiven}
       </h1>
-      <p className="uppercase text-neutral-500">{"an oxford format debate"}</p>
+      <p className="uppercase text-neutral-500">{anoxfordformatdebate}</p>
       <div className="relative flex flex-row justify-center mt-4 py-4">
         {/*  */}
         <div className="w-1/3 text-right flex flex-col items-end">
           <h2 className="text-2xl">
-            {debate.conf.proTeam || "The Proposition"}
+            {debate.conf.proTeam || "Anonymous" || "The Proposition"}
           </h2>
           <p className="text-neutral-500 uppercase">
-            {debate.conf.proTeam ? "as the proposition" : "in favour"}
+            {/* {debate.conf.proTeam ? "as the proposition" : "in favour"} */}
+            {aspropo}
           </p>
           <Dots
             stages={[0, 2, 4, 6]}
@@ -65,7 +79,7 @@ export default function OxfordDebate() {
         {/*  */}
         <div className="w-1/3 text-center flex flex-col space-y-2 items-center">
           <p className="text-neutral-500 uppercase">
-            {!advocem ? "current debate stage here" : "ad vocem"}
+            {!advocem ? stage_strings[stage] : "ad vocem"}
           </p>
           <Clock
             running={running}
@@ -78,10 +92,11 @@ export default function OxfordDebate() {
         {/*  */}
         <div className="w-1/3 text-left flex flex-col items-start">
           <h2 className="text-2xl">
-            {debate.conf.oppTeam || "The Opposition"}
+            {debate.conf.oppTeam || "Anonymous" || "The Opposition"}
           </h2>
           <p className="text-neutral-500 uppercase">
-            {debate.conf.oppTeam ? "as the opposition" : "against"}
+            {/* {debate.conf.oppTeam ? "as the opposition" : "against"} */}
+            {asoppo}
           </p>
           <Dots
             stages={[1, 3, 5, 7]}
@@ -110,6 +125,14 @@ export default function OxfordDebate() {
                   setStage(stage + 1);
                 }
               }}
+            />
+          </>
+        )}
+        {stage === 8 && (
+          <>
+            <LinkButton
+              text="back to debate config"
+              href="/oxford-debate/setup"
             />
           </>
         )}

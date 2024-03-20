@@ -29,6 +29,6 @@ const defaultDebateConf: debateConf = {
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  displayImage1: "MOW2024",
+  displayImage1: "null",
 };
 export { defaultDebateConf };

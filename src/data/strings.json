@@ -281,5 +281,65 @@
   "brandingdisplayimage_nulloption": {
     "en": "none",
     "pl": "brak"
+  },
+  "nomotiongiven": {
+    "en": "No motion given",
+    "pl": "Brak podanej tezy"
+  },
+  "oxfordformatdebate": {
+    "en": "an oxford format debate",
+    "pl": "debata w formacie oksfordzkim"
+  },
+  "asproposition": {
+    "en": "as the proposition",
+    "pl": "jako propozycja"
+  },
+  "asopposition": {
+    "en": "as the opposition",
+    "pl": "jako opozycja"
+  },
+  "timeleft": {
+    "en": "time left",
+    "pl": "pozostały czas"
+  },
+  "overtime": {
+    "en": "overtime",
+    "pl": "czas minął"
+  },
+  "stage0": {
+    "en": "first speech of the proposition",
+    "pl": "pierwsza mowa propozycji"
+  },
+  "stage1": {
+    "en": "first speech of the opposition",
+    "pl": "pierwsza mowa opozycji"
+  },
+  "stage2": {
+    "en": "second speech of the proposition",
+    "pl": "druga mowa propozycji"
+  },
+  "stage3": {
+    "en": "second speech of the opposition",
+    "pl": "druga mowa opozycji"
+  },
+  "stage4": {
+    "en": "third speech of the proposition",
+    "pl": "trzecia mowa propozycji"
+  },
+  "stage5": {
+    "en": "third speech of the opposition",
+    "pl": "trzecia mowa opozycji"
+  },
+  "stage6": {
+    "en": "fourth speech of the proposition",
+    "pl": "czwarta mowa propozycji"
+  },
+  "stage7": {
+    "en": "fourth speech of the opposition",
+    "pl": "czwarta mowa opozycji"
+  },
+  "stage8": {
+    "en": "debate complete",
+    "pl": "debata zakończona"
   }
 }

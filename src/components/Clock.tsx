@@ -20,21 +20,30 @@ const Clock = (props: {
     <>
       <div className="aspect-square w-[65%] flex flex-col space-y-1 justify-center items-center relative select-none">
         <h2 className="text-5xl z-30">
-          {Math.floor(time / 60) < 10 && "0"}
-          {Math.floor(time / 60)}
-          {":"}
-          {Math.floor(time % 60) < 10 && Math.floor(time % 60) !== 0 && "0"}
-          {Math.floor(time % 60)}
-          {Math.floor(time % 60) === 0 && "0"}
+          {time > 0 && (
+            <>
+              {Math.floor(time / 60) < 10 && "0"}
+              {Math.floor(time / 60)}
+              {":"}
+              {Math.floor(time % 60) < 10 && Math.floor(time % 60) !== 0 && "0"}
+              {Math.floor(time % 60)}
+              {Math.floor(time % 60) === 0 && "0"}
+            </>
+          )}
+          {time <= 0 && time * -1}
         </h2>
-        <p className="text-neutral-500 uppercase z-30">{"time left"}</p>
+        <p className="text-neutral-500 uppercase z-30">
+          {time > 0 ? "time left" : "seconds overtime"}
+        </p>
         {/* INFORM */}
         {/* ------ */}
         {/* VISUAL */}
         <div className="absolute w-full h-full flex justify-center items-center">
           {/* OUTER RING - GREEN DISAPPEARING RING */}
           <svg
-            className="z-20 -rotate-90 text-emerald-400"
+            className={`z-20 -rotate-90 ${
+              time > 0 ? "text-emerald-400" : "text-transparent"
+            }`}
             width={256}
             height={256}
           >
@@ -50,7 +59,8 @@ const Clock = (props: {
                 118 * 2 * Math.PI - (time / props.maxtime) * (118 * 2 * Math.PI)
               }
               strokeDasharray={refCircle.current?.getTotalLength()}
-              style={props.running ? { transitionDuration: "350ms" } : {}}
+              // style={props.running ? { transitionDuration: "350ms" } : {}}
+              style={{ transitionDuration: "350ms" }}
             />
           </svg>
         </div>
@@ -58,9 +68,11 @@ const Clock = (props: {
         <div className="absolute w-full h-full flex justify-center items-center">
           <svg
             className={`z-10 -rotate-90 ${
-              props.running && time !== props.maxtime
-                ? "text-neutral-800"
-                : "text-emerald-400"
+              time === props.maxtime
+                ? "text-emerald-400"
+                : time <= 0
+                ? "text-red-400"
+                : "text-neutral-800"
             }`}
             width={256}
             height={256}
@@ -72,6 +84,11 @@ const Clock = (props: {
               cx={128}
               cy={128}
               strokeWidth={5}
+              style={
+                !props.running && time > 0
+                  ? { transitionDuration: "350ms" }
+                  : {}
+              }
             />
           </svg>
         </div>

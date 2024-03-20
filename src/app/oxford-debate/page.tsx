@@ -46,7 +46,7 @@ export default function OxfordDebate() {
         {debate.conf.motion || "No motion given"}
       </h1>
       <p className="uppercase text-neutral-500">{"an oxford format debate"}</p>
-      <div className="relative flex flex-row justify-center py-4">
+      <div className="relative flex flex-row justify-center mt-4 py-4">
         {/*  */}
         <div className="w-1/3 text-right flex flex-col items-end">
           <h2 className="text-2xl">
@@ -66,7 +66,7 @@ export default function OxfordDebate() {
         {/*  */}
         <div className="w-1/3 text-center flex flex-col space-y-2 items-center">
           <p className="text-neutral-500 uppercase">
-            {"current debate stage here"}
+            {!advocem ? "current debate stage here" : "ad vocem"}
           </p>
           <Clock
             running={running}
@@ -99,6 +99,11 @@ export default function OxfordDebate() {
         {stage < 8 && (
           <>
             <GenericButton
+              text="advocem"
+              disabled={running}
+              onClick={() => setAdvocem(!advocem)}
+            />
+            <GenericButton
               text={!running ? "run" : "stop"}
               onClick={() => {
                 setRunning(!running);
@@ -106,11 +111,6 @@ export default function OxfordDebate() {
                   setStage(stage + 1);
                 }
               }}
-            />
-            <GenericButton
-              text="advocem"
-              disabled={running}
-              onClick={() => setAdvocem(!advocem)}
             />
           </>
         )}

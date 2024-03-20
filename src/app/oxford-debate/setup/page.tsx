@@ -17,6 +17,7 @@ export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
   const brandingselect = useLang("brandingdisplayimage");
+  const brandingnull = useLang("brandingdisplayimage_nulloption");
   return (
     <div>
       <h1 className="text-3xl mt-8 text-center font-serif">
@@ -41,10 +42,14 @@ export default function OxfordDebateSetup() {
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <GenericSelect
           text={brandingselect}
-          value={debateContext.conf.displayImage1}
+          value={
+            debateContext.conf.displayImage1 === "null"
+              ? brandingnull
+              : debateContext.conf.displayImage1
+          }
           options={displayImageTypeArray.map((el) => {
             return {
-              value: el,
+              value: el === "null" ? brandingnull : el,
               exec: () =>
                 debateContext.setConf({
                   ...debateContext.conf,

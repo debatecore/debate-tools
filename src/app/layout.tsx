@@ -1,8 +1,8 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { useState } from "react";
-import { language } from "@/types/language";
+import { useEffect, useState } from "react";
+import { langsArray, language } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
 import { debateConf, defaultDebateConf } from "@/types/debate";
 import { DebateContext } from "@/contexts/DebateContext";
@@ -14,9 +14,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [stateLang, setStateLang] = useState<language>("en");
+  const [stateLang, setStateLang] = useState<language>(
+    (langsArray.includes(localStorage.getItem("lang") as language) &&
+      (localStorage.getItem("lang") as language)) ||
+      "en"
+  );
   const [stateDebateConf, setStateDebateConf] =
     useState<debateConf>(defaultDebateConf);
+
   return (
     <html>
       <head>
@@ -32,6 +37,7 @@ export default function RootLayout({
             lang: stateLang,
             setLang: (lang) => {
               setStateLang(lang);
+              localStorage.setItem("lang", lang);
             },
           }}
         >

@@ -277,5 +277,9 @@
   "brandingdisplayimage": {
     "en": "Clock branding image",
     "pl": "Logotyp zegarowy"
+  },
+  "brandingdisplayimage_nulloption": {
+    "en": "none",
+    "pl": "brak"
   }
 }

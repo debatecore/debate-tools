@@ -1,4 +1,4 @@
-const displayImageTypeArray = ["none", "MOW2024", "MOW2018"] as const;
+const displayImageTypeArray = ["null", "MOW2024", "MOW2018"] as const;
 export { displayImageTypeArray };
 
 type displayImageType = (typeof displayImageTypeArray)[number];

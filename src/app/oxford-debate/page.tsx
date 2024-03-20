@@ -1,10 +1,15 @@
 "use client";
 import { GenericButton } from "@/components/GenericButton";
 import { DebateContext } from "@/contexts/DebateContext";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Clock } from "@/components/Clock";
 import { useLang } from "@/lib/useLang";
 import { LinkButton } from "@/components/LinkButton";
+import { IconPlayCircle } from "@/components/icons/PlayCircle";
+import { IconStopCircle } from "@/components/icons/StopCircle";
+import { IconAlertCircle } from "@/components/icons/AlertCircle";
+import { IconArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
+import Link from "next/link";
 
 const Dots = (props: {
   stages: number[];
@@ -51,6 +56,9 @@ export default function OxfordDebate() {
   const anoxfordformatdebate = useLang("oxfordformatdebate");
   const aspropo = useLang("asproposition");
   const asoppo = useLang("asopposition");
+  const startspeech = useLang("startspeech");
+  const stopspeech = useLang("stopspeech");
+  const debateconfig = useLang("oxfordDebateConfiguration");
 
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">
@@ -85,6 +93,9 @@ export default function OxfordDebate() {
             running={running}
             maxtime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
             clockimage={debate.conf.displayImage1}
+            beepSpeechEnd={debate.conf.beepOnSpeechEnd}
+            beepProtected={debate.conf.beepProtectedTime && !advocem}
+            protectedTime={debate.conf.endProtectedTime}
           />
         </div>
         {/*  */}
@@ -109,31 +120,57 @@ export default function OxfordDebate() {
       {/*  */}
       {/*  */}
       {/*  */}
-      <div className="max-w-4xl mx-auto flex flex-row space-x-2">
+      <div className="max-w-4xl mx-auto flex flex-row gap-2">
         {stage < 8 && (
-          <>
-            <GenericButton
-              text="advocem"
-              disabled={running}
-              onClick={() => setAdvocem(!advocem)}
-            />
-            <GenericButton
-              text={!running ? "run" : "stop"}
-              onClick={() => {
-                setRunning(!running);
-                if (running && !advocem) {
-                  setStage(stage + 1);
-                }
-              }}
-            />
-          </>
+          <div className="flex flex-col space-y-1">
+            <div className="flex flex-row flex-1 space-x-2">
+              <GenericButton
+                disabled={running || advocem || stage === 0}
+                smol
+                square
+                onClick={() => setStage(stage > 0 ? stage - 1 : stage)}
+              >
+                <IconArrowLeftCircle />
+              </GenericButton>
+              <GenericButton
+                disabled={running}
+                smol
+                square
+                onClick={() => setAdvocem(!advocem)}
+                className={advocem ? "!border-emerald-400" : ""}
+              >
+                <div className="flex flex-row gap-2">
+                  <IconAlertCircle />
+                  {"ad vocem"}
+                </div>
+              </GenericButton>
+              <GenericButton
+                smol
+                square
+                onClick={() => {
+                  setRunning(!running);
+                  if (running && !advocem) {
+                    setStage(stage + 1);
+                  }
+                }}
+              >
+                <div className="flex flex-row gap-2">
+                  {!running ? <IconPlayCircle /> : <IconStopCircle />}
+                  {!running ? startspeech : stopspeech}
+                </div>
+              </GenericButton>
+            </div>
+            <Link
+              href="/oxford-debate/setup"
+              className="text-neutral-500 hover:underline"
+            >
+              {debateconfig}
+            </Link>
+          </div>
         )}
         {stage === 8 && (
           <>
-            <LinkButton
-              text="back to debate config"
-              href="/oxford-debate/setup"
-            />
+            <LinkButton text={debateconfig} href="/oxford-debate/setup" />
           </>
         )}
       </div>

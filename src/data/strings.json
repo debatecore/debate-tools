@@ -341,5 +341,13 @@
   "stage8": {
     "en": "debate complete",
     "pl": "debata zakończona"
+  },
+  "startspeech": {
+    "en": "start speech",
+    "pl": "start mowy"
+  },
+  "stopspeech": {
+    "en": "end speech",
+    "pl": "koniec mowy"
   }
 }

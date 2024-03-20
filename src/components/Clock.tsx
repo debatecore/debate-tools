@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { displayImageType } from "@/types/debate";
-import { useInterval } from "react-use";
+import { useAudio, useInterval } from "react-use";
 import Image from "next/image";
 import { useLang } from "@/lib/useLang";
 
@@ -9,14 +9,34 @@ const Clock = (props: {
   running: boolean;
   maxtime: number;
   clockimage?: displayImageType;
+  beepSpeechEnd?: boolean;
+  beepProtected?: boolean;
+  protectedTime?: number;
 }) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
+
+  const [audio1, state1, controls1] = useAudio({
+    src: "/ping.mp3",
+  });
+  const [audio2, state2, controls2] = useAudio({
+    src: "/ping2.mp3",
+  });
 
   const timeleft = useLang("timeleft");
   const overtime = useLang("overtime");
 
   const delay = 1000; // ms
+
+  useEffect(() => {
+    if (props.beepSpeechEnd && time === 0) controls2.play();
+    // prettier-ignore
+    if (
+      props.beepProtected && props.protectedTime && (
+        time === props.protectedTime ||
+        time === props.maxtime - props.protectedTime
+    )) controls1.play();
+  }, [time]);
 
   useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
   useInterval(() => setTime(time - 1), props.running ? delay : null);
@@ -118,6 +138,8 @@ const Clock = (props: {
             />
           </div>
         )}
+        {audio1}
+        {audio2}
       </div>
     </>
   );

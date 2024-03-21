@@ -1,11 +1,8 @@
 "use client";
 
-const TimeInput = (props: {
-  time: number;
-  setTime: (time: number) => void;
-}) => {
+const TimeInput = (props: { time: number; setTime: (time: number) => void }) => {
   return (
-    <div className="flex flex-row gap-4 items-center">
+    <div className="flex flex-col lg:flex-row lg:gap-4 items-center">
       <div className="flex flex-row">
         <button
           className="px-3 border-2 hover:bg-neutral-800 border-neutral-800 hover:border-neutral-700 rounded-l"

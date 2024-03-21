@@ -19,26 +19,15 @@ export default function OxfordDebateSetup() {
   const brandingselect = useLang("brandingdisplayimage");
   const brandingnull = useLang("brandingdisplayimage_nulloption");
   return (
-    <div>
+    <div className="mb-5 lg:mb-0">
       <h1 className="text-3xl mt-8 text-center font-serif">
         {useLang("oxfordDebateConfiguration")}
       </h1>
       <p className="text-center text-neutral-500">
         {debateContext.conf.motion || flavortext}
       </p>
-      <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-4 px-4">
+      <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-6 lg:gap-4 px-4">
         <DebateConfStringsPanel />
-        {/* <hr className="border-b-2 rounded border-neutral-800 my-2" />
-        <GenericSelect
-          text="Debate ruleset preset"
-          value={"Custom"}
-          options={[
-            {
-              value: "Custom",
-              exec: () => {},
-            },
-          ]}
-        /> */}
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <GenericSelect
           text={brandingselect}
@@ -58,8 +47,8 @@ export default function OxfordDebateSetup() {
             };
           })}
         />
-        <div className="flex flex-row justify-between items-center">
-          <p>{useLang("speechTime")}</p>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <p className="mb-2 lg:mb-0">{useLang("speechTime")}</p>
           <TimeInput
             time={debateContext.conf.speechTime}
             setTime={(time: number) => {
@@ -70,8 +59,8 @@ export default function OxfordDebateSetup() {
             }}
           />
         </div>
-        <div className="flex flex-row justify-between items-center">
-          <p>{useLang("protectedTime")}</p>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <p className="mb-2 lg:mb-0">{useLang("protectedTime")}</p>
           <TimeInput
             time={debateContext.conf.endProtectedTime}
             setTime={(time: number) => {
@@ -82,8 +71,8 @@ export default function OxfordDebateSetup() {
             }}
           />
         </div>
-        <div className="flex flex-row justify-between items-center">
-          <p>{useLang("adVocemTime")}</p>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <p className="mb-2 lg:mb-0">{useLang("adVocemTime")}</p>
           <TimeInput
             time={debateContext.conf.adVocemTime}
             setTime={(time: number) => {

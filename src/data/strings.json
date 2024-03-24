@@ -274,6 +274,12 @@
   "motionEnPolicy": {
     "en": "Motion of policy"
   },
+  "motionEnDuty": {
+    "en": "Motion of duty"
+  },
+  "motionEnComparative": {
+    "en": "Comparative motion"
+  },
   "brandingdisplayimage": {
     "en": "Clock branding image",
     "pl": "Logotyp zegarowy"

@@ -22,13 +22,13 @@ const defaultDebateConf: debateConf = {
   motion: "",
   proTeam: "",
   oppTeam: "",
-  speechTime: 300,
+  speechTime: 240,
   adVocemTime: 60,
   endProtectedTime: 30,
-  startProtectedTime: 30,
+  startProtectedTime: 0,
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  displayImage1: "MOW2024",
+  displayImage1: "null",
 };
 export { defaultDebateConf };

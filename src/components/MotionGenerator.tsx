@@ -72,6 +72,19 @@ const MotionGenerator = () => {
 
   const [enabledMotions, setEnabledMotions] = useState(getMotionTypesStrings());
 
+  function languageHasMotions(lang: language) {
+    const motionsInLanguage = motions.filter((motion) => {
+      return motion.lang == lang;
+    });
+    return motionsInLanguage.length > 0;
+  }
+
+  const languagesWithMotions = () => {
+    return allowedMotionLanguages.filter((lang) => {
+      return languageHasMotions(lang);
+    });
+  };
+
   const applyLanguageFilter = (event: any) => {
     const checkedLanguage: string = event.target.value;
     if (event.target.checked) {
@@ -138,11 +151,11 @@ const MotionGenerator = () => {
           }}
         />
       </section>{" "}
-      <div className="bg-zinc-800 p-3">
+      <div className="bg-zinc-800 p-3 rounded-lg m-4">
         <h5 className="text-center font-bold">{useLang("motionFilterTitle")}</h5>
         <section className="flex flex-col">
           <h6 className="text-center">{useLang("language")}</h6>
-          {allowedMotionLanguages.map((langCode) => (
+          {languagesWithMotions().map((langCode: language) => (
             <Checkbox
               key={langCode}
               name="language"

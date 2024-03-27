@@ -232,7 +232,7 @@ const MotionGenerator = () => {
           &quot;{motion?.motion || ""}&quot;
         </p>
         <p className="text-neutral-500 flex flex-col">
-          {"[Insert motion type here]"}
+          {useLang(motion?.type as any)}
           <br />
           {motion?.source || ""}
         </p>

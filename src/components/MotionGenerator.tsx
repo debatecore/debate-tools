@@ -17,7 +17,6 @@ import { IconFilter } from "./icons/Filter";
  * TO-DO:
  * Fix errors
  * Componentize as much as possible
- * Prevent languages with no motions from being displayed in filter
  * Polish the filter component style
  */
 
@@ -85,6 +84,8 @@ const MotionGenerator = () => {
     });
   };
 
+  const [filtersVisibility, setFiltersVisibility] = useState(false);
+
   const applyLanguageFilter = (event: any) => {
     const checkedLanguage: string = event.target.value;
     if (event.target.checked) {
@@ -150,10 +151,36 @@ const MotionGenerator = () => {
             router.push("/oxford-debate/setup");
           }}
         />
+        <GenericButton
+          text={useLang("showFiltersButtonText")}
+          icon={IconFilter}
+          onClick={() => setFiltersVisibility(!filtersVisibility)}
+        />
       </section>{" "}
-      <div className="bg-zinc-800 p-3 rounded-lg m-4">
-        <h5 className="text-center font-bold">{useLang("motionFilterTitle")}</h5>
-        <section className="flex flex-col">
+      <div
+        className={
+          filtersVisibility
+            ? "bg-transparent border-2 border-neutral-800 p-3 rounded-lg m-4"
+            : "bg-transparent border-2 border-neutral-800 p-3 rounded-lg m-4 hidden"
+        }
+      >
+        <h5 className="text-center font-bold m-2">{useLang("motionFilterTitle")}</h5>
+        <GenericButton
+          text={useLang("applyFilterButtonText")}
+          icon={IconFilter}
+          onClick={() => {
+            if (
+              motion?.type &&
+              motion?.lang &&
+              !(
+                enabledMotions.includes(motion?.type as any) &&
+                enabledLanguages.includes(motion?.lang)
+              )
+            )
+              setMotion(generateMotion());
+          }}
+        />
+        <section className="flex flex-col m-2">
           <h6 className="text-center">{useLang("language")}</h6>
           {languagesWithMotions().map((langCode: language) => (
             <Checkbox
@@ -179,21 +206,6 @@ const MotionGenerator = () => {
             />
           ))}
         </section>
-        <GenericButton
-          text={useLang("filterButtonText")}
-          icon={IconFilter}
-          onClick={() => {
-            if (
-              motion?.type &&
-              motion?.lang &&
-              !(
-                enabledMotions.includes(motion?.type as any) &&
-                enabledLanguages.includes(motion?.lang)
-              )
-            )
-              setMotion(generateMotion());
-          }}
-        />
       </div>
       <section className="p-5">
         {motion && motion.adinfo ? (

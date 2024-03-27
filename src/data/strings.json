@@ -241,7 +241,10 @@
   "motionType": {
     "en": "Motion type"
   },
-  "filterButtonText": {
-    "en": "Filter"
+  "applyFilterButtonText": {
+    "en": "Apply filters"
+  },
+  "showFiltersButtonText": {
+    "en": "Filter motions"
   }
 }

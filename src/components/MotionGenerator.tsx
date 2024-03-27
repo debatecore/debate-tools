@@ -85,18 +85,22 @@ const MotionGenerator = () => {
   };
 
   const [filtersVisibility, setFiltersVisibility] = useState(false);
+  const [typeFiltersActive, setTypeFiltersActive] = useState(false);
+  const [langFiltersActive, setLangFiltersActive] = useState(false);
 
   const applyLanguageFilter = (event: any) => {
     const checkedLanguage: string = event.target.value;
     if (event.target.checked) {
       if (enabledLanguages.length == allowedMotionLanguages.length) {
         setEnabledLanguages([checkedLanguage]);
+        setLangFiltersActive(true);
       } else {
         setEnabledLanguages([...enabledLanguages, checkedLanguage]);
       }
     } else {
       if (enabledLanguages.length == 1) {
         setEnabledLanguages(allowedMotionLanguages);
+        setLangFiltersActive(false);
       } else {
         setEnabledLanguages(
           enabledLanguages.filter((entry) => {
@@ -112,12 +116,14 @@ const MotionGenerator = () => {
     if (event.target.checked) {
       if (enabledMotions.length == motionTypes.length) {
         setEnabledMotions([checkedMotionType]);
+        setTypeFiltersActive(true);
       } else {
         setEnabledMotions([...enabledMotions, checkedMotionType]);
       }
     } else {
       if (enabledMotions.length == 1) {
         setEnabledMotions(getMotionTypesStrings());
+        setTypeFiltersActive(false);
       } else {
         setEnabledMotions(
           enabledMotions.filter((entry) => {
@@ -155,8 +161,9 @@ const MotionGenerator = () => {
           text={useLang("showFiltersButtonText")}
           icon={IconFilter}
           onClick={() => setFiltersVisibility(!filtersVisibility)}
+          highlightIcon={langFiltersActive || typeFiltersActive}
         />
-      </section>{" "}
+      </section>
       <div
         className={
           filtersVisibility

@@ -7,6 +7,7 @@ type SharedButtonProps = {
   icon?: (props: iconprops) => JSX.Element;
   onClick?: () => void;
   className?: string;
+  highlightIcon?: boolean;
 };
 type GenericButtonProps = {
   disableTabbing?: boolean;
@@ -27,10 +28,17 @@ const GenericButton = (props: SharedButtonProps & GenericButtonProps) => {
     >
       <span className="z-20">{props.text}</span>
       {props.icon
-        ? props.icon({
-            moreClass:
-              "absolute bottom-1 right-0 scale-[1.75] rotate-[-15deg] opacity-[.15] text-white z-10",
-          })
+        ? props.icon(
+            props.highlightIcon
+              ? {
+                  moreClass:
+                    "absolute bottom-1 right-0 scale-[1.75] rotate-[-15deg] opacity-[.80] text-white z-10",
+                }
+              : {
+                  moreClass:
+                    "absolute bottom-1 right-0 scale-[1.75] rotate-[-15deg] opacity-[.15] text-white z-10",
+                }
+          )
         : ""}
     </button>
   );

@@ -1,8 +1,8 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { useState } from "react";
-import { language } from "@/types/language";
+import { useEffect, useState } from "react";
+import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { LangContext } from "@/contexts/LangContext";
 import { debateConf, defaultDebateConf } from "@/types/debate";
 import { DebateContext } from "@/contexts/DebateContext";
@@ -17,6 +17,15 @@ export default function RootLayout({
   const [stateLang, setStateLang] = useState<language>("en");
   const [stateDebateConf, setStateDebateConf] =
     useState<debateConf>(defaultDebateConf);
+
+  useEffect(() => {
+    if (!localStorage) return;
+    const localLang = localStorage.getItem("lang");
+    // prettier-ignore
+    if (localLang && !langsPublicBlacklist.includes(localLang as language) && langsArray.includes(localLang as language)) {
+      setStateLang(localLang as language);
+    }
+  }, []);
   return (
     <html>
       <head>
@@ -32,6 +41,7 @@ export default function RootLayout({
             lang: stateLang,
             setLang: (lang) => {
               setStateLang(lang);
+              localStorage.setItem("lang", lang);
             },
           }}
         >

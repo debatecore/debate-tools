@@ -18,7 +18,7 @@
     "pl": "Narzędzia Debatanckie",
     "de": "Debatten-Tool",
     "jp": "ディベートツール",
-    "es": "Herramientas de Debate"
+    "es": "Herramientas de debate"
   },
   "madeWith": {
     "en": "Made with",
@@ -38,7 +38,8 @@
   },
   "oxfordDebateConfiguration": {
     "en": "Debate configuration",
-    "pl": "Konfiguracja debaty"
+    "pl": "Konfiguracja debaty",
+    "es": "Configuración del debate"
   },
   "oxfordDebateConfigurationFlavortext": {
     "en": "Dear Marshal, what are the rules?",
@@ -46,57 +47,93 @@
   },
   "debateMotion": {
     "en": "Debate motion",
-    "pl": "Teza debaty"
+    "pl": "Teza debaty",
+    "es": "Tesis de debate"
   },
   "debateMotionFlavortext": {
     "en": "The topic of the debate.",
-    "pl": "Kość niezgody"
+    "pl": "Kość niezgody",
+    "es": "La manzana de la discordia"
   },
   "proTeam": {
     "en": "Proposition Team",
-    "pl": "Drużyna propozycji"
+    "pl": "Drużyna propozycji",
+    "es": "Equipo de propuesta"
   },
   "proTeamFlavortext": {
     "en": "Those in favour.",
-    "pl": "Za."
+    "pl": "Za.",
+    "es": "A favor."
   },
   "oppTeam": {
     "en": "Opposition Team",
-    "pl": "Drużyna opozycji"
+    "pl": "Drużyna opozycji",
+    "es": "Equipo de oposición"
   },
   "oppTeamFlavortext": {
     "en": "Those against.",
-    "pl": "Przeciw."
+    "pl": "Przeciw.",
+    "es": "En contra."
   },
   "speechTime": {
     "en": "Speech time",
-    "pl": "Czas mowy"
+    "pl": "Czas mowy",
+    "es": "Tiempo de habla"
   },
   "adVocem": {
     "en": "Ad vocem"
   },
   "protectedTime": {
     "en": "Protected time",
-    "pl": "Czas chroniony"
+    "pl": "Czas chroniony",
+    "es": "Tiempo protegido"
+  },
+  "adVocemTime": {
+    "en": "Ad vocem time",
+    "pl": "Czas Ad vocem"
   },
   "min": {
     "en": "min"
   },
   "sec": {
     "en": "sec",
-    "pl": "sek"
+    "pl": "sek",
+    "es": "seg"
   },
   "preset": {
     "en": "Preset",
-    "pl": "Szablon"
+    "pl": "Szablon",
+    "es": "Plantilla"
   },
   "musketeers": {
     "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
-    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku"
+    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
+    "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
     "en": "PLD - Poznań Debate League",
-    "pl": "PLD - Poznańska Liga Debat"
+    "pl": "PLD - Poznańska Liga Debat",
+    "es": "PLD - Liga de debate de Poznan"
+  },
+  "beepOnSpeechEnd": {
+    "en": "Beep on speech end",
+    "pl": "Sygnalizuj koniec mowy dźwiękowo"
+  },
+  "beepOnProtected": {
+    "en": "Beep on protected time",
+    "pl": "Sygnalizuj czas chroniony dźwiękowo"
+  },
+  "visualizeProtected": {
+    "en": "Visualize protected time",
+    "pl": "Pokaż czas chroniony wizualnie"
+  },
+  "protectSpeechStart": {
+    "en": "Protect time on speech start",
+    "pl": "Chroń czas na początku mowy"
+  },
+  "mainmenu": {
+    "en": "Main menu",
+    "pl": "Menu główne"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
@@ -175,11 +212,13 @@
   "debateOverThisMotion": {
     "en": "Debate over this motion",
     "pl": "Debatuj nad tą tezą",
-    "de": "Darüber debattieren"
+    "de": "Darüber debattieren",
+    "es": "Debatir esta tesis"
   },
   "infoslide": {
     "en": "Infoslide",
-    "pl": "Infoslajd"
+    "pl": "Infoslajd",
+    "es": "Diapositiva informativa"
   },
   "tournamentPlanner": {
     "en": "Tournament Planner",
@@ -246,5 +285,87 @@
   },
   "showFiltersButtonText": {
     "en": "Filter motions"
+  },
+  "motionEnDuty": {
+    "en": "Motion of duty"
+  },
+  "motionEnComparative": {
+    "en": "Comparative motion"
+  },
+  "brandingdisplayimage": {
+    "en": "Clock branding image",
+    "pl": "Logotyp zegarowy"
+  },
+  "brandingdisplayimage_nulloption": {
+    "en": "none",
+    "pl": "brak"
+  },
+  "nomotiongiven": {
+    "en": "No motion given",
+    "pl": "Brak podanej tezy"
+  },
+  "oxfordformatdebate": {
+    "en": "an oxford format debate",
+    "pl": "debata w formacie oksfordzkim"
+  },
+  "asproposition": {
+    "en": "as the proposition",
+    "pl": "jako propozycja"
+  },
+  "asopposition": {
+    "en": "as the opposition",
+    "pl": "jako opozycja"
+  },
+  "timeleft": {
+    "en": "time left",
+    "pl": "pozostały czas"
+  },
+  "overtime": {
+    "en": "overtime",
+    "pl": "czas minął"
+  },
+  "stage0": {
+    "en": "first speech of the proposition",
+    "pl": "pierwsza mowa propozycji"
+  },
+  "stage1": {
+    "en": "first speech of the opposition",
+    "pl": "pierwsza mowa opozycji"
+  },
+  "stage2": {
+    "en": "second speech of the proposition",
+    "pl": "druga mowa propozycji"
+  },
+  "stage3": {
+    "en": "second speech of the opposition",
+    "pl": "druga mowa opozycji"
+  },
+  "stage4": {
+    "en": "third speech of the proposition",
+    "pl": "trzecia mowa propozycji"
+  },
+  "stage5": {
+    "en": "third speech of the opposition",
+    "pl": "trzecia mowa opozycji"
+  },
+  "stage6": {
+    "en": "fourth speech of the proposition",
+    "pl": "czwarta mowa propozycji"
+  },
+  "stage7": {
+    "en": "fourth speech of the opposition",
+    "pl": "czwarta mowa opozycji"
+  },
+  "stage8": {
+    "en": "debate complete",
+    "pl": "debata zakończona"
+  },
+  "startspeech": {
+    "en": "start speech",
+    "pl": "start mowy"
+  },
+  "stopspeech": {
+    "en": "end speech",
+    "pl": "koniec mowy"
   }
 }

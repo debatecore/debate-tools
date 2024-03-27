@@ -1,3 +1,8 @@
+const displayImageTypeArray = ["null", "MOW2024", "MOW2018"] as const;
+export { displayImageTypeArray };
+
+type displayImageType = (typeof displayImageTypeArray)[number];
+
 type debateConf = {
   motion: string;
   proTeam: string;
@@ -9,8 +14,9 @@ type debateConf = {
   beepOnSpeechEnd: boolean;
   beepProtectedTime: boolean;
   visualizeProtectedTimes: boolean;
+  displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
 };
-export type { debateConf };
+export type { debateConf, displayImageType };
 
 const defaultDebateConf: debateConf = {
   motion: "",
@@ -23,5 +29,6 @@ const defaultDebateConf: debateConf = {
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
+  displayImage1: "null",
 };
 export { defaultDebateConf };

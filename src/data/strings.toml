@@ -3,15 +3,18 @@ en = "🇬🇧 English"
 pl = "🇵🇱 polski"
 de = "🇩🇪 Deutsch"
 jp = "🇯🇵 日本語"
+es = "🇪🇸 Español"
 
 [language]
 en = "Language"
 pl = "Język"
 de = "Sprache"
 jp = "言語"
+es = "Lengua"
 
 [debate-tools]
 en = "Debate Tools"
 pl = "Narzędzia Debatanckie"
 de = "Debatten-Tool"
 jp = "ディベートツール"
+es = "Herramientas de debate"

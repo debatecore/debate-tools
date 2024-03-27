@@ -214,27 +214,28 @@ const MotionGenerator = () => {
           ))}
         </section>
       </div>
-      <section className="p-5">
+      <section className="p-5 flex flex-col items-center">
+        <hr className="border-b-2 mb-5 rounded border-neutral-800 my-2 w-full" />
+        <p className="text-2xl md:text-2xl max-w-[80vw] lg:max-w-[50vw] mb-5 text-balance">
+          &quot;{motion?.motion || ""}&quot;
+        </p>
         {motion && motion.adinfo ? (
-          <section className="flex flex-col items-center mb-5">
+          <section className="flex flex-col items-center mb-5 border-2 border-neutral-800 rounded-lg pt-2 p-4">
             <section className="flex gap-2 text-2xl items-center">
               <span className="text-neutral-500">
                 <IconInfo />
               </span>
               {infoslideString}
             </section>
-            <p className="text-justify max-w-[75vw]">{motion.adinfo}</p>
+            <p className="text-justify max-w-[80vw] lg:max-w-[50vw]">{motion.adinfo}</p>
           </section>
         ) : (
           ""
         )}
-        <p className="text-2xl md:text-2xl max-w-[85vw] mb-5">
-          &quot;{motion?.motion || ""}&quot;
-        </p>
         <p className="text-neutral-500 flex flex-col">
-          {useLang(motion?.type as any)}
-          <br />
           {motion?.source || ""}
+          <br />
+          {"[Motion type here]"}
         </p>
       </section>
     </div>

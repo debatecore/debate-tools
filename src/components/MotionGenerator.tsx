@@ -60,7 +60,7 @@ const MotionGenerator = () => {
     getMotionTypesStrings()
   );
 
-  const handleFiltersChange = (newState: motionTypeCode) => {
+  const handleFiltersChange = (newState: motionTypeCode[]) => {
     setEnabledMotionTypes(newState as any);
   };
 

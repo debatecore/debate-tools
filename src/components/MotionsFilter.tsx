@@ -1,11 +1,6 @@
 import { getSpecificLangString, useLang } from "@/lib/useLang";
 import { langsArray, langsPublicBlacklist, language } from "@/types/language";
-import {
-  motion,
-  motionTypesObjects,
-  motionTypeCode,
-  motionTypesArray,
-} from "@/types/motion";
+import { motionTypesObjects, motionTypeCode, motionTypesArray } from "@/types/motion";
 import { Checkbox } from "./Checkbox";
 import { GenericButton } from "./GenericButton";
 import { IconFilter } from "./icons/Filter";
@@ -14,7 +9,7 @@ import motions from "@/data/motion.json";
 
 type MotionsFilterProps = {
   hidden: boolean;
-  onFiltersChange: (newState: motionTypeCode) => void;
+  onFiltersChange: (newState: motionTypeCode[]) => void;
 };
 
 const MotionsFilter = (props: MotionsFilterProps) => {
@@ -88,10 +83,11 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   /**
    * A list of currently enabled motion types regardless of the language they're in
    */
-  const [enabledMotionTypes, setEnabledMotionTypes] = useState(getMotionTypesStrings());
+  const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>(
+    getMotionTypesStrings()
+  );
   const [langFiltersActive, setLangFiltersActive] = useState(false);
   const [typeFiltersActive, setTypeFiltersActive] = useState(false);
-  const [enabledMotions, setEnabledMotions] = useState(motions);
 
   function languageHasMotions(lang: language) {
     const motionsInLanguage = motions.filter((motion) => {
@@ -113,20 +109,19 @@ const MotionsFilter = (props: MotionsFilterProps) => {
     return true;
   }
 
-  function combineFilters() {
-    return motions.filter((motion) => {
+  function combineFilters(): motionTypeCode[] {
+    return motionTypesArray.filter((motionType: motionTypeCode) => {
       return (
-        (enabledMotionTypes.includes(motion.type as motionTypeCode) &&
-          !enabledLanguages.includes(motion.lang as language)) ||
-        (enabledMotionTypes.includes(motion.type as motionTypeCode) &&
-          enabledLanguages.includes(motion.lang as language))
+        (enabledMotionTypes.includes(motionType) &&
+          !enabledLanguages.includes(motionType)) ||
+        (enabledMotionTypes.includes(motionType) && enabledLanguages.includes(motionType))
       );
     });
   }
 
-  const updateEnabledMotions = (newState: any) => {
-    setEnabledMotions(newState);
-    props.onFiltersChange(newState as motionTypeCode);
+  const updateEnabledMotions = (newState: motionTypeCode[]) => {
+    setEnabledMotionTypes(newState);
+    props.onFiltersChange(newState);
   };
 
   return (
@@ -175,7 +170,13 @@ const MotionsFilter = (props: MotionsFilterProps) => {
             value={motionType.type}
             // TO-DO: Don't use the useLang hook in a callback
             labelText={useLang(motionType.type)}
-            disabled={isLanguageDisabled(motionType.lang)}
+            // TO-DO: Prevent checked motion types from being disabled when the language is filtered out
+            disabled={
+              !(
+                enabledMotionTypes.includes(motionType.type) &&
+                enabledLanguages.includes(motionType.lang)
+              )
+            }
             onChange={applyMotionTypeFilter}
           />
         ))}

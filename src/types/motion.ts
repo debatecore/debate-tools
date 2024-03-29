@@ -1,4 +1,4 @@
-const motionTypes = [
+const motionTypesObjects = [
   { type: "motionPlDescriptive", lang: "pl" },
   { type: "motionPlFact", lang: "pl" },
   { type: "motionPlFirstPerson", lang: "pl" },
@@ -14,7 +14,28 @@ const motionTypes = [
   { type: "motionEnRegret", lang: "en" },
   { type: "motionEnThisHouseSupports", lang: "en" },
 ] as const;
-export { motionTypes };
+export { motionTypesObjects as motionTypesObjects };
+
+const motionTypesArray = [
+  "motionPlDescriptive",
+  "motionPlFact",
+  "motionPlFirstPerson",
+  "motionPlComparative",
+  "motionPlDuty",
+  "motionPlPolicy",
+  "motionPlValues",
+  "motionPlEvaluative",
+  "motionPlRegret",
+  "motionEnFirstPerson",
+  "motionEnFact",
+  "motionEnPolicy",
+  "motionEnRegret",
+  "motionEnThisHouseSupports",
+] as const;
+export { motionTypesArray };
+
+type motionTypeCode = (typeof motionTypesArray)[number];
+export type { motionTypeCode };
 
 type motion = {
   lang: string;

@@ -187,7 +187,16 @@ export default function OxfordDebate() {
         )}
         {stage === 8 && (
           <>
-            <LinkButton text={debateconfig} href="/oxford-debate/setup" />
+            <GenericButton
+              smol
+              square
+              onClick={() => setStage(stage > 0 ? stage - 1 : stage)}
+            >
+              <IconArrowLeftCircle />
+            </GenericButton>
+            <LinkButton square href="/oxford-debate/setup">
+              {debateconfig}
+            </LinkButton>
           </>
         )}
       </div>

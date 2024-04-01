@@ -1,5 +1,5 @@
 "use client";
-import { motion, motionTypeCode, motionTypesObjects } from "@/types/motion";
+import { motion, motionTypeCode, motionTypesArray } from "@/types/motion";
 import motions from "@/data/motion.json";
 import { useContext, useEffect, useState } from "react";
 import { GenericButton } from "./GenericButton";
@@ -15,7 +15,9 @@ import { useLang } from "@/lib/useLang";
 /**
  * TO-DO:
  * Fix errors
- * Polish the filter component style
+ * Move filters component to the side and make it always visible. Get rid of filter buttons
+ * Make generation buttons static (their width subtly changes depending on the motion length)
+ * Uncheck motion type checkboxes when their language is filtered out
  */
 
 const MotionGenerator = () => {
@@ -25,7 +27,6 @@ const MotionGenerator = () => {
 
   function generateMotion(): motion {
     const filteredMotions = motions.filter((motion) => {
-      //TO-DO: figure out why this logic statement is always false
       return motion.type && enabledMotionTypes.includes(motion.type as motionTypeCode);
     });
     return filteredMotions[Math.floor(Math.random() * filteredMotions.length)];
@@ -43,22 +44,10 @@ const MotionGenerator = () => {
     setMotion(generateMotion());
   }, []);
 
-  /**
-   * TO-DO: figure out a way to do without this function and rely on {@link motionTypesArray} instead
-   * @returns A writeable copy of {@link motionTypesArray}
-   */
-  const getMotionTypesStrings: () => motionTypeCode[] = () => {
-    return motionTypesObjects.map((motionType) => {
-      return motionType.type;
-    });
-  };
-
   const [filtersVisibility, setFiltersVisibility] = useState(false);
-  const [typeFiltersActive, setTypeFiltersActive] = useState(false);
-  const [langFiltersActive, setLangFiltersActive] = useState(false);
-  const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>(
-    getMotionTypesStrings()
-  );
+  const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>([
+    ...motionTypesArray,
+  ]);
 
   const handleFiltersChange = (newState: motionTypeCode[]) => {
     setEnabledMotionTypes(newState as any);
@@ -84,10 +73,9 @@ const MotionGenerator = () => {
           text={useLang("showFiltersButtonText")}
           icon={IconFilter}
           onClick={() => setFiltersVisibility(!filtersVisibility)}
-          highlightIcon={langFiltersActive || typeFiltersActive}
         />
       </section>
-      <MotionsFilter hidden={filtersVisibility} onFiltersChange={handleFiltersChange} />
+      <MotionsFilter hidden={!filtersVisibility} onFiltersChange={handleFiltersChange} />
       <MotionDisplay motion={motion} />
     </div>
   );

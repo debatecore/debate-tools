@@ -1,4 +1,4 @@
-import { motion } from "@/types/motion";
+import { MotionTypeTranslation, motion, motionTypeCode } from "@/types/motion";
 import { IconInfo } from "./icons/info";
 import { useLang } from "@/lib/useLang";
 
@@ -26,7 +26,8 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
       <p className="text-neutral-500 flex flex-col">
         {motion?.source || ""}
         <br />
-        {"[Motion type here]"}
+        {motion?.type}
+        {/* {MotionTypeTranslation(motion?.type as motionTypeCode) || ""} */}
       </p>
     </section>
   );

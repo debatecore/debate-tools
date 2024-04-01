@@ -220,6 +220,11 @@
     "pl": "Infoslajd",
     "es": "Diapositiva informativa"
   },
+  "availableMotionsCount": {
+    "en": "Available motions",
+    "pl": "Dostępne tezy",
+    "de": "Verfügbare Thesen"
+  },
   "tournamentPlanner": {
     "en": "Tournament Planner",
     "pl": "Planowanie turnieju",

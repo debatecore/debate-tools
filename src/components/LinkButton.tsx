@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { GenericButton, SharedButtonProps } from "./GenericButton";
+import { PropsWithChildren } from "react";
 
 type LinkButtonProps = {
   href: string;
 } & SharedButtonProps;
 export type { LinkButtonProps };
 
-const LinkButton = (props: LinkButtonProps) => {
+const LinkButton = (props: PropsWithChildren<LinkButtonProps>) => {
   return (
     <Link
       href={props.disabled ? "/" : props.href}
@@ -21,7 +22,9 @@ const LinkButton = (props: LinkButtonProps) => {
         compactOnMobile={props.compactOnMobile}
         smol={props.smol}
         square={props.square}
-      />
+      >
+        {props.children}
+      </GenericButton>
     </Link>
   );
 };

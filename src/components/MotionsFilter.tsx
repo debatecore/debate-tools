@@ -142,28 +142,12 @@ const MotionsFilter = (props: MotionsFilterProps) => {
       }
     >
       <h5 className="text-center font-bold m-2">{useLang("motionFilterTitle")}</h5>
-      <GenericButton
-        text={useLang("applyFilterButtonText")}
-        icon={IconFilter}
-        onClick={() => {
-          // TO-DO: Make apply filters button work
-          // if (
-          //   motion?.type &&
-          //   motion?.lang &&
-          //   !(
-          //     enabledMotions.includes(motion?.type as any) &&
-          //     enabledLanguages.includes(motion?.lang)
-          //   )
-          // )
-          //   setMotion(generateMotion());
-        }}
-      />
       <span className="m-5">
         {useLang("availableMotionsCount") + ": " + enabledMotionsCount()}
       </span>
       <section className="flex gap-5 flex-row m-2">
-        {languagesWithMotions().map((langCode: language) => (
-          <section>
+        {languagesWithMotions().map((langCode: language, index: number) => (
+          <section key={index}>
             <Checkbox
               key={langCode}
               name="language"
@@ -178,9 +162,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
                   key={motionType.type}
                   name="motionType"
                   value={motionType.type}
-                  // TO-DO: Don't use the useLang hook in a callback
-                  labelText={useLang(motionType.type)}
-                  // TO-DO: Prevent checked motion types from being disabled when the language is filtered out
+                  labelText={motionType.type}
                   disabled={!enabledLanguages.includes(motionType.lang)}
                   onChange={applyMotionTypeFilter}
                 />

@@ -1,49 +1,45 @@
 import { useLang } from "@/lib/useLang";
 
 const motionTypesObjects = [
-  { type: "motionPlDescriptive", lang: "pl" },
-  { type: "motionPlFact", lang: "pl" },
-  { type: "motionPlFirstPerson", lang: "pl" },
-  { type: "motionPlComparative", lang: "pl" },
-  { type: "motionPlDuty", lang: "pl" },
-  { type: "motionPlPolicy", lang: "pl" },
-  { type: "motionPlValues", lang: "pl" },
-  { type: "motionPlEvaluative", lang: "pl" },
-  { type: "motionPlRegret", lang: "pl" },
-  { type: "motionEnComparative", lang: "en" },
-  { type: "motionEnFirstPerson", lang: "en" },
-  { type: "motionEnDuty", lang: "en" },
-  { type: "motionEnFact", lang: "en" },
-  { type: "motionEnPolicy", lang: "en" },
-  { type: "motionEnRegret", lang: "en" },
-  { type: "motionEnThisHouseSupports", lang: "en" },
+  { type: "Teza deskryptywna", lang: "pl" },
+  { type: "Teza faktograficzna", lang: "pl" },
+  { type: "Teza pierwszoosobowa", lang: "pl" },
+  { type: "Teza porównawcza", lang: "pl" },
+  { type: "Teza powinnościowa", lang: "pl" },
+  { type: "Teza o działaniu", lang: "pl" },
+  { type: "Teza o wartościach", lang: "pl" },
+  { type: "Teza oceniająca", lang: "pl" },
+  { type: "Należy żałować...", lang: "pl" },
+  { type: "Comparative motion", lang: "en" },
+  { type: "First-person motion", lang: "en" },
+  { type: "Motion of duty", lang: "en" },
+  { type: "Motion of fact", lang: "en" },
+  { type: "Motion of policy", lang: "en" },
+  { type: "This House Regrets...", lang: "en" },
+  { type: "This House Supports...", lang: "en" },
 ] as const;
 export { motionTypesObjects as motionTypesObjects };
 
+// TO-DO: make the array be generated from the above objects array
 const motionTypesArray = [
-  "motionPlDescriptive",
-  "motionPlFact",
-  "motionPlFirstPerson",
-  "motionPlComparative",
-  "motionPlDuty",
-  "motionPlPolicy",
-  "motionPlValues",
-  "motionPlEvaluative",
-  "motionPlRegret",
-  "motionEnComparative",
-  "motionEnFirstPerson",
-  "motionEnDuty",
-  "motionEnFact",
-  "motionEnPolicy",
-  "motionEnRegret",
-  "motionEnThisHouseSupports",
+  "Teza deskryptywna",
+  "Teza faktograficzna",
+  "Teza pierwszoosobowa",
+  "Teza porównawcza",
+  "Teza powinnościowa",
+  "Teza o działaniu",
+  "Teza o wartościach",
+  "Teza oceniająca",
+  "Należy żałować...",
+  "Comparative motion",
+  "First-person motion",
+  "Motion of duty",
+  "Motion of fact",
+  "Motion of policy",
+  "This House Regrets...",
+  "This House Supports...",
 ] as const;
 export { motionTypesArray };
-
-const MotionTypeTranslation = (type: motionTypeCode) => {
-  return useLang(type);
-};
-export { MotionTypeTranslation };
 
 /**
  * Represents a motion type code used in the translations file (strings.json)

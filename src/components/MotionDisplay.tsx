@@ -1,9 +1,10 @@
-import { MotionTypeTranslation, motion, motionTypeCode } from "@/types/motion";
+import { motion, motionTypeCode } from "@/types/motion";
 import { IconInfo } from "./icons/info";
 import { useLang } from "@/lib/useLang";
 
 const MotionDisplay = ({ motion }: { motion: motion | null }) => {
   const infoslideString = useLang("infoslide");
+
   return (
     <section className="p-5 flex flex-col items-center">
       <hr className="border-b-2 mb-5 rounded border-neutral-800 my-2 w-full" />
@@ -26,8 +27,7 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
       <p className="text-neutral-500 flex flex-col">
         {motion?.source || ""}
         <br />
-        {motion?.type}
-        {/* {MotionTypeTranslation(motion?.type as motionTypeCode) || ""} */}
+        {motion?.type || ""}
       </p>
     </section>
   );

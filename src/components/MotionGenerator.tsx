@@ -15,8 +15,6 @@ import { useLang } from "@/lib/useLang";
 /**
  * TO-DO:
  * Fix errors
- * Move filters component to the side and make it always visible. Get rid of filter buttons
- * Make generation buttons static (their width subtly changes depending on the motion length)
  * Uncheck motion type checkboxes when their language is filtered out
  */
 
@@ -69,14 +67,12 @@ const MotionGenerator = () => {
             router.push("/oxford-debate/setup");
           }}
         />
-        <GenericButton
-          text={useLang("showFiltersButtonText")}
-          icon={IconFilter}
-          onClick={() => setFiltersVisibility(!filtersVisibility)}
-        />
       </section>
-      <MotionsFilter hidden={!filtersVisibility} onFiltersChange={handleFiltersChange} />
-      <MotionDisplay motion={motion} />
+      <hr className="border-b-2 mb-5 rounded border-neutral-800 my-2 w-full" />
+      <section className="flex flex-col xl:flex-row items-center">
+        <MotionsFilter onFiltersChange={handleFiltersChange} />
+        <MotionDisplay motion={motion} />
+      </section>
     </div>
   );
 };

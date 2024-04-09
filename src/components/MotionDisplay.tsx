@@ -6,8 +6,7 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
   const infoslideString = useLang("infoslide");
 
   return (
-    <section className="p-5 flex flex-col items-center">
-      <hr className="border-b-2 mb-5 rounded border-neutral-800 my-2 w-full" />
+    <section className="lg:w-[50vw] p-5 flex flex-col items-center self-center">
       <p className="text-2xl md:text-2xl max-w-[80vw] lg:max-w-[50vw] mb-5 text-balance">
         &quot;{motion?.motion || ""}&quot;
       </p>
@@ -19,7 +18,7 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
             </span>
             {infoslideString}
           </section>
-          <p className="text-justify max-w-[80vw] lg:max-w-[50vw]">{motion.adinfo}</p>
+          <p className="text-justify max-w-[80vw] xl:max-w-[50vw]">{motion.adinfo}</p>
         </section>
       ) : (
         ""

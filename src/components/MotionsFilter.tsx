@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import motions from "@/data/motion.json";
 
 type MotionsFilterProps = {
-  hidden: boolean;
   onFiltersChange: (newState: motionTypeCode[]) => void;
 };
 
@@ -136,9 +135,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   return (
     <div
       className={
-        props.hidden
-          ? "bg-transparent border-2 border-neutral-800 p-3 rounded-lg m-4 hidden"
-          : "bg-neutral-900 border-2 border-neutral-800 absolute p-3 rounded-lg mt-[20vh] lg:mt-[9vh]"
+        "grow-0 xl:self-start bg-neutral-900 border-2 border-neutral-800 p-3 rounded-lg"
       }
     >
       <h5 className="text-center font-bold m-2">{useLang("motionFilterTitle")}</h5>

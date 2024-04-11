@@ -7,14 +7,12 @@ import { DebateContext } from "@/contexts/DebateContext";
 import { IconDice } from "./icons/Dice";
 import { IconClock } from "./icons/Clock";
 import { useRouter } from "next/navigation";
-import { IconFilter } from "./icons/Filter";
 import { MotionDisplay } from "./MotionDisplay";
 import { MotionsFilter } from "./MotionsFilter";
 import { useLang } from "@/lib/useLang";
 
 /**
  * TO-DO:
- * Fix errors
  * Uncheck motion type checkboxes when their language is filtered out
  */
 
@@ -37,15 +35,16 @@ const MotionGenerator = () => {
     });
   }
 
-  /** Calls {@link generateMotion()} on page load. */
-  useEffect(() => {
-    setMotion(generateMotion());
-  }, []);
-
-  const [filtersVisibility, setFiltersVisibility] = useState(false);
   const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>([
     ...motionTypesArray,
   ]);
+
+  /** Calls {@link generateMotion()} on page load. */
+  useEffect(() => {
+    if (!enabledMotionTypes.includes(motion?.type as motionTypeCode)) {
+      setMotion(generateMotion());
+    }
+  }, [enabledMotionTypes]);
 
   const handleFiltersChange = (newState: motionTypeCode[]) => {
     setEnabledMotionTypes(newState as any);
@@ -68,7 +67,7 @@ const MotionGenerator = () => {
           }}
         />
       </section>
-      <hr className="border-b-2 mb-5 rounded border-neutral-800 my-2 w-full" />
+      <hr className="border-b-2 mt-8 mb-8 rounded border-neutral-800 my-2 w-full" />
       <section className="flex flex-col xl:flex-row items-center">
         <MotionsFilter onFiltersChange={handleFiltersChange} />
         <MotionDisplay motion={motion} />

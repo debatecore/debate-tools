@@ -3,8 +3,6 @@ import { getSpecificLangString, useLang } from "@/lib/useLang";
 import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { motionTypesObjects, motionTypeCode, motionTypesArray } from "@/types/motion";
 import { Checkbox } from "./Checkbox";
-import { GenericButton } from "./GenericButton";
-import { IconFilter } from "./icons/Filter";
 import { useEffect, useState } from "react";
 import motions from "@/data/motion.json";
 
@@ -146,7 +144,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         {languagesWithMotions().map((langCode: language, index: number) => (
           <section key={index}>
             <Checkbox
-              key={langCode}
+              checkboxKey={langCode}
               name="language"
               value={langCode}
               labelText={getSpecificLangString("selfLanguageString", langCode)}
@@ -156,7 +154,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
               .filter((motionType) => motionType.lang === langCode)
               .map((motionType: any) => (
                 <Checkbox
-                  key={motionType.type}
+                  checkboxKey={motionType.type}
                   name="motionType"
                   value={motionType.type}
                   labelText={motionType.type}

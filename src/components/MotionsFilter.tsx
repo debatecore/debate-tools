@@ -10,6 +10,12 @@ type MotionsFilterProps = {
   onFiltersChange: (newState: motionTypeCode[]) => void;
 };
 
+/**
+ * Current state of things:
+ * - when motionTypes are unchecked by applying language filters,
+ *   enabledMotionTypes must be changed accordingly, which, as of now, they don't do
+ */
+
 const MotionsFilter = (props: MotionsFilterProps) => {
   const applyMotionTypeFilter = (event: any) => {
     const checkedMotionType = event.target.value;
@@ -19,6 +25,16 @@ const MotionsFilter = (props: MotionsFilterProps) => {
       } else {
         setEnabledMotionTypes([...enabledMotionTypes, checkedMotionType]);
       }
+      setCheckedMotionTypes(
+        checkedMotionTypes.map((motionType) => {
+          if (motionType.type == checkedMotionType) {
+            return {
+              ...motionType,
+              checked: true,
+            };
+          } else return { ...motionType };
+        })
+      );
     } else {
       if (enabledMotionTypes.length == 1) {
         setEnabledMotionTypes([...motionTypesArray]);
@@ -29,6 +45,16 @@ const MotionsFilter = (props: MotionsFilterProps) => {
           })
         );
       }
+      setCheckedMotionTypes(
+        checkedMotionTypes.map((motionType) => {
+          if (motionType.type == checkedMotionType) {
+            return {
+              ...motionType,
+              checked: false,
+            };
+          } else return { ...motionType };
+        })
+      );
     }
   };
 
@@ -42,6 +68,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   const applyLanguageFilter = (event: any) => {
     const checkedLanguage: language = event.target.value;
     if (event.target.checked) {
+      console.log(enabledMotionTypes);
       if (enabledLanguages.length == allowedMotionLanguages.length) {
         setEnabledLanguages([checkedLanguage]);
       } else {
@@ -58,6 +85,20 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         );
       }
     }
+    setCheckedMotionTypes(
+      checkedMotionTypes.map((motionType) => {
+        if (motionType.checked && motionType.lang == checkedLanguage)
+          return {
+            ...motionType,
+            checked: true,
+          };
+        else
+          return {
+            ...motionType,
+            checked: false,
+          };
+      })
+    );
   };
 
   function combineFilters(): motionTypeCode[] {
@@ -69,6 +110,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         filteredMotionTypes.push(type);
       }
     });
+    console.log(checkedMotionTypes);
     return filteredMotionTypes;
   }
 
@@ -97,6 +139,19 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   const [filteredMotionTypes, setFilteredMotionTypes] = useState<motionTypeCode[]>([
     ...motionTypesArray,
   ]);
+
+  /**
+   * A list of currently checked motion type checkboxes
+   * checked != enabled
+   */
+  const [checkedMotionTypes, setCheckedMotionTypes] = useState(
+    motionTypesObjects.map((motionType) => {
+      return {
+        ...motionType,
+        checked: false,
+      };
+    })
+  );
 
   function languageHasMotions(lang: language) {
     const motionsInLanguage = motions.filter((motion) => {
@@ -152,7 +207,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
             />
             {motionTypesObjects
               .filter((motionType) => motionType.lang === langCode)
-              .map((motionType: any) => (
+              .map((motionType: { lang: language; type: motionTypeCode }) => (
                 <Checkbox
                   checkboxKey={motionType.type}
                   name="motionType"
@@ -160,6 +215,11 @@ const MotionsFilter = (props: MotionsFilterProps) => {
                   labelText={motionType.type}
                   disabled={!enabledLanguages.includes(motionType.lang)}
                   onChange={applyMotionTypeFilter}
+                  checked={
+                    checkedMotionTypes.find((motionTypeState) => {
+                      return motionTypeState.type == motionType.type;
+                    })?.checked
+                  }
                 />
               ))}
           </section>

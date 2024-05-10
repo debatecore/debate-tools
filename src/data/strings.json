@@ -39,6 +39,7 @@
   "oxfordDebateConfiguration": {
     "en": "Debate configuration",
     "pl": "Konfiguracja debaty",
+    "de": "Debattekonfiguration",
     "es": "Configuración del debate"
   },
   "oxfordDebateConfigurationFlavortext": {
@@ -48,6 +49,7 @@
   "debateMotion": {
     "en": "Debate motion",
     "pl": "Teza debaty",
+    "de": "These der Debatte",
     "es": "Tesis de debate"
   },
   "debateMotionFlavortext": {
@@ -58,26 +60,31 @@
   "proTeam": {
     "en": "Proposition Team",
     "pl": "Drużyna propozycji",
+    "de": "Vorschlagsseite",
     "es": "Equipo de propuesta"
   },
   "proTeamFlavortext": {
     "en": "Those in favour.",
     "pl": "Za.",
+    "de": "Für",
     "es": "A favor."
   },
   "oppTeam": {
     "en": "Opposition Team",
     "pl": "Drużyna opozycji",
+    "de": "Oppositionsseite",
     "es": "Equipo de oposición"
   },
   "oppTeamFlavortext": {
     "en": "Those against.",
     "pl": "Przeciw.",
+    "de": "Gegen",
     "es": "En contra."
   },
   "speechTime": {
     "en": "Speech time",
     "pl": "Czas mowy",
+    "de": "Ansprachezeit",
     "es": "Tiempo de habla"
   },
   "adVocem": {
@@ -86,11 +93,13 @@
   "protectedTime": {
     "en": "Protected time",
     "pl": "Czas chroniony",
+    "de": "Geschützte Zeit",
     "es": "Tiempo protegido"
   },
   "adVocemTime": {
     "en": "Ad vocem time",
-    "pl": "Czas Ad vocem"
+    "pl": "Czas Ad vocem",
+    "de": "Ad vocem Zeit"
   },
   "min": {
     "en": "min"
@@ -103,37 +112,45 @@
   "preset": {
     "en": "Preset",
     "pl": "Szablon",
+    "de": "Vorlage",
     "es": "Plantilla"
   },
   "musketeers": {
     "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
     "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
+    "de": "Musketeers of Words – Polnish Oxforddebatte Meisterschaft auf English",
     "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
     "en": "PLD - Poznań Debate League",
     "pl": "PLD - Poznańska Liga Debat",
+    "de": "PLD – Posener Debattenliga",
     "es": "PLD - Liga de debate de Poznan"
   },
   "beepOnSpeechEnd": {
     "en": "Beep on speech end",
-    "pl": "Sygnalizuj koniec mowy dźwiękowo"
+    "pl": "Sygnalizuj koniec mowy dźwiękowo",
+    "de": "Ende der Ansprache Tonsignalisierung"
   },
   "beepOnProtected": {
     "en": "Beep on protected time",
-    "pl": "Sygnalizuj czas chroniony dźwiękowo"
+    "pl": "Sygnalizuj czas chroniony dźwiękowo",
+    "de": "Geschützte Zeit Tonsignalisierung"
   },
   "visualizeProtected": {
     "en": "Visualize protected time",
-    "pl": "Pokaż czas chroniony wizualnie"
+    "pl": "Pokaż czas chroniony wizualnie",
+    "de": "Geschützte Zeit Visuellsignalisierung"
   },
   "protectSpeechStart": {
     "en": "Protect time on speech start",
-    "pl": "Chroń czas na początku mowy"
+    "pl": "Chroń czas na początku mowy",
+    "de": "Geschützte Zeit am Anfang der Ansprache"
   },
   "mainmenu": {
     "en": "Main menu",
-    "pl": "Menu główne"
+    "pl": "Menu główne",
+    "de": "Menu"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",

@@ -22,11 +22,13 @@
   },
   "madeWith": {
     "en": "Made with",
+    "pl": "Stworzone z",
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
+    "pl": "przez debatantów z Poznania",
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },

@@ -45,7 +45,7 @@
   },
   "oxfordDebateConfigurationFlavortext": {
     "en": "Dear Marshal, what are the rules?",
-    "pl": "Wysoka izbo, to my mamy rację!"
+    "pl": "Właśnie moja racja jest racja najmojsza!"
   },
   "debateMotion": {
     "en": "Debate motion",
@@ -92,7 +92,7 @@
   },
   "adVocemTime": {
     "en": "Ad vocem time",
-    "pl": "Czas Ad vocem"
+    "pl": "Czas ad vocem"
   },
   "min": {
     "en": "min"
@@ -108,9 +108,9 @@
     "es": "Plantilla"
   },
   "musketeers": {
-    "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
-    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
-    "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
+    "en": "Musketeers of Words – Polish Oxford Debate Championships in English",
+    "pl": "Muszkieterowie Słowa – Polskie mistrzostwa debat oksfordzkich w języku angielskim",
+    "es": "Mosqueteros de La Palabra – Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
     "en": "PLD - Poznań Debate League",
@@ -136,6 +136,10 @@
   "mainmenu": {
     "en": "Main menu",
     "pl": "Menu główne"
+  },
+  "startDebate": {
+    "en": "Start debate",
+    "pl": "Rozpocznij debatę"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",

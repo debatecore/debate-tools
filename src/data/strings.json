@@ -68,7 +68,7 @@
   "proTeamFlavortext": {
     "en": "Those in favour.",
     "pl": "Za.",
-    "de": "Für",
+    "de": "Für.",
     "es": "A favor."
   },
   "oppTeam": {
@@ -80,7 +80,7 @@
   "oppTeamFlavortext": {
     "en": "Those against.",
     "pl": "Przeciw.",
-    "de": "Gegen",
+    "de": "Gegen.",
     "es": "En contra."
   },
   "speechTime": {
@@ -124,10 +124,10 @@
     "es": "Mosqueteros de La Palabra – Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
-    "en": "PLD - Poznań Debate League",
-    "pl": "PLD - Poznańska Liga Debat",
+    "en": "PLD – Poznań Debate League",
+    "pl": "PLD – Poznańska Liga Debat",
     "de": "PLD – Posener Debattenliga",
-    "es": "PLD - Liga de debate de Poznan"
+    "es": "PLD – Liga de debate de Poznan"
   },
   "beepOnSpeechEnd": {
     "en": "Beep on speech end",

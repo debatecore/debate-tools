@@ -22,11 +22,13 @@
   },
   "madeWith": {
     "en": "Made with",
+    "pl": "Stworzone z",
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
+    "pl": "przez debatantów z Poznania",
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },
@@ -44,7 +46,7 @@
   },
   "oxfordDebateConfigurationFlavortext": {
     "en": "Dear Marshal, what are the rules?",
-    "pl": "Wysoka izbo, to my mamy rację!"
+    "pl": "Właśnie moja racja jest racja najmojsza!"
   },
   "debateMotion": {
     "en": "Debate motion",
@@ -98,7 +100,7 @@
   },
   "adVocemTime": {
     "en": "Ad vocem time",
-    "pl": "Czas Ad vocem",
+    "pl": "Czas ad vocem",
     "de": "Ad vocem Zeit"
   },
   "min": {
@@ -116,10 +118,10 @@
     "es": "Plantilla"
   },
   "musketeers": {
-    "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
-    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
-    "de": "Musketeers of Words – Polnish Oxforddebatte Meisterschaft auf English",
-    "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
+    "en": "Musketeers of Words – Polish Oxford Debate Championships in English",
+    "pl": "Muszkieterowie Słowa – Polskie mistrzostwa debat oksfordzkich w języku angielskim",
+    "de": "Musketeers of Words – Polnisch Oxforddebatte Meisterschaft auf English",
+    "es": "Mosqueteros de La Palabra – Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
     "en": "PLD - Poznań Debate League",
@@ -151,6 +153,11 @@
     "en": "Main menu",
     "pl": "Menu główne",
     "de": "Menu"
+  },
+  "startDebate": {
+    "en": "Start debate",
+    "pl": "Rozpocznij debatę",
+    "de": "Debatte beginnen"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",

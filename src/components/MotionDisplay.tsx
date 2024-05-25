@@ -1,4 +1,4 @@
-import { motion, motionTypeCode } from "@/types/motion";
+import { motion } from "@/types/motion";
 import { IconInfo } from "./icons/info";
 import { useLang } from "@/lib/useLang";
 

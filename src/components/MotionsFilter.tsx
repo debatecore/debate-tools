@@ -3,7 +3,7 @@ import { getSpecificLangString, useLang } from "@/lib/useLang";
 import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { motionTypesObjects, motionTypeCode, motionTypesArray } from "@/types/motion";
 import { Checkbox } from "./Checkbox";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import motions from "@/data/motion.json";
 
 type MotionsFilterProps = {

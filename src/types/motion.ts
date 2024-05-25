@@ -1,5 +1,3 @@
-import { useLang } from "@/lib/useLang";
-
 const motionTypesObjects = [
   { type: "Teza deskryptywna", lang: "pl" },
   { type: "Teza faktograficzna", lang: "pl" },

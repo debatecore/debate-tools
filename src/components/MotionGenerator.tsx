@@ -11,11 +11,6 @@ import { MotionDisplay } from "./MotionDisplay";
 import { MotionsFilter } from "./MotionsFilter";
 import { useLang } from "@/lib/useLang";
 
-/**
- * TO-DO:
- * Uncheck motion type checkboxes when their language is filtered out
- */
-
 const MotionGenerator = () => {
   const [motion, setMotion] = useState<motion | null>(null);
   const debateContext = useContext(DebateContext);

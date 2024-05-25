@@ -3,20 +3,21 @@ import { getSpecificLangString, useLang } from "@/lib/useLang";
 import { langsArray, langsPublicBlacklist, language } from "@/types/language";
 import { motionTypesObjects, motionTypeCode, motionTypesArray } from "@/types/motion";
 import { Checkbox } from "./Checkbox";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import motions from "@/data/motion.json";
 
 type MotionsFilterProps = {
   onFiltersChange: (newState: motionTypeCode[]) => void;
 };
 
-/**
- * Current state of things:
- * - when motionTypes are unchecked by applying language filters,
- *   enabledMotionTypes must be changed accordingly, which, as of now, they don't do
- */
-
 const MotionsFilter = (props: MotionsFilterProps) => {
+  /**
+   * @description Changes the contents of {@link enabledMotionTypes } and {@link checkedMotionTypes}
+   * according to the state of motion type checkboxes. If none are checked,
+   * all motion types are enabled. If one or more are checked,
+   * only the checked motion types are enabled.
+   * @param event An event raised when a motion type checkbox is checked or unchecked
+   */
   const applyMotionTypeFilter = (event: any) => {
     const checkedMotionType = event.target.value;
     if (event.target.checked) {
@@ -59,16 +60,15 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   };
 
   /**
-   * @description Changes the contents of {@link enabledMotionTypes }
-   * according to motion types checkboxes. If none are checked,
-   * all motion types are enabled. If one or more are checked,
+   * @description Changes the contents of {@link enabledLanguages }
+   * according to language checkboxes. If none are checked,
+   * all languages are enabled. If one or more are checked,
    * only the checked motion types are enabled.
    * @param event An event raised when a motion type checkbox is checked or unchecked
    */
   const applyLanguageFilter = (event: any) => {
     const checkedLanguage: language = event.target.value;
     if (event.target.checked) {
-      console.log(enabledMotionTypes);
       if (enabledLanguages.length == allowedMotionLanguages.length) {
         setEnabledLanguages([checkedLanguage]);
       } else {
@@ -99,9 +99,30 @@ const MotionsFilter = (props: MotionsFilterProps) => {
           };
       })
     );
+    setEnabledMotionTypes(
+      enabledMotionTypes.filter((motionType) => isMotionTypeInEnabledLanguage(motionType))
+    );
   };
 
+  function isMotionTypeInEnabledLanguage(motionType: motionTypeCode): boolean {
+    const motionTypeObject = motionTypesObjects.find((motionTypeObject) => {
+      return motionTypeObject.type == motionType;
+    });
+    if (motionTypeObject && motionTypeObject?.lang in allowedMotionLanguages) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /**
+   *
+   * @returns Motion types with both language and type filters applied
+   */
   function combineFilters(): motionTypeCode[] {
+    if (enabledMotionTypes.length == 0) {
+      setEnabledMotionTypes([...motionTypesArray]);
+    }
     const filteredMotionTypes: motionTypeCode[] = [];
     motionTypesObjects.forEach((motionTypeObject) => {
       const lang = motionTypeObject.lang;
@@ -110,10 +131,12 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         filteredMotionTypes.push(type);
       }
     });
-    console.log(checkedMotionTypes);
     return filteredMotionTypes;
   }
 
+  /**
+   * A list of non-blacklisted languages
+   */
   const allowedMotionLanguages = [
     ...langsArray
       .filter((lang) => !langsPublicBlacklist.includes(lang))
@@ -121,6 +144,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         return lang;
       }),
   ];
+
   const [enabledLanguages, setEnabledLanguages] = useState<language[]>(
     allowedMotionLanguages.map((lang) => {
       return lang;
@@ -134,15 +158,16 @@ const MotionsFilter = (props: MotionsFilterProps) => {
     ...motionTypesArray,
   ]);
   /**
-   * A list of motion types enabled along with the language they're in
+   * A list of motion types that is being passed to a parent component
    */
   const [filteredMotionTypes, setFilteredMotionTypes] = useState<motionTypeCode[]>([
     ...motionTypesArray,
   ]);
 
   /**
-   * A list of currently checked motion type checkboxes
-   * checked != enabled
+   * A list of currently checked motion type checkboxes.
+   * The checkboxes' state is tracked separately, as the checkbox being checked
+   * does not always correspond with the motion type being enabled
    */
   const [checkedMotionTypes, setCheckedMotionTypes] = useState(
     motionTypesObjects.map((motionType) => {
@@ -166,11 +191,18 @@ const MotionsFilter = (props: MotionsFilterProps) => {
     });
   };
 
+  /**
+   * Passes the filtered motion types to a parent component
+   */
   const updateFilteredMotions = (newState: motionTypeCode[]) => {
     setFilteredMotionTypes(newState);
     props.onFiltersChange(newState);
   };
 
+  /**
+   *
+   * @returns Number of currently enabled motions
+   */
   const enabledMotionsCount = (): number => {
     return motions.filter((motion) => {
       return filteredMotionTypes.includes(motion.type as motionTypeCode);

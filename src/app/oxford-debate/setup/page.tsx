@@ -135,7 +135,7 @@ export default function OxfordDebateSetup() {
           <LinkButton href="/" text={useLang("mainmenu")} icon={IconList} />
           <LinkButton
             href="/oxford-debate"
-            text={useLang("oxfordDebateConductionUtility")}
+            text={useLang("startDebate")}
             icon={IconPlayCircle}
           />
         </div>

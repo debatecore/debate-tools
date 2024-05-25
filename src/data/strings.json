@@ -22,11 +22,13 @@
   },
   "madeWith": {
     "en": "Made with",
+    "pl": "Stworzone z",
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
+    "pl": "przez debatantów z Poznania",
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },
@@ -39,45 +41,53 @@
   "oxfordDebateConfiguration": {
     "en": "Debate configuration",
     "pl": "Konfiguracja debaty",
+    "de": "Debattekonfiguration",
     "es": "Configuración del debate"
   },
   "oxfordDebateConfigurationFlavortext": {
     "en": "Dear Marshal, what are the rules?",
-    "pl": "Wysoka izbo, to my mamy rację!"
+    "pl": "Właśnie moja racja jest racja najmojsza!"
   },
   "debateMotion": {
     "en": "Debate motion",
     "pl": "Teza debaty",
+    "de": "These der Debatte",
     "es": "Tesis de debate"
   },
   "debateMotionFlavortext": {
-    "en": "The topic of the debate.",
-    "pl": "Kość niezgody",
-    "es": "La manzana de la discordia"
+    "en": "Bone of contention.",
+    "pl": "Kość niezgody.",
+    "de": "Stein des Anstoßes.",
+    "es": "La manzana de la discordia."
   },
   "proTeam": {
     "en": "Proposition Team",
     "pl": "Drużyna propozycji",
+    "de": "Vorschlagsseite",
     "es": "Equipo de propuesta"
   },
   "proTeamFlavortext": {
     "en": "Those in favour.",
     "pl": "Za.",
+    "de": "Für.",
     "es": "A favor."
   },
   "oppTeam": {
     "en": "Opposition Team",
     "pl": "Drużyna opozycji",
+    "de": "Oppositionsseite",
     "es": "Equipo de oposición"
   },
   "oppTeamFlavortext": {
     "en": "Those against.",
     "pl": "Przeciw.",
+    "de": "Gegen.",
     "es": "En contra."
   },
   "speechTime": {
     "en": "Speech time",
     "pl": "Czas mowy",
+    "de": "Ansprachezeit",
     "es": "Tiempo de habla"
   },
   "adVocem": {
@@ -86,11 +96,13 @@
   "protectedTime": {
     "en": "Protected time",
     "pl": "Czas chroniony",
+    "de": "Geschützte Zeit",
     "es": "Tiempo protegido"
   },
   "adVocemTime": {
     "en": "Ad vocem time",
-    "pl": "Czas Ad vocem"
+    "pl": "Czas ad vocem",
+    "de": "Ad vocem Zeit"
   },
   "min": {
     "en": "min"
@@ -103,37 +115,50 @@
   "preset": {
     "en": "Preset",
     "pl": "Szablon",
+    "de": "Vorlage",
     "es": "Plantilla"
   },
   "musketeers": {
-    "en": "Musketeers of Words - Polish Oxford Debate Championships in English",
-    "pl": "Muszkieterowie Słowa - Polskie Mistrzostwa Debaty Oksfordzkiej po angielsku",
-    "es": "Mosqueteros de La Palabra - Campeonato polaco de debate de Oxford en inglés"
+    "en": "Musketeers of Words – Polish Oxford Debate Championships in English",
+    "pl": "Muszkieterowie Słowa – Polskie mistrzostwa debat oksfordzkich w języku angielskim",
+    "de": "Musketeers of Words – Polnisch Oxforddebatte Meisterschaft auf English",
+    "es": "Mosqueteros de La Palabra – Campeonato polaco de debate de Oxford en inglés"
   },
   "PLD": {
-    "en": "PLD - Poznań Debate League",
-    "pl": "PLD - Poznańska Liga Debat",
-    "es": "PLD - Liga de debate de Poznan"
+    "en": "PLD – Poznań Debate League",
+    "pl": "PLD – Poznańska Liga Debat",
+    "de": "PLD – Posener Debattenliga",
+    "es": "PLD – Liga de debate de Poznan"
   },
   "beepOnSpeechEnd": {
     "en": "Beep on speech end",
-    "pl": "Sygnalizuj koniec mowy dźwiękowo"
+    "pl": "Sygnalizuj koniec mowy dźwiękowo",
+    "de": "Ende der Ansprache Tonsignalisierung"
   },
   "beepOnProtected": {
     "en": "Beep on protected time",
-    "pl": "Sygnalizuj czas chroniony dźwiękowo"
+    "pl": "Sygnalizuj czas chroniony dźwiękowo",
+    "de": "Geschützte Zeit Tonsignalisierung"
   },
   "visualizeProtected": {
     "en": "Visualize protected time",
-    "pl": "Pokaż czas chroniony wizualnie"
+    "pl": "Pokaż czas chroniony wizualnie",
+    "de": "Geschützte Zeit Visuellsignalisierung"
   },
   "protectSpeechStart": {
     "en": "Protect time on speech start",
-    "pl": "Chroń czas na początku mowy"
+    "pl": "Chroń czas na początku mowy",
+    "de": "Geschützte Zeit am Anfang der Ansprache"
   },
   "mainmenu": {
     "en": "Main menu",
-    "pl": "Menu główne"
+    "pl": "Menu główne",
+    "de": "Menu"
+  },
+  "startDebate": {
+    "en": "Start debate",
+    "pl": "Rozpocznij debatę",
+    "de": "Debatte beginnen"
   },
   "soundDemonstration": {
     "en": "Sound Demonstration",
@@ -172,23 +197,27 @@
     "es": "Doble sonido"
   },
   "soundDemonstrationPoznanPack": {
-    "en": "ZTM Poznań Pack: (KBING! - Gong)",
-    "pl": "Paczka dźwięków ZTM Poznań: (KBING! - Gong)",
-    "es": "Un conjunto de sonidos ZTM Poznań: (KBING! - Gong)"
+    "en": "ZTM Poznań Pack: (KBING! – Gong)",
+    "pl": "Paczka dźwięków ZTM Poznań: (KBING! – Gong)",
+    "de": "ZTM Poznań Tonpacket (KBING! – Gong)",
+    "es": "Un conjunto de sonidos ZTM Poznań: (KBING! – Gong)"
   },
   "soundDemonstrationPoznanPackFlavortext": {
     "en": "The iconic announcement sound known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
     "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "de": "Der ikonenhaft Durchsageton kennt jeder, der mal das Vergnügen hatte, in der Hauptstadt der Straßenarbeiten öffentliche Verkehrsmittel zu benutzen.",
     "es": "El icónico sonido del anuncio es conocido por cualquiera que haya tenido el placer de utilizar el transporte público en la capital de obras viales."
   },
   "soundDemonstrationTransitBell": {
     "en": "Transit bell",
     "pl": "Gong",
+    "de": "Gong",
     "es": "Campana de transito"
   },
   "soundDemonstrationDisclaimer": {
-    "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl For Developers page, in an effort to promote the city of Poznań. Files last updated: 2024-02-02. Unmodified.",
-    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie Dla Deweloperów witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane.",
+    "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl \"For Developers\" page, in an effort to promote the city of Poznań. Files last updated: 2024-02-02. Unmodified.",
+    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie \"Dla Deweloperów\" witryny ztm.poznan.pl, w celu promocji miasta Poznania. Pliki aktualizowane: 2024-02-02. Niemodyfikowane.",
+    "de": "Die Tone verfügbar unter dem Name \"ZTM Poznań Pack\" sind unter Bedinungen, der auf ztm.poznan.pl \"Für Developers\" Seite verfügbar sind, benutzt, um die Stadt Poznań zu bewerben. Dateien letzmalig upgedatet: 2024-02-02. Unmodifiert.",
     "es": "Los sonidos disponibles bajo el nombre \"Conjunto de sonidos ZTM Poznań\" se utilizan según las condiciones disponibles en la página Para Desarrolladores del sitio web ztm.poznan.pl, con el fin de promocionar la ciudad de Poznań. Archivos actualizados: 2024-02-02. Sin modificar."
   },
   "debateMotionGenerator": {

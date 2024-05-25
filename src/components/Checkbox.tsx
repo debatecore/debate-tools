@@ -1,10 +1,7 @@
-import { EventHandler } from "react";
-
 type CheckboxProps = {
   name: string;
   value: string;
   labelText: string;
-  checkboxKey: string;
   disabled?: boolean;
   onChange?: any;
   checked?: boolean;
@@ -21,7 +18,6 @@ const Checkbox = (props: CheckboxProps) => {
         type="checkbox"
         name={props.name}
         value={props.value}
-        key={props.checkboxKey}
         disabled={props.disabled}
         onChange={props.onChange}
         checked={props.checked}

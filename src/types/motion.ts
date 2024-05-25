@@ -20,7 +20,9 @@ const motionTypesObjects = [
 ] as const;
 export { motionTypesObjects as motionTypesObjects };
 
-// TO-DO: make the array be generated from the above objects array
+/**
+ * Names of motion types written in their respective languages
+ */
 const motionTypesArray = [
   "Teza deskryptywna",
   "Teza faktograficzna",
@@ -42,10 +44,10 @@ const motionTypesArray = [
 export { motionTypesArray };
 
 /**
- * Represents a motion type code used in the translations file (strings.json)
+ * Represents a motion type name based upon {@link motionTypesArray}
  */
-type motionTypeCode = (typeof motionTypesArray)[number];
-export type { motionTypeCode };
+type motionTypeName = (typeof motionTypesArray)[number];
+export type { motionTypeName as motionTypeCode };
 
 type motion = {
   lang: string;

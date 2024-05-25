@@ -157,6 +157,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>([
     ...motionTypesArray,
   ]);
+
   /**
    * A list of motion types that is being passed to a parent component
    */
@@ -231,7 +232,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
         {languagesWithMotions().map((langCode: language, index: number) => (
           <section key={index}>
             <Checkbox
-              checkboxKey={langCode}
+              key={langCode}
               name="language"
               value={langCode}
               labelText={getSpecificLangString("selfLanguageString", langCode)}
@@ -241,7 +242,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
               .filter((motionType) => motionType.lang === langCode)
               .map((motionType: { lang: language; type: motionTypeCode }) => (
                 <Checkbox
-                  checkboxKey={motionType.type}
+                  key={motionType.type}
                   name="motionType"
                   value={motionType.type}
                   labelText={motionType.type}

@@ -238,7 +238,9 @@
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
   "motionFilterTitle": {
-    "en": "Filter motions"
+    "en": "Filter motions",
+    "pl": "Filtruj tezy",
+    "de": "Thesen filtrieren"
   },
   "motionType": {
     "en": "Motion type"

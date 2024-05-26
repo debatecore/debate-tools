@@ -10,7 +10,7 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
       <p className="text-xl xl:text-2xl max-w-[80vw] lg:max-w-[50vw] mb-5 text-balance">
         &quot;{motion && motion?.motion ? motion.motion : ""}&quot;
       </p>
-      {motion && motion.adinfo ? (
+      {motion && motion.adinfo && (
         <section className="flex flex-col items-center mb-5 border-2 border-neutral-800 rounded-lg pt-2 p-4">
           <section className="flex gap-2 text-2xl items-center">
             <span className="text-neutral-500">
@@ -20,8 +20,6 @@ const MotionDisplay = ({ motion }: { motion: motion | null }) => {
           </section>
           <p className="text-justify max-w-[80vw] xl:max-w-[50vw]">{motion.adinfo}</p>
         </section>
-      ) : (
-        ""
       )}
       <p className="text-sm xl:text-base text-neutral-500 flex flex-col">
         {motion?.source || ""}

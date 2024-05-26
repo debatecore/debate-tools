@@ -249,6 +249,11 @@
     "pl": "Infoslajd",
     "es": "Diapositiva informativa"
   },
+  "availableMotionsCount": {
+    "en": "Available motions",
+    "pl": "Dostępne tezy",
+    "de": "Verfügbare Thesen"
+  },
   "tournamentPlanner": {
     "en": "Tournament Planner",
     "pl": "Planowanie turnieju",
@@ -261,53 +266,16 @@
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
-  "motionPlPolicy": {
-    "en": "Teza o działaniu"
+  "motionFilterTitle": {
+    "en": "Filter motions",
+    "pl": "Filtruj tezy",
+    "de": "Thesen filtrieren"
   },
-  "motionPlDuty": {
-    "en": "Teza powinnościowa"
+  "motionType": {
+    "en": "Motion type"
   },
-  "motionPlDescriptive": {
-    "en": "Teza deskryptywna"
-  },
-  "motionPlFirstPerson": {
-    "en": "Teza pierwszoosobowa"
-  },
-  "motionPlComparative": {
-    "en": "Teza porównawcza"
-  },
-  "motionPlValues": {
-    "en": "Teza o wartościach "
-  },
-  "motionPlFact": {
-    "en": "Teza faktograficzna"
-  },
-  "motionPlEvaluative": {
-    "en": "Teza oceniająca"
-  },
-  "motionPlRegret": {
-    "en": "Należy żałować..."
-  },
-  "motionEnFirstPerson": {
-    "en": "First-person motion"
-  },
-  "motionEnFact": {
-    "en": "Motion of fact"
-  },
-  "motionEnRegret": {
-    "en": "This House Regrets..."
-  },
-  "motionEnThisHouseSupports": {
-    "en": "This House Supports..."
-  },
-  "motionEnPolicy": {
-    "en": "Motion of policy"
-  },
-  "motionEnDuty": {
-    "en": "Motion of duty"
-  },
-  "motionEnComparative": {
-    "en": "Comparative motion"
+  "showFiltersButtonText": {
+    "en": "Filter motions"
   },
   "brandingdisplayimage": {
     "en": "Clock branding image",

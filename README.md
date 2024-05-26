@@ -10,6 +10,7 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 
 - Debate clock adjustable to rules of any tournament
 - Generator of motions used in past tournaments
+- Filtering generated motions by type and language
 
 ## Tournaments where Debate Tools were used
 
@@ -17,7 +18,6 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 
 ## Plans for the future
 
-- Filtering motions by type and language
 - Submitting custom logos
 - Tournament planner
 - Adding locales in more languages

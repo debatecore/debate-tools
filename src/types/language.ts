@@ -1,7 +1,7 @@
 const langsArray = ["en", "pl", "de", "jp", "es"] as const;
 export { langsArray };
 
-// languages disallowed to be selected from public lang selection menu
+/** languages disallowed to be selected from public lang selection menu */
 const langsPublicBlacklist = ["jp"];
 export { langsPublicBlacklist };
 

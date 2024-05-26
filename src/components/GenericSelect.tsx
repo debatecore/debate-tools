@@ -5,6 +5,7 @@ import { IconBlankIcon } from "./icons/BlankIcon";
 
 type option = {
   value: string;
+  icon?: React.JSX.Element;
   exec?: () => void;
 };
 
@@ -34,9 +35,12 @@ const GenericSelect = (props: GenericSelectProps) => {
     <div className="flex flex-row justify-between relative">
       <p className="text-neutral-500">{props.text}</p>
       <button
-        className="flex flex-row gap-2 text-neutral-500 select-none"
+        className="flex flex-row gap-2 text-neutral-500 select-none items-center"
         onClick={() => setSelectOpen(true)}
       >
+        {props.options.find((option) => {
+          return option.value === props.value;
+        })?.icon || ""}
         {props.value}
         <IconChevronDown moreClass="scale-[.75]" />
       </button>
@@ -49,25 +53,26 @@ const GenericSelect = (props: GenericSelectProps) => {
             border-neutral-700 shadow shadow-black select-none
           `}
         >
-          {props.options.map((el: option) => {
+          {props.options.map((element: option) => {
             return (
               <button
-                key={el.value}
+                key={element.value}
                 onClick={() => {
-                  if (el.exec) el.exec();
+                  if (element.exec) element.exec();
                   setSelectOpen(false);
                 }}
                 className={`
                   flex flex-row gap-1 rounded
-                  pr-3 hover:bg-neutral-700
+                  pr-3 hover:bg-neutral-700 items-center
                 `}
               >
-                {props.value === el.value ? (
+                {props.value === element.value ? (
                   <IconCheck moreClass="scale-[.65]" />
                 ) : (
                   <IconBlankIcon />
                 )}
-                {el.value}
+                {element.icon}
+                {element.value}
               </button>
             );
           })}

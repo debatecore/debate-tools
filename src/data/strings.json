@@ -384,5 +384,13 @@
   "stopspeech": {
     "en": "end speech",
     "pl": "koniec mowy"
+  },
+  "soundPackSelect": {
+    "en": "Bell sounds",
+    "pl": "Sygnały dźwiękowe"
+  },
+  "defaultSoundsOption": {
+    "en": "Default",
+    "pl": "Domyślne"
   }
 }

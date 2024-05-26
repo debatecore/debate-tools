@@ -10,12 +10,9 @@ import { IconStopCircle } from "@/components/icons/StopCircle";
 import { IconAlertCircle } from "@/components/icons/AlertCircle";
 import { IconArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
 import Link from "next/link";
+import { useAudio } from "react-use";
 
-const Dots = (props: {
-  stages: number[];
-  flashCurrent: boolean;
-  stage: number;
-}) => {
+const Dots = (props: { stages: number[]; flashCurrent: boolean; stage: number }) => {
   return (
     <div className="flex flex-row gap-1 mt-1">
       {props.stages.map((el) => {
@@ -60,6 +57,16 @@ export default function OxfordDebate() {
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
 
+  const adVocemSoundPath = useContext(DebateContext).conf.soundPack.adVocemSound;
+  const debateEndSoundPath = useContext(DebateContext).conf.soundPack.debateEndSound;
+
+  const [adVocemAudio, stateAdVocemAudio, controlAdVocemAudio] = useAudio({
+    src: adVocemSoundPath || "",
+  });
+  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio({
+    src: debateEndSoundPath || "",
+  });
+
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">
       <h1 className="font-serif text-4xl text-balance">
@@ -76,11 +83,7 @@ export default function OxfordDebate() {
             {/* {debate.conf.proTeam ? "as the proposition" : "in favour"} */}
             {aspropo}
           </p>
-          <Dots
-            stages={[0, 2, 4, 6]}
-            stage={stage}
-            flashCurrent={running && !advocem}
-          />
+          <Dots stages={[0, 2, 4, 6]} stage={stage} flashCurrent={running && !advocem} />
         </div>
         {/*  */}
         {/*  */}
@@ -124,11 +127,7 @@ export default function OxfordDebate() {
             {/* {debate.conf.oppTeam ? "as the opposition" : "against"} */}
             {asoppo}
           </p>
-          <Dots
-            stages={[1, 3, 5, 7]}
-            stage={stage}
-            flashCurrent={running && !advocem}
-          />
+          <Dots stages={[1, 3, 5, 7]} stage={stage} flashCurrent={running && !advocem} />
         </div>
         {/*  */}
       </div>
@@ -151,7 +150,12 @@ export default function OxfordDebate() {
                 disabled={running}
                 smol
                 square
-                onClick={() => setAdvocem(!advocem)}
+                onClick={() => {
+                  if (!advocem) {
+                    controlAdVocemAudio.play();
+                  }
+                  setAdvocem(!advocem);
+                }}
                 className={advocem ? "!border-emerald-400" : ""}
               >
                 <div className="flex flex-row gap-2">
@@ -200,6 +204,8 @@ export default function OxfordDebate() {
           </>
         )}
       </div>
+      {adVocemAudio}
+      {debateEndAudio}
     </div>
   );
 }

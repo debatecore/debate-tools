@@ -221,7 +221,7 @@ const MotionsFilter = (props: MotionsFilterProps) => {
   return (
     <div
       className={
-        "grow-0 xl:self-start bg-neutral-900 border-2 border-neutral-800 p-3 rounded-lg"
+        "grow-0 xl:self-start bg-neutral-900 m-2 border-2 border-neutral-800 p-3 rounded-lg"
       }
     >
       <h5 className="text-center font-bold m-2">{useLang("motionFilterTitle")}</h5>

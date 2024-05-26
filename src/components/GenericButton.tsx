@@ -10,7 +10,6 @@ type SharedButtonProps = {
   square?: boolean;
   onClick?: () => void;
   className?: string;
-  highlightIcon?: boolean;
   hidden?: boolean;
 };
 type GenericButtonProps = {

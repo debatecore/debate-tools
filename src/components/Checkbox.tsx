@@ -9,8 +9,14 @@ type CheckboxProps = {
 
 const Checkbox = (props: CheckboxProps) => {
   return (
-    <label className="flex flex-row justify-between select-none cursor-pointer">
-      <span className={props.disabled ? "mr-2 text-neutral-500" : "mr-2"}>
+    <label className="flex flex-row justify-between select-none cursor-pointer mt-1 mb-2 xl:m-0">
+      <span
+        className={
+          props.disabled
+            ? "text-xs xl:text-base mr-2 text-neutral-500"
+            : "text-xs xl:text-base mr-2"
+        }
+      >
         {props.labelText}
       </span>
       <input

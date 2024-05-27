@@ -42,6 +42,7 @@ export default function OxfordDebate() {
   const [stage, setStage] = useState<number>(0);
   const [running, setRunning] = useState<boolean>(false);
   const [advocem, setAdvocem] = useState<boolean>(false);
+  const [debateEndSoundPlayed, setDebateEndSoundPlayed] = useState(false);
 
   // prettier-ignore
   const stage_strings = [
@@ -65,6 +66,13 @@ export default function OxfordDebate() {
   });
   const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio({
     src: debateEndSoundPath || "",
+  });
+
+  useEffect(() => {
+    if (stage === 8 && !debateEndSoundPlayed) {
+      controlDebateEndAudio.play();
+      setDebateEndSoundPlayed(true);
+    }
   });
 
   return (
@@ -194,7 +202,10 @@ export default function OxfordDebate() {
             <GenericButton
               smol
               square
-              onClick={() => setStage(stage > 0 ? stage - 1 : stage)}
+              onClick={() => {
+                setStage(stage > 0 ? stage - 1 : stage);
+                setDebateEndSoundPlayed(false);
+              }}
             >
               <IconArrowLeftCircle />
             </GenericButton>

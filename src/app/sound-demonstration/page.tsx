@@ -32,9 +32,7 @@ export default function SoundTestPage() {
             righticon={IconDoubleBell}
           />
         </div>
-        <p className="text-center mt-4">
-          {useLang("soundDemonstrationPoznanPack")}
-        </p>
+        <p className="text-center mt-4">{useLang("soundDemonstrationPoznanPack")}</p>
         <p className="text-neutral-500 px-2 text-justify sm:text-center sm:text-balance">
           {useLang("soundDemonstrationPoznanPackFlavortext")}
         </p>
@@ -49,9 +47,9 @@ export default function SoundTestPage() {
           />
         </div>
       </div>
-      {/* <p className="text-neutral-700 px-2 text-justify sm:text-balance sm:text-center mt-auto mx-auto max-w-7xl">
+      <p className="text-neutral-600 px-2 p-2 text-justify sm:text-balance sm:text-center mt-auto mx-auto max-w-7xl">
         {useLang("soundDemonstrationDisclaimer")}
-      </p> */}
+      </p>
     </div>
   );
 }

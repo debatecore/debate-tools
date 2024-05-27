@@ -49,7 +49,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      <div className="hidden lg:block max-w-7xl mx-auto mt-auto text-neutral-800 text-center p-2">
+      <div className="hidden lg:block max-w-7xl mx-auto mt-auto text-neutral-600 text-center p-2">
         <p className="text-balance">
           {useLang("disclaimer")}
           {" © 2023-2024 Jakub Mańczak."}

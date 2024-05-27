@@ -387,10 +387,12 @@
   },
   "soundPackSelect": {
     "en": "Bell sounds",
-    "pl": "Sygnały dźwiękowe"
+    "pl": "Sygnały dźwiękowe",
+    "de": "Tonsignalisierung"
   },
   "defaultSoundsOption": {
     "en": "Default",
-    "pl": "Domyślne"
+    "pl": "Domyślne",
+    "de": "Standard"
   }
 }

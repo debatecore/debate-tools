@@ -266,6 +266,14 @@
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
+  "licenseDisclaimer_before": {
+    "en": "Distributed under the terms of",
+    "pl": "Dystrybuowane w zgodności z"
+  },
+  "sourcecodeDisclaimer_before": {
+    "en": "Source code available on",
+    "pl": "Kod źródłowy dostępny za pośrednictwem serwisu"
+  },
   "motionFilterTitle": {
     "en": "Filter motions",
     "pl": "Filtruj tezy",

@@ -7,11 +7,11 @@
     "es": "Lengua"
   },
   "selfLanguageString": {
-    "en": "🇬🇧 English",
-    "pl": "🇵🇱 polski",
-    "de": "🇩🇪 Deutsch",
-    "jp": "🇯🇵 日本語",
-    "es": "🇪🇸 Español"
+    "en": "English",
+    "pl": "polski",
+    "de": "Deutsch",
+    "jp": "日本語",
+    "es": "Español"
   },
   "debateTools": {
     "en": "Debate Tools",
@@ -249,6 +249,11 @@
     "pl": "Infoslajd",
     "es": "Diapositiva informativa"
   },
+  "availableMotionsCount": {
+    "en": "Available motions",
+    "pl": "Dostępne tezy",
+    "de": "Verfügbare Thesen"
+  },
   "tournamentPlanner": {
     "en": "Tournament Planner",
     "pl": "Planowanie turnieju",
@@ -256,58 +261,31 @@
     "es": "Planificación de torneos"
   },
   "disclaimer": {
-    "en": "Originally made for the purposes of the debaters from ZSK Poznań as well as various Polish debate organisations. Available freely.",
-    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz różnych polskich organizacji debatanckich. Dostępne publicznie.",
-    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen. Öffentlich zugänglich.",
+    "en": "Originally made for the purposes of the debaters from ZSK Poznań and Polish debate organisations.",
+    "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz polskich organizacji debatanckich.",
+    "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
   },
-  "motionPlPolicy": {
-    "en": "Teza o działaniu"
+  "licenseDisclaimer_before": {
+    "en": "Available freely under the terms of",
+    "pl": "Dostępne publicznie na licencji",
+    "de": "Frei verfügbar unter den Bedingungen der"
   },
-  "motionPlDuty": {
-    "en": "Teza powinnościowa"
+  "sourcecodeDisclaimer_before": {
+    "en": "Source code available on",
+    "pl": "Kod źródłowy dostępny za pośrednictwem serwisu",
+    "de": "Quellcode verfügbar auf"
   },
-  "motionPlDescriptive": {
-    "en": "Teza deskryptywna"
+  "motionFilterTitle": {
+    "en": "Filter motions",
+    "pl": "Filtruj tezy",
+    "de": "Thesen filtrieren"
   },
-  "motionPlFirstPerson": {
-    "en": "Teza pierwszoosobowa"
+  "motionType": {
+    "en": "Motion type"
   },
-  "motionPlComparative": {
-    "en": "Teza porównawcza"
-  },
-  "motionPlValues": {
-    "en": "Teza o wartościach "
-  },
-  "motionPlFact": {
-    "en": "Teza faktograficzna"
-  },
-  "motionPlEvaluative": {
-    "en": "Teza oceniająca"
-  },
-  "motionPlRegret": {
-    "en": "Należy żałować..."
-  },
-  "motionEnFirstPerson": {
-    "en": "First-person motion"
-  },
-  "motionEnFact": {
-    "en": "Motion of fact"
-  },
-  "motionEnRegret": {
-    "en": "This House Regrets..."
-  },
-  "motionEnThisHouseSupports": {
-    "en": "This House Supports..."
-  },
-  "motionEnPolicy": {
-    "en": "Motion of policy"
-  },
-  "motionEnDuty": {
-    "en": "Motion of duty"
-  },
-  "motionEnComparative": {
-    "en": "Comparative motion"
+  "showFiltersButtonText": {
+    "en": "Filter motions"
   },
   "brandingdisplayimage": {
     "en": "Clock branding image",

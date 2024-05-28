@@ -2,7 +2,6 @@
 import { SoundPlayerButton } from "@/components/SoundPlayer";
 import { IconAlertCircle } from "@/components/icons/AlertCircle";
 import { IconBell } from "@/components/icons/Bell";
-import { IconConstruction } from "@/components/icons/Construction";
 import { IconDoubleBell } from "@/components/icons/DoubleBell";
 import { IconPoznanBus } from "@/components/icons/PoznanBus";
 import { IconPoznanTram } from "@/components/icons/PoznanTram";
@@ -11,6 +10,9 @@ import { useLang } from "@/lib/useLang";
 import { defaultSoundPack, ztmPoznańSoundPack } from "@/types/soundPack";
 
 export default function SoundTestPage() {
+  const adVocemText = useLang("adVocem");
+  const debateEndText = useLang("debateEnd");
+
   const ztmAdVocemSound = ztmPoznańSoundPack.adVocemSound;
   const ztmDebateEndSound = ztmPoznańSoundPack.debateEndSound;
   return (
@@ -38,9 +40,7 @@ export default function SoundTestPage() {
             righticon={IconDoubleBell}
           />
         </div>
-        <p className="text-center mt-4">
-          {useLang("soundDemonstrationPoznanPack")}
-        </p>
+        <p className="text-center mt-4">{useLang("soundDemonstrationPoznanPack")}</p>
         <p className="text-neutral-500 px-2 text-justify sm:text-center sm:text-balance">
           {useLang("soundDemonstrationPoznanPackFlavortext")}
         </p>
@@ -55,7 +55,7 @@ export default function SoundTestPage() {
           />
           {ztmAdVocemSound && (
             <SoundPlayerButton
-              text={useLang("adVocem")}
+              text={adVocemText}
               lefticon={IconPoznanBus}
               lefticonclasses="scale-[2] top-[33px] left-[8px]"
               soundpath={ztmAdVocemSound}
@@ -65,7 +65,7 @@ export default function SoundTestPage() {
           )}
           {ztmDebateEndSound && (
             <SoundPlayerButton
-              text={useLang("debateEnd")}
+              text={debateEndText}
               soundpath={ztmDebateEndSound}
               lefticon={IconTrophy}
               lefticonclasses="scale-[2] top-[17px] left-[25px]"

@@ -203,9 +203,9 @@
     "es": "Un conjunto de sonidos ZTM Poznań: (KBING! – Gong)"
   },
   "soundDemonstrationPoznanPackFlavortext": {
-    "en": "The iconic announcement sound known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
-    "pl": "Ikoniczny dźwięk zapowiedzi w zbiorkomie znany każdemu kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
-    "de": "Der ikonenhaft Durchsageton kennt jeder, der mal das Vergnügen hatte, in der Hauptstadt der Straßenarbeiten öffentliche Verkehrsmittel zu benutzen.",
+    "en": "The iconic announcement sounds known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
+    "pl": "Ikoniczne dźwięki zapowiedzi w zbiorkomie znany każdemu, kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "de": "Die ikonenhaften Durchsagetone kennt jeder, der mal das Vergnügen hatte, in der Hauptstadt der Straßenarbeiten öffentliche Verkehrsmittel zu benutzen.",
     "es": "El icónico sonido del anuncio es conocido por cualquiera que haya tenido el placer de utilizar el transporte público en la capital de obras viales."
   },
   "soundDemonstrationTransitBell": {
@@ -214,9 +214,14 @@
     "de": "Gong",
     "es": "Campana de transito"
   },
+  "debateEnd": {
+    "en": "Debate end",
+    "pl": "Koniec debaty",
+    "de": "Ende der Debatte"
+  },
   "soundDemonstrationDisclaimer": {
     "en": "The sounds featured under the name \"ZTM Poznań Pack\" are used under the terms available on the ztm.poznan.pl \"For Developers\" page, in an effort to promote the city of Poznań. Files last updated: 2024-05-27. Unmodified.",
-    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie \"Dla Deweloperów\" witryny ztm.poznan.pl, w celu promocji miasta Poznania. Ostatnia aktualizacja: 2024-05-27. Niemodyfikowane.",
+    "pl": "Dźwięki dostępne pod nazwą \"Paczka dźwięków ZTM Poznań\" są używane pod warunkami dostępnymi na stronie \"Dla Deweloperów\" witryny ztm.poznan.pl w celu promocji miasta Poznania. Ostatnia aktualizacja: 2024-05-27. Niemodyfikowane.",
     "de": "Die Tone verfügbaren unter dem Name \"ZTM Poznań Pack\" sind unter Bedinungen, der auf ztm.poznan.pl \"Für Developers\" Seite verfügbaren sind, benutzt, um die Stadt Poznań zu bewerben. Dateien letzmalig upgedatet: 2024-05-27. Unmodifierte.",
     "es": "Los sonidos disponibles bajo el nombre \"Conjunto de sonidos ZTM Poznań\" se utilizan según las condiciones disponibles en la página Para Desarrolladores del sitio web ztm.poznan.pl, con el fin de promocionar la ciudad de Poznań. Archivos actualizados: 2024-05-27. Sin modificar."
   },

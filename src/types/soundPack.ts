@@ -14,25 +14,21 @@ type soundPack = {
 
 export { type soundPack };
 
-const soundPacks: Array<soundPack> = [
-  {
-    name: "default",
-    pingProtectedTime: "/ping.mp3",
-    pingSpeechEnd: "/ping2.mp3",
-  },
-  {
-    name: "ZTM Poznań",
-    pingProtectedTime: "/KBING! - Gong.mp3",
-    pingSpeechEnd: "/KBING! - Gong.mp3",
-    adVocemSound: "/KZADAN.mp3",
-    debateEndSound: "/KONCTR.mp3",
-  },
-] as const;
-export { soundPacks };
-
 const defaultSoundPack: soundPack = {
   name: "default",
   pingProtectedTime: "/ping.mp3",
   pingSpeechEnd: "/ping2.mp3",
 };
 export { defaultSoundPack };
+
+const ztmPoznańSoundPack: soundPack = {
+  name: "ZTM Poznań",
+  pingProtectedTime: "/KBING!",
+  pingSpeechEnd: "/KBING! - Gong.mp3",
+  adVocemSound: "/KZADAN.mp3",
+  debateEndSound: "/KONCTR.mp3",
+};
+export { ztmPoznańSoundPack };
+
+const soundPacks: Array<soundPack> = [defaultSoundPack, ztmPoznańSoundPack] as const;
+export { soundPacks };

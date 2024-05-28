@@ -13,10 +13,10 @@ import Link from "next/link";
 import { useAudio } from "react-use";
 
 const Dots = (props: {
-    stages: number[];
-    flashCurrent: boolean;
-    stage: number
-  }) => {
+  stages: number[];
+  flashCurrent: boolean;
+  stage: number
+}) => {
   return (
     <div className="flex flex-row gap-1 mt-1">
       {props.stages.map((el) => {
@@ -95,7 +95,7 @@ export default function OxfordDebate() {
             {/* {debate.conf.proTeam ? "as the proposition" : "in favour"} */}
             {aspropo}
           </p>
-          <Dots 
+          <Dots
             stages={[0, 2, 4, 6]}
             stage={stage}
             flashCurrent={running && !advocem}
@@ -143,7 +143,11 @@ export default function OxfordDebate() {
             {/* {debate.conf.oppTeam ? "as the opposition" : "against"} */}
             {asoppo}
           </p>
-          <Dots stages={[1, 3, 5, 7]} stage={stage} flashCurrent={running && !advocem} />
+          <Dots
+            stages={[1, 3, 5, 7]}
+            stage={stage}
+            flashCurrent={running && !advocem}
+          />
         </div>
         {/*  */}
       </div>

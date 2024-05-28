@@ -8,8 +8,8 @@
   },
   {
     "lang": "en",
-    "motion": "This House, as a\u00a0Commonwealth citizen, would rather see Prince William as the next King of the United Kingdom after the death of Queen Elizabeth II, rather than King Charles III.",
-    "adinfo": "Before the death of Queen Elizabeth II, some commentators and a\u00a0part of the public opinion suggested that in the event of the death of the monarch, the then Prince of Wales, Charles, should pass the crown to Prince William, rather than him becoming the new king.",
+    "motion": "This House, as a\u00a0Commonwealth citizen, would rather see Prince William as the next King of the United Kingdom after the death of Queen Elizabeth\u00a0II, rather than King Charles\u00a0III.",
+    "adinfo": "Before the death of Queen Elizabeth\u00a0II, some commentators and a\u00a0part of the public opinion suggested that in the event of the death of the monarch, the then Prince of Wales, Charles, should pass the crown to Prince William, rather than him becoming the new king.",
     "source": "Musketeers of Words – Polish Oxford Debates Championships in English 2023, Group phase",
     "type": "First-person motion"
   },
@@ -46,7 +46,7 @@
     "motion": "This House regrets the narrative saying that forgiveness is a\u00a0virtue.",
     "adinfo": "",
     "source": "Musketeers of Words – Polish Oxford Debates Championships in English 2023, Final",
-    "type": "This House Regrets..."
+    "type": "This House Regrets…"
   },
   {
     "lang": "pl",
@@ -193,7 +193,7 @@
     "motion": "Należy żałować wzrostu popularności osób wykonujących zawody zaufania społecznego (np. lekarzy) w\u00a0mediach społecznościowych.",
     "adinfo": "",
     "source": "Turniej Debat Oksfordzkich o\u00a0Tematyce Społeczno-Prawnej 2022, Runda finałowa",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -270,7 +270,7 @@
     "motion": "Należy żałować popularności astrologii.",
     "adinfo": "",
     "source": "Poznańska Noc Debaty 2023, Faza grupowa",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -347,7 +347,7 @@
     "motion": "This House supports the same educational system within EU.",
     "adinfo": "",
     "source": "Musketeers of Words – Polish Oxford Debates Championships in English 2022",
-    "type": "This House Supports..."
+    "type": "This House Supports…"
   },
   {
     "lang": "en",
@@ -1208,7 +1208,7 @@
     "adinfo": "",
     "motion": "Należy żałować rosnącej roli celebrytów w\u00a0eko-aktywizmie.",
     "source": "Turniej debat ekologiczno-klimatycznych, czerwiec 2022",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -1222,7 +1222,7 @@
     "adinfo": "",
     "motion": "Należy żałować narracji o\u00a0odpowiedzialności konsumenckiej przejawianej w\u00a0informowaniu o\u00a0śladzie węglowym w\u00a0poszczególnych produktach.",
     "source": "Turniej debat ekologiczno-klimatycznych, czerwiec 2022",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -1418,7 +1418,7 @@
     "adinfo": "",
     "motion": "Należy żałować dominującej w\u00a0społeczeństwie narracji o\u00a0indywidualnej odpowiedzialności za środowisko naturalne.",
     "source": "Liga Debat Fundacji ORLEN, 16.11.2022",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -1474,7 +1474,7 @@
     "adinfo": "",
     "motion": "Należy żałować narracji mówiącej o\u00a0tym, że tylko popularni artyści powinni być uznani za odnoszących sukces.",
     "source": "Kujawsko-Pomorska Liga Debat, Toruń, maj 2023",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -1530,7 +1530,7 @@
     "adinfo": "",
     "motion": "Należy żałować dominującej w\u00a0społeczeństwie narracji o\u00a0indywidualnej odpowiedzialności za środowisko naturalne.",
     "source": "Liga Debat Fundacji ORLEN, listopad 2022",
-    "type": "Należy żałować..."
+    "type": "Należy żałować…"
   },
   {
     "lang": "pl",
@@ -1703,14 +1703,14 @@
   {
     "lang": "pl",
     "adinfo": "",
-    "motion": "Dziedzictwo rewolucji francuskiej z\u00a01789 r. należy ocenić negatywnie.",
+    "motion": "Dziedzictwo rewolucji francuskiej z\u00a01789\u00a0r. należy ocenić negatywnie.",
     "source": "Poznańska Liga Debat, 08.03.2024",
     "type": "Teza oceniająca"
   },
   {
     "lang": "pl",
     "adinfo": "",
-    "motion": "Działalność Napoleona I\u00a0Bonaparte przyniosła Europie więcej szkód niż korzyści.",
+    "motion": "Działalność Napoleona\u00a0I Bonaparte przyniosła Europie więcej szkód niż korzyści.",
     "source": "Poznańska Liga Debat, 08.03.2024",
     "type": "Teza deskryptywna"
   },
@@ -1727,5 +1727,19 @@
     "motion": "Kultura wykluczania przynosi ruchom aktywistycznym więcej szkód niż korzyści.",
     "source": "Poznańska Liga Debat, 12.04.2024",
     "type": "Teza deskryptywna"
+  },
+  {
+    "lang": "pl",
+    "adinfo": "",
+    "motion": "W Polsce powinno się w pełni zakazać hazardu.",
+    "source": "Poznańska Liga Debat, 24.05.2024, Ćwierćfinał",
+    "type": "Teza powinnościowa"
+  },
+  {
+    "lang": "pl",
+    "adinfo": "Rezolucje zmniejszają rozwój gospodarczy wynikający z AI, ale regulują proces dalszego rozwoju technologii.",
+    "motion": "ONZ nie powinno wprowadzić rezolucji regulujących rozwój sztucznej inteligencji.",
+    "source": "Poznańska Liga Debat, 24.05.2024, Półfinał",
+    "type": "Teza powinnościowa"
   }
 ]

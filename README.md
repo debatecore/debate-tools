@@ -25,3 +25,11 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 ## Special thanks
 
 - Oskar ~~Tezowicz~~ Turowicz from [Educational Projects Foundation](https://projektyedukacyjne.org/) – for sharing motions used by the Foundation and continuous feedback on the project
+
+## License
+
+Copyright © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński
+
+Unless stated otherwise in cases of specific files, debate tools are distributed under [AGPL-3.0-only](LICENSE).
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License version 3 as published by the Free Software Foundation.

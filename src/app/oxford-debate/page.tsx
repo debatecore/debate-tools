@@ -10,11 +10,12 @@ import { IconStopCircle } from "@/components/icons/StopCircle";
 import { IconAlertCircle } from "@/components/icons/AlertCircle";
 import { IconArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
 import Link from "next/link";
+import { useAudio } from "react-use";
 
 const Dots = (props: {
   stages: number[];
   flashCurrent: boolean;
-  stage: number;
+  stage: number
 }) => {
   return (
     <div className="flex flex-row gap-1 mt-1">
@@ -45,6 +46,7 @@ export default function OxfordDebate() {
   const [stage, setStage] = useState<number>(0);
   const [running, setRunning] = useState<boolean>(false);
   const [advocem, setAdvocem] = useState<boolean>(false);
+  const [debateEndSoundPlayed, setDebateEndSoundPlayed] = useState(false);
 
   // prettier-ignore
   const stage_strings = [
@@ -59,6 +61,23 @@ export default function OxfordDebate() {
   const startspeech = useLang("startspeech");
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
+
+  const adVocemSoundPath = useContext(DebateContext).conf.soundPack.adVocemSound;
+  const debateEndSoundPath = useContext(DebateContext).conf.soundPack.debateEndSound;
+
+  const [adVocemAudio, stateAdVocemAudio, controlAdVocemAudio] = useAudio({
+    src: adVocemSoundPath || "",
+  });
+  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio({
+    src: debateEndSoundPath || "",
+  });
+
+  useEffect(() => {
+    if (stage === 8 && !debateEndSoundPlayed) {
+      controlDebateEndAudio.play();
+      setDebateEndSoundPlayed(true);
+    }
+  });
 
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">
@@ -151,7 +170,12 @@ export default function OxfordDebate() {
                 disabled={running}
                 smol
                 square
-                onClick={() => setAdvocem(!advocem)}
+                onClick={() => {
+                  if (!advocem) {
+                    controlAdVocemAudio.play();
+                  }
+                  setAdvocem(!advocem);
+                }}
                 className={advocem ? "!border-emerald-400" : ""}
               >
                 <div className="flex flex-row gap-2">
@@ -190,7 +214,10 @@ export default function OxfordDebate() {
             <GenericButton
               smol
               square
-              onClick={() => setStage(stage > 0 ? stage - 1 : stage)}
+              onClick={() => {
+                setStage(stage > 0 ? stage - 1 : stage);
+                setDebateEndSoundPlayed(false);
+              }}
             >
               <IconArrowLeftCircle />
             </GenericButton>
@@ -200,6 +227,8 @@ export default function OxfordDebate() {
           </>
         )}
       </div>
+      {adVocemAudio}
+      {debateEndAudio}
     </div>
   );
 }

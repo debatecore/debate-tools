@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { displayImageType } from "@/types/debate";
 import { useAudio, useInterval } from "react-use";
 import Image from "next/image";
 import { useLang } from "@/lib/useLang";
+import { DebateContext } from "@/contexts/DebateContext";
 
 const Clock = (props: {
   running: boolean;
@@ -17,11 +18,14 @@ const Clock = (props: {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
 
+  const protectedTimeSound = useContext(DebateContext).conf.soundPack.pingProtectedTime;
+  const speechEndSound = useContext(DebateContext).conf.soundPack.pingSpeechEnd;
+
   const [audio1, state1, controls1] = useAudio({
-    src: "/ping.mp3",
+    src: protectedTimeSound,
   });
   const [audio2, state2, controls2] = useAudio({
-    src: "/ping2.mp3",
+    src: speechEndSound,
   });
 
   const timeleft = useLang("timeleft");
@@ -107,11 +111,7 @@ const Clock = (props: {
               cx={128}
               cy={128}
               strokeWidth={5}
-              style={
-                !props.running && time > 0
-                  ? { transitionDuration: "350ms" }
-                  : {}
-              }
+              style={!props.running && time > 0 ? { transitionDuration: "350ms" } : {}}
             />
           </svg>
         </div>

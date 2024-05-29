@@ -11,6 +11,12 @@ import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { displayImageTypeArray } from "@/types/debate";
+import {
+  defaultSoundPack,
+  soundPackName,
+  soundPackNamesArray,
+  soundPacks,
+} from "@/types/soundPack";
 import { useContext } from "react";
 
 export default function OxfordDebateSetup() {
@@ -18,6 +24,8 @@ export default function OxfordDebateSetup() {
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
   const brandingselect = useLang("brandingdisplayimage");
   const brandingnull = useLang("brandingdisplayimage_nulloption");
+  const soundPackSelect = useLang("soundPackSelect");
+  const soundPackDefault = useLang("defaultSoundsOption");
   return (
     <div className="mb-5 lg:mb-0">
       <h1 className="text-3xl mt-8 text-center font-serif">
@@ -44,6 +52,26 @@ export default function OxfordDebateSetup() {
                   ...debateContext.conf,
                   displayImage1: el,
                 }),
+            };
+          })}
+        />
+        <GenericSelect
+          text={soundPackSelect}
+          value={
+            debateContext.conf.soundPack.name === "default"
+              ? soundPackDefault
+              : debateContext.conf.soundPack.name
+          }
+          options={soundPackNamesArray.map((element: soundPackName) => {
+            return {
+              value: element === "default" ? soundPackDefault : element,
+              exec: () => {
+                const soundPack =
+                  soundPacks.find((soundPack) => {
+                    return soundPack.name == element;
+                  }) || defaultSoundPack;
+                debateContext.setConf({ ...debateContext.conf, soundPack: soundPack });
+              },
             };
           })}
         />

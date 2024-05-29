@@ -1,3 +1,5 @@
+import { defaultSoundPack, soundPack } from "./soundPack";
+
 const displayImageTypeArray = ["null", "MOW2024", "MOW2018"] as const;
 export { displayImageTypeArray };
 
@@ -15,6 +17,7 @@ type debateConf = {
   beepProtectedTime: boolean;
   visualizeProtectedTimes: boolean;
   displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
+  soundPack: soundPack;
 };
 export type { debateConf, displayImageType };
 
@@ -30,5 +33,6 @@ const defaultDebateConf: debateConf = {
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
   displayImage1: "null",
+  soundPack: defaultSoundPack,
 };
 export { defaultDebateConf };

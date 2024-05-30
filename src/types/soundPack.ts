@@ -23,12 +23,12 @@ export { defaultSoundPack };
 
 const ztmPoznańSoundPack: soundPack = {
   name: "ZTM Poznań",
-  pingProtectedTime: "/KBING!",
-  pingSpeechEnd: "/KBING! - Gong.mp3",
+  pingProtectedTime: "/KBING!.mp3",
+  pingSpeechEnd: "/KBING!.mp3",
   adVocemSound: "/KZADAN.mp3",
   debateEndSound: "/KONCTR.mp3",
 };
 export { ztmPoznańSoundPack };
 
-const soundPacks: Array<soundPack> = [defaultSoundPack, ztmPoznańSoundPack] as const;
+const soundPacks: soundPack[] = [defaultSoundPack, ztmPoznańSoundPack] as const;
 export { soundPacks };

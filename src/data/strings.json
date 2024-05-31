@@ -26,6 +26,22 @@
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
+  "footerAbout": {
+    "en": "About",
+    "pl": "O stronie"
+  },
+  "footerMission": {
+    "en": "Mission",
+    "pl": "Misja"
+  },
+  "footerLicense": {
+    "en": "License",
+    "pl": "Licencja"
+  },
+  "footerSourceCode": {
+    "en": "Source code",
+    "pl": "Kod źródłowy"
+  },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
     "pl": "przez debatantów z Poznania",

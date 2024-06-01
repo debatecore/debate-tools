@@ -1,4 +1,5 @@
 "use client";
+import { DebatecoreFooter } from "@/components/DebatecoreFooter";
 import { SoundPlayerButton } from "@/components/SoundPlayer";
 import { IconAlertCircle } from "@/components/icons/AlertCircle";
 import { IconBell } from "@/components/icons/Bell";
@@ -40,7 +41,9 @@ export default function SoundTestPage() {
             righticon={IconDoubleBell}
           />
         </div>
-        <p className="text-center mt-4">{useLang("soundDemonstrationPoznanPack")}</p>
+        <p className="text-center mt-4">
+          {useLang("soundDemonstrationPoznanPack")}
+        </p>
         <p className="text-neutral-500 px-2 text-justify sm:text-center sm:text-balance">
           {useLang("soundDemonstrationPoznanPackFlavortext")}
         </p>
@@ -75,7 +78,9 @@ export default function SoundTestPage() {
           )}
         </div>
       </div>
-      <p className="text-neutral-600 px-2 p-2 text-justify sm:text-balance sm:text-center mt-auto mx-auto max-w-7xl">
+      <div className="mt-auto" />
+      <DebatecoreFooter />
+      <p className="text-neutral-700 px-2 pb-2 text-justify sm:text-balance sm:text-center mx-auto max-w-7xl">
         {useLang("soundDemonstrationDisclaimer")}
       </p>
     </div>

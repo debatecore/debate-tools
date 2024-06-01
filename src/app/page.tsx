@@ -52,28 +52,6 @@ export default function Home() {
       </div>
       <div className="mt-auto" />
       <DebatecoreFooter />
-      {/* <div className="hidden lg:block max-w-7xl mx-auto text-neutral-700 text-center p-2">
-        <p className="text-balance">
-          {useLang("disclaimer")}
-          {/* {` ${useLang("licenseDisclaimer_before")} `}
-          <a
-            className="underline"
-            href="https://github.com/debatecore/debate-tools/blob/master/LICENSE"
-          >
-            {"AGPLv3"}
-          </a>
-          {`.`}
-          {` ${useLang("sourcecodeDisclaimer_before")} `}
-          <a
-            className="underline"
-            href="https://github.com/debatecore/debate-tools"
-          >
-            {"Github"}
-          </a>
-          {`.`} */}
-      {/* {" © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński"}
-        </p>
-      </div> */}
     </div>
   );
 }

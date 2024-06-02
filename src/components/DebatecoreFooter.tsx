@@ -21,7 +21,7 @@ const DebatecoreFooter = (props: {}) => {
       href: "https://debateco.re/about",
     },
     {
-      text: "Send feedback",
+      text: useLang("footerSendFeedback"),
       href: "https://debateco.re/sendfeedback?from=toolsfooter",
     },
     {

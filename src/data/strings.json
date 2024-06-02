@@ -34,6 +34,10 @@
     "en": "Mission",
     "pl": "Misja"
   },
+  "footerSendFeedback": {
+    "en": "Send feedback",
+    "pl": "Wyślij opinię"
+  },
   "footerLicense": {
     "en": "License",
     "pl": "Licencja"

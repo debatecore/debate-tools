@@ -21,6 +21,10 @@ const DebatecoreFooter = (props: {}) => {
       href: "https://debateco.re/about",
     },
     {
+      text: "Send feedback",
+      href: "https://debateco.re/sendfeedback?from=toolsfooter",
+    },
+    {
       text: `${useLang("footerLicense")} (AGPLv3)`,
       href: "/about/license",
     },
@@ -32,7 +36,7 @@ const DebatecoreFooter = (props: {}) => {
 
   return (
     <>
-      <div className="flex flex-row items-center gap-4 p-2 mx-auto">
+      <div className="flex flex-col md:flex-row items-center gap-4 p-2 mx-auto">
         <div>
           <a
             href="https://debateco.re"
@@ -41,18 +45,20 @@ const DebatecoreFooter = (props: {}) => {
             debatecore
           </a>
         </div>
-        <div className="w-1 h-1 block bg-neutral-500 rounded" />
-        {footerlinks.map((link) => {
-          return (
-            <a
-              href={link.href}
-              key={link.text}
-              className="text-neutral-400 hover:underline"
-            >
-              {link.text}
-            </a>
-          );
-        })}
+        <div className="w-1 h-1 hidden md:block bg-neutral-500 rounded" />
+        <div className="flex flex-row flex-wrap justify-center items-center gap-4">
+          {footerlinks.map((link) => {
+            return (
+              <a
+                href={link.href}
+                key={link.text}
+                className="text-neutral-400 hover:underline"
+              >
+                {link.text}
+              </a>
+            );
+          })}
+        </div>
       </div>
       <div className="mx-auto p-2 text-balance text-center text-neutral-700">
         {useLang("disclaimer")}

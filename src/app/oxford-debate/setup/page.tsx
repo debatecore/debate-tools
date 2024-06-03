@@ -11,8 +11,7 @@ import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { displayImageType, displayImageTypeArray } from "@/types/debate";
-import { HTMLAttributes, useContext } from "react";
-import sharp from "sharp";
+import { useContext } from "react";
 import {
   defaultSoundPack,
   soundPackName,
@@ -125,7 +124,10 @@ export default function OxfordDebateSetup() {
                   soundPacks.find((soundPack) => {
                     return soundPack.name == element;
                   }) || defaultSoundPack;
-                debateContext.setConf({ ...debateContext.conf, soundPack: soundPack });
+                debateContext.setConf({
+                  ...debateContext.conf,
+                  soundPack: soundPack,
+                });
               },
             };
           })}

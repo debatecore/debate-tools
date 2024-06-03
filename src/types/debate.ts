@@ -1,4 +1,5 @@
 const displayImageTypeArray = ["null", "MOW2024", "MOW2018", "custom"] as const;
+import { defaultSoundPack, soundPack } from "./soundPack";
 export { displayImageTypeArray };
 
 type displayImageType = (typeof displayImageTypeArray)[number];
@@ -16,6 +17,7 @@ type debateConf = {
   visualizeProtectedTimes: boolean;
   displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
   customDisplayImage: string; // Base64
+  soundPack: soundPack;
 };
 export type { debateConf, displayImageType };
 
@@ -31,6 +33,7 @@ const defaultDebateConf: debateConf = {
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
   displayImage1: "null",
-  customDisplayImage: ""
+  customDisplayImage: "",
+  soundPack: defaultSoundPack
 };
 export { defaultDebateConf };

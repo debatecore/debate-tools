@@ -13,6 +13,12 @@ import { useLang } from "@/lib/useLang";
 import { displayImageType, displayImageTypeArray } from "@/types/debate";
 import { HTMLAttributes, useContext } from "react";
 import sharp from "sharp";
+import {
+  defaultSoundPack,
+  soundPackName,
+  soundPackNamesArray,
+  soundPacks,
+} from "@/types/soundPack";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -20,6 +26,8 @@ export default function OxfordDebateSetup() {
   const brandingselect = useLang("brandingdisplayimage");
   const brandingNull = useLang("brandingdisplayimage_nulloption");
   const brandingCustom = useLang("brandingdisplayimage_customoption");
+  const soundPackSelect = useLang("soundPackSelect");
+  const soundPackDefault = useLang("defaultSoundsOption");
 
   function convertImageToBase64(file: File): Promise<string> {
     return new Promise<string>((resolve) => {
@@ -99,6 +107,26 @@ export default function OxfordDebateSetup() {
             return {
               value: getBrandingImageName(el),
               exec: () => setBrandingImage(el),
+            };
+          })}
+        />
+        <GenericSelect
+          text={soundPackSelect}
+          value={
+            debateContext.conf.soundPack.name === "default"
+              ? soundPackDefault
+              : debateContext.conf.soundPack.name
+          }
+          options={soundPackNamesArray.map((element: soundPackName) => {
+            return {
+              value: element === "default" ? soundPackDefault : element,
+              exec: () => {
+                const soundPack =
+                  soundPacks.find((soundPack) => {
+                    return soundPack.name == element;
+                  }) || defaultSoundPack;
+                debateContext.setConf({ ...debateContext.conf, soundPack: soundPack });
+              },
             };
           })}
         />

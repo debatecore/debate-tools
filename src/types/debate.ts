@@ -1,4 +1,4 @@
-const displayImageTypeArray = ["null", "MOW2024", "MOW2018"] as const;
+const displayImageTypeArray = ["null", "MOW2024", "MOW2018", "custom"] as const;
 export { displayImageTypeArray };
 
 type displayImageType = (typeof displayImageTypeArray)[number];
@@ -15,6 +15,7 @@ type debateConf = {
   beepProtectedTime: boolean;
   visualizeProtectedTimes: boolean;
   displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
+  customDisplayImage: string; // Base64
 };
 export type { debateConf, displayImageType };
 
@@ -30,5 +31,6 @@ const defaultDebateConf: debateConf = {
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
   displayImage1: "null",
+  customDisplayImage: ""
 };
 export { defaultDebateConf };

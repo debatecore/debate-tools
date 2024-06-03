@@ -1,9 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { displayImageType } from "@/types/debate";
 import { useAudio, useInterval } from "react-use";
 import Image from "next/image";
 import { useLang } from "@/lib/useLang";
+import { DebateContext } from "@/contexts/DebateContext";
 
 const Clock = (props: {
   running: boolean;
@@ -28,6 +29,8 @@ const Clock = (props: {
   const overtime = useLang("overtime");
 
   const delay = 1000; // ms
+
+  const debateConf = useContext(DebateContext).conf;
 
   useEffect(() => {
     if (props.beepSpeechEnd && time === 0) controls2.play();
@@ -137,6 +140,18 @@ const Clock = (props: {
             />
           </div>
         )}
+        {props.clockimage === "custom" &&
+          debateConf.customDisplayImage != "" && (
+            <div className="absolute w-full h-full flex justify-center items-center">
+              <Image
+                src={`data:image/png;base64, ${debateConf.customDisplayImage}`}
+                alt="Custom logo"
+                width={60}
+                height={60}
+                className="mt-36"
+              />
+            </div>
+          )}
         {audio1}
         {audio2}
       </div>

@@ -10,14 +10,70 @@ import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
-import { displayImageTypeArray } from "@/types/debate";
-import { useContext } from "react";
+import { displayImageType, displayImageTypeArray } from "@/types/debate";
+import { HTMLAttributes, useContext } from "react";
+import sharp from "sharp";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
   const brandingselect = useLang("brandingdisplayimage");
-  const brandingnull = useLang("brandingdisplayimage_nulloption");
+  const brandingNull = useLang("brandingdisplayimage_nulloption");
+  const brandingCustom = useLang("brandingdisplayimage_customoption");
+
+  function convertImageToBase64(file: File): Promise<string> {
+    return new Promise<string>((resolve) => {
+      const fileReader = new FileReader();
+      fileReader.onload = function (event) {
+        const arrayBuffer = event.target?.result;
+        const base64Image = btoa(
+          String.fromCharCode(...new Uint8Array(arrayBuffer as ArrayBuffer))
+        );
+        resolve(base64Image);
+      };
+      fileReader.onerror = function (error) {
+        Promise.reject(`Failed to convert image to Base64: ${error}`);
+      };
+      fileReader.readAsArrayBuffer(file);
+    });
+  }
+
+  const getBrandingImageName = (brandingImageCode: string) => {
+    switch (brandingImageCode) {
+      case "null":
+        return brandingNull;
+      case "custom":
+        return brandingCustom;
+      default:
+        return brandingImageCode;
+    }
+  };
+
+  const setBrandingImage = (brandingImageCode: displayImageType) => {
+    switch (brandingImageCode) {
+      case "custom":
+      default:
+        debateContext.setConf({
+          ...debateContext.conf,
+          displayImage1: brandingImageCode,
+        });
+        break;
+    }
+  };
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target) return;
+    const input = e.target;
+    if (!input.files) return;
+    const file = input.files[0];
+    const base64Image = await convertImageToBase64(file);
+    debateContext.setConf({
+      ...debateContext.conf,
+      customDisplayImage: base64Image,
+    });
+    console.log(debateContext.conf.customDisplayImage);
+  };
+
   return (
     <div className="mb-5 lg:mb-0">
       <h1 className="text-3xl mt-8 text-center font-serif">
@@ -29,21 +85,20 @@ export default function OxfordDebateSetup() {
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-6 lg:gap-4 px-4">
         <DebateConfStringsPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
+        <input
+          type="file"
+          id="branding"
+          name="branding"
+          accept=".jpg, .jpeg, .png"
+          onChange={handleImageChange}
+        />
         <GenericSelect
           text={brandingselect}
-          value={
-            debateContext.conf.displayImage1 === "null"
-              ? brandingnull
-              : debateContext.conf.displayImage1
-          }
+          value={getBrandingImageName(debateContext.conf.displayImage1)}
           options={displayImageTypeArray.map((el) => {
             return {
-              value: el === "null" ? brandingnull : el,
-              exec: () =>
-                debateContext.setConf({
-                  ...debateContext.conf,
-                  displayImage1: el,
-                }),
+              value: getBrandingImageName(el),
+              exec: () => setBrandingImage(el),
             };
           })}
         />

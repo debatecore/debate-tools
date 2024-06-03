@@ -292,8 +292,12 @@
     "pl": "Logotyp zegarowy"
   },
   "brandingdisplayimage_nulloption": {
-    "en": "none",
-    "pl": "brak"
+    "en": "None",
+    "pl": "Brak"
+  },
+  "brandingdisplayimage_customoption": {
+    "en": "Custom",
+    "pl": "Własny"
   },
   "nomotiongiven": {
     "en": "No motion given",

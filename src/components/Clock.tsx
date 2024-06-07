@@ -19,26 +19,32 @@ const Clock = (props: {
   const refCircle = useRef<SVGCircleElement>(null);
   const conf = useContext(DebateContext).conf;
 
-  const [audio1, state1, controls1] = useAudio({
-    src: conf.soundPack.pingProtectedTime,
-  });
-  const [audio2, state2, controls2] = useAudio({
-    src: conf.soundPack.pingSpeechEnd,
-  });
+  const timeprotsound = ((res) => ({
+    element: res[0],
+    state: res[1],
+    controls: res[2],
+  }))(useAudio({ src: conf.soundPack.pingProtectedTime }));
+
+  const endtalksound = ((res) => ({
+    element: res[0],
+    state: res[1],
+    controls: res[2],
+  }))(useAudio({ src: conf.soundPack.pingSpeechEnd }));
 
   const timeleft = useLang("timeleft");
   const overtime = useLang("overtime");
 
   const delay = 1000; // ms
+  const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
-    controls1.volume(conf.soundPack.volumeOverride || 1);
-    controls2.volume(conf.soundPack.volumeOverride || 1);
-    if (props.beepSpeechEnd && time === 0) controls2.play();
+    timeprotsound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    endtalksound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    if (props.beepSpeechEnd && time === 0) endtalksound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && time === props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && time === props.protectedTime) timeprotsound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) timeprotsound.controls.play();
   }, [time]);
 
   useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
@@ -141,8 +147,8 @@ const Clock = (props: {
             />
           </div>
         )}
-        {audio1}
-        {audio2}
+        {timeprotsound.element}
+        {endtalksound.element}
       </div>
     </>
   );

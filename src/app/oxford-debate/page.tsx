@@ -63,20 +63,26 @@ export default function OxfordDebate() {
   const debateconfig = useLang("oxfordDebateConfiguration");
 
   const conf = useContext(DebateContext).conf;
-  const [adVocemAudio, stateAdVocemAudio, controlAdVocemAudio] = useAudio({
-    src: conf.soundPack.adVocemSound || "",
-  });
-  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio(
-    {
-      src: conf.soundPack.debateEndSound || "",
-    }
-  );
+
+  const advocemSound = ((res) => ({
+    element: res[0],
+    state: res[1],
+    controls: res[2],
+  }))(useAudio({ src: conf.soundPack.adVocemSound || "" }));
+
+  const debateEndSound = ((res) => ({
+    element: res[0],
+    state: res[1],
+    controls: res[2],
+  }))(useAudio({ src: conf.soundPack.debateEndSound || "" }));
+
+  const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
-    controlAdVocemAudio.volume(conf.soundPack.volumeOverride || 1);
-    controlDebateEndAudio.volume(conf.soundPack.volumeOverride || 1);
+    advocemSound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    debateEndSound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
     if (stage === 8 && !debateEndSoundPlayed) {
-      controlDebateEndAudio.play();
+      debateEndSound.controls.play();
       setDebateEndSoundPlayed(true);
     }
   }, [stage]);
@@ -174,7 +180,7 @@ export default function OxfordDebate() {
                 square
                 onClick={() => {
                   if (!advocem) {
-                    controlAdVocemAudio.play();
+                    advocemSound.controls.play();
                   }
                   setAdvocem(!advocem);
                 }}
@@ -229,8 +235,8 @@ export default function OxfordDebate() {
           </>
         )}
       </div>
-      {adVocemAudio}
-      {debateEndAudio}
+      {advocemSound.element}
+      {debateEndSound.element}
     </div>
   );
 }

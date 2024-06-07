@@ -14,7 +14,7 @@ type soundPlayerButtonType = {
 export type { soundPlayerButtonType };
 
 const SoundPlayerButton = (props: soundPlayerButtonType) => {
-  const volume = props.soundvolumeoverride || 1;
+  const volume = props.soundvolumeoverride || 1; // useSound volume range is 0-1
   const [playSound] = useSound(props.soundpath, {
     volume,
   });

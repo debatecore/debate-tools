@@ -15,7 +15,7 @@ import { useAudio } from "react-use";
 const Dots = (props: {
   stages: number[];
   flashCurrent: boolean;
-  stage: number
+  stage: number;
 }) => {
   return (
     <div className="flex flex-row gap-1 mt-1">
@@ -62,22 +62,24 @@ export default function OxfordDebate() {
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
 
-  const adVocemSoundPath = useContext(DebateContext).conf.soundPack.adVocemSound;
-  const debateEndSoundPath = useContext(DebateContext).conf.soundPack.debateEndSound;
-
+  const conf = useContext(DebateContext).conf;
   const [adVocemAudio, stateAdVocemAudio, controlAdVocemAudio] = useAudio({
-    src: adVocemSoundPath || "",
+    src: conf.soundPack.adVocemSound || "",
   });
-  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio({
-    src: debateEndSoundPath || "",
-  });
+  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio(
+    {
+      src: conf.soundPack.debateEndSound || "",
+    }
+  );
 
   useEffect(() => {
+    controlAdVocemAudio.volume(conf.soundPack.volumeOverride || 1);
+    controlDebateEndAudio.volume(conf.soundPack.volumeOverride || 1);
     if (stage === 8 && !debateEndSoundPlayed) {
       controlDebateEndAudio.play();
       setDebateEndSoundPlayed(true);
     }
-  });
+  }, [stage]);
 
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">

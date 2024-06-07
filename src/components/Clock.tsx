@@ -17,15 +17,13 @@ const Clock = (props: {
 }) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
-
-  const protectedTimeSound = useContext(DebateContext).conf.soundPack.pingProtectedTime;
-  const speechEndSound = useContext(DebateContext).conf.soundPack.pingSpeechEnd;
+  const conf = useContext(DebateContext).conf;
 
   const [audio1, state1, controls1] = useAudio({
-    src: protectedTimeSound,
+    src: conf.soundPack.pingProtectedTime,
   });
   const [audio2, state2, controls2] = useAudio({
-    src: speechEndSound,
+    src: conf.soundPack.pingSpeechEnd,
   });
 
   const timeleft = useLang("timeleft");
@@ -34,6 +32,8 @@ const Clock = (props: {
   const delay = 1000; // ms
 
   useEffect(() => {
+    controls1.volume(conf.soundPack.volumeOverride || 1);
+    controls2.volume(conf.soundPack.volumeOverride || 1);
     if (props.beepSpeechEnd && time === 0) controls2.play();
     // prettier-ignore
     if(props.beepProtected && props.protectedTime && time === props.protectedTime) controls1.play();
@@ -111,7 +111,11 @@ const Clock = (props: {
               cx={128}
               cy={128}
               strokeWidth={5}
-              style={!props.running && time > 0 ? { transitionDuration: "350ms" } : {}}
+              style={
+                !props.running && time > 0
+                  ? { transitionDuration: "350ms" }
+                  : {}
+              }
             />
           </svg>
         </div>

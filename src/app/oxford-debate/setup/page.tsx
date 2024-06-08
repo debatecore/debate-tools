@@ -23,14 +23,14 @@ import { convertImageToBase64 } from "@/lib/imageToBase64";
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
-  const brandingselect = useLang("brandingdisplayimage");
-  const clockImageNull = useLang("brandingdisplayimage_nulloption");
-  const clockImageCustom = useLang("brandingdisplayimage_customoption");
+  const clockImageSelect = useLang("clockImage");
+  const clockImageNull = useLang("clockImageNullOption");
+  const clockImageCustom = useLang("clockImageCustomOption");
   const soundPackSelect = useLang("soundPackSelect");
   const soundPackDefault = useLang("defaultSoundsOption");
   const [customBrandingSelected, setCustomBrandingSelected] = useState(false);
 
-  const getDisplayNameOfBrandingImage = (clockImageName: string) => {
+  const getDisplayNameOfClockImage = (clockImageName: string) => {
     switch (clockImageName) {
       case "null":
         return clockImageNull;
@@ -41,7 +41,7 @@ export default function OxfordDebateSetup() {
     }
   };
 
-  const setBrandingImage = (clockImageName: displayImageType) => {
+  const setClockImage = (clockImageName: displayImageType) => {
     debateContext.setConf(
       {...debateContext.conf,
       clockImageName: clockImageName,
@@ -88,14 +88,14 @@ export default function OxfordDebateSetup() {
           hidden={!customBrandingSelected}
         />
         <GenericSelect
-          text={brandingselect}
-          value={getDisplayNameOfBrandingImage(
+          text={clockImageSelect}
+          value={getDisplayNameOfClockImage(
             debateContext.conf.clockImageName
           )}
           options={displayImageTypeArray.map((element) => {
             return {
-              value: getDisplayNameOfBrandingImage(element),
-              exec: () => setBrandingImage(element),
+              value: getDisplayNameOfClockImage(element),
+              exec: () => setClockImage(element),
             };
           })}
         />
@@ -182,7 +182,7 @@ export default function OxfordDebateSetup() {
         {/* implement visualize protected speech functionality */}
         {/* selection disabled until implemented */}
         {/* <GenericButton
-          text={useLang("visualizeProtected")}
+          // text={useLang("visualizeProtected")}
           icon={debateContext.conf.visualizeProtectedTimes ? IconCheck : IconX}
           onClick={() => {
             debateContext.setConf({

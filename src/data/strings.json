@@ -292,17 +292,20 @@
   "showFiltersButtonText": {
     "en": "Filter motions"
   },
-  "brandingdisplayimage": {
+  "clockImage": {
     "en": "Clock branding image",
-    "pl": "Logotyp zegarowy"
+    "pl": "Logotyp zegarowy",
+    "de": "Uhrlogo"
   },
-  "brandingdisplayimage_nulloption": {
+  "clockImageNullOption": {
     "en": "None",
-    "pl": "Brak"
+    "pl": "Brak",
+    "de": "Kein"
   },
-  "brandingdisplayimage_customoption": {
+  "clockImageCustomOption": {
     "en": "Custom",
-    "pl": "Własny"
+    "pl": "Własny",
+    "de": "Eigenes"
   },
   "nomotiongiven": {
     "en": "No motion given",

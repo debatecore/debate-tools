@@ -9,11 +9,12 @@ const ClockDisplayImage = ({}) => {
   const currentDebateConf = useContext(DebateContext).conf;
   const clockImageName = currentDebateConf.clockImageName;
   const [clockImageLoaded, setClockImageLoaded] = useState(false);
+  const loadingText = useLang("loading");
 
   return (
     <span className="absolute w-full h-full flex justify-center items-center">
       {!clockImageLoaded && (
-        <div className="w-15 h-15 pt-32">{useLang("loading")}</div>
+        <div className="w-15 h-15 pt-32">{loadingText}</div>
       )}
       {clockImageName === "MOW2018" && (
         <Image

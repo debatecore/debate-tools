@@ -132,8 +132,8 @@ export default function OxfordDebate() {
           </div>
           <Clock
             running={running}
-            maxtime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
-            clockimage={debate.conf.displayImage1}
+            maxTime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
+            clockImage={debate.conf.clockImageName}
             beepSpeechEnd={debate.conf.beepOnSpeechEnd}
             beepProtected={debate.conf.beepProtectedTime && !advocem}
             protectedTime={debate.conf.endProtectedTime}

@@ -10,50 +10,94 @@ import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
-import { displayImageTypeArray } from "@/types/debate";
+import { displayImageType, displayImageTypeArray } from "@/types/debate";
+import { useContext, useEffect, useState } from "react";
 import {
   defaultSoundPack,
   soundPackName,
   soundPackNamesArray,
   soundPacks,
 } from "@/types/soundPack";
-import { useContext } from "react";
+import { convertImageToBase64 } from "@/lib/imageToBase64";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
-  const flavortext = useLang("oxfordDebateConfigurationFlavortext");
-  const brandingselect = useLang("brandingdisplayimage");
-  const brandingnull = useLang("brandingdisplayimage_nulloption");
+  const flavorText = useLang("oxfordDebateConfigurationFlavorText");
+  const clockImageSelect = useLang("clockImage");
+  const clockImageNull = useLang("clockImageNullOption");
+  const clockImageCustom = useLang("clockImageCustomOption");
   const soundPackSelect = useLang("soundPackSelect");
   const soundPackDefault = useLang("defaultSoundsOption");
+  const [customClockImageSelected, setCustomClockImageSelected] = useState(false);
+
+  const getDisplayNameOfClockImage = (clockImageName: string) => {
+    switch (clockImageName) {
+      case "null":
+        return clockImageNull;
+      case "custom":
+        return clockImageCustom;
+      default:
+        return clockImageName;
+    }
+  };
+
+  const setClockImage = (clockImageName: displayImageType) => {
+    debateContext.setConf(
+      {...debateContext.conf,
+      clockImageName: clockImageName,
+    });
+    };
+
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target) return;
+    const input = e.target;
+    if (!input.files) return;
+    const file = input.files[0];
+    const base64Image = await convertImageToBase64(file);
+    debateContext.setConf({
+      ...debateContext.conf,
+      customClockImageBase64: base64Image,
+    });
+  };
+
+  useEffect(() => {
+    if (debateContext.conf.clockImageName == "custom") {
+      setCustomClockImageSelected(true);
+    } else {
+      setCustomClockImageSelected(false);
+    }
+  });
+
   return (
     <div className="mb-5 lg:mb-0">
       <h1 className="text-3xl mt-8 text-center font-serif">
         {useLang("oxfordDebateConfiguration")}
       </h1>
       <p className="text-center text-neutral-500">
-        {debateContext.conf.motion || flavortext}
+        {debateContext.conf.motion || flavorText}
       </p>
       <div className="max-w-2xl mx-auto mt-8 flex flex-col gap-6 lg:gap-4 px-4">
         <DebateConfStringsPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <GenericSelect
-          text={brandingselect}
-          value={
-            debateContext.conf.displayImage1 === "null"
-              ? brandingnull
-              : debateContext.conf.displayImage1
-          }
-          options={displayImageTypeArray.map((el) => {
+          text={clockImageSelect}
+          value={getDisplayNameOfClockImage(
+            debateContext.conf.clockImageName
+          )}
+          options={displayImageTypeArray.map((element) => {
             return {
-              value: el === "null" ? brandingnull : el,
-              exec: () =>
-                debateContext.setConf({
-                  ...debateContext.conf,
-                  displayImage1: el,
-                }),
+              value: getDisplayNameOfClockImage(element),
+              exec: () => setClockImage(element),
             };
           })}
+        />
+        <input
+          type="file"
+          id="clockImage"
+          name="clockImage"
+          accept=".jpg, .jpeg, .png"
+          onChange={handleImageChange}
+          hidden={!customClockImageSelected}
         />
         <GenericSelect
           text={soundPackSelect}
@@ -70,7 +114,10 @@ export default function OxfordDebateSetup() {
                   soundPacks.find((soundPack) => {
                     return soundPack.name == element;
                   }) || defaultSoundPack;
-                debateContext.setConf({ ...debateContext.conf, soundPack: soundPack });
+                debateContext.setConf({
+                  ...debateContext.conf,
+                  soundPack: soundPack,
+                });
               },
             };
           })}
@@ -131,20 +178,6 @@ export default function OxfordDebateSetup() {
             });
           }}
         />
-        {/* TODO: */}
-        {/* implement visualize protected speech functionality */}
-        {/* selection disabled until implemented */}
-        {/* <GenericButton
-          text={useLang("visualizeProtected")}
-          icon={debateContext.conf.visualizeProtectedTimes ? IconCheck : IconX}
-          onClick={() => {
-            debateContext.setConf({
-              ...debateContext.conf,
-              visualizeProtectedTimes:
-                !debateContext.conf.visualizeProtectedTimes,
-            });
-          }}
-        /> */}
         <GenericButton
           text={useLang("protectSpeechStart")}
           icon={debateContext.conf.startProtectedTime ? IconCheck : IconX}
@@ -160,7 +193,7 @@ export default function OxfordDebateSetup() {
         />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <div className="flex flex-row flex-wrap justify-center gap-2">
-          <LinkButton href="/" text={useLang("mainmenu")} icon={IconList} />
+          <LinkButton href="/" text={useLang("mainMenu")} icon={IconList} />
           <LinkButton
             href="/oxford-debate"
             text={useLang("startDebate")}

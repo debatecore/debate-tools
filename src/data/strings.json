@@ -44,7 +44,7 @@
     "de": "Debattekonfiguration",
     "es": "Configuración del debate"
   },
-  "oxfordDebateConfigurationFlavortext": {
+  "oxfordDebateConfigurationFlavorText": {
     "en": "Dear Marshal, what are the rules?",
     "pl": "Właśnie moja racja jest racja najmojsza!"
   },
@@ -150,7 +150,7 @@
     "pl": "Chroń czas na początku mowy",
     "de": "Geschützte Zeit am Anfang der Ansprache"
   },
-  "mainmenu": {
+  "mainMenu": {
     "en": "Main menu",
     "pl": "Menu główne",
     "de": "Menu"
@@ -292,13 +292,20 @@
   "showFiltersButtonText": {
     "en": "Filter motions"
   },
-  "brandingdisplayimage": {
+  "clockImage": {
     "en": "Clock branding image",
-    "pl": "Logotyp zegarowy"
+    "pl": "Logotyp zegarowy",
+    "de": "Uhrlogo"
   },
-  "brandingdisplayimage_nulloption": {
-    "en": "none",
-    "pl": "brak"
+  "clockImageNullOption": {
+    "en": "None",
+    "pl": "Brak",
+    "de": "Kein"
+  },
+  "clockImageCustomOption": {
+    "en": "Custom",
+    "pl": "Własny",
+    "de": "Eigenes"
   },
   "nomotiongiven": {
     "en": "No motion given",
@@ -377,5 +384,10 @@
     "en": "Default",
     "pl": "Domyślne",
     "de": "Standard"
+  },
+  "loading": {
+    "en": "Loading…",
+    "pl": "Ładowanie…",
+    "de": "Laden…"
   }
 }

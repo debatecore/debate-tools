@@ -2,20 +2,20 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { displayImageType } from "@/types/debate";
 import { useAudio, useInterval } from "react-use";
-import Image from "next/image";
 import { useLang } from "@/lib/useLang";
 import { DebateContext } from "@/contexts/DebateContext";
+import { ClockDisplayImage } from "./ClockDisplayImage";
 
 const Clock = (props: {
   running: boolean;
-  maxtime: number;
-  clockimage?: displayImageType;
+  maxTime: number;
+  clockImage?: displayImageType;
   beepSpeechEnd?: boolean;
   beepProtected?: boolean;
   protectedTime?: number;
   protectStart?: boolean;
 }) => {
-  const [time, setTime] = useState<number>(props.maxtime);
+  const [time, setTime] = useState<number>(props.maxTime);
   const refCircle = useRef<SVGCircleElement>(null);
   const conf = useContext(DebateContext).conf;
 
@@ -31,10 +31,11 @@ const Clock = (props: {
     controls: temp[2],
   }))(useAudio({ src: conf.soundPack.pingSpeechEnd }));
 
-  const timeleft = useLang("timeleft");
+  const timeLeft = useLang("timeleft");
   const overtime = useLang("overtime");
 
-  const delay = 1000; // ms
+  const delayInMs = 1000;
+  const clockColorsTransitionDuration = "350ms"
   const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
@@ -44,11 +45,11 @@ const Clock = (props: {
     // prettier-ignore
     if(props.beepProtected && props.protectedTime && time === props.protectedTime) timeprotsound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) timeprotsound.controls.play();
+    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxTime - props.protectedTime) timeprotsound.controls.play();
   }, [time]);
 
-  useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
-  useInterval(() => setTime(time - 1), props.running ? delay : null);
+  useEffect(() => setTime(props.maxTime), [props.running, props.maxTime]);
+  useInterval(() => setTime(time - 1), props.running ? delayInMs : null);
   return (
     <>
       <div className="aspect-square min-w-64 flex flex-col space-y-1 justify-center items-center relative select-none">
@@ -66,7 +67,7 @@ const Clock = (props: {
           {time <= 0 && time * -1}
         </h2>
         <p className="text-neutral-500 uppercase z-30">
-          {time > 0 ? timeleft : overtime}
+          {time > 0 ? timeLeft : overtime}
         </p>
         {/* INFORM */}
         {/* ------ */}
@@ -89,10 +90,9 @@ const Clock = (props: {
               cy={128}
               strokeWidth={5}
               strokeDashoffset={
-                118 * 2 * Math.PI - (time / props.maxtime) * (118 * 2 * Math.PI)
+                118 * 2 * Math.PI - (time / props.maxTime) * (118 * 2 * Math.PI)
               }
               strokeDasharray={refCircle.current?.getTotalLength()}
-              // style={props.running ? { transitionDuration: "350ms" } : {}}
               style={{ transitionDuration: "350ms" }}
             />
           </svg>
@@ -101,7 +101,7 @@ const Clock = (props: {
         <div className="absolute w-full h-full flex justify-center items-center">
           <svg
             className={`z-10 -rotate-90 ${
-              time === props.maxtime
+              time === props.maxTime
                 ? "text-emerald-400"
                 : time <= 0
                 ? "text-red-400"
@@ -119,34 +119,13 @@ const Clock = (props: {
               strokeWidth={5}
               style={
                 !props.running && time > 0
-                  ? { transitionDuration: "350ms" }
+                  ? { transitionDuration: clockColorsTransitionDuration }
                   : {}
               }
             />
           </svg>
         </div>
-        {props.clockimage === "MOW2018" && (
-          <div className="absolute w-full h-full flex justify-center items-center">
-            <Image
-              src={"/displayimages/Musketeer.png"}
-              alt="Musketeers of Words logo"
-              width={80}
-              height={64}
-              className="pt-32"
-            />
-          </div>
-        )}
-        {props.clockimage === "MOW2024" && (
-          <div className="absolute w-full h-full flex justify-center items-center">
-            <Image
-              src={"/displayimages/MOW.png"}
-              alt="Musketeers of Words logo"
-              width={60}
-              height={60}
-              className="mt-36 rounded-full"
-            />
-          </div>
-        )}
+        {props.clockImage != "null" && <ClockDisplayImage />}
         {timeprotsound.element}
         {endtalksound.element}
       </div>

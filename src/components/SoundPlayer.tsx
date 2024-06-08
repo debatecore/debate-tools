@@ -5,6 +5,7 @@ import useSound from "use-sound";
 type soundPlayerButtonType = {
   text: string;
   soundpath: string;
+  soundvolumeoverride?: number;
   lefticon?: (props: iconprops) => JSX.Element;
   lefticonclasses?: string;
   righticon?: (props: iconprops) => JSX.Element;
@@ -13,7 +14,10 @@ type soundPlayerButtonType = {
 export type { soundPlayerButtonType };
 
 const SoundPlayerButton = (props: soundPlayerButtonType) => {
-  const [playSound] = useSound(props.soundpath);
+  const volume = props.soundvolumeoverride || 1; // useSound volume range is 0-1
+  const [playSound] = useSound(props.soundpath, {
+    volume,
+  });
   return (
     <button
       onClick={() => playSound()}

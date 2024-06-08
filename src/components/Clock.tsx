@@ -17,28 +17,34 @@ const Clock = (props: {
 }) => {
   const [time, setTime] = useState<number>(props.maxtime);
   const refCircle = useRef<SVGCircleElement>(null);
+  const conf = useContext(DebateContext).conf;
 
-  const protectedTimeSound = useContext(DebateContext).conf.soundPack.pingProtectedTime;
-  const speechEndSound = useContext(DebateContext).conf.soundPack.pingSpeechEnd;
+  const timeprotsound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.pingProtectedTime }));
 
-  const [audio1, state1, controls1] = useAudio({
-    src: protectedTimeSound,
-  });
-  const [audio2, state2, controls2] = useAudio({
-    src: speechEndSound,
-  });
+  const endtalksound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.pingSpeechEnd }));
 
   const timeleft = useLang("timeleft");
   const overtime = useLang("overtime");
 
   const delay = 1000; // ms
+  const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
-    if (props.beepSpeechEnd && time === 0) controls2.play();
+    timeprotsound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    endtalksound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    if (props.beepSpeechEnd && time === 0) endtalksound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && time === props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && time === props.protectedTime) timeprotsound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxtime - props.protectedTime) timeprotsound.controls.play();
   }, [time]);
 
   useEffect(() => setTime(props.maxtime), [props.running, props.maxtime]);
@@ -111,7 +117,11 @@ const Clock = (props: {
               cx={128}
               cy={128}
               strokeWidth={5}
-              style={!props.running && time > 0 ? { transitionDuration: "350ms" } : {}}
+              style={
+                !props.running && time > 0
+                  ? { transitionDuration: "350ms" }
+                  : {}
+              }
             />
           </svg>
         </div>
@@ -137,8 +147,8 @@ const Clock = (props: {
             />
           </div>
         )}
-        {audio1}
-        {audio2}
+        {timeprotsound.element}
+        {endtalksound.element}
       </div>
     </>
   );

@@ -11,62 +11,42 @@ import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import { displayImageType, displayImageTypeArray } from "@/types/debate";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   defaultSoundPack,
   soundPackName,
   soundPackNamesArray,
   soundPacks,
 } from "@/types/soundPack";
+import { convertImageToBase64 } from "@/lib/imageToBase64";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
   const flavortext = useLang("oxfordDebateConfigurationFlavortext");
   const brandingselect = useLang("brandingdisplayimage");
-  const brandingNull = useLang("brandingdisplayimage_nulloption");
-  const brandingCustom = useLang("brandingdisplayimage_customoption");
+  const clockImageNull = useLang("brandingdisplayimage_nulloption");
+  const clockImageCustom = useLang("brandingdisplayimage_customoption");
   const soundPackSelect = useLang("soundPackSelect");
   const soundPackDefault = useLang("defaultSoundsOption");
+  const [customBrandingSelected, setCustomBrandingSelected] = useState(false);
 
-  function convertImageToBase64(file: File): Promise<string> {
-    return new Promise<string>((resolve) => {
-      const fileReader = new FileReader();
-      fileReader.onload = function (event) {
-        const arrayBuffer = event.target?.result;
-        const base64Image = btoa(
-          String.fromCharCode(...new Uint8Array(arrayBuffer as ArrayBuffer))
-        );
-        resolve(base64Image);
-      };
-      fileReader.onerror = function (error) {
-        Promise.reject(`Failed to convert image to Base64: ${error}`);
-      };
-      fileReader.readAsArrayBuffer(file);
-    });
-  }
-
-  const getBrandingImageName = (brandingImageCode: string) => {
-    switch (brandingImageCode) {
+  const getDisplayNameOfBrandingImage = (clockImageName: string) => {
+    switch (clockImageName) {
       case "null":
-        return brandingNull;
+        return clockImageNull;
       case "custom":
-        return brandingCustom;
+        return clockImageCustom;
       default:
-        return brandingImageCode;
+        return clockImageName;
     }
   };
 
-  const setBrandingImage = (brandingImageCode: displayImageType) => {
-    switch (brandingImageCode) {
-      case "custom":
-      default:
-        debateContext.setConf({
-          ...debateContext.conf,
-          displayImage1: brandingImageCode,
-        });
-        break;
-    }
-  };
+  const setBrandingImage = (clockImageName: displayImageType) => {
+    debateContext.setConf(
+      {...debateContext.conf,
+      clockImageName: clockImageName,
+    });
+    };
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target) return;
@@ -76,10 +56,17 @@ export default function OxfordDebateSetup() {
     const base64Image = await convertImageToBase64(file);
     debateContext.setConf({
       ...debateContext.conf,
-      customDisplayImage: base64Image,
+      customClockImageBase64: base64Image,
     });
-    console.log(debateContext.conf.customDisplayImage);
   };
+
+  useEffect(() => {
+    if (debateContext.conf.clockImageName == "custom") {
+      setCustomBrandingSelected(true);
+    } else {
+      setCustomBrandingSelected(false);
+    }
+  });
 
   return (
     <div className="mb-5 lg:mb-0">
@@ -98,14 +85,17 @@ export default function OxfordDebateSetup() {
           name="branding"
           accept=".jpg, .jpeg, .png"
           onChange={handleImageChange}
+          hidden={!customBrandingSelected}
         />
         <GenericSelect
           text={brandingselect}
-          value={getBrandingImageName(debateContext.conf.displayImage1)}
-          options={displayImageTypeArray.map((el) => {
+          value={getDisplayNameOfBrandingImage(
+            debateContext.conf.clockImageName
+          )}
+          options={displayImageTypeArray.map((element) => {
             return {
-              value: getBrandingImageName(el),
-              exec: () => setBrandingImage(el),
+              value: getDisplayNameOfBrandingImage(element),
+              exec: () => setBrandingImage(element),
             };
           })}
         />

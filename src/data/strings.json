@@ -381,5 +381,10 @@
     "en": "Default",
     "pl": "Domyślne",
     "de": "Standard"
+  },
+  "loading": {
+    "en": "Loading…",
+    "pl": "Ładowanie…",
+    "de": "Laden…"
   }
 }

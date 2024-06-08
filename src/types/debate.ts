@@ -15,8 +15,8 @@ type debateConf = {
   beepOnSpeechEnd: boolean;
   beepProtectedTime: boolean;
   visualizeProtectedTimes: boolean;
-  displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
-  customDisplayImage: string; // Base64
+  clockImageName: displayImageType;
+  customClockImageBase64: string;
   soundPack: soundPack;
 };
 export type { debateConf, displayImageType };
@@ -32,8 +32,8 @@ const defaultDebateConf: debateConf = {
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  displayImage1: "null",
-  customDisplayImage: "",
+  clockImageName: "null",
+  customClockImageBase64: "",
   soundPack: defaultSoundPack
 };
 export { defaultDebateConf };

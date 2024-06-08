@@ -64,16 +64,16 @@ export default function OxfordDebate() {
 
   const conf = useContext(DebateContext).conf;
 
-  const advocemSound = ((res) => ({
-    element: res[0],
-    state: res[1],
-    controls: res[2],
+  const advocemSound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
   }))(useAudio({ src: conf.soundPack.adVocemSound || "" }));
 
-  const debateEndSound = ((res) => ({
-    element: res[0],
-    state: res[1],
-    controls: res[2],
+  const debateEndSound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
   }))(useAudio({ src: conf.soundPack.debateEndSound || "" }));
 
   const fullvolume = 1; // useAudio volume range is 0-1

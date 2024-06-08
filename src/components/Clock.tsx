@@ -19,16 +19,16 @@ const Clock = (props: {
   const refCircle = useRef<SVGCircleElement>(null);
   const conf = useContext(DebateContext).conf;
 
-  const timeprotsound = ((res) => ({
-    element: res[0],
-    state: res[1],
-    controls: res[2],
+  const timeprotsound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
   }))(useAudio({ src: conf.soundPack.pingProtectedTime }));
 
-  const endtalksound = ((res) => ({
-    element: res[0],
-    state: res[1],
-    controls: res[2],
+  const endtalksound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
   }))(useAudio({ src: conf.soundPack.pingSpeechEnd }));
 
   const timeleft = useLang("timeleft");

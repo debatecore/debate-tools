@@ -17,30 +17,35 @@ const Clock = (props: {
 }) => {
   const [time, setTime] = useState<number>(props.maxTime);
   const refCircle = useRef<SVGCircleElement>(null);
+  const conf = useContext(DebateContext).conf;
 
-  const protectedTimeSound =
-    useContext(DebateContext).conf.soundPack.pingProtectedTime;
-  const speechEndSound = useContext(DebateContext).conf.soundPack.pingSpeechEnd;
+  const timeprotsound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.pingProtectedTime }));
 
-  const [audio1, state1, controls1] = useAudio({
-    src: protectedTimeSound,
-  });
-  const [audio2, state2, controls2] = useAudio({
-    src: speechEndSound,
-  });
+  const endtalksound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.pingSpeechEnd }));
 
   const timeLeft = useLang("timeleft");
   const overtime = useLang("overtime");
 
   const delayInMs = 1000;
   const clockColorsTransitionDuration = "350ms"
+  const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
-    if (props.beepSpeechEnd && time === 0) controls2.play();
+    timeprotsound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    endtalksound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    if (props.beepSpeechEnd && time === 0) endtalksound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && time === props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && time === props.protectedTime) timeprotsound.controls.play();
     // prettier-ignore
-    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxTime - props.protectedTime) controls1.play();
+    if(props.beepProtected && props.protectedTime && props.protectStart && time === props.maxTime - props.protectedTime) timeprotsound.controls.play();
   }, [time]);
 
   useEffect(() => setTime(props.maxTime), [props.running, props.maxTime]);
@@ -121,8 +126,8 @@ const Clock = (props: {
           </svg>
         </div>
         {props.clockImage != "null" && <ClockDisplayImage />}
-        {audio1}
-        {audio2}
+        {timeprotsound.element}
+        {endtalksound.element}
       </div>
     </>
   );

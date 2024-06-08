@@ -15,7 +15,7 @@ import { useAudio } from "react-use";
 const Dots = (props: {
   stages: number[];
   flashCurrent: boolean;
-  stage: number
+  stage: number;
 }) => {
   return (
     <div className="flex flex-row gap-1 mt-1">
@@ -62,22 +62,30 @@ export default function OxfordDebate() {
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
 
-  const adVocemSoundPath = useContext(DebateContext).conf.soundPack.adVocemSound;
-  const debateEndSoundPath = useContext(DebateContext).conf.soundPack.debateEndSound;
+  const conf = useContext(DebateContext).conf;
 
-  const [adVocemAudio, stateAdVocemAudio, controlAdVocemAudio] = useAudio({
-    src: adVocemSoundPath || "",
-  });
-  const [debateEndAudio, stateDebateEndAudio, controlDebateEndAudio] = useAudio({
-      src: debateEndSoundPath || "",
-  });
+  const advocemSound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.adVocemSound || "" }));
+
+  const debateEndSound = ((temp) => ({
+    element: temp[0],
+    state: temp[1],
+    controls: temp[2],
+  }))(useAudio({ src: conf.soundPack.debateEndSound || "" }));
+
+  const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
+    advocemSound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
+    debateEndSound.controls.volume(conf.soundPack.volumeOverride || fullvolume);
     if (stage === 8 && !debateEndSoundPlayed) {
-      controlDebateEndAudio.play();
+      debateEndSound.controls.play();
       setDebateEndSoundPlayed(true);
     }
-  });
+  }, [stage]);
 
   return (
     <div className="flex flex-col gap-1 text-center mx-auto mt-8">
@@ -172,7 +180,7 @@ export default function OxfordDebate() {
                 square
                 onClick={() => {
                   if (!advocem) {
-                    controlAdVocemAudio.play();
+                    advocemSound.controls.play();
                   }
                   setAdvocem(!advocem);
                 }}
@@ -227,8 +235,8 @@ export default function OxfordDebate() {
           </>
         )}
       </div>
-      {adVocemAudio}
-      {debateEndAudio}
+      {advocemSound.element}
+      {debateEndSound.element}
     </div>
   );
 }

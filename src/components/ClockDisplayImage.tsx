@@ -1,13 +1,13 @@
 "use client";
-
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Image from "next/image";
 import { useContext, useState } from "react";
 
-const ClockDisplayImage = ({}) => {
+const ClockDisplayImage = () => {
   const currentDebateConf = useContext(DebateContext).conf;
   const clockImageName = currentDebateConf.clockImageName;
+
   const [clockImageLoaded, setClockImageLoaded] = useState(false);
   const loadingText = useLang("loading");
 
@@ -18,8 +18,8 @@ const ClockDisplayImage = ({}) => {
       )}
       {clockImageName === "MOW2018" && (
         <Image
-          src={"/displayimages/Musketeer.png"}
-          alt="Musketeers of Words logo"
+          src={"/display-images/MOW2018.png"}
+          alt="Musketeers of Words logo (2018-2023)"
           width={80}
           height={64}
           className="mt-32"
@@ -28,11 +28,21 @@ const ClockDisplayImage = ({}) => {
       )}
       {clockImageName === "MOW2024" && (
         <Image
-          src={"/displayimages/MOW.png"}
-          alt="Musketeers of Words logo"
+          src={"/display-images/MOW2024.png"}
+          alt="Musketeers of Words logo (since 2024)"
           width={60}
           height={60}
           className="mt-36 rounded-full"
+          onLoad={() => setClockImageLoaded(true)}
+        />
+      )}
+      {clockImageName === "PND2024" && (
+        <Image
+          src={"/display-images/PND2024.png"}
+          alt="Poznańska Noc Debaty logo (since 2024)"
+          width={100}
+          height={100}
+          className="mt-40"
           onLoad={() => setClockImageLoaded(true)}
         />
       )}

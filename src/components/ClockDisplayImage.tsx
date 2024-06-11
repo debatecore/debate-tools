@@ -1,5 +1,4 @@
 "use client";
-
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
 import Image from "next/image";
@@ -34,6 +33,16 @@ const ClockDisplayImage = () => {
           width={60}
           height={60}
           className="mt-36 rounded-full"
+          onLoad={() => setClockImageLoaded(true)}
+        />
+      )}
+      {clockImageName === "PND2024" && (
+        <Image
+          src={"/display-images/PND2024.png"}
+          alt="Poznańska Noc Debaty logo (since 2024)"
+          width={100}
+          height={100}
+          className="mt-40"
           onLoad={() => setClockImageLoaded(true)}
         />
       )}

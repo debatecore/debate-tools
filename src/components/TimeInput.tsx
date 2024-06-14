@@ -14,10 +14,11 @@ const TimeInput = (props: {
   const secondsPlural = useLang("secondsPlural");
   const minutesSingular = useLang("minutesSingular");
   const minutesPlural = pluralMinutesTranslation(minutesCount);
+  const defaultMinutesPlural = useLang("minutesPlural");
 
   function pluralMinutesTranslation(minutesCount: number) {
     if (langContext.lang != "pl") {
-      return useLang("minutesPlural");
+      return defaultMinutesPlural;
     }
     const lastDigit = minutesCount % 10;
     if (lastDigit >= 2 && lastDigit <= 4) {

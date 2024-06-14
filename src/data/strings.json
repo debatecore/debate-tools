@@ -404,5 +404,10 @@
     "pl": "sekund",
     "en": "seconds",
     "de": "Sekunden"
+  },
+  "and": {
+    "pl": "i",
+    "en": "and",
+    "de": "und"
   }
 }

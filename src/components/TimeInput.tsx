@@ -8,16 +8,16 @@ const TimeInput = (props: {
   time: number;
   setTime: (time: number) => void;
 }) => {
-  const langContext = useContext(LangContext);
+  const currentLang = useContext(LangContext).lang;
   const minutesCount = Math.floor(props.time / 60);
   const secondsCount = Math.floor(props.time % 60);
   const secondsPlural = useLang("secondsPlural");
   const minutesSingular = useLang("minutesSingular");
-  const minutesPlural = pluralMinutesTranslation(minutesCount);
   const defaultMinutesPlural = useLang("minutesPlural");
+  const minutesPlural = pluralMinutesTranslation();
 
-  function pluralMinutesTranslation(minutesCount: number) {
-    if (langContext.lang != "pl") {
+  function pluralMinutesTranslation() {
+    if (currentLang != "pl") {
       return defaultMinutesPlural;
     }
     const lastDigit = minutesCount % 10;
@@ -50,7 +50,7 @@ const TimeInput = (props: {
           +
         </button>
       </div>
-      <p>and</p>
+      <p>{useLang("and")}</p>
       <div className="flex flex-row">
         <button
           className="px-3 border-2 hover:bg-neutral-800 border-neutral-800 hover:border-neutral-700 rounded-l disabled:text-neutral-500 disabled:hover:bg-transparent disabled:hover:border-neutral-800 disabled:cursor-not-allowed"

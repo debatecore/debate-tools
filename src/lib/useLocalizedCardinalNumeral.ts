@@ -3,7 +3,7 @@ import { LangContext } from "@/contexts/LangContext";
 import { useLang } from "./useLang";
 import strings from "@/data/strings.json";
 
-const localizedCardinalNumeralsArray = ["minutes", "seconds"] as const;
+const localizedCardinalNumeralsArray = ["minutes"] as const;
 
 type localizedCardinalNumeral = (typeof localizedCardinalNumeralsArray)[number];
 export type { localizedCardinalNumeral };
@@ -12,14 +12,16 @@ const useLocalizedCardinalNumeral = (
   count: number,
   token: localizedCardinalNumeral
 ) => {
+  const defaultForms = {
+    singular: useLang(`${token}Singular`) as keyof typeof strings,
+    plural: useLang(`${token}Plural`) as keyof typeof strings,
+  };
   const langContext = useContext(LangContext);
   const currentLanguage = langContext.lang;
-  switch (currentLanguage) {
-    case "pl":
-      return polishLocalizedCardinalNumeral(count, token);
-    default:
-      return defaultLocalizedCardinalNumeral(count, token);
+  if (currentLanguage == "pl") {
+    return polishLocalizedCardinalNumeral(count, token);
   }
+  return defaultLocalizedCardinalNumeral(count, defaultForms);
 };
 
 const polishLocalizedCardinalNumeral = (
@@ -29,8 +31,6 @@ const polishLocalizedCardinalNumeral = (
   switch (token) {
     case "minutes":
       return localizedMinutesPl(count);
-    case "seconds":
-      return localizedSecondsPl(count);
     default:
       throw new Error("Polish general numeral not localized");
   }
@@ -51,29 +51,17 @@ const localizedMinutesPl = (count: number) => {
   }
 };
 
-const localizedSecondsPl = (count: number) => {
-  if (count == 0) {
-    return "sekund";
-  }
-  if (count == 1) {
-    return "sekunda";
-  }
-  if (count >= 2 && count <= 4) {
-    return "sekundy";
-  }
-  if (count >= 5 && count <= 21) {
-    return "sekund";
-  }
-};
-
 const defaultLocalizedCardinalNumeral = (
   count: number,
-  token: localizedCardinalNumeral
+  forms: {
+    singular: keyof typeof strings;
+    plural: keyof typeof strings;
+  }
 ) => {
   if (count == 1) {
-    return useLang(`${token}Singular` as keyof typeof strings);
+    return forms.singular;
   }
-  return useLang(`${token}Plural`);
+  return forms.plural;
 };
 
 export { useLocalizedCardinalNumeral };

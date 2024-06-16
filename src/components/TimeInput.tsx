@@ -13,10 +13,7 @@ const TimeInput = (props: {
     minutesCount,
     "minutes"
   );
-  const secondsCardinalNumeral = useLocalizedCardinalNumeral(
-    secondsCount,
-    "seconds"
-  );
+  const secondsPlural = useLang("secondsPlural");
 
   return (
     <div className="flex flex-col lg:flex-row lg:gap-4 items-center">
@@ -54,7 +51,7 @@ const TimeInput = (props: {
         </button>
         <div className="border-y-2 border-neutral-800 min-w-32 flex flex-row justify-center p-2">
           {secondsCount}
-          {` ${secondsCardinalNumeral}`}
+          {` ${secondsPlural}`}
         </div>
         <button
           className="px-3 border-2 hover:bg-neutral-800 border-neutral-800 hover:border-neutral-700 rounded-r disabled:text-neutral-500 disabled:hover:bg-transparent disabled:hover:border-neutral-800 disabled:cursor-not-allowed"

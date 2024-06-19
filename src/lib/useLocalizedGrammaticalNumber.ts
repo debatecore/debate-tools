@@ -3,13 +3,13 @@ import { LangContext } from "@/contexts/LangContext";
 import { useLang } from "./useLang";
 import strings from "@/data/strings.json";
 
-const localizedCardinalNumeralsArray = ["minutes"] as const;
+const localizedGrammaticalNumbersArray = ["minutes"] as const;
 
 type localizedGrammaticalNumber =
-  (typeof localizedCardinalNumeralsArray)[number];
+  (typeof localizedGrammaticalNumbersArray)[number];
 export type { localizedGrammaticalNumber };
 
-const useLocalizedCardinalNumeral = (
+const useLocalizedGrammaticalNumber = (
   count: number,
   token: localizedGrammaticalNumber
 ) => {
@@ -21,12 +21,12 @@ const useLocalizedCardinalNumeral = (
   const currentLanguage = langContext.lang;
 
   if (currentLanguage == "pl") {
-    return polishLocalizedCardinalNumeral(count, token);
+    return polishLocalizedGrammaticalNumber(count, token);
   }
-  return defaultLocalizedCardinalNumeral(count, defaultForms);
+  return defaultLocalizedGrammaticalNumber(count, defaultForms);
 };
 
-const polishLocalizedCardinalNumeral = (
+const polishLocalizedGrammaticalNumber = (
   count: number,
   token: localizedGrammaticalNumber
 ) => {
@@ -47,7 +47,7 @@ const localizedMinutesPl = (count: number) => {
 
 export { localizedMinutesPl };
 
-const defaultLocalizedCardinalNumeral = (
+const defaultLocalizedGrammaticalNumber = (
   count: number,
   forms: {
     singular: keyof typeof strings;
@@ -58,4 +58,4 @@ const defaultLocalizedCardinalNumeral = (
   return forms.plural;
 };
 
-export { useLocalizedCardinalNumeral };
+export { useLocalizedGrammaticalNumber };

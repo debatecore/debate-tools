@@ -25,7 +25,7 @@ const Dots = (props: {
       if (props.flashCurrent) {
         return "border-emerald-400";
       }
-      return "border-slate-100";
+      return "border-slate-300";
     } else {
       return "border-neutral-600";
     }

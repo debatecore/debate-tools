@@ -398,16 +398,18 @@
   "minutesPlural": {
     "pl": "minuty",
     "en": "minutes",
-    "de": "Minuten"
+    "de": "Minuten",
+    "es": "min"
   },
   "secondsPlural": {
     "pl": "sekund",
     "en": "seconds",
-    "de": "Sekunden"
+    "de": "Sekunden",
+    "es": "s"
   },
   "and": {
-    "pl": "i",
     "en": "and",
+    "pl": "i",
     "de": "und"
   }
 }

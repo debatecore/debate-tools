@@ -5,12 +5,13 @@ import strings from "@/data/strings.json";
 
 const localizedCardinalNumeralsArray = ["minutes"] as const;
 
-type localizedCardinalNumeral = (typeof localizedCardinalNumeralsArray)[number];
-export type { localizedCardinalNumeral };
+type localizedGrammaticalNumber =
+  (typeof localizedCardinalNumeralsArray)[number];
+export type { localizedGrammaticalNumber };
 
 const useLocalizedCardinalNumeral = (
   count: number,
-  token: localizedCardinalNumeral
+  token: localizedGrammaticalNumber
 ) => {
   const defaultForms = {
     singular: useLang(`${token}Singular`) as keyof typeof strings,
@@ -18,6 +19,7 @@ const useLocalizedCardinalNumeral = (
   };
   const langContext = useContext(LangContext);
   const currentLanguage = langContext.lang;
+
   if (currentLanguage == "pl") {
     return polishLocalizedCardinalNumeral(count, token);
   }
@@ -26,7 +28,7 @@ const useLocalizedCardinalNumeral = (
 
 const polishLocalizedCardinalNumeral = (
   count: number,
-  token: localizedCardinalNumeral
+  token: localizedGrammaticalNumber
 ) => {
   switch (token) {
     case "minutes":
@@ -37,19 +39,19 @@ const polishLocalizedCardinalNumeral = (
 };
 
 const localizedMinutesPl = (count: number) => {
-  if (count == 0) {
+  if (count % 100 >= 12 && count % 100 <= 21) {
     return "minut";
+  }
+  if (count % 10 >= 2 && count % 10 <= 4) {
+    return "minuty";
   }
   if (count == 1) {
     return "minuta";
   }
-  if (count >= 2 && count <= 4) {
-    return "minuty";
-  }
-  if (count >= 5 && count <= 21) {
-    return "minut";
-  }
+  return "minut";
 };
+
+export { localizedMinutesPl };
 
 const defaultLocalizedCardinalNumeral = (
   count: number,
@@ -58,9 +60,7 @@ const defaultLocalizedCardinalNumeral = (
     plural: keyof typeof strings;
   }
 ) => {
-  if (count == 1) {
-    return forms.singular;
-  }
+  if (count == 1) return forms.singular;
   return forms.plural;
 };
 

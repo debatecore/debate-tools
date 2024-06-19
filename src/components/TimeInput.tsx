@@ -1,7 +1,7 @@
 "use client";
 
 import { useLang } from "@/lib/useLang";
-import { useLocalizedCardinalNumeral } from "@/lib/useLocalizedCardinalNumeral";
+import { useLocalizedGrammaticalNumber } from "@/lib/useLocalizedGrammaticalNumber";
 
 const TimeInput = (props: {
   time: number;
@@ -9,7 +9,7 @@ const TimeInput = (props: {
 }) => {
   const minutesCount = Math.floor(props.time / 60);
   const secondsCount = Math.floor(props.time % 60);
-  const minutesCardinalNumeral = useLocalizedCardinalNumeral(
+  const minutesCardinalNumeral = useLocalizedGrammaticalNumber(
     minutesCount,
     "minutes"
   );

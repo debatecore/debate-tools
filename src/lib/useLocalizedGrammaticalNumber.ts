@@ -39,15 +39,9 @@ const polishLocalizedCardinalNumeral = (
 };
 
 const localizedMinutesPl = (count: number) => {
-  if (count % 100 >= 12 && count % 100 <= 21) {
-    return "minut";
-  }
-  if (count % 10 >= 2 && count % 10 <= 4) {
-    return "minuty";
-  }
-  if (count == 1) {
-    return "minuta";
-  }
+  if (count % 100 >= 12 && count % 100 <= 21) return "minut";
+  if (count % 10 >= 2 && count % 10 <= 4) return "minuty";
+  if (count == 1) return "minuta";
   return "minut";
 };
 

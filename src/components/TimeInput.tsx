@@ -9,7 +9,7 @@ const TimeInput = (props: {
 }) => {
   const minutesCount = Math.floor(props.time / 60);
   const secondsCount = Math.floor(props.time % 60);
-  const minutesCardinalNumeral = useLocalizedGrammaticalNumber(
+  const minutesGrammaticalNumber = useLocalizedGrammaticalNumber(
     minutesCount,
     "minutes"
   );
@@ -29,7 +29,7 @@ const TimeInput = (props: {
         </button>
         <div className="border-y-2 border-neutral-800 min-w-32 flex flex-row justify-center p-2">
           {minutesCount}
-          {`  ${minutesCardinalNumeral}`}
+          {`  ${minutesGrammaticalNumber}`}
         </div>
         <button
           className="px-3 border-2 hover:bg-neutral-800 border-neutral-800 hover:border-neutral-700 rounded-r disabled:text-neutral-500 disabled:hover:bg-transparent disabled:hover:border-neutral-800 disabled:cursor-not-allowed"

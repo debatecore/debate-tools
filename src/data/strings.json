@@ -391,19 +391,19 @@
     "de": "Laden…"
   },
   "minutesSingular": {
-    "pl": "minuta",
     "en": "minute",
+    "pl": "minuta",
     "de": "Minute"
   },
   "minutesPlural": {
-    "pl": "minuty",
     "en": "minutes",
+    "pl": "minuty",
     "de": "Minuten",
     "es": "min"
   },
   "secondsPlural": {
-    "pl": "sekund",
     "en": "seconds",
+    "pl": "sekund",
     "de": "Sekunden",
     "es": "s"
   },

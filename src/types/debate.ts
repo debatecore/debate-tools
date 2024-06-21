@@ -32,7 +32,7 @@ const defaultDebateConf: debateConf = {
   motion: "",
   proTeam: "",
   oppTeam: "",
-  speechTime: 240,
+  speechTime: 300,
   adVocemTime: 60,
   endProtectedTime: 30,
   startProtectedTime: 0,

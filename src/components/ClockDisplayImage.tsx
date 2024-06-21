@@ -24,6 +24,7 @@ const ClockDisplayImage = () => {
           height={64}
           className="mt-32"
           onLoad={() => setClockImageLoaded(true)}
+          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "MOW2024" && (
@@ -34,6 +35,7 @@ const ClockDisplayImage = () => {
           height={60}
           className="mt-36 rounded-full"
           onLoad={() => setClockImageLoaded(true)}
+          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "PND2024" && (
@@ -44,6 +46,7 @@ const ClockDisplayImage = () => {
           height={100}
           className="mt-40"
           onLoad={() => setClockImageLoaded(true)}
+          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "custom" &&
@@ -55,6 +58,7 @@ const ClockDisplayImage = () => {
             height={60}
             className="mt-36"
             onLoad={() => setClockImageLoaded(true)}
+            hidden={!clockImageLoaded}
           />
         )}
     </span>

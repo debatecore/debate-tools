@@ -32,10 +32,10 @@
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },
-  "oxfordDebateConductionUtility": {
-    "en": "Oxford Debate Conduction",
-    "pl": "Przeprowadzenie debaty",
-    "de": "Debattenführung",
+  "oxfordDebateClock": {
+    "en": "Oxford Debate Clock",
+    "pl": "Zegar do Debat Oksfordzkich",
+    "de": "Oxforddebattenuhr",
     "es": "Conducción del debate"
   },
   "oxfordDebateConfiguration": {
@@ -204,7 +204,7 @@
   },
   "soundDemonstrationPoznanPackFlavortext": {
     "en": "The iconic announcement sounds known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
-    "pl": "Ikoniczne dźwięki zapowiedzi w zbiorkomie znany każdemu, kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "pl": "Ikoniczne dźwięki zapowiedzi w zbiorkomie znane każdemu, kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
     "de": "Die ikonenhaften Durchsagetone kennt jeder, der mal das Vergnügen hatte, in der Hauptstadt der Straßenarbeiten öffentliche Verkehrsmittel zu benutzen.",
     "es": "El icónico sonido del anuncio es conocido por cualquiera que haya tenido el placer de utilizar el transporte público en la capital de obras viales."
   },

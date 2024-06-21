@@ -14,7 +14,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [stateLang, setStateLang] = useState<language>("en");
+  const [stateLang, setStateLang] = useState<language>("pl");
   const [stateDebateConf, setStateDebateConf] =
     useState<debateConf>(defaultDebateConf);
 

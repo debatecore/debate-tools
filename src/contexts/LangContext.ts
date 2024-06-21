@@ -5,7 +5,7 @@ const LangContext = createContext<{
   lang: language;
   setLang: (lang: language) => void;
 }>({
-  lang: "en",
+  lang: "pl",
   setLang: (lang) => {},
 });
 export { LangContext };

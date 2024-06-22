@@ -40,7 +40,7 @@ const defaultDebateConf: debateConf = {
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  clockImageName: "PND2024",
+  clockImageName: "PND2024 + Sponsors",
   customClockImageBase64: "",
   soundPack: defaultSoundPack,
 };

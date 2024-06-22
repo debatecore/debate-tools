@@ -13,11 +13,11 @@ import Link from "next/link";
 import { useAudio } from "react-use";
 import Image from "next/image";
 
-import sponsor_poznan from "../../../public/display-images/sponsor_poznan.jpg";
-import sponsor_ngo from "../../../public/display-images/sponsor_ngo.png";
-import sponsor_mrm from "../../../public/display-images/sponsor_mrm.jpg";
-import sponsor_wojewoda from "../../../public/display-images/sponsor_wojewoda.png";
-import sponsor_wielkopolska from "../../../public/display-images/sponsor_wielkopolska.jpg";
+import sponsor_poznan from "/public/display-images/sponsor_poznan.png";
+import sponsor_ngo from "/public/display-images/sponsor_ngo.png";
+import sponsor_mrm from "/public/display-images/sponsor_mrm.png";
+import sponsor_wojewoda from "/public/display-images/sponsor_wojewoda.png";
+import sponsor_wielkopolska from "/public/display-images/sponsor_wielkopolska.png";
 
 const Dots = (props: {
   stages: number[];
@@ -247,9 +247,7 @@ export default function OxfordDebate() {
           <Image
             // src={"/display-images/sponsor_poznan.jpg"}
             src={sponsor_poznan}
-            alt={"logotyp sponsora"}
-            // width={2371}
-            // height={2370}
+            alt={"logotyp sponsora - poznan"}
             className="h-12 w-auto"
           />
         </div>
@@ -257,9 +255,7 @@ export default function OxfordDebate() {
           <Image
             // src={"/display-images/sponsor_ngo.png"}
             src={sponsor_ngo}
-            alt={"logotyp sponsora"}
-            // width={500}
-            // height={500}
+            alt={"logotyp sponsora - ngo"}
             className="h-12 w-auto"
           />
         </div>
@@ -267,9 +263,7 @@ export default function OxfordDebate() {
           <Image
             // src={"/display-images/sponsor_mrm.jpg"}
             src={sponsor_mrm}
-            alt={"logotyp sponsora"}
-            // width={2568}
-            // height={1154}
+            alt={"logotyp sponsora - mrm"}
             className="h-12 w-auto"
           />
         </div>
@@ -277,9 +271,7 @@ export default function OxfordDebate() {
           <Image
             // src={"/display-images/sponsor_wielkopolska.jpg"}
             src={sponsor_wielkopolska}
-            alt={"logotyp sponsora"}
-            // width={1891}
-            // height={709}
+            alt={"logotyp sponsora - wlkp"}
             className="h-12 w-auto"
           />
         </div>
@@ -287,9 +279,7 @@ export default function OxfordDebate() {
           <Image
             // src={"/display-images/sponsor_wojewoda.png"}
             src={sponsor_wojewoda}
-            alt={"logotyp sponsora"}
-            // width={2568}
-            // height={1154}
+            alt={"logotyp sponsora - wojewoda"}
             className="h-12 w-auto"
           />
         </div>

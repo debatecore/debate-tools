@@ -11,6 +11,13 @@ import { IconAlertCircle } from "@/components/icons/AlertCircle";
 import { IconArrowLeftCircle } from "@/components/icons/ArrowLeftCircle";
 import Link from "next/link";
 import { useAudio } from "react-use";
+import Image from "next/image";
+
+import sponsor_poznan from "../../../public/display-images/sponsor_poznan.jpg";
+import sponsor_ngo from "../../../public/display-images/sponsor_ngo.png";
+import sponsor_mrm from "../../../public/display-images/sponsor_mrm.jpg";
+import sponsor_wojewoda from "../../../public/display-images/sponsor_wojewoda.png";
+import sponsor_wielkopolska from "../../../public/display-images/sponsor_wielkopolska.jpg";
 
 const Dots = (props: {
   stages: number[];
@@ -88,7 +95,7 @@ export default function OxfordDebate() {
   }, [stage]);
 
   return (
-    <div className="flex flex-col gap-1 text-center mx-auto mt-8">
+    <div className="flex flex-col gap-1 text-center h-screen mx-auto py-8">
       <h1 className="font-serif text-4xl text-balance">
         {debate.conf.motion || nomotiongiven}
       </h1>
@@ -234,6 +241,58 @@ export default function OxfordDebate() {
             </LinkButton>
           </>
         )}
+      </div>
+      <div className="flex flex-row gap-4 w-fit justify-center items-center bg-white rounded-full mx-auto mt-auto px-8 py-4">
+        <div>
+          <Image
+            // src={"/display-images/sponsor_poznan.jpg"}
+            src={sponsor_poznan}
+            alt={"logotyp sponsora"}
+            // width={2371}
+            // height={2370}
+            className="h-12 w-auto"
+          />
+        </div>
+        <div>
+          <Image
+            // src={"/display-images/sponsor_ngo.png"}
+            src={sponsor_ngo}
+            alt={"logotyp sponsora"}
+            // width={500}
+            // height={500}
+            className="h-12 w-auto"
+          />
+        </div>
+        <div>
+          <Image
+            // src={"/display-images/sponsor_mrm.jpg"}
+            src={sponsor_mrm}
+            alt={"logotyp sponsora"}
+            // width={2568}
+            // height={1154}
+            className="h-12 w-auto"
+          />
+        </div>
+        <div>
+          <Image
+            // src={"/display-images/sponsor_wielkopolska.jpg"}
+            src={sponsor_wielkopolska}
+            alt={"logotyp sponsora"}
+            // width={1891}
+            // height={709}
+            className="h-12 w-auto"
+          />
+        </div>
+        <div>
+          <Image
+            // src={"/display-images/sponsor_wojewoda.png"}
+            src={sponsor_wojewoda}
+            alt={"logotyp sponsora"}
+            // width={2568}
+            // height={1154}
+            className="h-12 w-auto"
+          />
+        </div>
       </div>
       {advocemSound.element}
       {debateEndSound.element}

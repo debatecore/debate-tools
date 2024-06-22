@@ -36,7 +36,8 @@ const ClockDisplayImage = () => {
           onLoad={() => setClockImageLoaded(true)}
         />
       )}
-      {clockImageName === "PND2024" && (
+      {(clockImageName === "PND2024" ||
+        clockImageName === "PND2024 + Sponsors") && (
         <Image
           src={"/display-images/PND2024.png"}
           alt="Poznańska Noc Debaty logo (since 2024)"

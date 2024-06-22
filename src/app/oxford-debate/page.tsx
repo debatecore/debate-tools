@@ -242,48 +242,50 @@ export default function OxfordDebate() {
           </>
         )}
       </div>
-      <div className="flex flex-row gap-4 w-fit justify-center items-center bg-white rounded-full mx-auto mt-auto px-8 py-4">
-        <div>
-          <Image
-            // src={"/display-images/sponsor_poznan.jpg"}
-            src={sponsor_poznan}
-            alt={"logotyp sponsora - poznan"}
-            className="h-12 w-auto"
-          />
+      {debate.conf.clockImageName === "PND2024 + Sponsors" && (
+        <div className="flex flex-row gap-4 w-fit justify-center items-center bg-white rounded-full mx-auto mt-auto px-8 py-4">
+          <div>
+            <Image
+              // src={"/display-images/sponsor_poznan.jpg"}
+              src={sponsor_poznan}
+              alt={"logotyp sponsora - poznan"}
+              className="h-12 w-auto"
+            />
+          </div>
+          <div>
+            <Image
+              // src={"/display-images/sponsor_ngo.png"}
+              src={sponsor_ngo}
+              alt={"logotyp sponsora - ngo"}
+              className="h-12 w-auto"
+            />
+          </div>
+          <div>
+            <Image
+              // src={"/display-images/sponsor_mrm.jpg"}
+              src={sponsor_mrm}
+              alt={"logotyp sponsora - mrm"}
+              className="h-12 w-auto"
+            />
+          </div>
+          <div>
+            <Image
+              // src={"/display-images/sponsor_wielkopolska.jpg"}
+              src={sponsor_wielkopolska}
+              alt={"logotyp sponsora - wlkp"}
+              className="h-12 w-auto"
+            />
+          </div>
+          <div>
+            <Image
+              // src={"/display-images/sponsor_wojewoda.png"}
+              src={sponsor_wojewoda}
+              alt={"logotyp sponsora - wojewoda"}
+              className="h-12 w-auto"
+            />
+          </div>
         </div>
-        <div>
-          <Image
-            // src={"/display-images/sponsor_ngo.png"}
-            src={sponsor_ngo}
-            alt={"logotyp sponsora - ngo"}
-            className="h-12 w-auto"
-          />
-        </div>
-        <div>
-          <Image
-            // src={"/display-images/sponsor_mrm.jpg"}
-            src={sponsor_mrm}
-            alt={"logotyp sponsora - mrm"}
-            className="h-12 w-auto"
-          />
-        </div>
-        <div>
-          <Image
-            // src={"/display-images/sponsor_wielkopolska.jpg"}
-            src={sponsor_wielkopolska}
-            alt={"logotyp sponsora - wlkp"}
-            className="h-12 w-auto"
-          />
-        </div>
-        <div>
-          <Image
-            // src={"/display-images/sponsor_wojewoda.png"}
-            src={sponsor_wojewoda}
-            alt={"logotyp sponsora - wojewoda"}
-            className="h-12 w-auto"
-          />
-        </div>
-      </div>
+      )}
       {advocemSound.element}
       {debateEndSound.element}
     </div>

@@ -5,6 +5,7 @@ const displayImageTypeArray = [
   "MOW2024",
   "MOW2018",
   "PND2024",
+  "ZSK",
   "custom",
 ] as const;
 export { displayImageTypeArray };

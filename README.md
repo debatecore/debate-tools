@@ -17,7 +17,7 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 ## Tournaments where Debate Tools were used
 
 - [Musketeers of Words – Polish Oxford Debates Championships in English](http://musketeersofwords.eu/) 2024,
-- Poznań Debate Night (pl. _Poznańska Noc Debaty_) 2024.
+- [Poznań Debate Night (pl. _Poznańska Noc Debaty_)](https://www.instagram.com/poznanska_noc_debaty/) 2024.
 
 ## Plans for the future
 

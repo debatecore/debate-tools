@@ -55,9 +55,8 @@ const ClockDisplayImage = () => {
           alt="Zespół Szkół Komunikacji logo"
           width={64}
           height={64}
-          className="mt-36"
+          className={`mt-36 ${!clockImageLoaded && "opacity-0"}`}
           onLoad={() => setClockImageLoaded(true)}
-          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "custom" &&

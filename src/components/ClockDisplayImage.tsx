@@ -22,9 +22,8 @@ const ClockDisplayImage = () => {
           alt="Musketeers of Words logo (2018-2023)"
           width={80}
           height={64}
-          className="mt-32"
+          className={`mt-32 ${!clockImageLoaded && "opacity-0"}`}
           onLoad={() => setClockImageLoaded(true)}
-          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "MOW2024" && (
@@ -33,9 +32,8 @@ const ClockDisplayImage = () => {
           alt="Musketeers of Words logo (since 2024)"
           width={60}
           height={60}
-          className="mt-36 rounded-full"
+          className={`mt-36 rounded-full ${!clockImageLoaded && "opacity-0"}`}
           onLoad={() => setClockImageLoaded(true)}
-          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "PND2024" && (
@@ -44,9 +42,8 @@ const ClockDisplayImage = () => {
           alt="Poznańska Noc Debaty logo (since 2024)"
           width={100}
           height={100}
-          className="mt-40"
+          className={`mt-40 ${!clockImageLoaded && "opacity-0"}`}
           onLoad={() => setClockImageLoaded(true)}
-          hidden={!clockImageLoaded}
         />
       )}
       {clockImageName === "custom" &&
@@ -56,9 +53,8 @@ const ClockDisplayImage = () => {
             alt="Custom logo"
             width={60}
             height={60}
-            className="mt-36"
+            className={`mt-36 ${!clockImageLoaded && "opacity-0"}`}
             onLoad={() => setClockImageLoaded(true)}
-            hidden={!clockImageLoaded}
           />
         )}
     </span>

@@ -9,6 +9,7 @@ const LangSwitchComponent = () => {
   const langContext = useContext(LangContext);
   return (
     <GenericSelect
+      id="langswitchselect"
       text={useLang("language")}
       value={getSpecificLangString("selfLanguageString", langContext.lang)}
       options={[

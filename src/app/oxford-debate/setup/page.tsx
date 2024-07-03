@@ -28,7 +28,8 @@ export default function OxfordDebateSetup() {
   const clockImageCustom = useLang("clockImageCustomOption");
   const soundPackSelect = useLang("soundPackSelect");
   const soundPackDefault = useLang("defaultSoundsOption");
-  const [customClockImageSelected, setCustomClockImageSelected] = useState(false);
+  const [customClockImageSelected, setCustomClockImageSelected] =
+    useState(false);
 
   const getDisplayNameOfClockImage = (clockImageName: string) => {
     switch (clockImageName) {
@@ -42,11 +43,11 @@ export default function OxfordDebateSetup() {
   };
 
   const setClockImage = (clockImageName: displayImageType) => {
-    debateContext.setConf(
-      {...debateContext.conf,
+    debateContext.setConf({
+      ...debateContext.conf,
       clockImageName: clockImageName,
     });
-    };
+  };
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target) return;
@@ -80,10 +81,9 @@ export default function OxfordDebateSetup() {
         <DebateConfStringsPanel />
         <hr className="border-b-2 rounded border-neutral-800 my-2" />
         <GenericSelect
+          id="clockimageselect"
           text={clockImageSelect}
-          value={getDisplayNameOfClockImage(
-            debateContext.conf.clockImageName
-          )}
+          value={getDisplayNameOfClockImage(debateContext.conf.clockImageName)}
           options={displayImageTypeArray.map((element) => {
             return {
               value: getDisplayNameOfClockImage(element),
@@ -100,6 +100,7 @@ export default function OxfordDebateSetup() {
           hidden={!customClockImageSelected}
         />
         <GenericSelect
+          id="soundpackselect"
           text={soundPackSelect}
           value={
             debateContext.conf.soundPack.name === "default"

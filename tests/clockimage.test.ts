@@ -19,11 +19,10 @@ predefinedImagesToTest.forEach((imageid) => {
     await page.getByRole("button", { name: strings.startDebate.en }).click();
     await page.waitForURL("http://localhost:3000/oxford-debate");
 
-    await page.getByRole("img", { name: imageid }).click();
-    const screenshot = await page.screenshot({
-      path: `screenshot-${imageid}-${browserName}.jpg`,
-      fullPage: true,
-    });
+    const img = await page.getByRole("img", { name: imageid });
+    await expect(img).toHaveJSProperty("complete", true);
+
+    const screenshot = await page.screenshot({ fullPage: true });
     await testinfo.attach("image screenshot", {
       body: screenshot,
       contentType: "image/jpg",

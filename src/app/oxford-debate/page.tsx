@@ -15,8 +15,21 @@ import { useAudio } from "react-use";
 const Dots = (props: {
   stages: number[];
   flashCurrent: boolean;
+  highlightNext: boolean;
   stage: number;
 }) => {
+  const dotStageStyling = (dotPosition: number) => {
+    if (props.stage > dotPosition) {
+      return "bg-neutral-600 border-neutral-600";
+    } else if (props.stage === dotPosition) {
+      if (props.flashCurrent) {
+        return "border-emerald-400";
+      }
+      return "border-slate-300";
+    } else {
+      return "border-neutral-600";
+    }
+  };
   return (
     <div className="flex flex-row gap-1 mt-1">
       {props.stages.map((el) => {
@@ -26,13 +39,8 @@ const Dots = (props: {
               <div className="absolute left-0 top-0 h-3 w-3 rounded-full border-2 border-emerald-400 animate-ping z-20" />
             )}
             <div
-              className={`h-3 w-3 rounded-full border-2 z-10 ${
-                props.stage > el && "bg-neutral-600"
-              } ${
-                props.stage === el && props.flashCurrent
-                  ? "border-emerald-400"
-                  : "border-neutral-600"
-              }`}
+              className={`h-3 w-3 rounded-full border-2 z-10
+                ${dotStageStyling(el)}`}
             />
           </div>
         );
@@ -45,7 +53,7 @@ export default function OxfordDebate() {
   const debate = useContext(DebateContext);
   const [stage, setStage] = useState<number>(0);
   const [running, setRunning] = useState<boolean>(false);
-  const [advocem, setAdvocem] = useState<boolean>(false);
+  const [adVocem, setAdvocem] = useState<boolean>(false);
   const [debateEndSoundPlayed, setDebateEndSoundPlayed] = useState(false);
 
   // prettier-ignore
@@ -99,14 +107,12 @@ export default function OxfordDebate() {
           <h2 className="text-2xl">
             {debate.conf.proTeam || "Anonymous" || "The Proposition"}
           </h2>
-          <p className="text-neutral-500 uppercase">
-            {/* {debate.conf.proTeam ? "as the proposition" : "in favour"} */}
-            {aspropo}
-          </p>
+          <p className="text-neutral-500 uppercase">{aspropo}</p>
           <Dots
             stages={[0, 2, 4, 6]}
             stage={stage}
-            flashCurrent={running && !advocem}
+            flashCurrent={running && !adVocem}
+            highlightNext={!running && !adVocem}
           />
         </div>
         {/*  */}
@@ -115,27 +121,29 @@ export default function OxfordDebate() {
         <div className="w-full lg:w-1/3 text-center flex flex-col space-y-2 items-center">
           <div>
             <p className="text-neutral-500 uppercase">
-              {!advocem ? stage_strings[stage] : "ad vocem"}
+              {!adVocem ? stage_strings[stage] : "ad vocem"}
             </p>
             <div className="flex lg:hidden flex-row space-x-6 justify-center">
               <Dots
                 stage={stage}
                 stages={[0, 2, 4, 6]}
                 flashCurrent={running && !running}
+                highlightNext={!running && !adVocem}
               />
               <Dots
                 stage={stage}
                 stages={[1, 3, 5, 7]}
                 flashCurrent={running && !running}
+                highlightNext={!running && !adVocem}
               />
             </div>
           </div>
           <Clock
             running={running}
-            maxTime={advocem ? debate.conf.adVocemTime : debate.conf.speechTime}
+            maxTime={adVocem ? debate.conf.adVocemTime : debate.conf.speechTime}
             clockImage={debate.conf.clockImageName}
             beepSpeechEnd={debate.conf.beepOnSpeechEnd}
-            beepProtected={debate.conf.beepProtectedTime && !advocem}
+            beepProtected={debate.conf.beepProtectedTime && !adVocem}
             protectedTime={debate.conf.endProtectedTime}
             protectStart={!!debate.conf.startProtectedTime}
           />
@@ -154,7 +162,8 @@ export default function OxfordDebate() {
           <Dots
             stages={[1, 3, 5, 7]}
             stage={stage}
-            flashCurrent={running && !advocem}
+            flashCurrent={running && !adVocem}
+            highlightNext={!running && !adVocem}
           />
         </div>
         {/*  */}
@@ -167,7 +176,7 @@ export default function OxfordDebate() {
           <div className="flex flex-col space-y-1">
             <div className="flex flex-row flex-1 space-x-2">
               <GenericButton
-                disabled={running || advocem || stage === 0}
+                disabled={running || adVocem || stage === 0}
                 smol
                 square
                 onClick={() => setStage(stage > 0 ? stage - 1 : stage)}
@@ -179,12 +188,12 @@ export default function OxfordDebate() {
                 smol
                 square
                 onClick={() => {
-                  if (!advocem) {
+                  if (!adVocem) {
                     advocemSound.controls.play();
                   }
-                  setAdvocem(!advocem);
+                  setAdvocem(!adVocem);
                 }}
-                className={advocem ? "!border-emerald-400" : ""}
+                className={adVocem ? "!border-emerald-400" : ""}
               >
                 <div className="flex flex-row gap-2">
                   <IconAlertCircle />
@@ -196,7 +205,7 @@ export default function OxfordDebate() {
                 square
                 onClick={() => {
                   setRunning(!running);
-                  if (running && !advocem) {
+                  if (running && !adVocem) {
                     setStage(stage + 1);
                   }
                 }}

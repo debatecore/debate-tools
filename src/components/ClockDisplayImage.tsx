@@ -55,11 +55,12 @@ const ClockDisplayImage = () => {
       {clockImageName === "ZSK" && (
         <Image
           src={"/display-images/ZSK.webp"}
-          alt="Zespół Szkół Komunikacji logo"
+          alt={`${clockImageName} | Zespół Szkół Komunikacji logo`}
           width={64}
           height={64}
           className={`mt-36 ${!clockImageLoaded && "opacity-0"}`}
           onLoad={() => setClockImageLoaded(true)}
+          data-loaded={clockImageLoaded}
         />
       )}
       {clockImageName === "custom" &&

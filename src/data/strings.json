@@ -389,5 +389,27 @@
     "en": "Loading…",
     "pl": "Ładowanie…",
     "de": "Laden…"
+  },
+  "minutesSingular": {
+    "en": "minute",
+    "pl": "minuta",
+    "de": "Minute"
+  },
+  "minutesPlural": {
+    "en": "minutes",
+    "pl": "minuty",
+    "de": "Minuten",
+    "es": "min"
+  },
+  "secondsPlural": {
+    "en": "seconds",
+    "pl": "sekund",
+    "de": "Sekunden",
+    "es": "s"
+  },
+  "and": {
+    "en": "and",
+    "pl": "i",
+    "de": "und"
   }
 }

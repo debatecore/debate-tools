@@ -27,6 +27,7 @@
   "devDependencies": {
     "@testing-library/dom": "^10.1.0",
     "@testing-library/react": "^16.0.0",
+    "@playwright/test": "^1.45.1",
     "@types/node": "^20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

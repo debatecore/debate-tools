@@ -10,6 +10,7 @@ type option = {
 };
 
 type GenericSelectProps = {
+  id: string;
   text: string;
   value: string;
   options: option[];
@@ -32,10 +33,16 @@ const GenericSelect = (props: GenericSelectProps) => {
   }, [selectOpen]);
 
   return (
-    <div className="flex flex-row justify-between relative">
-      <p className="text-neutral-500">{props.text}</p>
+    <div
+      className="flex flex-row justify-between relative"
+      id={`${props.id}-container`}
+    >
+      <p className="text-neutral-500" id={`${props.id}-text`}>
+        {props.text}
+      </p>
       <button
         className="flex flex-row gap-2 text-neutral-500 select-none items-center"
+        id={`${props.id}-selectbutton`}
         onClick={() => setSelectOpen(true)}
       >
         {props.options.find((option) => {
@@ -47,6 +54,7 @@ const GenericSelect = (props: GenericSelectProps) => {
       {selectOpen ? (
         <div
           ref={refSelectMenu}
+          id={`${props.id}-optionscontainer`}
           className={`
             absolute top-0 right-0 flex flex-col z-50
             bg-neutral-800 rounded-md border-2 p-1 gap-1
@@ -61,6 +69,7 @@ const GenericSelect = (props: GenericSelectProps) => {
                   if (element.exec) element.exec();
                   setSelectOpen(false);
                 }}
+                id={`${props.id}-option-${element.value}`}
                 className={`
                   flex flex-row gap-1 rounded
                   pr-3 hover:bg-neutral-700 items-center

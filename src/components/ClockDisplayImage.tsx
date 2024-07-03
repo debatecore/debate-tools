@@ -17,7 +17,7 @@ const ClockDisplayImage = () => {
       id="clockDisplayImageParent"
     >
       {!clockImageLoaded && (
-        <div className="w-15 h-15 pt-32">{loadingText}</div>
+        <div className="w-15 h-15 pt-32 absolute">{loadingText}</div>
       )}
       {clockImageName === "MOW2018" && (
         <Image

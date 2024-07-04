@@ -1,6 +1,6 @@
 # Debate Tools
 
-Debate Tools are designed to help conduct an Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oksfordzka)_).
+Debate Tools are designed to help conduct an Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oksfordzka)_.
 
 ## What is an Oxford Debate?
 
@@ -9,12 +9,15 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 ## Features
 
 - Debate clock adjustable to rules of any tournament,
-- Generator of motions used in past tournaments,
-- Filtering generated motions by type and language,
+- Generator of motions used in past tournaments with filtering by type and language,
 - Usable logos of tournaments that used Debate Tools,
 - Submitting custom logos.
 
-## Tournaments where Debate Tools were used
+## Origin
+
+Debate Tools were first used and tested in ZSK Poznań, during the 2023/2024 edition of the school's debate league. They were then used in several tournaments, the most notable ones being listed below:
+
+### Notable tournaments where Debate Tools were used
 
 - [Musketeers of Words – Polish Oxford Debates Championships in English](http://musketeersofwords.eu/) 2024,
 - [Poznań Debate Night (pl. _Poznańska Noc Debaty_)](https://www.instagram.com/poznanska_noc_debaty/) 2024.

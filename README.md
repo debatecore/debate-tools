@@ -1,6 +1,6 @@
 # Debate Tools
 
-Debate Tools are designed to help conduct an Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oksfordzka)_.
+Debate Tools are designed to help conduct an Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oksfordzka)_).
 
 ## What is an Oxford Debate?
 

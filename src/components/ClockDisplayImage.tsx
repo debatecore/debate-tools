@@ -52,6 +52,17 @@ const ClockDisplayImage = () => {
           data-loaded={clockImageLoaded}
         />
       )}
+      {clockImageName === "ZSK" && (
+        <Image
+          src={"/display-images/ZSK.webp"}
+          alt={`${clockImageName} | Zespół Szkół Komunikacji logo`}
+          width={64}
+          height={64}
+          className={`mt-36 ${!clockImageLoaded && "opacity-0"}`}
+          onLoad={() => setClockImageLoaded(true)}
+          data-loaded={clockImageLoaded}
+        />
+      )}
       {clockImageName === "custom" &&
         currentDebateConf.customClockImageBase64 != "" && (
           <Image

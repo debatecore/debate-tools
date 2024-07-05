@@ -36,7 +36,7 @@ const DebatecoreFooter = (props: {}) => {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row items-center gap-4 p-2 mx-auto">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 p-2 mx-auto">
         <div>
           <a
             href="https://debateco.re"

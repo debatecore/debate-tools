@@ -1,6 +1,13 @@
 import { defaultSoundPack, soundPack } from "./soundPack";
 
-const displayImageTypeArray = ["null", "MOW2024", "MOW2018"] as const;
+const displayImageTypeArray = [
+  "null",
+  "MOW2024",
+  "MOW2018",
+  "PND2024",
+  "ZSK",
+  "custom",
+] as const;
 export { displayImageTypeArray };
 
 type displayImageType = (typeof displayImageTypeArray)[number];
@@ -16,7 +23,8 @@ type debateConf = {
   beepOnSpeechEnd: boolean;
   beepProtectedTime: boolean;
   visualizeProtectedTimes: boolean;
-  displayImage1: displayImageType; // CLOCK IMAGE DISPLAY
+  clockImageName: displayImageType;
+  customClockImageBase64: string;
   soundPack: soundPack;
 };
 export type { debateConf, displayImageType };
@@ -25,14 +33,15 @@ const defaultDebateConf: debateConf = {
   motion: "",
   proTeam: "",
   oppTeam: "",
-  speechTime: 240,
+  speechTime: 300,
   adVocemTime: 60,
   endProtectedTime: 30,
   startProtectedTime: 0,
   beepOnSpeechEnd: true,
   beepProtectedTime: true,
   visualizeProtectedTimes: false,
-  displayImage1: "null",
+  clockImageName: "null",
+  customClockImageBase64: "",
   soundPack: defaultSoundPack,
 };
 export { defaultDebateConf };

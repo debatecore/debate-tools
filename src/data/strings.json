@@ -52,10 +52,10 @@
     "de": "von Posener Debattierer.",
     "es": "en Poznań por compañeros de debate."
   },
-  "oxfordDebateConductionUtility": {
-    "en": "Oxford Debate Conduction",
-    "pl": "Przeprowadzenie debaty",
-    "de": "Debattenführung",
+  "oxfordDebateClock": {
+    "en": "Oxford Debate Clock",
+    "pl": "Zegar do Debat Oksfordzkich",
+    "de": "Oxforddebattenuhr",
     "es": "Conducción del debate"
   },
   "oxfordDebateConfiguration": {
@@ -64,7 +64,7 @@
     "de": "Debattekonfiguration",
     "es": "Configuración del debate"
   },
-  "oxfordDebateConfigurationFlavortext": {
+  "oxfordDebateConfigurationFlavorText": {
     "en": "Dear Marshal, what are the rules?",
     "pl": "Właśnie moja racja jest racja najmojsza!"
   },
@@ -170,7 +170,7 @@
     "pl": "Chroń czas na początku mowy",
     "de": "Geschützte Zeit am Anfang der Ansprache"
   },
-  "mainmenu": {
+  "mainMenu": {
     "en": "Main menu",
     "pl": "Menu główne",
     "de": "Menu"
@@ -224,7 +224,7 @@
   },
   "soundDemonstrationPoznanPackFlavortext": {
     "en": "The iconic announcement sounds known to anyone who's had the pleasure to use public transportation in the world's roadworks capital.",
-    "pl": "Ikoniczne dźwięki zapowiedzi w zbiorkomie znany każdemu, kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
+    "pl": "Ikoniczne dźwięki zapowiedzi w zbiorkomie znane każdemu, kto miał przyjemność jechać bimbą w światowej stolicy robót drogowych.",
     "de": "Die ikonenhaften Durchsagetone kennt jeder, der mal das Vergnügen hatte, in der Hauptstadt der Straßenarbeiten öffentliche Verkehrsmittel zu benutzen.",
     "es": "El icónico sonido del anuncio es conocido por cualquiera que haya tenido el placer de utilizar el transporte público en la capital de obras viales."
   },
@@ -302,13 +302,20 @@
   "showFiltersButtonText": {
     "en": "Filter motions"
   },
-  "brandingdisplayimage": {
+  "clockImage": {
     "en": "Clock branding image",
-    "pl": "Logotyp zegarowy"
+    "pl": "Logotyp zegarowy",
+    "de": "Uhrlogo"
   },
-  "brandingdisplayimage_nulloption": {
-    "en": "none",
-    "pl": "brak"
+  "clockImageNullOption": {
+    "en": "None",
+    "pl": "Brak",
+    "de": "Kein"
+  },
+  "clockImageCustomOption": {
+    "en": "Custom",
+    "pl": "Własny",
+    "de": "Eigenes"
   },
   "nomotiongiven": {
     "en": "No motion given",
@@ -387,5 +394,32 @@
     "en": "Default",
     "pl": "Domyślne",
     "de": "Standard"
+  },
+  "loading": {
+    "en": "Loading…",
+    "pl": "Ładowanie…",
+    "de": "Laden…"
+  },
+  "minutesSingular": {
+    "en": "minute",
+    "pl": "minuta",
+    "de": "Minute"
+  },
+  "minutesPlural": {
+    "en": "minutes",
+    "pl": "minuty",
+    "de": "Minuten",
+    "es": "min"
+  },
+  "secondsPlural": {
+    "en": "seconds",
+    "pl": "sekund",
+    "de": "Sekunden",
+    "es": "s"
+  },
+  "and": {
+    "en": "and",
+    "pl": "i",
+    "de": "und"
   }
 }

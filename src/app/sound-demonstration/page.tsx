@@ -51,6 +51,7 @@ export default function SoundTestPage() {
           <SoundPlayerButton
             text={useLang("soundDemonstrationTransitBell")}
             soundpath={ztmPoznańSoundPack.pingProtectedTime}
+            soundvolumeoverride={ztmPoznańSoundPack.volumeOverride}
             lefticon={IconPoznanBus}
             lefticonclasses="scale-[2] top-[33px] left-[8px]"
             righticon={IconPoznanTram}
@@ -59,9 +60,10 @@ export default function SoundTestPage() {
           {ztmAdVocemSound && (
             <SoundPlayerButton
               text={adVocemText}
+              soundpath={ztmAdVocemSound}
+              soundvolumeoverride={ztmPoznańSoundPack.volumeOverride}
               lefticon={IconPoznanBus}
               lefticonclasses="scale-[2] top-[33px] left-[8px]"
-              soundpath={ztmAdVocemSound}
               righticon={IconAlertCircle}
               righticonclasses="scale-x-[2] scale-y-[2] right-[25px] top-[17px] rotate-[0]"
             />
@@ -70,6 +72,7 @@ export default function SoundTestPage() {
             <SoundPlayerButton
               text={debateEndText}
               soundpath={ztmDebateEndSound}
+              soundvolumeoverride={ztmPoznańSoundPack.volumeOverride}
               lefticon={IconTrophy}
               lefticonclasses="scale-[2] top-[17px] left-[25px]"
               righticon={IconPoznanTram}

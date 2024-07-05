@@ -6,6 +6,7 @@ export { type soundPackName };
 
 type soundPack = {
   name: soundPackName;
+  volumeOverride?: number;
   pingProtectedTime: string;
   pingSpeechEnd: string;
   adVocemSound?: string;
@@ -23,6 +24,7 @@ export { defaultSoundPack };
 
 const ztmPoznańSoundPack: soundPack = {
   name: "ZTM Poznań",
+  volumeOverride: 0.2,
   pingProtectedTime: "/KBING!.mp3",
   pingSpeechEnd: "/KBING!.mp3",
   adVocemSound: "/KZADAN.mp3",

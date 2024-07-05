@@ -47,7 +47,7 @@ const MotionGenerator = () => {
 
   return (
     <div className="flex flex-col items-center text-center">
-      <section className="hidden xl:block flex flex-col space-y-2 max-w-[400px]">
+      <section className="hidden xl:flex flex-col space-y-2 max-w-[400px]">
         <GenericButton
           text={useLang("debateMotionGeneratorRegenerate")}
           icon={IconDice}
@@ -65,7 +65,7 @@ const MotionGenerator = () => {
       <hr className="border-b-2 mt-8 mb-8 rounded border-neutral-800 my-2 w-full" />
       <section className="flex flex-col xl:flex-row items-center">
         <MotionsFilter onFiltersChange={handleFiltersChange} />
-        <section className="block xl:hidden flex flex-col mt-5 space-y-2 max-w-[400px]">
+        <section className="flex xl:hidden flex-col mt-5 space-y-2 max-w-[400px]">
           <GenericButton
             text={useLang("debateMotionGeneratorRegenerate")}
             icon={IconDice}

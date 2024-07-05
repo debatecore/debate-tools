@@ -26,7 +26,7 @@ export default function Home() {
           {[
             {
               href: "/oxford-debate/setup",
-              text: useLang("oxfordDebateConductionUtility"),
+              text: useLang("oxfordDebateClock"),
               icon: IconClock,
             },
             {

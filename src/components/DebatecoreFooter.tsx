@@ -12,21 +12,21 @@ const DebatecoreFooter = (props: {}) => {
   const boldfont = lexend.className;
 
   const footerlinks: footerlink[] = [
-    {
-      text: useLang("footerAbout"),
-      href: "/about",
-    },
-    {
-      text: useLang("footerMission"),
-      href: "https://debateco.re/about",
-    },
-    {
-      text: useLang("footerSendFeedback"),
-      href: "https://debateco.re/sendfeedback?from=toolsfooter",
-    },
+    // {
+    //   text: useLang("footerAbout"),
+    //   href: "/about",
+    // },
+    // {
+    //   text: useLang("footerMission"),
+    //   href: "https://debateco.re/about",
+    // },
+    // {
+    //   text: useLang("footerSendFeedback"),
+    //   href: "https://debateco.re/sendfeedback?from=toolsfooter",
+    // },
     {
       text: `${useLang("footerLicense")} (AGPLv3)`,
-      href: "/about/license",
+      href: "https://github.com/debatecore/debate-tools/blob/master/LICENSE",
     },
     {
       text: useLang("footerSourceCode"),
@@ -62,7 +62,7 @@ const DebatecoreFooter = (props: {}) => {
       </div>
       <div className="mx-auto p-2 text-balance text-center text-neutral-700">
         {useLang("disclaimer")}
-        {" © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński"}
+        {" © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński"}
       </div>
     </>
   );

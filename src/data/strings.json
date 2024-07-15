@@ -28,7 +28,8 @@
   },
   "footerAbout": {
     "en": "About",
-    "pl": "O stronie"
+    "pl": "O nas",
+    "de": "Unser Projekt"
   },
   "footerMission": {
     "en": "Mission",
@@ -40,7 +41,8 @@
   },
   "footerLicense": {
     "en": "License",
-    "pl": "Licencja"
+    "pl": "Licencja",
+    "de": "Lizenz"
   },
   "footerSourceCode": {
     "en": "Source code",

@@ -12,18 +12,10 @@ const DebatecoreFooter = (props: {}) => {
   const boldfont = lexend.className;
 
   const footerlinks: footerlink[] = [
-    // {
-    //   text: useLang("footerAbout"),
-    //   href: "/about",
-    // },
-    // {
-    //   text: useLang("footerMission"),
-    //   href: "https://debateco.re/about",
-    // },
-    // {
-    //   text: useLang("footerSendFeedback"),
-    //   href: "https://debateco.re/sendfeedback?from=toolsfooter",
-    // },
+    {
+      text: useLang("footerAbout"),
+      href: "/about",
+    },
     {
       text: `${useLang("footerLicense")} (AGPLv3)`,
       href: "https://github.com/debatecore/debate-tools/blob/master/LICENSE",

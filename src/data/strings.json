@@ -26,6 +26,29 @@
     "de": "Hergestellt mit",
     "es": "Creado con"
   },
+  "footerAbout": {
+    "en": "About",
+    "pl": "O nas",
+    "de": "Unser Projekt"
+  },
+  "footerMission": {
+    "en": "Mission",
+    "pl": "Misja"
+  },
+  "footerSendFeedback": {
+    "en": "Send feedback",
+    "pl": "Wyślij opinię"
+  },
+  "footerLicense": {
+    "en": "License",
+    "pl": "Licencja",
+    "de": "Lizenz"
+  },
+  "footerSourceCode": {
+    "en": "Source code",
+    "pl": "Kod źródłowy",
+    "de": "Quellcode"
+  },
   "byPoznanDebaters": {
     "en": "in Poznań by fellow debaters.",
     "pl": "przez debatantów z Poznania",
@@ -270,16 +293,6 @@
     "pl": "Oryginalnie stworzone na potrzeby debatantów ZSK Poznań oraz polskich organizacji debatanckich.",
     "de": "Ursprünglich hergestellt zum Zweck der Debatierer von ZSK Poznań und anderer polnisher Debattenorganisationen.",
     "es": "Creado originalmente para las necesidades de los polemistas del ZSK Poznań y de varias organizaciones de debate polacas. Disponible públicamente."
-  },
-  "licenseDisclaimer_before": {
-    "en": "Available freely under the terms of",
-    "pl": "Dostępne publicznie na licencji",
-    "de": "Frei verfügbar unter den Bedingungen der"
-  },
-  "sourcecodeDisclaimer_before": {
-    "en": "Source code available on",
-    "pl": "Kod źródłowy dostępny za pośrednictwem serwisu",
-    "de": "Quellcode verfügbar auf"
   },
   "motionFilterTitle": {
     "en": "Filter motions",

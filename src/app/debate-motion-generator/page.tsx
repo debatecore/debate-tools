@@ -1,4 +1,5 @@
 "use client";
+import { DebatecoreFooter } from "@/components/DebatecoreFooter";
 import { MotionGenerator } from "@/components/MotionGenerator";
 import { useLang } from "@/lib/useLang";
 
@@ -14,6 +15,8 @@ export default function DebateMotionGenerator() {
       <div className="flex flex-col md:flex-row justify-center flex-wrap items-center gap-2 mt-4">
         <MotionGenerator />
       </div>
+      <div className="mt-auto" />
+      <DebatecoreFooter />
     </div>
   );
 }

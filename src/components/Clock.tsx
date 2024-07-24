@@ -14,6 +14,7 @@ const Clock = (props: {
   beepProtected?: boolean;
   protectedTime?: number;
   protectStart?: boolean;
+  moreClass?: string;
 }) => {
   const [time, setTime] = useState<number>(props.maxTime);
   const refCircle = useRef<SVGCircleElement>(null);
@@ -35,7 +36,7 @@ const Clock = (props: {
   const overtime = useLang("overtime");
 
   const delayInMs = 1000;
-  const clockColorsTransitionDuration = "350ms"
+  const clockColorsTransitionDuration = "350ms";
   const fullvolume = 1; // useAudio volume range is 0-1
 
   useEffect(() => {
@@ -52,7 +53,9 @@ const Clock = (props: {
   useInterval(() => setTime(time - 1), props.running ? delayInMs : null);
   return (
     <>
-      <div className="aspect-square min-w-64 flex flex-col space-y-1 justify-center items-center relative select-none">
+      <div
+        className={`aspect-square min-w-64 flex flex-col space-y-1 justify-center items-center relative select-none ${props.moreClass}`}
+      >
         <h2 className="text-5xl z-30">
           {time > 0 && (
             <>

@@ -424,5 +424,9 @@
     "en": "and",
     "pl": "i",
     "de": "und"
+  },
+  "debateFinishedEnthusiastic": {
+    "en": "Debate finished!",
+    "pl": "Debata zakończona!"
   }
 }

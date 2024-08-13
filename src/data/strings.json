@@ -427,6 +427,7 @@
   },
   "debateFinishedEnthusiastic": {
     "en": "Debate finished!",
-    "pl": "Debata zakończona!"
+    "pl": "Debata zakończona!",
+    "de": "Debatte geendet!"
   }
 }

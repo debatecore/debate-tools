@@ -69,7 +69,7 @@ export default function OxfordDebate() {
   const startspeech = useLang("startspeech");
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
-  const debatedoneenthusiastic = useLang("debateFinishedEnthusiastic");
+  const debateFinishedEnthusiastic = useLang("debateFinishedEnthusiastic");
 
   const conf = useContext(DebateContext).conf;
 
@@ -156,7 +156,7 @@ export default function OxfordDebate() {
           {/* debate finished */}
           {stage === 8 && (
             <div className="w-full h-full flex flex-col gap-5 justify-center items-center absolute">
-              <p className="text-3xl font-semibold">{debatedoneenthusiastic}</p>
+              <p className="text-3xl font-semibold">{debateFinishedEnthusiastic}</p>
               <p className="animate-wiggle text-6xl">{"🎉"}</p>
             </div>
           )}

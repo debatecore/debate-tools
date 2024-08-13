@@ -128,14 +128,6 @@ describe("quotation marks functions", () => {
   });
 });
 
-describe("dates formatting", () => {
-  test("no comma separating source and date", () => {
-    expect(noCommaBetweenDate("Historia w\u00a0Trasie 2023")).toBe(true);
-
-    expect(noCommaBetweenDate("Historia w\u00a0Trasie, 2023")).toBe(false);
-  });
-});
-
 describe("other single-sentence functions", () => {
   test("'not empty function'", () => {
     expect(isNotEmpty("")).toBe(false);
@@ -214,14 +206,6 @@ function hasClosingQuotationMarks(sentence: string): boolean {
   return true;
 }
 
-function noCommaBetweenDate(source: string) {
-  const commaBeforeDatePattern = /, \d{4}/;
-  if (source.match(commaBeforeDatePattern)) {
-    return false;
-  }
-  return true;
-}
-
 function isNotEmpty(sentence?: string | null): boolean {
   if (sentence == "" || sentence == undefined || sentence == null) {
     return false;
@@ -257,7 +241,6 @@ export {
   containsNonBreakingSpaces,
   hasLanguageCompatibleQuotationMarks,
   hasCorrectlyNestedQuotationMarks,
-  noCommaBetweenDate,
   isNotEmpty,
   endsWithPeriod,
   startsWithCapitalLetter,

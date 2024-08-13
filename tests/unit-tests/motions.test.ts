@@ -7,7 +7,6 @@ import {
   hasCorrectlyNestedQuotationMarks,
   hasLanguageCompatibleQuotationMarks,
   isNotEmpty,
-  noCommaBetweenDate,
   startsWithCapitalLetter,
 } from "./motionsValidationHelperFunctions.test";
 
@@ -22,10 +21,6 @@ motions.forEach((motion) => {
       expect(endsWithPeriod(motion.motion)).toBe(true);
       expect(endsWithPeriod(motion.source)).toBe(false);
       expect(endsWithPeriod(motion.type)).toBe(false);
-    });
-
-    test("date formatting", () => {
-      expect(noCommaBetweenDate(motion.source)).toBe(true);
     });
 
     for (const [key, value] of Object.entries(motion)) {

@@ -69,6 +69,7 @@ export default function OxfordDebate() {
   const startspeech = useLang("startspeech");
   const stopspeech = useLang("stopspeech");
   const debateconfig = useLang("oxfordDebateConfiguration");
+  const debateFinishedEnthusiastic = useLang("debateFinishedEnthusiastic");
 
   const conf = useContext(DebateContext).conf;
 
@@ -103,7 +104,11 @@ export default function OxfordDebate() {
       <p className="uppercase text-neutral-500">{anoxfordformatdebate}</p>
       <div className="relative flex flex-row justify-center mt-4 py-4">
         {/*  */}
-        <div className="hidden lg:flex w-1/3 text-right flex-col items-end">
+        <div
+          className={`hidden lg:flex w-1/3 text-right flex-col items-end ${
+            stage === 8 && "opacity-[.15]"
+          }`}
+        >
           <h2 className="text-2xl">
             {debate.conf.proTeam || "Anonymous" || "The Proposition"}
           </h2>
@@ -118,8 +123,8 @@ export default function OxfordDebate() {
         {/*  */}
         {/*  */}
         {/*  */}
-        <div className="w-full lg:w-1/3 text-center flex flex-col space-y-2 items-center">
-          <div>
+        <div className="w-full lg:w-1/3 text-center flex flex-col space-y-2 items-center relative">
+          <div className={stage === 8 ? "opacity-[.15]" : ""}>
             <p className="text-neutral-500 uppercase">
               {!adVocem ? stage_strings[stage] : "ad vocem"}
             </p>
@@ -146,12 +151,24 @@ export default function OxfordDebate() {
             beepProtected={debate.conf.beepProtectedTime && !adVocem}
             protectedTime={debate.conf.endProtectedTime}
             protectStart={!!debate.conf.startProtectedTime}
+            moreClass={stage === 8 ? "opacity-[.15]" : ""}
           />
+          {/* debate finished */}
+          {stage === 8 && (
+            <div className="w-full h-full flex flex-col gap-5 justify-center items-center absolute">
+              <p className="text-3xl font-semibold">{debateFinishedEnthusiastic}</p>
+              <p className="animate-wiggle text-6xl">{"🎉"}</p>
+            </div>
+          )}
         </div>
         {/*  */}
         {/*  */}
         {/*  */}
-        <div className="hidden lg:flex w-1/3 text-left flex-col items-start">
+        <div
+          className={`hidden lg:flex w-1/3 text-left flex-col items-start ${
+            stage === 8 && "opacity-[.15]"
+          }`}
+        >
           <h2 className="text-2xl">
             {debate.conf.oppTeam || "Anonymous" || "The Opposition"}
           </h2>

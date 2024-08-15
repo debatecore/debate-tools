@@ -10,17 +10,36 @@ import { useRouter } from "next/navigation";
 import { MotionDisplay } from "./MotionDisplay";
 import { MotionsFilter } from "./MotionsFilter";
 import { useLang } from "@/lib/useLang";
+import { IconCopy } from "./icons/Copy";
 
 const MotionGenerator = () => {
   const [motion, setMotion] = useState<motion | null>(null);
   const debateContext = useContext(DebateContext);
   const router = useRouter();
+  const infoslideLabel = useLang("infoslide");
 
   function generateMotion(): motion {
     const filteredMotions = motions.filter((motion) => {
-      return motion.type && enabledMotionTypes.includes(motion.type as motionTypeCode);
+      return (
+        motion.type &&
+        enabledMotionTypes.includes(motion.type as motionTypeCode)
+      );
     });
     return filteredMotions[Math.floor(Math.random() * filteredMotions.length)];
+  }
+
+  function copyMotionToClipboard() {
+    if (!motion?.motion || !motion.source || !motion.type) {
+      return;
+    }
+    const infoslideLine = motion.adinfo
+      ? `${infoslideLabel}: ${motion.adinfo}\n`
+      : "";
+    const sourceLine = `~${motion.source}`;
+    navigator.clipboard.writeText(
+      `${motion.motion}\n${infoslideLine}${sourceLine}`
+    );
+    displayMotionCopiedMessage();
   }
 
   function saveMotionToContext(): void {
@@ -30,9 +49,9 @@ const MotionGenerator = () => {
     });
   }
 
-  const [enabledMotionTypes, setEnabledMotionTypes] = useState<motionTypeCode[]>([
-    ...motionTypesArray,
-  ]);
+  const [enabledMotionTypes, setEnabledMotionTypes] = useState<
+    motionTypeCode[]
+  >([...motionTypesArray]);
 
   /** Calls {@link generateMotion()} on page load. */
   useEffect(() => {
@@ -45,6 +64,15 @@ const MotionGenerator = () => {
     setEnabledMotionTypes(newState as any);
   };
 
+  const [motionCopiedRecently, setMotionCopiedRecently] = useState(false);
+
+  function displayMotionCopiedMessage() {
+    setMotionCopiedRecently(true);
+    setTimeout(() => {
+      setMotionCopiedRecently(false);
+    }, 1000);
+  }
+
   return (
     <div className="flex flex-col items-center text-center">
       <section className="hidden xl:flex flex-col space-y-2 max-w-[400px]">
@@ -52,6 +80,11 @@ const MotionGenerator = () => {
           text={useLang("debateMotionGeneratorRegenerate")}
           icon={IconDice}
           onClick={() => setMotion(generateMotion())}
+        />
+        <GenericButton
+          text={useLang("copyMotion")}
+          icon={IconCopy}
+          onClick={() => copyMotionToClipboard()}
         />
         <GenericButton
           text={useLang("debateOverThisMotion")}
@@ -70,6 +103,11 @@ const MotionGenerator = () => {
             text={useLang("debateMotionGeneratorRegenerate")}
             icon={IconDice}
             onClick={() => setMotion(generateMotion())}
+          />
+          <GenericButton
+            text={useLang("copyMotion")}
+            icon={IconCopy}
+            onClick={() => copyMotionToClipboard()}
           />
           <GenericButton
             text={useLang("debateOverThisMotion")}

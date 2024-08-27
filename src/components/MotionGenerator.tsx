@@ -10,6 +10,9 @@ import { useRouter } from "next/navigation";
 import { MotionDisplay } from "./MotionDisplay";
 import { MotionsFilter } from "./MotionsFilter";
 import { useLang } from "@/lib/useLang";
+import { LinkButton } from "./LinkButton";
+import { IconPlayCircle } from "./icons/PlayCircle";
+import { IconList } from "./icons/List";
 import { IconCopy } from "./icons/Copy";
 import { toast, Toaster } from "sonner";
 
@@ -88,6 +91,7 @@ const MotionGenerator = () => {
             router.push("/oxford-debate/setup");
           }}
         />
+        <LinkButton href="/" text={useLang("mainMenu")} icon={IconList} />
       </section>
       <hr className="border-b-2 mt-8 mb-8 rounded border-neutral-800 my-2 w-full" />
       <section className="flex flex-col xl:flex-row items-center">
@@ -111,8 +115,10 @@ const MotionGenerator = () => {
               router.push("/oxford-debate/setup");
             }}
           />
+          <LinkButton href="/" text={useLang("mainMenu")} icon={IconList} />
         </section>
         <MotionDisplay motion={motion} />
+        <div className="flex flex-row flex-wrap justify-center gap-2"></div>
       </section>
     </div>
   );

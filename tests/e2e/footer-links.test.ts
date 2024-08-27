@@ -27,7 +27,5 @@ test("debate tools repo", async ({ page }) => {
   await page.goto("http://localhost:3000");
   await page.getByRole("link", { name: "Source code" }).click();
   await expect(page).toHaveTitle(/.*debatecore\/debate-tools.*/);
-  await expect(page).toHaveURL(
-    "https://github.com/debatecore/debate-tools/blob/master/LICENSE"
-  );
+  await expect(page).toHaveURL("https://github.com/debatecore/debate-tools");
 });

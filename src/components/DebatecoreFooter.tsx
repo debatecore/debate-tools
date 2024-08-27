@@ -14,7 +14,7 @@ const DebatecoreFooter = (props: {}) => {
   const footerlinks: footerlink[] = [
     {
       text: useLang("footerAbout"),
-      href: "/about",
+      href: "https://debateco.re/about",
     },
     {
       text: `${useLang("footerLicense")} (AGPLv3)`,

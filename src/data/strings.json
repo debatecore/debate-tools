@@ -429,5 +429,15 @@
     "en": "Debate finished!",
     "pl": "Debata zakończona!",
     "de": "Debatte geendet!"
+  },
+  "copyMotion": {
+    "en": "Copy motion",
+    "pl": "Skopiuj tezę",
+    "de": "These kopieren"
+  },
+  "motionCopiedSuccess": {
+    "en": "Motion copied to clipboard",
+    "pl": "Teza skopiowana do schowka",
+    "de": "These kopiert"
   }
 }

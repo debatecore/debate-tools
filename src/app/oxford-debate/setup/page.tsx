@@ -10,7 +10,12 @@ import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
-import { displayImageType, displayImageTypeArray } from "@/types/debate";
+import {
+  debateConf,
+  defaultDebateConf,
+  displayImageType,
+  displayImageTypeArray,
+} from "@/types/debate";
 import { useContext, useEffect, useState } from "react";
 import {
   defaultSoundPack,
@@ -68,7 +73,41 @@ export default function OxfordDebateSetup() {
     } else {
       setCustomClockImageSelected(false);
     }
-  });
+  }, [setCustomClockImageSelected, debateContext.conf.clockImageName]);
+
+  useEffect(() => {
+    debateContext.setConf(parseUrlParams());
+  }, []);
+
+  const parseUrlParams = () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const conf: debateConf = {
+      motion: urlParams.get("motion") || defaultDebateConf.motion,
+      proTeam: urlParams.get("propositionName") || defaultDebateConf.proTeam,
+      oppTeam: urlParams.get("oppositionName") || defaultDebateConf.oppTeam,
+      speechTime:
+        parseInt(urlParams.get("speechTime") || "") ||
+        defaultDebateConf.speechTime,
+      adVocemTime:
+        parseInt(urlParams.get("adVocemTime") || "") ||
+        defaultDebateConf.adVocemTime,
+      endProtectedTime:
+        parseInt(urlParams.get("protectedTime") || "") ||
+        defaultDebateConf.endProtectedTime,
+      startProtectedTime:
+        parseInt(urlParams.get("startProtectedTime") || "") ||
+        defaultDebateConf.startProtectedTime,
+      beepOnSpeechEnd: true,
+      beepProtectedTime: true,
+      visualizeProtectedTimes: false,
+      clockImageName:
+        urlParams.get("clockImage") != undefined ? "custom" : "null",
+      customClockImageBase64: urlParams.get("clockImage") || "",
+      soundPack: defaultSoundPack,
+    };
+    return conf;
+  };
 
   return (
     <div className="min-h-screen w-full flex flex-col">

@@ -1,3 +1,5 @@
+import * as fs from "fs";
+
 const convertImageToBase64 = (file: File): Promise<string> => {
   return new Promise<string>((resolve) => {
     const fileReader = new FileReader();
@@ -19,4 +21,9 @@ const convertImageToBase64 = (file: File): Promise<string> => {
   });
 };
 
-export { convertImageToBase64 };
+const getBase64ImageFromPath = (imagePath: string): string => {
+  const imageBuffer = fs.readFileSync(imagePath);
+  return imageBuffer.toString("base64");
+};
+
+export { convertImageToBase64, getBase64ImageFromPath };

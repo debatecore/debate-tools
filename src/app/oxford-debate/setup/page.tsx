@@ -22,6 +22,7 @@ import {
   soundPackName,
   soundPackNamesArray,
   soundPacks,
+  ztmPoznańSoundPack,
 } from "@/types/soundPack";
 import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
@@ -107,7 +108,7 @@ export default function OxfordDebateSetup() {
       clockImageName: urlParams.get("clockImage") ? "custom" : "null",
       customClockImageBase64: "",
       customClockImageLink: urlParams.get("clockImage") || "",
-      soundPack: defaultSoundPack,
+      soundPack: getSoundPack(urlParams),
     };
     return conf;
   };
@@ -148,23 +149,44 @@ export default function OxfordDebateSetup() {
     }
   }
 
+  function getSoundPack(urlParams: URLSearchParams) {
+    const soundPack = urlParams.get("soundPack");
+    console.log(soundPack);
+    if (soundPack == undefined) {
+      return defaultSoundPack;
+    }
+    if (decodeURI(soundPack) == "ZTM Poznań") {
+      return ztmPoznańSoundPack;
+    } else {
+      return defaultSoundPack;
+    }
+  }
+
   function copyDebateConfigurationLink() {
     const currentDebateConf = debateContext.conf;
     const params = [];
     let param: keyof debateConf;
     for (param in currentDebateConf) {
-      if (currentDebateConf[param] != defaultDebateConf[param]) {
+      if (
+        currentDebateConf[param] != defaultDebateConf[param] &&
+        param != "soundPack"
+      ) {
         params.push(`${param}=${currentDebateConf[param]}`);
       }
     }
     if (params.length == 0) {
       navigator.clipboard.writeText(window.location.href);
     } else {
-      let link = encodeURI(`${window.location.href}?`);
+      let link = `${window.location.href}?`;
       params.forEach((param) => {
         link += `&${param}`;
       });
-      navigator.clipboard.writeText(link);
+      if (
+        currentDebateConf.soundPack.name != defaultDebateConf.soundPack.name
+      ) {
+        link += `&soundPack=${currentDebateConf.soundPack.name}`;
+      }
+      navigator.clipboard.writeText(encodeURI(link));
     }
     toast.success(debateCopiedMessage);
   }

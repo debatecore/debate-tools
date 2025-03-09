@@ -231,6 +231,8 @@ test("url params: copy motion to clipboard", async ({ page }) => {
   await manuallyChangeTime("Protected", "minute", "increase", page);
   await manuallyChangeTime("Protected", "second", "decrease", page);
   await page.getByRole("button", { name: "Beep on speech end" }).click();
+  await page.getByRole("button", { name: "Default" }).click();
+  await page.getByText("ZTM Poznań").click();
   await page.getByRole("button", { name: "Copy debate" }).click();
   await page.getByText("Debate link copied to clipboard");
 
@@ -264,4 +266,16 @@ test("url params: copy motion to clipboard", async ({ page }) => {
     "30 seconds"
   );
   expect(await getBooleanButtonValue("Beep on speech end", page)).toBe(false);
+  expect(page.getByText("ZTM Poznań")).toBeVisible();
+});
+
+test("url params: soundPacks", async ({ page }, testinfo) => {
+  // GIVEN
+  const soundPackName = "ZTM Poznań";
+  await page.goto(
+    `http://localhost:3000/oxford-debate/setup?soundPack=${soundPackName}`
+  );
+
+  // THEN
+  expect(page.getByText(soundPackName)).toBeVisible();
 });

@@ -11,7 +11,12 @@ const ClockDisplayImage = () => {
   const [clockImageLoaded, setClockImageLoaded] = useState(false);
   const loadingText = useLang("loading");
 
-  const getImageSource = () => {
+  function getImageSource() {
+    console.log(
+      "loading clock image",
+      currentDebateConf.customClockImageBase64,
+      currentDebateConf.customClockImageLink
+    );
     if (
       currentDebateConf.clockImageName == "custom" &&
       currentDebateConf.customClockImageBase64 != ""
@@ -23,8 +28,10 @@ const ClockDisplayImage = () => {
     ) {
       console.log("clock image", currentDebateConf.customClockImageLink);
       return currentDebateConf.customClockImageLink;
+    } else {
+      return "";
     }
-  };
+  }
 
   return (
     <div
@@ -79,9 +86,22 @@ const ClockDisplayImage = () => {
         />
       )}
       {clockImageName === "custom" &&
-        currentDebateConf.customClockImageBase64 != "" && (
+        currentDebateConf.customClockImageBase64 != "" &&
+        currentDebateConf.customClockImageLink == "" && (
           <Image
-            src={getImageSource() || ""}
+            src={getImageSource()}
+            alt="Custom logo"
+            width={60}
+            height={60}
+            className={`mt-36 ${!clockImageLoaded && "opacity-0"}`}
+            onLoad={() => setClockImageLoaded(true)}
+            data-loaded={clockImageLoaded}
+          />
+        )}
+      {clockImageName === "custom" &&
+        currentDebateConf.customClockImageLink != "" && (
+          <img
+            src={getImageSource()}
             alt="Custom logo"
             width={60}
             height={60}

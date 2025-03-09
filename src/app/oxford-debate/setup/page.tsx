@@ -26,6 +26,7 @@ import {
 import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
 import { IconClipboard } from "@/components/icons/Clipboard";
+import { useEffectOnce } from "react-use";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -97,12 +98,8 @@ export default function OxfordDebateSetup() {
       startProtectedTime:
         parseInt(urlParams.get("startProtectedTime") || "") ||
         defaultDebateConf.startProtectedTime,
-      beepOnSpeechEnd:
-        parseAsBooleanValue(urlParams.get("beepOnSpeechEnd")) ||
-        defaultDebateConf.beepOnSpeechEnd,
-      beepProtectedTime:
-        parseAsBooleanValue(urlParams.get("beepProtectedTime")) ||
-        defaultDebateConf.beepProtectedTime,
+      beepOnSpeechEnd: getBooleanParamValue("beepOnSpeechEnd", urlParams),
+      beepProtectedTime: getBooleanParamValue("beepProtectedTime", urlParams),
       visualizeProtectedTimes: false,
       clockImageName: urlParams.get("clockImage") ? "custom" : "null",
       customClockImageBase64: "",
@@ -112,14 +109,34 @@ export default function OxfordDebateSetup() {
     return conf;
   };
 
-  useEffect(() => {
+  useEffectOnce(() => {
     let confFromParams = parseUrlParams();
-    if (debateContext.conf != confFromParams) {
-      debateContext.setConf(parseUrlParams());
+    if (
+      debateContext.conf == defaultDebateConf &&
+      confFromParams != defaultDebateConf
+    ) {
+      debateContext.setConf(confFromParams);
+      console.log(confFromParams);
     }
-  }, []);
+  });
 
-  function parseAsBooleanValue(value: string | null): boolean | undefined {
+  function getBooleanParamValue(
+    param: "beepOnSpeechEnd" | "beepProtectedTime",
+    urlParams: URLSearchParams
+  ): boolean {
+    const paramValue = parseAsBoolean(urlParams.get(param));
+    if (paramValue != undefined) {
+      return paramValue;
+    } else if (param == "beepOnSpeechEnd") {
+      return defaultDebateConf.beepOnSpeechEnd;
+    } else if (param == "beepProtectedTime") {
+      return defaultDebateConf.beepProtectedTime;
+    } else {
+      throw Error("Invalid boolean param");
+    }
+  }
+
+  function parseAsBoolean(value: string | null): boolean | undefined {
     console.log(value);
     if (value == "true") {
       return true;

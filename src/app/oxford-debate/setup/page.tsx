@@ -27,6 +27,7 @@ import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
 import { IconClipboard } from "@/components/icons/Clipboard";
 import { useEffectOnce } from "react-use";
+import { toast } from "sonner";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -39,6 +40,7 @@ export default function OxfordDebateSetup() {
   const [customClockImageSelected, setCustomClockImageSelected] =
     useState(false);
   const initializedRef = useRef(false);
+  const debateCopiedMessage = useLang("debateCopiedSuccess");
 
   const getDisplayNameOfClockImage = (clockImageName: string) => {
     switch (clockImageName) {
@@ -84,8 +86,8 @@ export default function OxfordDebateSetup() {
     const urlParams = new URLSearchParams(queryString);
     const conf: debateConf = {
       motion: urlParams.get("motion") || defaultDebateConf.motion,
-      proTeam: urlParams.get("propositionName") || defaultDebateConf.proTeam,
-      oppTeam: urlParams.get("oppositionName") || defaultDebateConf.oppTeam,
+      proTeam: urlParams.get("proTeam") || defaultDebateConf.proTeam,
+      oppTeam: urlParams.get("oppTeam") || defaultDebateConf.oppTeam,
       speechTime:
         parseInt(urlParams.get("speechTime") || "") ||
         defaultDebateConf.speechTime,
@@ -145,6 +147,29 @@ export default function OxfordDebateSetup() {
     } else {
       return undefined;
     }
+  }
+
+  function copyDebateConfigurationLink() {
+    const currentDebateConf = debateContext.conf;
+    console.log(currentDebateConf);
+    const params = [];
+    let param: keyof debateConf;
+    for (param in currentDebateConf) {
+      if (currentDebateConf[param] != defaultDebateConf[param]) {
+        params.push(`${param}=${currentDebateConf[param]}`);
+      }
+    }
+    console.log(params);
+    if (params.length == 0) {
+      navigator.clipboard.writeText(window.location.href);
+    } else {
+      let link = encodeURI(`${window.location.href}?`);
+      params.forEach((param) => {
+        link += `&${param}`;
+      });
+      navigator.clipboard.writeText(link);
+    }
+    toast.success(debateCopiedMessage);
   }
 
   return (
@@ -274,7 +299,7 @@ export default function OxfordDebateSetup() {
             }}
           />
           <GenericButton
-            onClick={() => {}}
+            onClick={() => copyDebateConfigurationLink()}
             text={useLang("copyDebateConfiguration")}
             icon={IconClipboard}
           />

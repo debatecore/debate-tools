@@ -230,6 +230,7 @@ test("url params: copy motion to clipboard", async ({ page }) => {
   await manuallyChangeTime("Ad vocem", "second", "increase", page);
   await manuallyChangeTime("Protected", "minute", "increase", page);
   await manuallyChangeTime("Protected", "second", "decrease", page);
+  await page.getByRole("button", { name: "Beep on speech end" }).click();
   await page.getByRole("button", { name: "Copy debate" }).click();
 
   const clipboardContent = await page.evaluate(() =>
@@ -250,15 +251,16 @@ test("url params: copy motion to clipboard", async ({ page }) => {
     "2 minutes"
   );
   expect(await getTimeAsSeenByUser("Protected", "minute", page)).toBe(
-    "1 minute"
+    "0 minutes"
   );
   expect(await getTimeAsSeenByUser("Speech", "second", page)).toBe(
     "15 seconds"
   );
   expect(await getTimeAsSeenByUser("Ad vocem", "second", page)).toBe(
-    "45 seconds"
+    "15 seconds"
   );
   expect(await getTimeAsSeenByUser("Protected", "second", page)).toBe(
-    "0 seconds"
+    "30 seconds"
   );
+  expect(await getBooleanButtonValue("Beep on speech end", page)).toBe(false);
 });

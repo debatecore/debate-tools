@@ -27,7 +27,8 @@ import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
 import { IconClipboard } from "@/components/icons/Clipboard";
 import { useEffectOnce } from "react-use";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
+import Link from "next/link";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -118,7 +119,6 @@ export default function OxfordDebateSetup() {
       confFromParams != defaultDebateConf
     ) {
       debateContext.setConf(confFromParams);
-      console.log(confFromParams);
     }
   });
 
@@ -139,7 +139,6 @@ export default function OxfordDebateSetup() {
   }
 
   function parseAsBoolean(value: string | null): boolean | undefined {
-    console.log(value);
     if (value == "true") {
       return true;
     } else if (value == "false") {
@@ -151,7 +150,6 @@ export default function OxfordDebateSetup() {
 
   function copyDebateConfigurationLink() {
     const currentDebateConf = debateContext.conf;
-    console.log(currentDebateConf);
     const params = [];
     let param: keyof debateConf;
     for (param in currentDebateConf) {
@@ -159,7 +157,6 @@ export default function OxfordDebateSetup() {
         params.push(`${param}=${currentDebateConf[param]}`);
       }
     }
-    console.log(params);
     if (params.length == 0) {
       navigator.clipboard.writeText(window.location.href);
     } else {
@@ -174,6 +171,7 @@ export default function OxfordDebateSetup() {
 
   return (
     <div className="min-h-screen w-full flex flex-col">
+      <Toaster richColors position="bottom-center" />
       <div className="mb-5 lg:mb-0">
         <h1 className="text-3xl mt-8 text-center font-serif">
           {useLang("oxfordDebateConfiguration")}
@@ -298,14 +296,16 @@ export default function OxfordDebateSetup() {
               });
             }}
           />
-          <GenericButton
-            onClick={() => copyDebateConfigurationLink()}
-            text={useLang("copyDebateConfiguration")}
-            icon={IconClipboard}
-          />
           <hr className="border-b-2 rounded border-neutral-800 my-2" />
           <div className="flex flex-row flex-wrap justify-center gap-2">
             <LinkButton href="/" text={useLang("mainMenu")} icon={IconList} />
+            <Link href={""} className="rounded-lg" tabIndex={0}>
+              <GenericButton
+                onClick={() => copyDebateConfigurationLink()}
+                text={useLang("copyDebateConfiguration")}
+                icon={IconClipboard}
+              />
+            </Link>
             <LinkButton
               href="/oxford-debate"
               text={useLang("startDebate")}

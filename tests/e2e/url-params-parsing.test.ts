@@ -1,4 +1,4 @@
-import { test, expect, Page } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import {
   getBooleanButtonValue,
   getConfiguredMotion,
@@ -64,7 +64,7 @@ test("default setup: motion", async ({ page }) => {
 test("url params: team names", async ({ page }) => {
   // GIVEN
   await page.goto(
-    "http://localhost:3000/oxford-debate/setup?propositionName=Debate%20Team%20Buster&oppositionName=Delusional%20Debaters"
+    "http://localhost:3000/oxford-debate/setup?proTeam=Debate%20Team%20Buster&oppTeam=Delusional%20Debaters"
   );
 
   // WHEN
@@ -232,6 +232,7 @@ test("url params: copy motion to clipboard", async ({ page }) => {
   await manuallyChangeTime("Protected", "second", "decrease", page);
   await page.getByRole("button", { name: "Beep on speech end" }).click();
   await page.getByRole("button", { name: "Copy debate" }).click();
+  await page.getByText("Debate link copied to clipboard");
 
   const clipboardContent = await page.evaluate(() =>
     navigator.clipboard.readText()

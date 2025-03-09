@@ -12,11 +12,6 @@ const ClockDisplayImage = () => {
   const loadingText = useLang("loading");
 
   function getImageSource() {
-    console.log(
-      "loading clock image",
-      currentDebateConf.customClockImageBase64,
-      currentDebateConf.customClockImageLink
-    );
     if (
       currentDebateConf.clockImageName == "custom" &&
       currentDebateConf.customClockImageBase64 != ""
@@ -26,7 +21,6 @@ const ClockDisplayImage = () => {
       currentDebateConf.clockImageName == "custom" &&
       currentDebateConf.customClockImageLink != ""
     ) {
-      console.log("clock image", currentDebateConf.customClockImageLink);
       return currentDebateConf.customClockImageLink;
     } else {
       return "";

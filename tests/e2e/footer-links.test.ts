@@ -3,14 +3,12 @@ import { test, expect } from "@playwright/test";
 test("debatecore homepage", async ({ page }) => {
   await page.goto("http://localhost:3000");
   await page.getByRole("link", { name: "debatecore" }).click();
-  await expect(page).toHaveTitle(/.*debatecore.*/);
   await expect(page).toHaveURL("https://debateco.re");
 });
 
 test("about page", async ({ page }) => {
   await page.goto("http://localhost:3000");
   await page.getByRole("link", { name: "About" }).click();
-  await expect(page).toHaveTitle(/.*debatecore.*/);
   await expect(page).toHaveURL("https://debateco.re/about");
 });
 

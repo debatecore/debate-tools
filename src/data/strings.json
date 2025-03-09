@@ -429,5 +429,10 @@
     "en": "Debate finished!",
     "pl": "Debata zakończona!",
     "de": "Debatte geendet!"
+  },
+  "copyDebateConfiguration": {
+    "en": "Copy debate",
+    "pl": "Kopiuj debatę",
+    "de": "Debatte kopieren"
   }
 }

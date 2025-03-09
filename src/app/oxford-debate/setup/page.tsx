@@ -16,7 +16,7 @@ import {
   displayImageType,
   displayImageTypeArray,
 } from "@/types/debate";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import {
   defaultSoundPack,
   soundPackName,
@@ -25,6 +25,7 @@ import {
 } from "@/types/soundPack";
 import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
+import { IconClipboard } from "@/components/icons/Clipboard";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -36,6 +37,7 @@ export default function OxfordDebateSetup() {
   const soundPackDefault = useLang("defaultSoundsOption");
   const [customClockImageSelected, setCustomClockImageSelected] =
     useState(false);
+  const initializedRef = useRef(false);
 
   const getDisplayNameOfClockImage = (clockImageName: string) => {
     switch (clockImageName) {
@@ -73,11 +75,8 @@ export default function OxfordDebateSetup() {
     } else {
       setCustomClockImageSelected(false);
     }
+    initializedRef.current = true;
   }, [setCustomClockImageSelected, debateContext.conf.clockImageName]);
-
-  useEffect(() => {
-    debateContext.setConf(parseUrlParams());
-  }, []);
 
   const parseUrlParams = () => {
     const queryString = window.location.search;
@@ -98,16 +97,38 @@ export default function OxfordDebateSetup() {
       startProtectedTime:
         parseInt(urlParams.get("startProtectedTime") || "") ||
         defaultDebateConf.startProtectedTime,
-      beepOnSpeechEnd: true,
-      beepProtectedTime: true,
+      beepOnSpeechEnd:
+        parseAsBooleanValue(urlParams.get("beepOnSpeechEnd")) ||
+        defaultDebateConf.beepOnSpeechEnd,
+      beepProtectedTime:
+        parseAsBooleanValue(urlParams.get("beepProtectedTime")) ||
+        defaultDebateConf.beepProtectedTime,
       visualizeProtectedTimes: false,
-      clockImageName:
-        urlParams.get("clockImage") != undefined ? "custom" : "null",
-      customClockImageBase64: urlParams.get("clockImage") || "",
+      clockImageName: urlParams.get("clockImage") ? "custom" : "null",
+      customClockImageBase64: "",
+      customClockImageLink: urlParams.get("clockImage") || "",
       soundPack: defaultSoundPack,
     };
     return conf;
   };
+
+  useEffect(() => {
+    let confFromParams = parseUrlParams();
+    if (debateContext.conf != confFromParams) {
+      debateContext.setConf(parseUrlParams());
+    }
+  }, []);
+
+  function parseAsBooleanValue(value: string | null): boolean | undefined {
+    console.log(value);
+    if (value == "true") {
+      return true;
+    } else if (value == "false") {
+      return false;
+    } else {
+      return undefined;
+    }
+  }
 
   return (
     <div className="min-h-screen w-full flex flex-col">
@@ -234,6 +255,11 @@ export default function OxfordDebateSetup() {
                     : 0,
               });
             }}
+          />
+          <GenericButton
+            onClick={() => {}}
+            text={useLang("copyDebateConfiguration")}
+            icon={IconClipboard}
           />
           <hr className="border-b-2 rounded border-neutral-800 my-2" />
           <div className="flex flex-row flex-wrap justify-center gap-2">

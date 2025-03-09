@@ -25,6 +25,7 @@ type debateConf = {
   visualizeProtectedTimes: boolean;
   clockImageName: displayImageType;
   customClockImageBase64: string;
+  customClockImageLink: string;
   soundPack: soundPack;
 };
 export type { debateConf, displayImageType };
@@ -42,6 +43,7 @@ const defaultDebateConf: debateConf = {
   visualizeProtectedTimes: false,
   clockImageName: "null",
   customClockImageBase64: "",
+  customClockImageLink: "",
   soundPack: defaultSoundPack,
 };
 export { defaultDebateConf };

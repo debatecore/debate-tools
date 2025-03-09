@@ -123,32 +123,49 @@ test("url params: time inputs", async ({ page }) => {
   expect(adVocemSeconds).toBe("30 seconds");
 });
 
-test("url params: clock image", async ({ page }, testinfo) => {
+test("url params: booleanInputs", async ({ page }) => {
   // GIVEN
-  const base64Image = getBase64ImageFromPath(
-    "tests/assets/black_mesa_lambda.png"
-  );
   await page.goto(
-    `http://localhost:3000/oxford-debate/setup?clockImage=data:image/png;base64, ${base64Image}`
+    "http://localhost:3000/oxford-debate/setup?beepOnSpeechEnd=false&beepOnProtectedTime=false&startProtectedTime=30&endProtectedTime=30"
+  );
+
+  // WHEN
+  const beepOnSpeechEndButton = page.getByText("Beep on speech end");
+  const beepOnSpeechEndCross = await beepOnSpeechEndButton.locator("svg");
+
+  const beepOnProtectedTimeButton = page.getByText("Beep on protected time");
+  const beepOnProtectedTimeCross = await beepOnProtectedTimeButton.locator(
+    "svg"
+  );
+
+  const startProtectedTimeButton = page.getByText(
+    "Protect time on speech start"
+  );
+  const startProtectedTimeCheck = await startProtectedTimeButton.locator("svg");
+  const image = await beepOnSpeechEndButton.evaluate((el: Element) => {
+    return window.getComputedStyle(el).getPropertyValue("background-image");
+  });
+
+  // THEN
+  expect(beepOnSpeechEndCross).toBeVisible();
+  expect(beepOnProtectedTimeCross).toBeVisible();
+  expect(startProtectedTimeCheck).toBeVisible();
+});
+
+test("url params: clock image", async ({ page }) => {
+  // GIVEN
+  await page.goto(
+    "http://localhost:3000/oxford-debate/setup?clockImage=https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Orange_lambda.svg/459px-Orange_lambda.svg.png"
   );
 
   // WHEN
   await page.getByRole("button", { name: "Start debate" }).click();
   await page.waitForURL("http://localhost:3000/oxford-debate");
-
-  // THEN
   const img = await page.getByRole("img", { name: "custom" });
+
   await expect(img).toHaveJSProperty("complete", true);
   await expect(img).toHaveAttribute("data-loaded", "true");
-
-  const screenshot = await page.screenshot({ fullPage: true });
-  await testinfo.attach(
-    `setup->display of image: "custom" test - full page screenshot`,
-    {
-      body: screenshot,
-      contentType: "image/jpg",
-    }
-  );
+  // THEN
 });
 
 async function getTime(

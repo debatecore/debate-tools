@@ -11,6 +11,21 @@ const ClockDisplayImage = () => {
   const [clockImageLoaded, setClockImageLoaded] = useState(false);
   const loadingText = useLang("loading");
 
+  const getImageSource = () => {
+    if (
+      currentDebateConf.clockImageName == "custom" &&
+      currentDebateConf.customClockImageBase64 != ""
+    ) {
+      return `data:image/png;base64, ${currentDebateConf.customClockImageBase64}`;
+    } else if (
+      currentDebateConf.clockImageName == "custom" &&
+      currentDebateConf.customClockImageLink != ""
+    ) {
+      console.log("clock image", currentDebateConf.customClockImageLink);
+      return currentDebateConf.customClockImageLink;
+    }
+  };
+
   return (
     <div
       className="absolute w-full h-full flex justify-center items-center z-50"
@@ -66,7 +81,7 @@ const ClockDisplayImage = () => {
       {clockImageName === "custom" &&
         currentDebateConf.customClockImageBase64 != "" && (
           <Image
-            src={`data:image/png;base64, ${currentDebateConf.customClockImageBase64}`}
+            src={getImageSource() || ""}
             alt="Custom logo"
             width={60}
             height={60}

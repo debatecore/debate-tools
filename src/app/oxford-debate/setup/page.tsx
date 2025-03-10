@@ -151,7 +151,6 @@ export default function OxfordDebateSetup() {
 
   function getSoundPack(urlParams: URLSearchParams) {
     const soundPack = urlParams.get("soundPack");
-    console.log(soundPack);
     if (soundPack == undefined) {
       return defaultSoundPack;
     }

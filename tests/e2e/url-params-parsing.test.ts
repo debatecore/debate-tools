@@ -3,6 +3,7 @@ import {
   fillAndCheckTextBox,
   getBooleanButtonValue,
   getConfiguredMotion,
+  getConfiguredSoundPack,
   getConfiguredTeamName,
   getTimeAsSeenByUser,
   manuallyChangeTime,
@@ -326,6 +327,7 @@ test("url params: copy motion to clipboard", async ({
   const propositionTeam = "Wyścigówki Kubicy";
   const oppositionTeam = "Gorsze Wyścigówki Kubicy";
   const motion = "Należy żałować.";
+  const soundPackName = "ZTM Poznań";
 
   // WHEN
   await page.goto(url);
@@ -344,7 +346,7 @@ test("url params: copy motion to clipboard", async ({
   await manuallyChangeTime("Protected", "second", "decrease", page);
   await page.getByRole("button", { name: "Beep on speech end" }).click();
   await page.getByRole("button", { name: "Default" }).click();
-  await page.getByText("ZTM Poznań").click();
+  await page.getByText(soundPackName).click();
   await page.getByRole("button", { name: "Copy debate" }).click();
   page.getByText("Debate link copied to clipboard");
 
@@ -381,7 +383,7 @@ test("url params: copy motion to clipboard", async ({
   expect(await getBooleanButtonValue("Beep on speech end", false, page)).toBe(
     false
   );
-  expect(page.getByText("ZTM Poznań")).toBeVisible();
+  expect(await getConfiguredSoundPack(soundPackName, page));
 });
 
 test("url params: soundPacks", async ({ page }) => {
@@ -396,5 +398,5 @@ test("url params: soundPacks", async ({ page }) => {
   await page.waitForURL(url);
 
   // THEN
-  expect(page.getByText(soundPackName)).toBeVisible();
+  expect(await getConfiguredSoundPack(soundPackName, page)).toBe(soundPackName);
 });

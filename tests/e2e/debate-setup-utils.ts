@@ -110,6 +110,17 @@ async function fillAndCheckTextBox(
   }
 }
 
+async function getConfiguredSoundPack(expectedValue: string, page: Page) {
+  let soundPack = null;
+  const soundPackElement = page.getByText(expectedValue);
+  soundPack = await soundPackElement.textContent();
+  while (soundPack != expectedValue) {
+    await page.waitForTimeout(RETRY_TIMEOUT); // This is necessary, as URL params are usually parsed with a slight delay
+    soundPack = await soundPackElement.inputValue();
+  }
+  return soundPack;
+}
+
 export {
   getMotion as getConfiguredMotion,
   getTeamName as getConfiguredTeamName,
@@ -117,4 +128,5 @@ export {
   manuallyChangeTime,
   getBooleanButtonValue,
   fillAndCheckTextBox,
+  getConfiguredSoundPack,
 };

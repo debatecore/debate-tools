@@ -101,6 +101,7 @@ async function fillAndCheckTextBox(
   let actualInputValue = "";
   while (actualInputValue != desiredInput) {
     await locator.fill(desiredInput);
+    await page.waitForTimeout(500);
     const actualInputValue = await locator.inputValue();
     if (actualInputValue == desiredInput) {
       return actualInputValue;

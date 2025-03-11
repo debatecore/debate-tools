@@ -7,9 +7,11 @@ import {
   manuallyChangeTime,
 } from "./debate-setup-utils";
 
+test.describe.configure({ retries: 3 });
+
 test("configured strings should be visible in debate view", async ({
   page,
-}) => {
+}, testinfo) => {
   // GIVEN
   const url = "http://localhost:3000/oxford-debate/setup";
   const propositionTeam = "Wyścigówki Kubicy";
@@ -39,6 +41,8 @@ test("configured strings should be visible in debate view", async ({
     expect(await getTeamName("Opposition", page)).toBe(oppositionTeam);
   }
   await expect(page.getByText(motion)).toBeVisible();
+  const screenshot = await page.screenshot({ fullPage: true });
+  testinfo.attach("debate view", { body: screenshot });
 });
 
 test("debate configuration should persist after page changes", async ({

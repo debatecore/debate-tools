@@ -97,7 +97,7 @@ export default function OxfordDebateSetup() {
         parseInt(urlParams.get("adVocemTime") || "") ||
         defaultDebateConf.adVocemTime,
       endProtectedTime:
-        parseInt(urlParams.get("protectedTime") || "") ||
+        parseInt(urlParams.get("endProtectedTime") || "") ||
         defaultDebateConf.endProtectedTime,
       startProtectedTime:
         parseInt(urlParams.get("startProtectedTime") || "") ||
@@ -105,9 +105,12 @@ export default function OxfordDebateSetup() {
       beepOnSpeechEnd: getBooleanParamValue("beepOnSpeechEnd", urlParams),
       beepProtectedTime: getBooleanParamValue("beepProtectedTime", urlParams),
       visualizeProtectedTimes: false,
-      clockImageName: urlParams.get("clockImage") ? "custom" : "null",
+      clockImageName: parseClockImageName(
+        urlParams.get("clockImageName"),
+        urlParams.get("customClockImageLink")
+      ),
       customClockImageBase64: "",
-      customClockImageLink: urlParams.get("clockImage") || "",
+      customClockImageLink: urlParams.get("customClockImageLink") || "",
       soundPack: getSoundPack(urlParams),
     };
     return conf;
@@ -161,6 +164,17 @@ export default function OxfordDebateSetup() {
     }
   }
 
+  function parseClockImageName(
+    name: string | null,
+    clockImageLink: string | null
+  ): displayImageType {
+    if (displayImageTypeArray.includes(name as any)) {
+      return name as displayImageType;
+    } else if (!displayImageTypeArray.includes(name as any) && clockImageLink) {
+      return "custom";
+    } else return "null";
+  }
+
   function copyDebateConfigurationLink() {
     const currentDebateConf = debateContext.conf;
     const params = [];
@@ -173,10 +187,13 @@ export default function OxfordDebateSetup() {
         params.push(`${param}=${currentDebateConf[param]}`);
       }
     }
+    let link = `${
+      location.protocol + "//" + location.host + location.pathname
+    }`;
     if (params.length == 0) {
-      navigator.clipboard.writeText(window.location.href);
+      navigator.clipboard.writeText(link);
     } else {
-      let link = `${window.location.href}?`;
+      link += "?";
       params.forEach((param) => {
         link += `&${param}`;
       });
@@ -186,6 +203,7 @@ export default function OxfordDebateSetup() {
         link += `&soundPack=${currentDebateConf.soundPack.name}`;
       }
       navigator.clipboard.writeText(encodeURI(link));
+      console.log(link);
     }
     toast.success(debateCopiedMessage);
   }

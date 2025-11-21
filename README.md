@@ -11,7 +11,8 @@ Oxford debate (pl. _[debata oksfordzka](https://pl.wikipedia.org/wiki/Debata_oks
 - Debate clock adjustable to rules of any tournament,
 - Generator of motions used in past tournaments with filtering by type and language,
 - Usable logos of tournaments that used Debate Tools,
-- Submitting custom logos.
+- Submitting custom logos,
+- Sharing debate configurations via links.
 
 ## Origin
 
@@ -34,7 +35,7 @@ Debate Tools were first used and tested in ZSK Poznań, during the 2023/2024 edi
 
 ## License
 
-Copyright © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński
+Copyright © 2023-2025 Jakub Mańczak & Mateusz Dobrzyński
 
 Unless stated otherwise in `LEGAL.md` regarding specific files, Debate Tools are distributed under [AGPL-3.0-only](LICENSE).
 

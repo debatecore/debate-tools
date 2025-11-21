@@ -430,6 +430,16 @@
     "pl": "Debata zakończona!",
     "de": "Debatte geendet!"
   },
+  "copyDebateConfiguration": {
+    "en": "Copy debate",
+    "pl": "Kopiuj debatę",
+    "de": "Debatte kopieren"
+  },
+  "debateCopiedSuccess": {
+    "en": "Debate link copied to clipboard",
+    "pl": "Link do debaty skopiowany do schowka",
+    "de": "Debattelink kopiert"
+  },
   "copyMotion": {
     "en": "Copy motion",
     "pl": "Skopiuj tezę",

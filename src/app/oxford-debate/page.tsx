@@ -156,7 +156,9 @@ export default function OxfordDebate() {
           {/* debate finished */}
           {stage === 8 && (
             <div className="w-full h-full flex flex-col gap-5 justify-center items-center absolute">
-              <p className="text-3xl font-semibold">{debateFinishedEnthusiastic}</p>
+              <p className="text-3xl font-semibold">
+                {debateFinishedEnthusiastic}
+              </p>
               <p className="animate-wiggle text-6xl">{"🎉"}</p>
             </div>
           )}

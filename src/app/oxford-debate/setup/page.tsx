@@ -10,16 +10,26 @@ import { IconPlayCircle } from "@/components/icons/PlayCircle";
 import { IconX } from "@/components/icons/X";
 import { DebateContext } from "@/contexts/DebateContext";
 import { useLang } from "@/lib/useLang";
-import { displayImageType, displayImageTypeArray } from "@/types/debate";
-import { useContext, useEffect, useState } from "react";
+import {
+  debateConf,
+  defaultDebateConf,
+  displayImageType,
+  displayImageTypeArray,
+} from "@/types/debate";
+import { useContext, useEffect, useRef, useState } from "react";
 import {
   defaultSoundPack,
   soundPackName,
   soundPackNamesArray,
   soundPacks,
+  ztmPoznańSoundPack,
 } from "@/types/soundPack";
 import { convertImageToBase64 } from "@/lib/imageToBase64";
 import { DebatecoreFooter } from "@/components/DebatecoreFooter";
+import { IconClipboard } from "@/components/icons/Clipboard";
+import { useEffectOnce } from "react-use";
+import { toast, Toaster } from "sonner";
+import Link from "next/link";
 
 export default function OxfordDebateSetup() {
   const debateContext = useContext(DebateContext);
@@ -31,6 +41,8 @@ export default function OxfordDebateSetup() {
   const soundPackDefault = useLang("defaultSoundsOption");
   const [customClockImageSelected, setCustomClockImageSelected] =
     useState(false);
+  const initializedRef = useRef(false);
+  const debateCopiedMessage = useLang("debateCopiedSuccess");
 
   const getDisplayNameOfClockImage = (clockImageName: string) => {
     switch (clockImageName) {
@@ -68,10 +80,137 @@ export default function OxfordDebateSetup() {
     } else {
       setCustomClockImageSelected(false);
     }
+    initializedRef.current = true;
+  }, [setCustomClockImageSelected, debateContext.conf.clockImageName]);
+
+  const parseUrlParams = () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const conf: debateConf = {
+      motion: urlParams.get("motion") || defaultDebateConf.motion,
+      proTeam: urlParams.get("proTeam") || defaultDebateConf.proTeam,
+      oppTeam: urlParams.get("oppTeam") || defaultDebateConf.oppTeam,
+      speechTime:
+        parseInt(urlParams.get("speechTime") || "") ||
+        defaultDebateConf.speechTime,
+      adVocemTime:
+        parseInt(urlParams.get("adVocemTime") || "") ||
+        defaultDebateConf.adVocemTime,
+      endProtectedTime:
+        parseInt(urlParams.get("endProtectedTime") || "") ||
+        defaultDebateConf.endProtectedTime,
+      startProtectedTime:
+        parseInt(urlParams.get("startProtectedTime") || "") ||
+        defaultDebateConf.startProtectedTime,
+      beepOnSpeechEnd: getBooleanParamValue("beepOnSpeechEnd", urlParams),
+      beepProtectedTime: getBooleanParamValue("beepProtectedTime", urlParams),
+      visualizeProtectedTimes: false,
+      clockImageName: parseClockImageName(
+        urlParams.get("clockImageName"),
+        urlParams.get("customClockImageLink")
+      ),
+      customClockImageBase64: "",
+      customClockImageLink: urlParams.get("customClockImageLink") || "",
+      soundPack: getSoundPack(urlParams),
+    };
+    return conf;
+  };
+
+  useEffectOnce(() => {
+    let confFromParams = parseUrlParams();
+    if (
+      debateContext.conf == defaultDebateConf &&
+      confFromParams != defaultDebateConf
+    ) {
+      debateContext.setConf(confFromParams);
+    }
   });
+
+  function getBooleanParamValue(
+    param: "beepOnSpeechEnd" | "beepProtectedTime",
+    urlParams: URLSearchParams
+  ): boolean {
+    const paramValue = parseAsBoolean(urlParams.get(param));
+    if (paramValue != undefined) {
+      return paramValue;
+    } else if (param == "beepOnSpeechEnd") {
+      return defaultDebateConf.beepOnSpeechEnd;
+    } else if (param == "beepProtectedTime") {
+      return defaultDebateConf.beepProtectedTime;
+    } else {
+      throw Error("Invalid boolean param");
+    }
+  }
+
+  function parseAsBoolean(value: string | null): boolean | undefined {
+    if (value == "true") {
+      return true;
+    } else if (value == "false") {
+      return false;
+    } else {
+      return undefined;
+    }
+  }
+
+  function getSoundPack(urlParams: URLSearchParams) {
+    const soundPack = urlParams.get("soundPack");
+    if (soundPack == undefined) {
+      return defaultSoundPack;
+    }
+    if (decodeURI(soundPack) == "ZTM Poznań") {
+      return ztmPoznańSoundPack;
+    } else {
+      return defaultSoundPack;
+    }
+  }
+
+  function parseClockImageName(
+    name: string | null,
+    clockImageLink: string | null
+  ): displayImageType {
+    if (displayImageTypeArray.includes(name as any)) {
+      return name as displayImageType;
+    } else if (!displayImageTypeArray.includes(name as any) && clockImageLink) {
+      return "custom";
+    } else return "null";
+  }
+
+  function copyDebateConfigurationLink() {
+    const currentDebateConf = debateContext.conf;
+    const params = [];
+    let param: keyof debateConf;
+    for (param in currentDebateConf) {
+      if (
+        currentDebateConf[param] != defaultDebateConf[param] &&
+        param != "soundPack"
+      ) {
+        params.push(`${param}=${currentDebateConf[param]}`);
+      }
+    }
+    let link = `${
+      location.protocol + "//" + location.host + location.pathname
+    }`;
+    if (params.length == 0) {
+      navigator.clipboard.writeText(link);
+    } else {
+      link += "?";
+      params.forEach((param) => {
+        link += `&${param}`;
+      });
+      if (
+        currentDebateConf.soundPack.name != defaultDebateConf.soundPack.name
+      ) {
+        link += `&soundPack=${currentDebateConf.soundPack.name}`;
+      }
+      navigator.clipboard.writeText(encodeURI(link));
+      console.log(link);
+    }
+    toast.success(debateCopiedMessage);
+  }
 
   return (
     <div className="min-h-screen w-full flex flex-col">
+      <Toaster richColors position="bottom-center" />
       <div className="mb-5 lg:mb-0">
         <h1 className="text-3xl mt-8 text-center font-serif">
           {useLang("oxfordDebateConfiguration")}
@@ -199,6 +338,13 @@ export default function OxfordDebateSetup() {
           <hr className="border-b-2 rounded border-neutral-800 my-2" />
           <div className="flex flex-row flex-wrap justify-center gap-2">
             <LinkButton href="/" text={useLang("mainMenu")} icon={IconList} />
+            <Link href={""} className="rounded-lg" tabIndex={0}>
+              <GenericButton
+                onClick={() => copyDebateConfigurationLink()}
+                text={useLang("copyDebateConfiguration")}
+                icon={IconClipboard}
+              />
+            </Link>
             <LinkButton
               href="/oxford-debate"
               text={useLang("startDebate")}

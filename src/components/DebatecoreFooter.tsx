@@ -54,7 +54,7 @@ const DebatecoreFooter = (props: {}) => {
       </div>
       <div className="mx-auto p-2 text-balance text-center text-neutral-700">
         {useLang("disclaimer")}
-        {" © 2023-2024 Jakub Mańczak & Mateusz Dobrzyński"}
+        {" © 2023-2025 Jakub Mańczak & Mateusz Dobrzyński"}
       </div>
     </>
   );
